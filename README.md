@@ -1,2 +1,6 @@
 # sofrito
-A savoury front-end base with advanced typographic, layout and build ingredients.
+A savoury front-end base with advanced typographic, layout, performance and build ingredients.
+
+
+
+
