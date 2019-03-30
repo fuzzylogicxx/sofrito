@@ -3,4 +3,5 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 
 
 
-
+## License
+The code is available under the MIT License.
