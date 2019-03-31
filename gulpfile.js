@@ -20,7 +20,7 @@ var settings = {
 
 var paths = {
 	input: 'src/',
-	output: 'dist/assets/',
+	output: 'dist/',
 	scripts: {
 		input: 'src/js/*',
 		polyfills: '.polyfill.js',

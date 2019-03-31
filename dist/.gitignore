@@ -1,2 +1,2 @@
-# Don’t ignore .gitignore files, i.e. dont’t ignore THIS file, i.e. ensure the /dist folder is tracked in version control even if its contents might not be.
+# Don’t ignore .gitignore files, i.e. don’t ignore THIS file, i.e. ensure the /dist folder is tracked in version control even if its contents might not be.
 !.gitignore

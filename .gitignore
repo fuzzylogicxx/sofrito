@@ -10,7 +10,6 @@
 
 # Node: don’t track dependencies / build artifacts / etc in source control
 node_modules
-node_modules
 test/results
 test/coverage
 
