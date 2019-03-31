@@ -20,19 +20,19 @@ var settings = {
 
 var paths = {
 	input: 'src/',
-	output: 'dist/',
+	output: 'dist/assets/',
 	scripts: {
 		input: 'src/js/*',
 		polyfills: '.polyfill.js',
-		output: 'dist/js/'
+		output: 'dist/assets/js/'
 	},
 	styles: {
 		input: 'src/sass/**/*.{scss,sass}',
-		output: 'dist/css/'
+		output: 'dist/assets/css/'
 	},
 	svgs: {
 		input: 'src/svg/*.svg',
-		output: 'dist/svg/'
+		output: 'dist/assets/svg/'
 	},
 	copy: {
 		input: 'src/copy/**/*',

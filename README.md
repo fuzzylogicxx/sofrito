@@ -1,7 +1,7 @@
 # sofrito
 A savoury front-end base with advanced typographic, layout, performance and build ingredients.
 
-## Build with Gulp
+## Gulp-based build system
 My starting point was https://github.com/cferdinandi/gulp-boilerplate.
 
 ## License

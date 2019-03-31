@@ -1,10 +1,28 @@
-# Node
-node_modules
-test/results
-test/coverage
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+# Useful .gitignore templates: https://github.com/github/gitignore
 
-## OS X
+# OS/system-generated files
 .DS_Store
 ._*
 .Spotlight-V100
 .Trashes
+
+# Node: don’t track dependencies / build artifacts / etc in source control
+node_modules
+node_modules
+test/results
+test/coverage
+
+# Docker: stuff to ignore (ref: https://github.com/PerchCMS/simple-docker)
+db/*
+!db/.gitkeep
+
+# Don’t track CSS, JS and SVGs that that are built from /src. We’re already tracking the source files. Let the build happen as a build step in a CI/CD environment.
+dist/*.html
+dist/assets/css/*
+dist/assets/js/*
+dist/assets/svg/*
+
+# Ignore image/media uploaded through a CMS (where we’ve named the CMS directory 'console')
+dist/console/resources/*
