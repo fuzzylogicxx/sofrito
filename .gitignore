@@ -18,10 +18,7 @@ db/*
 !db/.gitkeep
 
 # Don’t track CSS, JS and SVGs that that are built from /src. We’re already tracking the source files. Let the build happen as a build step in a CI/CD environment.
-dist/*.html
-dist/assets/css/*
-dist/assets/js/*
-dist/assets/svg/*
+dist/*
 
 # Ignore image/media uploaded through a CMS (where we’ve named the CMS directory 'console')
 dist/console/resources/*
