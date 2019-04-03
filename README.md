@@ -1,11 +1,20 @@
-# sofrito
+# Sofrito
 A savoury front-end base with advanced typographic, layout, performance and build ingredients.
+
+## Updates required when using in production
+- Open up to search engine indexing as appropriate. Sticking with the default robots.txt and "noindex, nofollow" values will cause the entire site to be blocked from search engines.
+- To lower file size you might want to remove some of the HTML comments that I put there just to remind me why I’m doing certain things.
 
 ## Gulp-based build system
 
 ## “Greedy” (BBC-style) Mobile Navigation
 
 ## HTML: lean, semantic and structural
+
+## A good <head> start
+- `lang` declared. This can affect the way CSS layout is handled.
+- asd
+
 
 ### Layout containers (from in to out)
 
@@ -23,11 +32,12 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 - Skip Links navigation
 - `aria-label` applied to elements which do not have a visible label such as navigation (skip-links and main menu)
 
+### Polyfills
+Via polyfill.io.
+
 ## Lightweight Analytics
 Using minimal analytics snippet.
 
-## Updates required when using in production
-- Open up to search engine indexing as appropriate. Sticking with the default robots.txt and "noindex, nofollow" values will cause the entire site to be blocked from search engines.
 
 ## Credits
 This project is inspired by and or uses elements of the following:
