@@ -44,6 +44,9 @@ Via polyfill.io.
 ## Lightweight Analytics
 Using minimal analytics snippet.
 
+## Cookie Consent (covering EU cookie Law)
+- Integrates https://cookieconsent.insites.com/
+
 
 ## Credits
 This project is inspired by and or adapts elements of the following:
