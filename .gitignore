@@ -24,4 +24,4 @@ dist/console/resources/*
 # We already track the /src files; build /dist as a build step in a CI/CD environment prior to deployment to your remote server.
 # Note: for the purposes of Sofrito’s demo pages we need the built artefacts.
 # But you don’t so can use this:
-dist/*
+# dist/*
