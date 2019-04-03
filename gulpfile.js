@@ -121,6 +121,7 @@ var cleanDist = function (done) {
 var jsTasks = lazypipe()
 	.pipe(header, banner.full, {package: package})
 	.pipe(optimizejs)
+  .pipe(rename, {suffix: '_v' + package.version})
 	.pipe(dest, paths.scripts.output)
 	.pipe(rename, {suffix: '.min'})
 	.pipe(uglify)
@@ -211,6 +212,7 @@ var buildStyles = function (done) {
 			remove: true
 		}))
 		.pipe(header(banner.full, { package : package }))
+    .pipe(rename({suffix: '_v' + package.version}))
 		.pipe(dest(paths.styles.output))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minify({
