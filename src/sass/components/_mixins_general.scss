@@ -1,0 +1,25 @@
+// Serve HiDPI background images from any selector you’d like, just by creating two image assets and one line of SCSS
+
+// Usage: @include retinize('icon-dribbble', 'png', 24px, 24px);
+@mixin retinize($file, $type, $width, $height) {
+  background-image: url('/assets/img/' + $file + '.' + $type);
+
+  $is-hidpi: "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5),(min-resolution: 1.5dppx)";
+  @media #{$is-hidpi} {
+    & {
+      background-image: url('/assets/img/' + $file + '_x2.' + $type);
+      background-size: $width $height;
+    }
+  }
+}
+
+
+
+
+// Convert rem value to em, useful for local sizing i.e. spacing within a component.
+// For local sizing (e.g. spacing between items in a component as opposed to element font-size), use ems so the spacing will scale if font-sizes are changed.
+// Example: get 1.2rem (20.16px) as an em value for an element with font-size 1.44rem (24.192px). 20.16/24.192 = 1.2/1.44 = 0.8333333333
+
+@function rem_to_em($targetValInRem, $contextValInRem) {
+ @return $targetValInRem / $contextValInRem;
+}
