@@ -107,6 +107,8 @@
         <p>The summary element is a clickable and focusable element which can be used to show and hide the other children of the details element.</p>
       </details>
 
+      <p><button id="click-me">Click to test matches()</button></p>
+
     </main>
 
   </div>
@@ -136,8 +138,9 @@
   <!-- polyfills first so that subsequent scripts (which might use matches() and so on) etc are polyfilled -->
   <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-  <!-- website’s global javascript file -->
-  <script src="dist/assets/js/main_v0.0.1.min.js"></script>
+  <!-- website’s global javascript file including any globally required polyfills (that aren’t provided by polyfill.io) -->
+  <script src="dist/assets/js/main.polyfills_v0.0.1.min.js"></script>
+
 
   <!-- add any page-specific JS here -->
 
