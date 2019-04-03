@@ -10,7 +10,7 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 - cache-busting (when necessary) by adding package version number to end of JS and CSS files.
 
 ## Mobile First and Responsive
-
+- Sass mixins
 
 ## HTML: lean, semantic and structural
 
