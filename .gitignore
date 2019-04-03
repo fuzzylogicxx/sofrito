@@ -21,7 +21,7 @@ db/*
 dist/console/resources/*
 
 # Don’t track built/compiled artefacts in version control.
-# Note: for the purposes of demoing Sofrito on Github Pages we need the built artefacts.
+# We already track the /src files; build /dist as a build step in a CI/CD environment prior to deployment to your remote server.
+# Note: for the purposes of Sofrito’s demo pages we need the built artefacts.
 # But you don’t so can use this:
 # dist/*
-
