@@ -9,34 +9,45 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 
 - cache-busting (when necessary) by adding package version number to end of JS and CSS files.
 
-## “Greedy” (BBC-style) Mobile Navigation
-
 ## HTML: lean, semantic and structural
 
-## A good <head> start
-- `lang` declared. This can affect the way CSS layout is handled.
-- asd
-
+<dl>`details` elements for disclosure</dl>
+<dd>Native show/hide control. Click on the summary element to reveal the contents.</dd>
+</dl>
 
 ### Layout containers (from in to out)
 
 <dl>`.prose`/dl>
 <dd>Innermost container around flowing prose. Its width will not exceed our maximum comfortable reading measure.</dd>
 
-<dl>`#primary-content`</dl>
+<dt>`#primary-content`</dt>
 <dd>Wraps .prose elements and any other primary content. In a single–column layout its width will be the widest we want our column to go. `.prose` will be left- or centre-aligned within.</dd>
 
-<dl>`.container`</dl>
+<dt>`.container`</dt>
 <dd>A wrapper for the #primary-content (and secondary if exists) to provide an additional layout (row) and styling context.</dd>
+</dl>
 
 ### Accessibility
 
 - Skip Links navigation
 - `aria-label` applied to elements which do not have a visible label (such as navigation: both skip-links and main menu)
 
+## A good <head> start
+- `lang` declared. This can affect the way CSS layout is handled.
+- asd
+
+
+## “Greedy” (BBC-style) Mobile Navigation
+
+
 ## CSS
 - Sass-based
 - Print styles included
+- @viewport { width: device-width; } because in will eventually replace the viewport meta tag
+
+### Opionated stuff
+- Please DO zoom text on rotate. html { -webkit-text-size-adjust: auto; } (Tim Brown, contrary to advice of normalise.css) 
+
 
 ### Polyfills
 Via polyfill.io.

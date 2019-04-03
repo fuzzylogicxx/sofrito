@@ -12,10 +12,7 @@
           "background": "#f1d600"
         }
       },
-      "theme": "classic",
-      "content": {
-        "href": "https://www.wonderworldsoftplay.co.uk/cookie-policy/"
-      }
+      "theme": "classic"
     })});
 
 })();
