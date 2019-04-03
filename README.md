@@ -7,6 +7,8 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 
 ## Gulp-based build system
 
+- cache-busting (when necessary) by adding package version number to end of JS and CSS files.
+
 ## “Greedy” (BBC-style) Mobile Navigation
 
 ## HTML: lean, semantic and structural
@@ -30,7 +32,11 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 ### Accessibility
 
 - Skip Links navigation
-- `aria-label` applied to elements which do not have a visible label such as navigation (skip-links and main menu)
+- `aria-label` applied to elements which do not have a visible label (such as navigation: both skip-links and main menu)
+
+## CSS
+- Sass-based
+- Print styles included
 
 ### Polyfills
 Via polyfill.io.
@@ -40,7 +46,7 @@ Using minimal analytics snippet.
 
 
 ## Credits
-This project is inspired by and or uses elements of the following:
+This project is inspired by and or adapts elements of the following:
 - https://github.com/h5bp/html5-boilerplate
 - https://github.com/cferdinandi/gulp-boilerplate
 - https://cferdinandi.github.io/kraken/
