@@ -2,7 +2,6 @@
   "name": "Sofrito",
   "version": "0.0.1",
   "description": "A savoury front-end base with advanced typographic, layout, performance and build ingredients.",
-  // "main": "./dist/your-main-js-file.js",
   "author": {
     "name": "Laurence Hughes",
     "url": "https://fuzzylogic.me"
