@@ -13,7 +13,8 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 
 <dl>
   <dt>`details` elements for disclosure.</dt>
-  <dd>Native show/hide control. Click on the summary element to reveal the contents. Polyfill for Internet Explorer included.</dd>
+  <dd>
+  Native show/hide control. Click on the summary element to reveal the contents. Baseline for no support is that the content is shown, so this represents a sensible progressive enhancement. However a polyfill for Internet Explorer included too (https://github.com/javan/details-element-polyfill). Styles to change the summary arrow also included.</dd>
 </dl>
 
 ### Layout containers (from in to out)
@@ -34,7 +35,7 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 - Skip Links navigation
 - `aria-label` applied to elements which do not have a visible label (such as navigation: both skip-links and main menu)
 
-## A good <head> start
+## A good &lt;head&gt; start
 - `lang` declared. This can affect the way CSS layout is handled.
 - asd
 
