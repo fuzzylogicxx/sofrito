@@ -9,6 +9,9 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 
 - cache-busting (when necessary) by adding package version number to end of JS and CSS files.
 
+## Mobile First and Responsive
+
+
 ## HTML: lean, semantic and structural
 
 <dl>
@@ -50,7 +53,6 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 
 ### Opionated stuff
 - Please DO zoom text on rotate. html { -webkit-text-size-adjust: auto; } (Tim Brown, contrary to advice of normalise.css) 
-
 
 ### Polyfills
 Via polyfill.io.

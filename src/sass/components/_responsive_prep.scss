@@ -3,35 +3,29 @@
 // multiply the em-based target width/height for our media query by our root font-size (in ems) value.
 
 // The first breakpoint is just a media-query-friendly equivalent of our measure width
-$width-pressure-point-one: ($text-measure-max-in-ems * $font-size-custom-base)+em;
+//$width-pressure-point-one: ($text-measure-max-in-ems * $font-size-custom-base)+em;
 
 
 
 // This breakpoint is a width arising from the sum of our first typographic pressure point PLUS some lateral breathing space
 // It’s a viewport width at which more space-reliant change can be applied.
-$bp-wide-one-space-on-each-side: 4;
-$bp-wide-one: ( ($text-measure-max-in-ems + ($bp-wide-one-space-on-each-side * 2) ) * $font-size-custom-base)+em;
+//$bp-wide-one-space-on-each-side: 4;
+//$bp-wide-one: ( ($text-measure-max-in-ems + ($bp-wide-one-space-on-each-side * 2) ) * $font-size-custom-base)+em;
 
 
 
 // This breakpoint is a width arising from the sum of our main layout container max-width PLUS some lateral breathing space
-$bp-wide-two-space-on-each-side: 5;
-$bp-wide-two: ( ($main-grid-col-maxwidth-in-ems + ($bp-wide-two-space-on-each-side * 2)) * $font-size-custom-base)+em;
-
-
-
-// Point at which the full "balloons" background image can be shown
-$width-ballons-bg-ready: 84+em; // (1340px image / 16)
+//$bp-wide-two-space-on-each-side: 5;
+//$bp-wide-two: ( ($main-grid-col-maxwidth-in-ems + ($bp-wide-two-space-on-each-side * 2)) * $font-size-custom-base)+em;
 
 
 
 // Point at which the nav doesn’t need to scroll and can go full width
-$width-nav-ready: (35 * $font-size-custom-base)+em; // (550px/16)
+//$width-nav-ready: (35 * $font-size-custom-base)+em; // (550px/16)
 
 
 
 // Responsive mixins
-
 
 @mixin at-least($device-width) {
   @media screen and (min-width: $device-width) {
