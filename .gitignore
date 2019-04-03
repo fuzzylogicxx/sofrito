@@ -17,8 +17,11 @@ test/coverage
 db/*
 !db/.gitkeep
 
-# Don’t track CSS, JS and SVGs that that are built from /src. We’re already tracking the source files. Let the build happen as a build step in a CI/CD environment.
-dist/*
-
-# Ignore image/media uploaded through a CMS (where we’ve named the CMS directory 'console')
+# Ignore image/media uploaded through a CMS (where our CMS directory is 'console' and its media folder is named 'resources')
 dist/console/resources/*
+
+# Don’t track built/compiled artefacts in version control.
+# Note: for the purposes of demoing Sofrito on Github Pages we need the built artefacts.
+# But you don’t so can use this:
+# dist/*
+

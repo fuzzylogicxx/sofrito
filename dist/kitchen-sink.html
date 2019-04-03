@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Laurence Hughes">
+
+  <!-- SEO inc title -->
+  <title>Sofrito – a front-end base for web developers.</title>
+  <meta name="description" content="A savoury front-end base with tasty typographic, layout, performance and build ingredients.">
+  <meta name="keywords" content="front-end boilerplate, web typography, grid layout, accessibility, performance" />
+
+  <!-- Avoid Google "duplicate content" penalties -->
+  <link rel="canonical" href="https://fuzzylogicxx.github.io/sofrito/" />
+
+  <!-- Meta Robots Starting Point: block all the things! When ready, update per page as appropriate. For example, we want articles indexed but might not want listing pages indexed. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- OG (Open Graph) tags -->
+  <!-- may want to change og:type when not on Homepage -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sofrito" />
+  <meta property="og:locale" content="en_gb" />
+  <meta property="og:url" content="https://fuzzylogicxx.github.io/sofrito/" />
+  <meta property="og:title" content="Sofrito – a front-end base for web developers." />
+  <meta property="og:description" content="A savoury front-end base with tasty typographic, layout, performance and build ingredients" />
+  <!-- ToDo: 400x400 – is that right? -->
+  <meta property="og:image" content="https://fuzzylogicxx.github.io/sofrito/assets/img/logo-400x400.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="400" />
+
+  <!-- Facebook Page reference here, if you have one -->
+  <!-- <meta property="article:publisher" content="https://www.facebook.com/Sofrito/" /> -->
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sofrito – a savoury front-end base" />
+  <meta name="twitter:description" content="A savoury front-end base with tasty typographic, layout, performance and build ingredients" />
+  <!-- ToDo: 400x400 – is that right? -->
+  <meta name="twitter:image" content="https://fuzzylogicxx.github.io/sofrito/assets/img/logo-400x400.png" />
+
+  <!-- Advice for devices which can 'install' this website on their home scren -->
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Icons: favicon and related  -->
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <!-- Icons: PWA Splash images for iOS  -->
+  <!-- ToDo: add here  -->
+
+  <!-- Web Fonts -->
+  <!-- If using a service such as typekit, add code here  -->
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/assets/css/main_v0.0.1.min.css">
+
+  <!-- Page-Specific Styles -->
+  <!-- If any, add here <style></style> -->
+
+  <!-- Service Worker -->
+  <!-- <link rel="serviceworker" href="/serviceworker.js"> -->
+
+  <!-- RSS feed, if you have it -->
+  <link href="https://fuzzylogicxx.github.io/sofrito/news/rss" rel="alternate" type="application/rss+xml" title="Sofrito News RSS feed">
+  <link href="https://fuzzylogicxx.github.io/sofrito/news/jsonfeed.json" rel="alternate" type="application/json" title="Sofrito News JSON feed">
+
+</head>
+
+<body id="page-home">
+
+  <!-- Header begins -->
+  <header id="global-header">
+
+    <a href="https://fuzzylogicxx.github.io/sofrito/" id="logo">Sofrito</a>
+
+    <nav aria-label="page" id="skip-links">
+      <a href="#primary-content">Main content</a>
+      <a href="#global-footer">Footer and Navigation</a>
+    </nav>
+
+    <nav aria-label="site" id="header-menu">
+      <ul>
+        <li class="header-menu-hidden"><a href="/">News</a></li>
+        <li class="header-menu-hidden"><a href="/">Products</a></li>
+        <li class="header-menu-hidden"><a href="/">Jobs</a></li>
+        <li id="header-menu-toggle"><a href="#footer-menu">Menu</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn" href="https://github.com/fuzzylogicxx/sofrito">See on GitHub</a>
+
+  </header>
+
+  <!-- Page contents begin -->
+  <div class="container">
+
+    <main id="primary-content">
+
+      <details>
+        <summary>More about the summary element</summary>
+        <p>The summary element is a clickable and focusable element which can be used to show and hide the other children of the details element.</p>
+      </details>
+
+      <article class="prose">
+
+        <h1>A Wonderful Change from the Classroom</h1>
+        <p>This is a paragraph. It’s just something I threw together. In the beginning was the word. And the word wrapped.</p>
+        <p>This is a paragraph. It’s just something I threw together. This sentence contains <a href="http://www.w3.org/">a link</a> to W3C, which you have probably visited. This sentence contains a link to <a href="http://www.foo.net/">someplace else</a>. This is <a href="http://www.htmlhelp.com/" class="offsite">an offsite link</a>. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
+        <hr />
+        <p>A blog is useful for many reasons. <small>This is small.</small> It can be<span style="color: green;">c</span>ome <a href="/">a source of leads</a>, it can <span style="color: red;">b</span>e the place where, in the future, you might sell your products if you want to become an indie developer, or it can simply be the place where you have your audience and express your ideas.</p>
+        <h2>I’m Heading 2 and I like to wrap whenever I can</h2>
+        <p>This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
+        <h3>I’m Heading 3</h3>
+        <p>This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
+
+        <h2>I’m Heading 2</h2>
+        <h3>I’m Heading 3 coming immediately after – it happens</h3>
+
+        <h4>Heading 4: the final insult</h4>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <h5>
+        Heading 5 I Am said Sam. In the Mosaic browser default stylesheet, I'm one step smaller than normal paragraph text. In the Core Style Project, I am still one step larger.
+        </h5>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <h6>
+          Heading 6, extended to produce a line break, so as to be able to determine line-height. This ought to do it, what? In the Mosaic browser default stylesheet, I'm two steps smaller than normal paragraph text (perverse!). In the Core Style Project, I am the same size.
+        </h6>
+
+        <p>This sentence contains <em>an emphasized phrase</em>. This sentence contains <strong>a strongly emphasized</strong> phrase. This sentence & contains <em>a strongly & emphasized bit <strong>within</strong> an emphasized phrase</em>. <strong class="warning">This sentence has the class "warning".</strong></p>
+
+        <p><big>This is big.</big> <small>This is small.</small> <samp>This is SAMP.</samp> <sub>This is sub.</sub> <sup>This is sup.</sup> <s>This is S.</s> <strike>This is strike.</strike> <tt>This is tt.</tt> <u>This is U.</u> <cite>This is cite.</cite> <ins>This is INS</ins>. <del>This is DEL</del>. <abbr>This is ABBR</abbr>. This sentence contains an acronym: <acronym>Nato</acronym>. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
+        <ul>
+          <li>This is an unordered list item.</li>
+          <li>And here’s another, this time it should be long enough to wrap if the viewport is narrow.</li>
+          <li>A final list item.</li>
+        </ul>
+        <h2>Heading 2</h2>
+        <p class="initial">This is a paragraph with the class "initial". In an indented paragraph scheme, I generally won't be. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <p class="stb">
+        This is a paragraph with the "small thematic break" (stb) class. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <p class="mtb">
+        This is a paragraph with the "medium thematic break" (mtb) class. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <p class="ltb">
+        This is a paragraph with the "large thematic break" (ltb) class. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <h2>
+          Heading 2
+        </h2>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <blockquote>
+          This is a blockquote. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space. I'll keep this up a bit longer and then move on. I've read more substantial greeting cards than this.
+        </blockquote>
+        <h3>
+          Heading 3
+        </h3>
+        <p>
+        This is a paragraph. It's just something I threw together. This sentence contains <a href="http://www.w3.org/">a link</a> to W3C, which you have probably visited. This sentence contains a link to <a href="http://www.foo.net/">someplace else</a>. This is <a href="http://www.unpronounceable.com/" class="offsite">an offsite link</a>. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <ol>
+          <li>
+          this is an ordered list item. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+          <li>
+          this is another ordered list item
+          <ul>
+    <li>This is an unordered list within an ordered one.
+    <li>This is another unordered list item.<ol>
+    <li>Just to be mean, here's another ordered list - inside the unordered list.
+    <li>...and another list item, to fill space.
+    </ol>
+    <li>This is a third item in that unordered list.
+    <li>This is a fourth.
+    </ul>
+    <li>This is item 3 in the initial ordered list.
+    <li>This is item 4.
+        </ol>
+        <ol>
+          <li>
+          this is an ordered list item. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space. <ol>
+    <li>Here's another ordered list - inside the ordered list.
+    <ol>
+    <li>Here's yet another ordered list - nested deeper.
+    <li>...and another list item, to fill space.
+    </ol>
+    <li>...and another list item, to fill space.
+    </ol>
+          <li>
+          this is another ordered list item
+        </ol>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+          <h4>
+          Heading 4
+        </h4>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <dl>
+          <dt>
+          Definition Term
+          <dd>
+          Definition data. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</dd>
+        </dl>
+        <table>
+          <caption>
+          Table caption
+          </caption>
+          <tr>
+            <th>
+              Table Head
+            </th>
+          </tr>
+          <tr>
+            <td>
+              Cell contents. How wide?
+            </td>
+          </tr>
+        </table>
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <h5>
+          Heading 5
+        </h5>
+        This is an improperly marked paragraph sequence, with <code>&lt;P&gt;</code> used as a paragraph separator rather than as a container. It's dismaying how common this is. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        <p>
+        This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </p>
+        <hr>
+        <div>
+          This is a div preceded by a horizontal rule, which might be hidden. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+        </div>
+        <div>
+    <p>
+          This is a paragraph within a div. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
+    </p>
+        </div>
+        <address>
+          This is an Address.
+        </address>
+
+      </div> <!-- ./prose -->
+
+    </main>
+
+  </div>
+
+  <!-- Footer begins -->
+  <footer aria-label="site" id="global-footer">
+
+    <nav id="footer-menu">
+      <ul>
+        <li><a href="/">News</a></li>
+        <li><a href="/">Products</a></li>
+        <li><a href="/">Jobs</a></li>
+        <li><a href="/">Thoughts</a></li>
+        <li><a href="/">Events</a></li>
+        <li><a href="/">Portfolio</a></li>
+      </ul>
+    </nav>
+
+    <small class="copyright">&copy; 2017–2019 Sofrito Group</small>
+
+  </footer>
+
+
+
+  <!-- Scripts at bottom -->
+
+  <!-- polyfills first so that subsequent scripts (which might use matches() and so on) etc are polyfilled -->
+  <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+  <!-- website’s global javascript file -->
+  <script src="/assets/js/main_v0.0.1.min.js"></script>
+
+  <!-- add any page-specific JS here -->
+
+  <!-- initialise a disclosure element -->
+  <script>
+    var disclosure = new Houdini('[data-houdini]');
+  </script>
+
+  <!-- register a service worker (for improved resilience and performance) -->
+  <!--
+  <script>
+  if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('/serviceworker.js');
+      window.addEventListener('load', function() {
+          if (navigator.serviceWorker.controller) {
+              navigator.serviceWorker.controller.postMessage({'command': 'clean up caches'});
+          }
+      });
+  }
+  </script>
+  -->
+
+  <!-- Google Analytics using the https://minimalanalytics.com/ snippet. Note: if require advanced features such as tracking AdWords, switch to a traditional GA snippet.  -->
+  <!-- Replace UA-xxxxxxxxx-x with your analytics ID -->
+  <!--
+  <script>
+    (function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
+    h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
+    l=function(){return g.cid||(g.cid=k()),g.cid},m=function(r){var s=[];for(var t in r)
+    r.hasOwnProperty(t)&&void 0!==r[t]&&s.push(h(t)+"="+h(r[t]));return s.join("&")},
+    n=function(r,s,t,u,v,w,x){var z="https://www.google-analytics.com/collect",
+    A=m({v:"1",ds:"web",aip:c.anonymizeIp?1:void 0,tid:b,cid:l(),t:r||"pageview",
+    sd:c.colorDepth&&screen.colorDepth?screen.colorDepth+"-bits":void 0,dr:e.referrer||
+    void 0,dt:e.title,dl:e.location.origin+e.location.pathname+e.location.search,ul:c.language?
+    (f.language||"").toLowerCase():void 0,de:c.characterSet?e.characterSet:void 0,
+    sr:c.screenSize?(a.screen||{}).width+"x"+(a.screen||{}).height:void 0,vp:c.screenSize&&
+    a.visualViewport?(a.visualViewport||{}).width+"x"+(a.visualViewport||{}).height:void 0,
+    ec:s||void 0,ea:t||void 0,el:u||void 0,ev:v||void 0,exd:w||void 0,exf:"undefined"!=typeof x&&
+    !1==!!x?0:void 0});if(f.sendBeacon)f.sendBeacon(z,A);else{var y=new XMLHttpRequest;
+    y.open("POST",z,!0),y.send(A)}};d.pushState=function(r){return"function"==typeof d.onpushstate&&
+    d.onpushstate({state:r}),setTimeout(n,c.delay||10),i.apply(d,arguments)},n(),
+    a.ma={trackEvent:function o(r,s,t,u){return n("event",r,s,t,u)},
+    trackException:function q(r,s){return n("exception",null,null,null,null,r,s)}}})
+    (window,"UA-xxxxxxxxx-x",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true});
+  </script>
+  -->
+
+  <!-- As an alternative to Google Analytics, try XYZ -->
+
+
+
+
+</body>
+</html>
