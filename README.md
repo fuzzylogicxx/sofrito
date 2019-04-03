@@ -11,20 +11,22 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 
 ## HTML: lean, semantic and structural
 
-<dl>`details` elements for disclosure</dl>
-<dd>Native show/hide control. Click on the summary element to reveal the contents.</dd>
+<dl>
+  <dt>`details` elements for disclosure.</dt>
+  <dd>Native show/hide control. Click on the summary element to reveal the contents. Polyfill for Internet Explorer included.</dd>
 </dl>
 
 ### Layout containers (from in to out)
 
-<dl>`.prose`/dl>
-<dd>Innermost container around flowing prose. Its width will not exceed our maximum comfortable reading measure.</dd>
+<dl>
+  <dt>`.prose`</dt>
+  <dd>Innermost container around flowing prose. Its width will not exceed our maximum comfortable reading measure.</dd>
 
-<dt>`#primary-content`</dt>
-<dd>Wraps .prose elements and any other primary content. In a single–column layout its width will be the widest we want our column to go. `.prose` will be left- or centre-aligned within.</dd>
+  <dt>`#primary-content`</dt>
+  <dd>Wraps .prose elements and any other primary content. In a single–column layout its width will be the widest we want our column to go. `.prose` will be left- or centre-aligned within.</dd>
 
-<dt>`.container`</dt>
-<dd>A wrapper for the #primary-content (and secondary if exists) to provide an additional layout (row) and styling context.</dd>
+  <dt>`.container`</dt>
+  <dd>A wrapper for the #primary-content (and secondary if exists) to provide an additional layout (row) and styling context.</dd>
 </dl>
 
 ### Accessibility
