@@ -52,7 +52,9 @@ Using minimal analytics snippet.
 This project is inspired by and or adapts elements of the following:
 - https://github.com/h5bp/html5-boilerplate
 - https://github.com/cferdinandi/gulp-boilerplate
+- https://github.com/cferdinandi/houdini
 - https://cferdinandi.github.io/kraken/
+
 
 ## License
 The code is available under the MIT License.
