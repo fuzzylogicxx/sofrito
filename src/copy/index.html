@@ -106,7 +106,8 @@
 
       <hr>
 
-      <form action="" method="post" novalidate="" data-validatorform="" data-error-title="The Form is incomplete" data-error-message="Go back there and fix it.">
+      <form action="" method="post">
+        <!-- novalidate="" data-validatorform="" data-error-title="The Form is incomplete" data-error-message="Go back there and fix it." -->
 
         <label class="form-group">
           <b class="label-text">Text</b>
@@ -123,6 +124,74 @@
           <input type="text" disabled="">
         </label>
 
+        <label class="form-group">
+          <b class="label-text">Profile Photo</b>
+          <input type="file">
+        </label>
+
+        <label class="form-group">
+          <b class="label-text">Text</b>
+          <textarea id="message" maxlength="250"></textarea>
+        </label>
+
+        <label class="form-group">
+          <b class="label-text">Email</b>
+          <input type="email" data-validate="email" autocorrect="off" autocapitalize="none" spellcheck="false">
+        </label>
+
+        <div class="form-group">
+          <label class="checkbox">
+            <input type="checkbox" name="opt1">
+            <span class="item">Description in sentence form.</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="opt2">
+            <span class="item">Description in sentence form.</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="opt3">
+            <span class="item">Another description in sentence form.</span>
+          </label>
+        </div>
+
+        <div class="form-group">
+
+          <label class="radiobutton">
+            <input type="radio" name="options1">
+            <span class="item">Description in sentence form.</span>
+          </label>
+
+          <label class="radiobutton">
+            <input type="radio" name="options1">
+            <span class="item">Another description in sentence form.</span>
+          </label>
+
+        </div>
+
+        <!-- this is a demo of two fields in a row. Add our own modern styles for this -->
+        <div class="snippet">
+
+          <div class="sect-group">
+
+            <div class="sect-inner-a">
+              <label class="form-group">
+                <b class="label-text">First Name</b>
+                <input type="text">
+              </label>
+            </div>
+
+            <div class="sect-inner-b">
+              <label class="form-group ">
+                <b class="label-text">Last Name</b>
+                <input type="text">
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+
         <select class="select-css">
           <option>This is a native select element</option>
           <option>Apples</option>
@@ -131,7 +200,50 @@
           <option>Oranges</option>
         </select>
 
+        <button type="submit" class="button btn-submit">Submit</button>
+
       </form>
+
+      <div class="table-container" aria-labelledby="caption-9b6k0m3tt" role="group">
+        <table>
+          <caption id="caption-9b6k0m3tt">Grindcore bands</caption>
+          <tbody>
+            <tr>
+              <th role="columnheader" scope="col" aria-sort="none">Band<button><svg viewBox="0 0 100 200" width="100" height="200"><polyline points="20 50, 50 20, 80 50"></polyline><line x1="50" y1="20" x2="50" y2="180"></line><polyline points="20 150, 50 180, 80 150"></polyline></svg><span class="visually-hidden">sort by Band inascendingorder</span></button>
+              </th>
+              <th role="columnheader" scope="col" aria-sort="none">Singer<button><svg viewBox="0 0 100 200" width="100" height="200"><polyline points="20 50, 50 20, 80 50"></polyline><line x1="50" y1="20" x2="50" y2="180"></line><polyline points="20 150, 50 180, 80 150"></polyline></svg><span class="visually-hidden">sort by Singer inascendingorder</span></button>
+              </th>
+              <th role="columnheader" scope="col" aria-sort="none">Inception<button><svg viewBox="0 0 100 200" width="100" height="200"><polyline points="20 50, 50 20, 80 50"></polyline><line x1="50" y1="20" x2="50" y2="180"></line><polyline points="20 150, 50 180, 80 150"></polyline></svg><span class="visually-hidden">sort by Inception inascendingorder</span></button></th>
+              <th role="columnheader" scope="col" aria-sort="none">Label<button><svg viewBox="0 0 100 200" width="100" height="200"><polyline points="20 50, 50 20, 80 50"></polyline><line x1="50" y1="20" x2="50" y2="180"></line><polyline points="20 150, 50 180, 80 150"></polyline></svg><span class="visually-hidden">sort by Label inascendingorder</span></button>
+              </th>
+            </tr>
+            <tr>
+              <th scope="row">Napalm Death</th>
+              <td>Barney Greenway</td>
+              <td>1981</td>
+              <td>Century Media</td>
+            </tr>
+            <tr>
+              <th scope="row">Carcass</th>
+              <td>Jeff Walker</td>
+              <td>1985</td>
+              <td>Earache</td>
+            </tr>
+            <tr>
+              <th scope="row">Extreme Noise Terror</th>
+              <td>Dean Jones</td>
+              <td>1985</td>
+              <td>Candlelight</td>
+            </tr>
+            <tr>
+              <th scope="row">Discordance Axis</th>
+              <td>Jon Chang</td>
+              <td>1992</td>
+              <td>Hydrahead</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <article class="prose">
 
