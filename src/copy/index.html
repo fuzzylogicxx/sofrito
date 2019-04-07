@@ -101,8 +101,12 @@
       <article class="prose">
 
         <h1>Heading Text Size</h1>
-        <p>This is a paragraph. It’s just something I threw together. In the beginning was the word. And the word wrapped.</p>
+        <p>I realised last night while watching a presentation by Lea Verou that I could streamline my CSS Grid layouts. I’d been creating an overall page grid by setting body { display: grid; } and some grid areas, but noticed that this only got me so far when it came to aligning more deeply nested elements of the page to that grid.</p>
+        <p>For example in the case of the main header, if I wanted its child logo, nav and search box elements to snap to the grid I found myself having to set display: grid and grid-template-areas again on the header.</p>
+        <p>It didn’t feel very DRY but my understanding was that while we await subgrid, this was a necessary evil.</p>
+        <p>What I should have been using is display: contents.</p>
         <p>This is a paragraph. It’s just something I threw together. This sentence contains <a href="http://www.w3.org/">a link</a> to W3C, which you have probably visited. This sentence contains a link to <a href="http://www.foo.net/">someplace else</a>. This is <a href="http://www.htmlhelp.com/" class="offsite">an offsite link</a>. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
+        <p>A blog is useful for many reasons. It can be<span style="color: green;">c</span>ome <a href="/">a source of leads</a>, it can <span style="color: red;">b</span>e the place where, in the future, you might sell your products if you want to become an indie developer, or it can simply be the place where you have your audience and express your ideas.</p>
 
         <ul>
           <li>Use proper accents e.g. résumé and jalapeño.</li>
@@ -118,9 +122,6 @@
           <li>If certain strings should not break onto two lines, mark those strings up so you can later apply a CSS white-space declaration: <cite class="nobreak">Robert Jones</cite>.</li>
           <li>Use Unicode’s fraction characters when possible: when she was 2½ years old. (Search Charcod.es for “fraction” and copy/paste the character you need rather than use the HTML entity.) Mark up any fractions that aren’t in Unicode so you can apply fraction-related OpenType features later: you’ll need a <span class="frac">5/16</span> wrench.</li>
         </ul>
-
-Excerpt From: Tim Brown. “Flexible Typesetting”. Apple Books. </p>
-
 
         <hr />
         <p>A blog is useful for many reasons. <small>This is small.</small> It can be<span style="color: green;">c</span>ome <a href="/">a source of leads</a>, it can <span style="color: red;">b</span>e the place where, in the future, you might sell your products if you want to become an indie developer, or it can simply be the place where you have your audience and express your ideas.</p>
