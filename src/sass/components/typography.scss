@@ -1,0 +1,39 @@
+@font-face {
+  font-family: Source Sans Pro;
+  src: url(/assets/type/SourceSansPro-LightIt.ttf.woff2) format("woff2"),
+       url(/assets/type/SourceSansPro-LightIt.ttf.woff) format("woff"),
+       url(/assets/type/SourceSansPro-LightIt.otf) format("opentype");
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Source Sans Pro;
+  src: url(/assets/type/SourceSansPro-Light.ttf.woff2) format("woff2"),
+       url(/assets/type/SourceSansPro-Light.ttf.woff) format("woff"),
+       url(/assets/type/SourceSansPro-Light.otf) format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Source Sans Pro;
+  src: url(/assets/type/SourceSansPro-SemiBold.ttf.woff2) format("woff2"),
+       url(/assets/type/SourceSansPro-SemiBold.ttf.woff) format("woff"),
+       url(/assets/type/SourceSansPro-SemiBold.otf) format("opentype");
+  font-weight:700;
+  font-display: swap;
+}
+
+/*html{
+  -webkit-text-size-adjust:100%;
+  word-wrap:break-word;
+}*/
+
+//body{
+//  font-family:Helvetica Neue,sans-serif;background:#fff;margin:0;color:#222
+//}
+
+//.fonts-loaded body{
+body {
+  font-family: Source Sans Pro,Helvetica Neue,sans-serif
+}
