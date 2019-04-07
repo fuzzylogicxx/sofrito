@@ -18,7 +18,15 @@ A savoury front-end base with advanced typographic, layout, performance and buil
   <dt>`details` elements for disclosure.</dt>
   <dd>
   Native show/hide control. Click on the summary element to reveal the contents. Baseline for no support is that the content is shown, so this represents a sensible progressive enhancement. However a polyfill for Internet Explorer included too (https://github.com/javan/details-element-polyfill). Styles to change the summary arrow also included.</dd>
+  <dt>Forms</dt>
+  <dd>
+  </dd>
+  <dt>Tables</dt>
+  <dd>
+  </dd>
 </dl>
+
+
 
 ### Layout containers (from in to out)
 
@@ -70,7 +78,9 @@ This project is inspired by and or adapts elements of the following:
 - https://github.com/cferdinandi/gulp-boilerplate
 - https://github.com/cferdinandi/houdini
 - https://cferdinandi.github.io/kraken/
-
+- https://github.com/filamentgroup/formcore
+- https://www.filamentgroup.com/lab/select-css.html
+- https://inclusive-components.design/data-tables/
 
 ## License
 The code is available under the MIT License.
