@@ -47,8 +47,8 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 - `aria-label` applied to elements which do not have a visible label (such as navigation: both skip-links and main menu)
 
 ## A good &lt;head&gt; start
-- `lang` declared. This can affect the way CSS layout is handled.
-- asd
+- `dir`, `lang`, `charset`. Charset declared within first 127 chars (first byte) so that browsers see it early – improves performance. `lang` and `dir` provide accessibility and CSS benefits.
+
 
 
 ## “Greedy” (BBC-style) Mobile Navigation
@@ -57,7 +57,12 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 ## CSS
 - Sass-based
 - Print styles included
-- @viewport { width: device-width; } because in will eventually replace the viewport meta tag
+- @viewport { width: device-width; } ("CSS Device Adaptation") - We’ve built a flexible layout. Make sure readers see our composition at its actual size on any device, without any artificial scaling, while maintaining their ability to zoom in if they want to. Tell the browser to fit the width of our layout to the width of a person’s device. This makes text actual-size, instead of scaling it to match a specific pixel-based width. This is not supported in all browsers yet, though, so we also use an HTML meta tag that accomplishes the same thing.
+- Relative font sizes
+- avoids text-size-adjust entirely. It can cause serious accessibility problems, it is sometimes overridden by viewport settings, and browser implementation is inconsistent right now.
+- body text uses:
+-- proportional oldstyle figures (lowercase numerals designed for text, not tables).
+
 
 ### Opionated stuff
 - Please DO zoom text on rotate. html { -webkit-text-size-adjust: auto; } (Tim Brown, contrary to advice of normalise.css) 
