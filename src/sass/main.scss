@@ -1,15 +1,15 @@
 @import "components/variables_general.scss";
 @import "components/mixins_general.scss";
-@import "components/responsive_prep.scss";
 @import "components/rutter_and_meyer_resets_edited.scss";
 @import "components/collected_reset_and_general_improvement_wisdom.scss";
+@import "components/typography.scss";
+@import "components/responsive_prep.scss";
+@import "components/forms.scss";
 
 // Note: there are a few additional imports at the end of this file, too. (houdini show-and-hide, print CSS, layout-enhanced/grid, cookie consent).
 
 
-@import "components/typography.scss";
 
-@import "components/forms.scss";
 
 
 

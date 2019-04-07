@@ -1,3 +1,17 @@
+///////////////////////////////////
+// Max-width we want our site's content to go.
+///////////////////////////////////
+
+// NB this is not the same as our $text-measure. This is for an outer wrapper.
+// We might want to change this to a relative measure to let it grow wider, but this’ll do for now.
+
+
+
+
+
+
+
+
 // Breakpoint values
 // Note that media queries work on 1em = 16px so if our root font-size is not 1em we need to:
 // multiply the em-based target width/height for our media query by our root font-size (in ems) value.
