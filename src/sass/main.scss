@@ -51,6 +51,19 @@
 
 
 
+//
+
+#global-header,
+#primary-content,
+#global-footer {
+  padding: 0 $min-acceptable-gutter_in_vw+vw;
+}
+
+.prose ol, .prose ul {
+    margin-left: 1.5em;
+    padding-left: 1em;
+}
+
 
 
 
