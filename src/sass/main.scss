@@ -4,6 +4,9 @@
 @import "components/collected_reset_and_general_improvement_wisdom.scss";
 @import "components/typography.scss";
 @import "components/responsive_prep.scss";
+// Bring formcore back in wholesale if we want to, or gradually
+// @import "components/formcore.scss";
+
 @import "components/forms.scss";
 
 // Note: there are a few additional imports at the end of this file, too. (houdini show-and-hide, print CSS, layout-enhanced/grid, cookie consent).
