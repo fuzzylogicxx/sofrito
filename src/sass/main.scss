@@ -3,11 +3,12 @@
 @import "components/rutter_and_meyer_resets_edited.scss";
 @import "components/collected_reset_and_general_improvement_wisdom.scss";
 @import "components/typography.scss";
-@import "components/responsive_prep.scss";
 // Bring formcore back in wholesale if we want to, or gradually
 // @import "components/formcore.scss";
 
 @import "components/forms.scss";
+
+@import "components/responsive_prep.scss";
 
 // Note: there are a few additional imports at the end of this file, too. (houdini show-and-hide, print CSS, layout-enhanced/grid, cookie consent).
 
@@ -36,7 +37,7 @@
 // Utilities
 
 // Full Viewport Width
-.highlight {
+.special {
   // Ref: https://css-tricks.com/full-width-containers-limited-width-parents/ (Sven Wolfermann https://codepen.io/maddesigns/pen/rOMgpQ/)
   // push to the exact middle of the browser window with left: 50%, then pull it back to the left edge with negative -50vw margin.
   // note 1: requires the parent to be exactly centered in the browser.
