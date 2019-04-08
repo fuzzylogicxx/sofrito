@@ -18,7 +18,6 @@ $alt-font-family: $base-font-family;
 $alt-font-family-fonts-loaded: $base-font-family-fonts-loaded;
 
 
-
 // @font-face declarations (if self-hosting)
 
 @font-face {
@@ -58,6 +57,7 @@ $alt-font-family-fonts-loaded: $base-font-family-fonts-loaded;
 
 
 
+
 ///////////////////////////////////
 // Sizing (parts 1 and 2)
 ///////////////////////////////////
@@ -68,7 +68,7 @@ $alt-font-family-fonts-loaded: $base-font-family-fonts-loaded;
 // 3) Calculate a size range: multiply reciprocal by familiar "limits" (Times .419em, Verdana .579em). For example .8729166667em to 1.20625em.
 // 4) Choose a value in between e.g. 1.04 (based on (.8729166667 + 1.20625) / 2 = 1.0395833334). Or size up or down within our range based on gut instinct.
 
-$ms-base: 1.1;
+$ms-base: 1.125; // aka 18px. Tip: avoid sub-pixel base font size (at least if also using for input font-size) because causes Safari to botch input bottom-borders.
 
 // Part 2: Generate a modular scale (ms) based on our chosen font-size and a sensible ratio (for example 5:6 (1.2), the minor third)
 // Use https://www.modularscale.com/ and set to appropriate base font-size and ratio.
@@ -86,6 +86,7 @@ $ms-ratio: 1.2;
 
 
 
+
 ///////////////////////////////////
 // Measure
 ///////////////////////////////////
@@ -93,6 +94,7 @@ $ms-ratio: 1.2;
 // arrived at by trying em-based values for max-width and min-width in browser and deciding what’s best by eye
 $text-measure-min-in-ems: 18;
 $text-measure-max-in-ems: 30;
+
 
 
 
@@ -126,7 +128,9 @@ $min-acceptable-gutter_in_vw: 4.89; // Using vw for main gutter has the advantag
 // Set some vars we’ll use as utilities and in calculations
 
 $ms-base-rem: ($ms-base * 1)+rem;
+$ms-base-percentage: ($ms-base*100)+%;
 $ms-base-px: ($ms-base * 16px)+px;
+
 
 $space-xxs: ($body-line-height-min/2)+rem;
 $space-xs: scale-value(-1)+rem;
@@ -138,6 +142,11 @@ $space-lg: scale-value(3)+rem;
 
 
 // Body Text
+
+// rems?
+// can i override on problem element?
+// ** subpixel values? (18px or font-size: 112.5%; works ok) **
+  // so can either: 1) not use subpixel value at root, or 2) override font-size of problem element using a non-subpixel value (it works, but prob an unnecessary faff.)
 
 :root {
   color: $text-color;
@@ -163,8 +172,7 @@ $space-lg: scale-value(3)+rem;
 //}
 
 body {
-  margin: 0 2em; //temp
-
+  margin: 0 1em; //temp
   font-family: $base-font-family-fonts-loaded;
   line-height: $body-line-height-min; // set leading on body per Tim Brown rather than on html/root level per normalize.css
   //@include at-least($width-pressure-point-one) {

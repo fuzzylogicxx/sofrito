@@ -1,5 +1,28 @@
+// Buttons
+
+// Give back a bit of padding that our reset took away
+
+button {
+  padding: .5em;
+  svg {
+    display: block;
+    margin: 0 auto;
+    font-size: 1em;
+  }
+}
+
+// Check out: https://dev.to/elizabethschafer/designing-button-focus-states-for-better-usability-gm2
+
+
+
+
+
+
+
+
+
 /**
- * From Scott O’Hara
+ * Scott O’Hara https://scottaohara.github.io/a11y_styled_form_controls/
  * Shared styling among the different form controls.
  * Much of these styles are pulled from normalize.css.
  * Use as necessary within your own style sheets.
@@ -10,7 +33,12 @@ button,
 textarea,
 select {
   border-radius: 0; /* may change, but start consistently */
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
   line-height: normal;
+  margin: 0;
   overflow: visible; /* show overflow in Edge */
   text-transform: none; /* remove inheritance Edge, Firefox, IE */
 }
@@ -48,6 +76,7 @@ legend {
   white-space: normal; /* 2 */
 }
 
+
 /**
  * 1. Remove webkit redesign of searches
  *
@@ -55,14 +84,23 @@ legend {
  *    OS X. Safari (but not Chrome) clips the cancel button when the
  *    search input has padding (& `textfield` appearance).
  */
+input[type="search"] {
+  -webkit-appearance: none; /* 1 */
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none; /* 2 */
+  appearance: none;
+}
 
 /**
- * Search Component Styling
+ * Component Specific Styling
  */
 .search-widget {
   border: 1px solid $accessible-border-color;
   display: block;
-  padding-right: 2.5em; // a gap for the submit button
+  padding-right: 2.5em;
   position: relative;
 
   & svg {
@@ -107,7 +145,7 @@ legend {
   & > [type="submit"]:focus svg,
   & > [type="submit"]:not([disabled]):hover svg {
     // Note: for our feather icon set icon, color works better here than fill.
-    color: #fff;
+    fill: #fff; // Note: if using the "feather" icon set icon, color works better here than fill.
   }
 
   /**
@@ -143,8 +181,7 @@ legend {
     }
 
     & svg {
-      // Note: for our feather icon set icon, color works better here than fill.
-      color: #fff;
+      fill: #fff; // Note: if using the "feather" icon set icon, color works better here than fill.
     }
 
     & > [type="search"][disabled],
@@ -154,9 +191,3 @@ legend {
   }
 
 }
-
-
-
-
-
-
