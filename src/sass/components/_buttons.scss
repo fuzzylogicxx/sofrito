@@ -1,0 +1,26 @@
+// Buttons
+
+// Give back a bit of padding that our reset took away
+
+button {
+  padding: .5em;
+  svg {
+    display: block;
+    margin: 0 auto;
+    font-size: 1em;
+  }
+}
+
+// Button-style links
+
+.btn {
+  background-color: $color-accent;
+  border: 5px solid $color-accent;
+  color: #fff;
+  //border-radius: 14px;
+  text-decoration: none;
+  padding: .125em 1.5em;
+  font-weight: 700;
+}
+
+// Check out: https://dev.to/elizabethschafer/designing-button-focus-states-for-better-usability-gm2

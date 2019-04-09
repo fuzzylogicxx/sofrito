@@ -14,9 +14,6 @@ $base-font-family-fonts-loaded: Source Sans Pro,Helvetica Neue,sans-serif;
 $alt-font-family: serif;
 $alt-font-family-fonts-loaded: Source Serif Pro, serif;
 
-$alt-font-family: $base-font-family;
-$alt-font-family-fonts-loaded: $base-font-family-fonts-loaded;
-
 
 // @font-face declarations (if self-hosting)
 
@@ -128,7 +125,6 @@ $min-acceptable-gutter_in_vw: 4.89; // Using vw for main gutter has the advantag
 // Set some vars we’ll use as utilities and in calculations
 
 $ms-base-rem: ($ms-base * 1)+rem;
-$ms-base-percentage: ($ms-base*100)+%;
 $ms-base-px: ($ms-base * 16px)+px;
 
 

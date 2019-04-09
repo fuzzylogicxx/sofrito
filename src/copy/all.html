@@ -97,63 +97,145 @@
   <div class="container">
 
     <main id="primary-content">
-<!--
+
+      <div class="table-container" aria-labelledby="caption-9b6k0m3tt" role="group">
+        <table>
+          <caption id="caption-9b6k0m3tt">Grindcore bands</caption>
+          <tbody>
+            <tr>
+              <th role="columnheader" scope="col" aria-sort="none">Band
+                <button>
+                  <svg viewBox="0 0 100 200" width="1em" height="1em">
+                    <polyline points="20 50, 50 20, 80 50"></polyline>
+                    <line x1="50" y1="20" x2="50" y2="180"></line>
+                    <polyline points="20 150, 50 180, 80 150"></polyline>
+                  </svg>
+                  <span class="a11y-only">sort by Band in ascendingorder</span>
+                </button>
+              </th>
+              <th role="columnheader" scope="col" aria-sort="none">Singer
+                <button>
+                  <svg viewBox="0 0 100 200" width="1em" height="1em">
+                    <polyline points="20 50, 50 20, 80 50"></polyline>
+                    <line x1="50" y1="20" x2="50" y2="180"></line>
+                    <polyline points="20 150, 50 180, 80 150"></polyline>
+                  </svg>
+                  <span class="a11y-only">sort by Singer in ascendingorder</span>
+                </button>
+              </th>
+              <th role="columnheader" scope="col" aria-sort="none">Inception
+                <button>
+                  <svg viewBox="0 0 100 200" width="1em" height="1em">
+                    <polyline points="20 50, 50 20, 80 50"></polyline>
+                    <line x1="50" y1="20" x2="50" y2="180"></line>
+                    <polyline points="20 150, 50 180, 80 150"></polyline>
+                  </svg>
+                  <span class="a11y-only">sort by Inception in ascendingorder</span>
+                </button>
+              </th>
+              <th role="columnheader" scope="col" aria-sort="none">Label
+                <button>
+                  <svg viewBox="0 0 100 200" width="1em" height="1em">
+                    <polyline points="20 50, 50 20, 80 50"></polyline>
+                    <line x1="50" y1="20" x2="50" y2="180"></line>
+                    <polyline points="20 150, 50 180, 80 150"></polyline>
+                  </svg>
+                  <span class="a11y-only">sort by Label in ascendingorder</span>
+                </button>
+              </th>
+            </tr>
+            <tr>
+              <th scope="row">Napalm Death</th>
+              <td>Barney Greenway</td>
+              <td>1981</td>
+              <td>Century Media</td>
+            </tr>
+            <tr>
+              <th scope="row">Carcass</th>
+              <td>Jeff Walker</td>
+              <td>1985</td>
+              <td>Earache</td>
+            </tr>
+            <tr>
+              <th scope="row">Extreme Noise Terror</th>
+              <td>Dean Jones</td>
+              <td>1985</td>
+              <td>Candlelight</td>
+            </tr>
+            <tr>
+              <th scope="row">Discordance Axis</th>
+              <td>Jon Chang</td>
+              <td>1992</td>
+              <td>Hydrahead</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+
       <form role="search" aria-label="Site">
-        <label for="srch_v">
-          Search for
+        <label class="form-group" for="srch_v">
+          <b>Search for</b>
+          <div class="search-widget">
+            <input type="search"
+              id="srch_v"
+              name="srch_v">
+            <button type="submit"
+              id="srch_btn_v"
+              aria-label="Submit Search">
+              <svg
+                width="1em"
+                height="1em"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="50 461 23 23">
+                <path d="M65.7857143,470.571429 C65.7857143,468.919635 65.1986666,467.506702 64.0245536,466.332589 C62.8504406,465.158476 61.4375083,464.571429 59.7857143,464.571429 C58.1339203,464.571429 56.720988,465.158476 55.546875,466.332589 C54.372762,467.506702 53.7857143,468.919635 53.7857143,470.571429 C53.7857143,472.223223 54.372762,473.636155 55.546875,474.810268 C56.720988,475.984381 58.1339203,476.571429 59.7857143,476.571429 C61.4375083,476.571429 62.8504406,475.984381 64.0245536,474.810268 C65.1986666,473.636155 65.7857143,472.223223 65.7857143,470.571429 Z M72.6428571,481.714286 C72.6428571,482.178574 72.473216,482.580355 72.1339286,482.919643 C71.7946412,483.25893 71.3928595,483.428571 70.9285714,483.428571 C70.4464262,483.428571 70.0446445,483.25893 69.7232143,482.919643 L65.1294643,478.339286 C63.531242,479.446434 61.7500098,480 59.7857143,480 C58.5089222,480 57.2879523,479.752235 56.1227679,479.256696 C54.9575835,478.761158 53.9531292,478.091522 53.109375,477.247768 C52.2656208,476.404014 51.5959846,475.399559 51.1004464,474.234375 C50.6049082,473.069191 50.3571429,471.848221 50.3571429,470.571429 C50.3571429,469.294636 50.6049082,468.073667 51.1004464,466.908482 C51.5959846,465.743298 52.2656208,464.738844 53.109375,463.895089 C53.9531292,463.051335 54.9575835,462.381699 56.1227679,461.886161 C57.2879523,461.390623 58.5089222,461.142857 59.7857143,461.142857 C61.0625064,461.142857 62.2834763,461.390623 63.4486607,461.886161 C64.6138451,462.381699 65.6182994,463.051335 66.4620536,463.895089 C67.3058078,464.738844 67.975444,465.743298 68.4709821,466.908482 C68.9665203,468.073667 69.2142857,469.294636 69.2142857,470.571429 C69.2142857,472.535724 68.6607198,474.316956 67.5535714,475.915179 L72.1473214,480.508929 C72.4776802,480.839287 72.6428571,481.241069 72.6428571,481.714286 Z" id="icon_search" stroke="none" fill-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
         </label>
-        <div class="search-widget">
-          <input type="search"
-            id="srch_v"
-            name="srch_v">
-          <button type="submit"
-            id="srch_btn_v"
-            aria-label="Submit Search">
-            <svg
-              aria-hidden="true"
-              focusable="false"
-              width="1em"
-              height="1em"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="M21 21l-4.35-4.35"/>
-            </svg>
-          </button>
-        </div>
-      </form> -->
+      </form>
 
-        <form role="search" aria-label="Site">
-            <label for="srch_v">
-              Search for
-            </label>
-            <div class="search-widget">
-              <input type="search"
-                id="srch_v"
-                name="srch_v">
-              <button type="submit"
-                id="srch_btn_v"
-                aria-label="Submit Search">
-                <svg
-                  width="1em"
-                  height="1em"
-                  aria-hidden="true"
-                  focusable="false"
-                  viewBox="50 461 23 23">
-                  <path d="M65.7857143,470.571429 C65.7857143,468.919635 65.1986666,467.506702 64.0245536,466.332589 C62.8504406,465.158476 61.4375083,464.571429 59.7857143,464.571429 C58.1339203,464.571429 56.720988,465.158476 55.546875,466.332589 C54.372762,467.506702 53.7857143,468.919635 53.7857143,470.571429 C53.7857143,472.223223 54.372762,473.636155 55.546875,474.810268 C56.720988,475.984381 58.1339203,476.571429 59.7857143,476.571429 C61.4375083,476.571429 62.8504406,475.984381 64.0245536,474.810268 C65.1986666,473.636155 65.7857143,472.223223 65.7857143,470.571429 Z M72.6428571,481.714286 C72.6428571,482.178574 72.473216,482.580355 72.1339286,482.919643 C71.7946412,483.25893 71.3928595,483.428571 70.9285714,483.428571 C70.4464262,483.428571 70.0446445,483.25893 69.7232143,482.919643 L65.1294643,478.339286 C63.531242,479.446434 61.7500098,480 59.7857143,480 C58.5089222,480 57.2879523,479.752235 56.1227679,479.256696 C54.9575835,478.761158 53.9531292,478.091522 53.109375,477.247768 C52.2656208,476.404014 51.5959846,475.399559 51.1004464,474.234375 C50.6049082,473.069191 50.3571429,471.848221 50.3571429,470.571429 C50.3571429,469.294636 50.6049082,468.073667 51.1004464,466.908482 C51.5959846,465.743298 52.2656208,464.738844 53.109375,463.895089 C53.9531292,463.051335 54.9575835,462.381699 56.1227679,461.886161 C57.2879523,461.390623 58.5089222,461.142857 59.7857143,461.142857 C61.0625064,461.142857 62.2834763,461.390623 63.4486607,461.886161 C64.6138451,462.381699 65.6182994,463.051335 66.4620536,463.895089 C67.3058078,464.738844 67.975444,465.743298 68.4709821,466.908482 C68.9665203,468.073667 69.2142857,469.294636 69.2142857,470.571429 C69.2142857,472.535724 68.6607198,474.316956 67.5535714,475.915179 L72.1473214,480.508929 C72.4776802,480.839287 72.6428571,481.241069 72.6428571,481.714286 Z" id="icon_search" stroke="none" fill-rule="evenodd"></path>
-                </svg>
-              </button>
-            </div>
-          </form>
+
+      <form action="" method="post">
+
+        <label class="form-group">
+          <b class="label-text">Text</b>
+          <input type="text">
+        </label>
+
+        <label class="form-group required">
+          <b class="label-text">Required Text</b>
+          <input type="text" required="">
+        </label>
+
+        <label class="form-group disabled">
+          <b class="label-text">Disabled Text</b>
+          <input type="text" disabled="">
+        </label>
+
+        <label class="form-group">
+          <b class="label-text">Choose:</b>
+          <select class="select-css">
+            <option>This is a native select element</option>
+            <option>Apples</option>
+            <option>Bananas</option>
+            <option>Grapes</option>
+            <option>Oranges</option>
+          </select>
+        </label>
+
+      </form>
 
 
 
 
-      <div style="margin-top: 300px" class="alert alert-primary" role="alert">
+
+
+
+      <div class="alert alert-primary" role="alert">
         This is a primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
       </div>
       <div class="alert alert-secondary" role="alert">
