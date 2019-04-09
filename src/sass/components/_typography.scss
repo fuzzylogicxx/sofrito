@@ -172,7 +172,7 @@ $space-lg: scale-value(3)+rem;
 //}
 
 body {
-  margin: 0 1em; //temp
+  //margin: 0 1em; //temp
   font-family: $base-font-family-fonts-loaded;
   line-height: $body-line-height-min; // set leading on body per Tim Brown rather than on html/root level per normalize.css
   //@include at-least($width-pressure-point-one) {

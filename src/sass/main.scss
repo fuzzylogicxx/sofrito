@@ -77,9 +77,18 @@ main {
 
 
 #global-footer {
-  & ul {
-    list-style: none;
+
+  // Lea Verou’s "fluid background, fixed content"
+  background: #333;
+  color: #fff;
+  a {
+    color: #fff;
   }
+  padding: 1em;
+  padding: 1em calc(50% - 15em); // where the second part of the calc is half of the target width for your inner content
+  // End Lea
+
+  & ul,
   & li {
     list-style: none;
   }
