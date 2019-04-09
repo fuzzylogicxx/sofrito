@@ -6,7 +6,7 @@ a, em, strong, small, s, cite, q, dfn, abbr, time, code, var, samp, kbd, i, b, m
 ins, del,
 img, iframe, embed, object, video, audio, canvas, map, area,
 table, caption, colgroup, tbody, thead, tfoot, tr, td, th,
-form, fieldset, legend, label, input, button, select, textarea,
+form, fieldset, legend, label, input, button, select, textarea, button,
 details, summary, command, menu {
     vertical-align: baseline;
     margin: 0;
@@ -17,6 +17,8 @@ details, summary, command, menu {
     font: inherit;
     // end Meyer additions
 }
+
+
 
 // Meyer
 article, aside, details, figcaption, figure,
