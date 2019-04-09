@@ -1,10 +1,101 @@
 @import "components/variables_general.scss";
-//@import "components/mixins_general.scss";
-//@import "components/responsive_prep.scss";
+@import "components/mixins_general.scss";
 @import "components/rutter_and_meyer_resets_edited.scss";
 @import "components/collected_reset_and_general_improvement_wisdom.scss";
+@import "components/typography.scss";
+// Bring formcore back in wholesale if we want to, or gradually
+// @import "components/formcore.scss";
+
+@import "components/forms.scss";
+
+@import "components/responsive_prep.scss";
 
 // Note: there are a few additional imports at the end of this file, too. (houdini show-and-hide, print CSS, layout-enhanced/grid, cookie consent).
+
+
+
+
+
+
+// Tables for data
+
+.table-container {
+  overflow-x: auto;
+}
+
+@media (min-width: 400px) {
+  .table-container {
+    display: block;
+  }
+
+  .lists-container {
+    display: none;
+  }
+}
+
+
+// Utilities
+
+// Full Viewport Width
+.special {
+  // Ref: https://css-tricks.com/full-width-containers-limited-width-parents/ (Sven Wolfermann https://codepen.io/maddesigns/pen/rOMgpQ/)
+  // push to the exact middle of the browser window with left: 50%, then pull it back to the left edge with negative -50vw margin.
+  // note 1: requires the parent to be exactly centered in the browser.
+  // note 2: I’ve taken out the 'right' and 'margin-right' properties because they’re only needed if your site might use direction: rtl
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+
+  // or: https://andy-bell.design/wrote/creating-a-full-bleed-css-utility/
+  //width: 100vw;
+  //margin-left: 50%;
+  //transform: translateX(-50%);
+}
+
+
+
+//
+
+#global-header,
+#primary-content,
+#global-footer {
+  //padding: 0 $min-acceptable-gutter_in_vw+vw;
+}
+
+.prose ol, .prose ul {
+    margin-left: 1.5em;
+    padding-left: 1em;
+}
+
+main {
+  /* ideal min-width: $text-measure-min-in-ems+em; */
+  max-width: $text-measure-max-in-ems+em;
+}
+
+
+
+
+#global-footer {
+
+  // Lea Verou’s "fluid background, fixed content"
+  background: #333;
+  color: #fff;
+  a {
+    color: #fff;
+  }
+  padding: 1em;
+  padding: 1em calc(50% - 15em); // where the second part of the calc is half of the target width for your inner content
+  // End Lea
+
+  & ul,
+  & li {
+    list-style: none;
+  }
+
+}
+
+
 
 
 

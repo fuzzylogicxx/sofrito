@@ -5,7 +5,7 @@
 	display: none;
 
 	/**
-	 * Remove focus styles from content (because we’ll be placing focus on a newly-revealed element)
+	 * Remove focus styles from revealed content (because although tabindex=-1 has allowed us to use JS’s focus(), in a11y terms it’s a non-interactive element so shouldn’t appear like one)
 	 * @type {String}
 	 */
 	&[tabindex="-1"]:focus {
