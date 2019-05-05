@@ -1,222 +1,30 @@
 @import "components/variables_general.scss";
 @import "components/mixins_general.scss";
-@import "components/rutter_and_meyer_resets_edited.scss";
+@import "components/custom_reset.scss";
 @import "components/collected_reset_and_general_improvement_wisdom.scss";
 @import "components/typography.scss";
-// Bring formcore back in wholesale if we want to, or gradually
-// @import "components/formcore.scss";
-
-@import "components/buttons.scss";
-@import "components/forms.scss";
-
 @import "components/responsive_prep.scss";
+@import "components/buttons.scss";
+    // Bring formcore back in wholesale if we want to, or gradually
+    // @import "components/formcore.scss";
+@import "components/forms.scss";
+@import "components/list_utils.scss";
+@import "components/tables.scss";
+@import "components/tabs.scss";
+@import "components/code.scss";
+@import "components/skip_links.scss";
+@import "components/aspect_ratio.scss";
+@import "components/svg_link_icons.scss";
+@import "components/media_objects.scss";
+@import "components/breakout.scss";
 
 // Note: there are a few additional imports at the end of this file, too. (houdini show-and-hide, print CSS, layout-enhanced/grid, cookie consent).
 
-
-// Lists (CF and S O’H)
-
-.list-unstyled {
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-/**
- * @bugfix Prevent webkit from removing list semantics
- * https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
- * 1. Add a non-breaking space
- * 2. Make sure it doesn't mess up the DOM flow
- */
-.list-unstyled > li:before {
-  content: "\200B"; /* 1 */
-  position: absolute; /* 2 */
-}
-
-
-.list-inline {
-  list-style: none;
-  // margin-left: -0.5em; // not necessary if have already used a reset.css
-  margin-right: -0.5em;
-  padding-left: 0;
-}
-
-.list-inline > li {
-  display: inline-block;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-}
-
-/**
- * @bugfix Prevent webkit from removing list semantics
- * https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
- * 1. Add a non-breaking space
- * 2. Make sure it doesn't mess up the DOM flow
- */
-.list-inline > li:before {
-  content: "\200B"; /* 1 */
-  position: absolute; /* 2 */
-}
-
-
-
-
-
-// Tables for data
-
-.table-container {
-  overflow-x: auto;
-}
-
-@media (min-width: 400px) {
-  .table-container {
-    display: block;
-  }
-
-  .lists-container {
-    display: none;
-  }
-}
-
-// Old school: Dan C.
-// To Do: refine with variables, relative padding etc.
-
-table {
-  border-top: 1px solid #999;
-  border-left: 1px solid #999;
-  //
-  margin: 1em 0;
-}
-
-caption {
-  color: #933;
-}
-
-th, td {
-  padding: 10px;
-  border-right: 1px solid #999;
-  border-bottom: 1px solid #999;
-}
-
-
-
-// Utilities
-
-// Full Viewport Width
-.special {
-  // Ref: https://css-tricks.com/full-width-containers-limited-width-parents/ (Sven Wolfermann https://codepen.io/maddesigns/pen/rOMgpQ/)
-  // push to the exact middle of the browser window with left: 50%, then pull it back to the left edge with negative -50vw margin.
-  // note 1: requires the parent to be exactly centered in the browser.
-  // note 2: I’ve taken out the 'right' and 'margin-right' properties because they’re only needed if your site might use direction: rtl
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  margin-left: -50vw;
-
-  // or: https://andy-bell.design/wrote/creating-a-full-bleed-css-utility/
-  //width: 100vw;
-  //margin-left: 50%;
-  //transform: translateX(-50%);
-}
-
-
-
-// Maintaining image/video/etc aspect ratio in responsive context
-
-/**
- * credit Andy Bell https://andy-bell.design/wrote/creating-an-aspect-ratio-css-utility/
- * ASPECT RATIO
- * A utility that provides you with a predictable aspect ratio
- *
- * ratio-wide: a 16:9 aspect
- * ratio-square: a perfect square
- */
-[class*='aspect-ratio-'] {
-  display: block;
-  position: relative;
-}
-
-[class*='aspect-ratio-'] > * {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.aspect-ratio-wide {
-  padding-top: 56.25%;
-}
-
-.aspect-ratio-square {
-  padding-top: 100%;
-}
-
-// Gallery styles are just for .aspect-ratio-square demo and are not part of the ASPECT RATIO utility so might want to remove or move into "plugin" component
-// Although note that the object-fit: cover is important.
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-  grid-gap: 0.4rem;
-  // LH additions
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-.gallery img {
-  object-fit: cover;
-}
-
-
-
-
-///////////////////////////////////
-// Accessible skip links (review this)
-///////////////////////////////////
-
-/* Inspired by the implementation on https://meyerweb.com/ */
-
-/*#skip-links {
-  position: absolute;
-  bottom: 1.5vh;
-  left: -51em;
-  width: 10em;
-}
-#skip-links a {
-  display: block;
-  background: #000;
-  color: #fff;
-  text-decoration-color: #fff;
-  margin: 0.335em;
-  padding: 0.335em;
-  transition: 150ms;
-}
-#skip-links a:focus {
-  background: #060;
-}
-#skip-links a:focus,
-#skip-links a:focus ~ a {
-  transform: translate(52em);
-}
-#skip-links:focus-within a {
-  transform: translate(52em);
-}
-@media (max-height: 42em) {
-  #skip-links {
-    width: auto;
-  }
-  #skip-links a {
-    display: inline-block;
-  }
-}*/
-
-
-
-
 //
+
+body {
+  //margin: 0 $space-s;
+}
 
 #global-header,
 #primary-content,
@@ -224,35 +32,38 @@ th, td {
   //padding: 0 $min-acceptable-gutter_in_vw+vw;
 }
 
-.prose ol, .prose ul {
-    margin-left: 1.5em;
-    padding-left: 1em;
-}
-
 main {
-  /* ideal min-width: $text-measure-min-in-ems+em; */
+  // ideal min-width: $text-measure-min-in-ems+em;
   max-width: $text-measure-max-in-ems+em;
+  margin: 0 auto;
+  padding: 0 $space-s;
+  @include at-least($bp-wide-one) {
+    padding: 0;
+  }
 }
 
 
 
 
 #global-footer {
-
-  // Lea Verou’s "fluid background, fixed content"
   background: #333;
   color: #fff;
-  a {
+  padding: 0 $space-s;
+
+  a:link {
     color: #fff;
   }
-  padding: 1em;
-  padding: 1em calc(50% - 15em); // where the second part of the calc is half of the target width for your inner content
-  // End Lea
 
-  & ul,
-  & li {
-    list-style: none;
+  @include at-least($bp-wide-one) {
+    // Lea Verou’s "fluid background, fixed content" (i.e. full-width background)
+    // Note this solves a different problem than our "breakout.scss" utility.
+    // With breakout we’re starting in a centred fixed width column and need to break out to full width.
+    // With this, we’re starting at full width and need to centre the content at the same width as our <main> content.
+    padding: 0 $space-s;
+    padding: 0 calc(50% - #{$text-measure-max-in-ems/2+em}); // where the second part of the calc is half of the target width for your inner content
+    // End Lea
   }
+
 
 }
 
@@ -268,7 +79,7 @@ main {
 @import "components/houdini.scss";
 
 // Enhance our basic layout using CSS grid.
-//@import "components/layout_enhanced.scss";
+@import "components/layout_enhanced.scss";
 
 // Cookie consent: we need it by law.
 @import "components/cookieconsent2_3.1.0.min.scss";

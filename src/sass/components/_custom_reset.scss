@@ -1,22 +1,42 @@
 // Richard Rutter’s Reset (ref: clagnut.com) with some Meyer Reset interspersed (https://meyerweb.com/eric/tools/css/reset/)
 
 html, body, section, nav, article, aside, h1, h2, h3, h4, h5, h6, hgroup, header, footer, address,
-p, hr, pre, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, div,
+p, hr, pre, blockquote, dl, dt, dd, figure, figcaption, div,
 a, em, strong, small, s, cite, q, dfn, abbr, time, code, var, samp, kbd, i, b, mark, span, br,
 ins, del,
 img, iframe, embed, object, video, audio, canvas, map, area,
 table, caption, colgroup, tbody, thead, tfoot, tr, td, th,
 form, fieldset, legend, label, input, button, select, textarea, button,
 details, summary, command, menu {
-    vertical-align: baseline;
     margin: 0;
     padding: 0;
     // Meyer additions
     border: 0;
     font-size: 100%;
-    font: inherit;
     // end Meyer additions
 }
+
+ol, ul, li {
+  vertical-align: baseline;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 100%;
+}
+
+// This rule sets everything to use the same font, so doesn’t include <code>, because we want that to get the user agent’s monospace font.
+
+html, body, section, nav, article, aside, h1, h2, h3, h4, h5, h6, hgroup, header, footer, address,
+p, hr, pre, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, div,
+a, em, strong, small, s, cite, q, dfn, abbr, time, var, samp, kbd, i, b, mark, span, br,
+ins, del,
+img, iframe, embed, object, video, audio, canvas, map, area,
+table, caption, colgroup, tbody, thead, tfoot, tr, td, th,
+form, fieldset, legend, label, input, button, select, textarea, button,
+details, summary, command, menu {
+  font: inherit;
+}
+
+
 
 
 
@@ -38,8 +58,3 @@ table {
 .highlight, mark {
     background-color: rgba(255,255,0,0.5);
 }
-
-// end Reset
-
-
-
