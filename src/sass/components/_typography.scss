@@ -231,10 +231,11 @@ h2 {
 }
 
 h1 {
-  font-size: scale-value(2)+rem;
+  font-size: (scale-value(2) + scale-value(-5))+rem;
   font-weight: 700;
   line-height: scale-value(0);
   margin-top: $space-s;
+  margin-bottom: $space-s;
   color: $color-accent;
 }
 
