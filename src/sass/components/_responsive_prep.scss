@@ -1,5 +1,5 @@
 ///////////////////////////////////
-// Max-width we want our site's content to go.
+// Max-width we want our site's content (including header and footer) to go.
 ///////////////////////////////////
 
 // NB this is not the same as our $text-measure. This is for an outer wrapper.
@@ -16,15 +16,14 @@
 // Note that media queries work on 1em = 16px so if our root font-size is not 1em we need to:
 // multiply the em-based target width/height for our media query by our root font-size (in ems) value.
 
-// The first breakpoint is just a media-query-friendly equivalent of our measure width
-//$width-pressure-point-one: ($text-measure-max-in-ems * $font-size-custom-base)+em;
+// The first breakpoint has already been defined in typography.scss and is just a media-query-friendly equivalent of our "measure" width.
+// $width-pressure-point-one: ($text-measure-max-in-ems * $font-size-custom-base)+em;
 
 
 
-// This breakpoint is a width arising from the sum of our first typographic pressure point PLUS some lateral breathing space
+// Define a breakpoint based on a width arising from the sum of our first typographic pressure point PLUS some lateral breathing space
 // It’s a viewport width at which more space-reliant change can be applied.
-//$bp-wide-one-space-on-each-side: 4;
-//$bp-wide-one: ( ($text-measure-max-in-ems + ($bp-wide-one-space-on-each-side * 2) ) * $font-size-custom-base)+em;
+$bp-wide-one: ( ($text-measure-max-in-ems + 2) * $ms-base)+em;
 
 
 
@@ -39,16 +38,4 @@
 
 
 
-// Responsive mixins
 
-@mixin at-least($device-width) {
-  @media screen and (min-width: $device-width) {
-    @content
-  }
-}
-
-@mixin until($device-width) {
-  @media screen and (max-width: $device-width - 1) {
-    @content
-  }
-}

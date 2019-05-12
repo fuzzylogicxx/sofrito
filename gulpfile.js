@@ -36,6 +36,7 @@ var paths = {
 	},
 	copy: {
 		input: 'src/copy/**/*',
+    inputHTML: 'src/copy/**/*.html',
 		output: 'dist/'
 	},
 	reload: './dist/'
@@ -95,6 +96,9 @@ var svgmin = require('gulp-svgmin');
 
 // BrowserSync
 var browserSync = require('browser-sync');
+
+// fileinclude for "includes" in HTML files
+var fileinclude = require('gulp-file-include')
 
 
 /**
@@ -250,9 +254,25 @@ var copyFiles = function (done) {
 	// Make sure this feature is activated before running
 	if (!settings.copy) return done();
 
-	// Copy static files
-	src(paths.copy.input)
+	// Copy everything except HTML files
+  src([paths.copy.input, '!'+paths.copy.inputHTML])
 		.pipe(dest(paths.copy.output));
+
+  // Copy only HTML files, replacing @@placeholders with real global "includes" e.g. header.html
+  src(paths.copy.inputHTML)
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(dest(paths.copy.output));
+
+
+  // gulp.src(['index.html'])
+  //   .pipe(fileinclude({
+  //     prefix: '@@',
+  //     basepath: '@file'
+  //   }))
+  //   .pipe(gulp.dest('./'));
 
 	// Signal completion
 	done();

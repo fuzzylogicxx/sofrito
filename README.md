@@ -3,6 +3,14 @@ A savoury front-end base with advanced typographic, layout, performance and buil
 
 Sofrito uses a Gulp-based build system.
 
+## Quick Start
+
+In bash/terminal/command line, cd into your project directory.
+- Run npm install to install required files and dependencies.
+- When it's done installing, run one of the task runners to get going:
+-- `gulp` manually compiles files.
+-- `gulp watch` automatically compiles files and applies changes using BrowserSync when you make changes to your source files.
+
 Full documentation to follow.
 
 ## Credits

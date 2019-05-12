@@ -139,6 +139,12 @@ video {
 // Miscellaneous
 ///////////////////////////////////
 
+// Remove the outline for mouse users but preserve it for keyboard users.
+// Rule will be ignored by browsers that don’t support :focus-visible.
+// Credit Lea Verou (https://twitter.com/leaverou/status/1045768279753666562)
+
+:focus:not(:focus-visible) { outline: none }
+
 // normalize.css: "Add the correct display in Edge, IE 10+, and Firefox."
 
 details {
@@ -177,3 +183,18 @@ template {
 .clearfix:after {
   clear: both;
 }
+
+// Remove _all_ animations and transitions for people that prefer not to see them
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    scroll-behavior: auto;
+  }
+
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    transition: none !important;
+  }
+}
+

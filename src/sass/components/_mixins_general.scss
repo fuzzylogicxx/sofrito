@@ -1,4 +1,6 @@
 // Add support for maths ability to raise a number to a certain power
+// We’ll use this for example to get any value from a modular scale for our typography.
+
 @function pow($number, $exponent) {
   $value: 1;
 
@@ -14,8 +16,6 @@
 
   @return $value;
 }
-
-
 
 
 // Serve HiDPI background images from any selector you’d like, just by creating two image assets and one line of SCSS
@@ -34,6 +34,19 @@
 }
 
 
+// Responsive utilities
+
+@mixin at-least($device-width) {
+  @media screen and (min-width: $device-width) {
+    @content
+  }
+}
+
+@mixin until($device-width) {
+  @media screen and (max-width: $device-width - 1) {
+    @content
+  }
+}
 
 
 // Convert rem value to em, useful for local sizing
