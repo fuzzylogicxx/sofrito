@@ -50,7 +50,8 @@ main {
   color: #fff;
   padding: 0 $space-s;
 
-  a:link {
+  a:link,
+  a:visited {
     color: #fff;
   }
 

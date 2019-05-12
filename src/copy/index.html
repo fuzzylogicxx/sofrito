@@ -32,8 +32,12 @@
 
       <article class="prose">
 
-        <h1>Heading Text Size</h1>
-        <p>I realised last night while watching a presentation by Lea Verou that I could streamline my CSS Grid layouts. I’d been creating an overall page grid by setting <code>body { display: grid; }</code> and some grid areas, but noticed that this only got me so far when it came to aligning more deeply nested elements of the page to that grid.</p>
+        <h1>Website Delivery Principles wraps onto two lines</h1>
+
+        <p>I realised last night while watching a presentation by Lea Verou that I could streamline my CSS Grid layouts. I’d previously been creating an overall page grid on the <code>body</code> then defining some grid areas, but was frustrated that this didn’t help with aligning nested elements to that grid.</p>
+
+        <h2>Use the right tool for the job wraps onto two lines</h2>
+
         <p>For example in the case of the main header, if I wanted its child logo, <code>nav</code> and search box elements to snap to the grid I found myself having to set <code>display: grid</code> and <code>grid-template-areas</code> again on the header.</p>
         <p>It didn’t feel very <abbr class="" title="Don’t Repeat Yourself">DRY</abbr> but my understanding was that while we await subgrid, this was a necessary evil.</p>
         <p>What I should have been using is <code>display: contents</code>.</p>

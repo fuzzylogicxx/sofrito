@@ -5,7 +5,8 @@
 // Note: using ems so that our tweaked size scales up whether in a <p> or <h1>
 code {
   color: $color-complimentary;
-  font-size: 1.2em;
-  padding: 0 .25em;
+  font-size: 1.275em; // an improvement, a sweet spot, and also below the threshold at which it negatively impacts the overall line-height.
   hyphens: none;
+  //padding: 0 .25em;
+  line-height: normal;
 }

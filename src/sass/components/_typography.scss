@@ -231,8 +231,8 @@ h2 {
 
 h1 {
   //save this larger font-size for larger screen sizes where the layout is less focused and needs more typog. contrast. //font-size: (scale-value(2) + scale-value(-5))+rem;
-  font-size: ( scale-value(2) + scale-value(-5) )+rem;
-  //font-size: scale-value(2)+rem;
+  //font-size: ( scale-value(2) + scale-value(-5) )+rem;
+  font-size: scale-value(2)+rem;
   font-weight: 700;
   line-height: 1;
   margin-top: $space-s;
