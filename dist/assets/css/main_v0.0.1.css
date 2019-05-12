@@ -7,37 +7,55 @@
  */
 
 @charset "UTF-8";
-/* line 3, src/sass/components/_rutter_and_meyer_resets_edited.scss */
+/* line 3, src/sass/components/_custom_reset.scss */
 html, body, section, nav, article, aside, h1, h2, h3, h4, h5, h6, hgroup, header, footer, address,
-p, hr, pre, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, div,
+p, hr, pre, blockquote, dl, dt, dd, figure, figcaption, div,
 a, em, strong, small, s, cite, q, dfn, abbr, time, code, var, samp, kbd, i, b, mark, span, br,
 ins, del,
 img, iframe, embed, object, video, audio, canvas, map, area,
 table, caption, colgroup, tbody, thead, tfoot, tr, td, th,
 form, fieldset, legend, label, input, button, select, textarea, button,
 details, summary, command, menu {
-  vertical-align: baseline;
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
+}
+
+/* line 19, src/sass/components/_custom_reset.scss */
+ol, ul, li {
+  vertical-align: baseline;
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 100%;
+}
+
+/* line 28, src/sass/components/_custom_reset.scss */
+html, body, section, nav, article, aside, h1, h2, h3, h4, h5, h6, hgroup, header, footer, address,
+p, hr, pre, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, div,
+a, em, strong, small, s, cite, q, dfn, abbr, time, var, samp, kbd, i, b, mark, span, br,
+ins, del,
+img, iframe, embed, object, video, audio, canvas, map, area,
+table, caption, colgroup, tbody, thead, tfoot, tr, td, th,
+form, fieldset, legend, label, input, button, select, textarea, button,
+details, summary, command, menu {
   font: inherit;
 }
 
-/* line 24, src/sass/components/_rutter_and_meyer_resets_edited.scss */
+/* line 44, src/sass/components/_custom_reset.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 32, src/sass/components/_rutter_and_meyer_resets_edited.scss */
+/* line 52, src/sass/components/_custom_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 100%;
 }
 
-/* line 38, src/sass/components/_rutter_and_meyer_resets_edited.scss */
+/* line 58, src/sass/components/_custom_reset.scss */
 .highlight, mark {
   background-color: rgba(255, 255, 0, 0.5);
 }
@@ -133,22 +151,27 @@ video {
   visibility: hidden;
 }
 
-/* line 144, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 146, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* line 150, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 details {
   display: block;
 }
 
-/* line 150, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 156, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 summary {
   display: list-item;
 }
 
-/* line 165, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 171, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 template {
   display: none;
 }
 
-/* line 171, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 177, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -157,12 +180,26 @@ template {
   /* 2 */
 }
 
-/* line 177, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 183, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 3, src/sass/components/_typography.scss */
+@media (prefers-reduced-motion: reduce) {
+  /* line 190, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+  body {
+    scroll-behavior: auto;
+  }
+  /* line 194, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+  * {
+    -webkit-animation: none !important;
+    animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
+/* line 2, src/sass/components/_typography.scss */
 #global-header {
   display: none;
 }
@@ -194,7 +231,7 @@ template {
   font-display: swap;
 }
 
-/* line 151, src/sass/components/_typography.scss */
+/* line 145, src/sass/components/_typography.scss */
 :root {
   color: #222222;
   font-family: Source Sans Pro, Helvetica Neue, sans-serif;
@@ -204,7 +241,7 @@ template {
 }
 
 @supports ((-webkit-font-kerning: normal) or (font-kerning: normal)) and ((-webkit-font-variant-ligatures: common-ligatures contextual) or (font-variant-ligatures: common-ligatures contextual)) and (font-variant-numeric: oldstyle-nums proportional-nums) {
-  /* line 159, src/sass/components/_typography.scss */
+  /* line 153, src/sass/components/_typography.scss */
   :root {
     -webkit-font-kerning: normal;
             font-kerning: normal;
@@ -216,77 +253,228 @@ template {
   }
 }
 
-/* line 174, src/sass/components/_typography.scss */
+/* line 168, src/sass/components/_typography.scss */
 body {
   font-family: Source Sans Pro, Helvetica Neue, sans-serif;
-  line-height: 1.35;
+  line-height: 1.33959;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 168, src/sass/components/_typography.scss */
+  body {
+    line-height: 1.44;
+  }
+}
+
+/* line 179, src/sass/components/_typography.scss */
+a:link {
+  color: #9b3d3d;
+}
+
+/* line 183, src/sass/components/_typography.scss */
+a:visited {
+  color: rebeccapurple;
 }
 
 /* line 187, src/sass/components/_typography.scss */
+a:hover {
+  color: #401919;
+}
+
+/* line 191, src/sass/components/_typography.scss */
+a:active {
+  color: #9b9b3d;
+}
+
+/* line 198, src/sass/components/_typography.scss */
 small {
   font-size: 0.69444rem;
 }
 
-/* line 191, src/sass/components/_typography.scss */
+/* line 202, src/sass/components/_typography.scss */
 h6,
 h5,
 h4,
 h3,
 h2,
 h1 {
-  margin: 0 0 0.675rem;
+  margin: 0 0 0.6698rem;
 }
 
-/* line 200, src/sass/components/_typography.scss */
+/* line 211, src/sass/components/_typography.scss */
 h6,
 h5,
 h4 {
   font-weight: 700;
 }
 
-/* line 206, src/sass/components/_typography.scss */
+/* line 217, src/sass/components/_typography.scss */
 h3,
 h2 {
   line-height: 1.2;
 }
 
-/* line 211, src/sass/components/_typography.scss */
+/* line 222, src/sass/components/_typography.scss */
 h3 {
   font-size: 1rem;
   font-weight: 700;
 }
 
-/* line 216, src/sass/components/_typography.scss */
+/* line 227, src/sass/components/_typography.scss */
 h2 {
   font-size: 1.2rem;
   font-weight: 700;
 }
 
-/* line 221, src/sass/components/_typography.scss */
+/* line 232, src/sass/components/_typography.scss */
 h1 {
   font-size: 1.44rem;
   font-weight: 700;
   line-height: 1;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   color: #9b3d3d;
 }
 
-/* line 229, src/sass/components/_typography.scss */
+/* line 243, src/sass/components/_typography.scss */
 p,
 ul {
-  margin-bottom: 0.675rem;
+  margin-bottom: 0.6698rem;
 }
 
-/* line 5, src/sass/components/_forms.scss */
-button {
-  padding: .5em;
+/* line 248, src/sass/components/_typography.scss */
+.prose {
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
-/* line 7, src/sass/components/_forms.scss */
-button svg {
-  display: block;
-  margin: 0 auto;
-  font-size: 1em;
+/*.prose ol, .prose ul {
+  margin-left: 1.5em;
+  padding-left: 1em;
+}*/
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/**
+ * Correct the padding in Firefox.
+ */
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+            box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+  }
+  50% {
+    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.9);
+            box-shadow: 0 0 12px rgba(51, 204, 255, 0.9);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+            box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+            box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+  }
+  50% {
+    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.9);
+            box-shadow: 0 0 12px rgba(51, 204, 255, 0.9);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+            box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
+  }
+}
+
+/* line 197, src/sass/components/_buttons.scss */
+input[type="submit"] {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 8px 15px;
+  font-weight: bold;
+  line-height: 1;
+  color: #444;
+  border: none;
+}
+
+/* line 208, src/sass/components/_buttons.scss */
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  -webkit-animation: pulse 1.5s infinite ease-in-out;
+          animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* line 217, src/sass/components/_buttons.scss */
+a.foo {
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 10px;
+  background: #9c3;
+  -webkit-transition: all 0.3s ease;
+  -webkit-transition: all  0.3s ease;
+  transition: all  0.3s ease;
+}
+
+/* line 229, src/sass/components/_buttons.scss */
+a.foo:hover,
+a.foo:focus {
+  color: #030;
+  background: #690;
 }
 
 /**
@@ -295,7 +483,7 @@ button svg {
  * Much of these styles are pulled from normalize.css.
  * Use as necessary within your own style sheets.
  */
-/* line 31, src/sass/components/_forms.scss */
+/* line 8, src/sass/components/_forms.scss */
 input,
 button,
 textarea,
@@ -318,7 +506,7 @@ select {
 /**
  * Remove the Clear button added by MS browsers
  */
-/* line 49, src/sass/components/_forms.scss */
+/* line 26, src/sass/components/_forms.scss */
 input::-ms-clear {
   display: none;
   height: 0;
@@ -330,7 +518,7 @@ input::-ms-clear {
  * remove FireFox specific inner focus styles.
  * focus style will be reapplied later.
  */
-/* line 61, src/sass/components/_forms.scss */
+/* line 38, src/sass/components/_forms.scss */
 button::-moz-focus-inner {
   border-style: none;
   padding: 0;
@@ -340,7 +528,7 @@ button::-moz-focus-inner {
  * 1. Correct color inheritance in IE
  * 2. Correct the text wrapping in Edge and IE
  */
-/* line 71, src/sass/components/_forms.scss */
+/* line 48, src/sass/components/_forms.scss */
 legend {
   color: inherit;
   /* 1 */
@@ -353,6 +541,25 @@ legend {
   /* 2 */
 }
 
+/* line 60, src/sass/components/_forms.scss */
+.form-group {
+  display: block;
+}
+
+/* line 62, src/sass/components/_forms.scss */
+.form-group b {
+  display: block;
+  font-weight: 700;
+}
+
+/* line 68, src/sass/components/_forms.scss */
+input[type=text],
+textarea {
+  border: 1px solid #565656;
+  padding: .5em;
+  width: 100%;
+}
+
 /**
  * 1. Remove webkit redesign of searches
  *
@@ -360,13 +567,13 @@ legend {
  *    OS X. Safari (but not Chrome) clips the cancel button when the
  *    search input has padding (& `textfield` appearance).
  */
-/* line 87, src/sass/components/_forms.scss */
+/* line 89, src/sass/components/_forms.scss */
 input[type="search"] {
   -webkit-appearance: none;
   /* 1 */
 }
 
-/* line 91, src/sass/components/_forms.scss */
+/* line 93, src/sass/components/_forms.scss */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -377,7 +584,7 @@ input[type="search"]::-webkit-search-cancel-button {
 /**
  * Component Specific Styling
  */
-/* line 100, src/sass/components/_forms.scss */
+/* line 102, src/sass/components/_forms.scss */
 .search-widget {
   border: 1px solid #565656;
   display: block;
@@ -388,20 +595,20 @@ input[type="search"]::-webkit-search-cancel-button {
   */
 }
 
-/* line 106, src/sass/components/_forms.scss */
+/* line 108, src/sass/components/_forms.scss */
 .search-widget svg {
   display: block;
   margin: 0 auto;
 }
 
-/* line 111, src/sass/components/_forms.scss */
+/* line 113, src/sass/components/_forms.scss */
 .search-widget > input[type="search"] {
   border-right: 1px solid #565656;
   padding: .5em;
   width: 100%;
 }
 
-/* line 117, src/sass/components/_forms.scss */
+/* line 119, src/sass/components/_forms.scss */
 .search-widget > [type="submit"] {
   background: #eee;
   position: absolute;
@@ -411,7 +618,7 @@ input[type="search"]::-webkit-search-cancel-button {
   width: 2.5em;
 }
 
-/* line 128, src/sass/components/_forms.scss */
+/* line 130, src/sass/components/_forms.scss */
 .search-widget > input[type="search"]:focus,
 .search-widget > [type="submit"]:not([disabled]):hover,
 .search-widget > [type="submit"]:focus {
@@ -421,24 +628,24 @@ input[type="search"]::-webkit-search-cancel-button {
   outline-offset: 0;
 }
 
-/* line 136, src/sass/components/_forms.scss */
+/* line 138, src/sass/components/_forms.scss */
 .search-widget > input[type="search"]:focus {
   border-right-color: #9b3d3d;
 }
 
-/* line 140, src/sass/components/_forms.scss */
+/* line 142, src/sass/components/_forms.scss */
 .search-widget > [type="submit"]:not([disabled]):hover,
 .search-widget > [type="submit"]:focus {
   background: #9b3d3d;
 }
 
-/* line 145, src/sass/components/_forms.scss */
+/* line 147, src/sass/components/_forms.scss */
 .search-widget > [type="submit"]:focus svg,
 .search-widget > [type="submit"]:not([disabled]):hover svg {
   fill: #fff;
 }
 
-/* line 154, src/sass/components/_forms.scss */
+/* line 156, src/sass/components/_forms.scss */
 .search-widget > [type="search"][disabled],
 .search-widget > [type="submit"][disabled] {
   background: #fafafa;
@@ -447,53 +654,341 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 @media screen and (-ms-high-contrast: active) {
-  /* line 100, src/sass/components/_forms.scss */
+  /* line 102, src/sass/components/_forms.scss */
   .search-widget {
     border: none;
   }
-  /* line 168, src/sass/components/_forms.scss */
+  /* line 170, src/sass/components/_forms.scss */
   .search-widget > input[type="search"] {
     border: 1px solid;
     border-right: 1px solid;
     position: relative;
   }
-  /* line 174, src/sass/components/_forms.scss */
+  /* line 176, src/sass/components/_forms.scss */
   .search-widget > [type="submit"],
   .search-widget > input[type="search"]:focus {
     z-index: 4;
   }
-  /* line 179, src/sass/components/_forms.scss */
+  /* line 181, src/sass/components/_forms.scss */
   .search-widget > [type="submit"]:focus {
     border: 1px solid;
   }
-  /* line 183, src/sass/components/_forms.scss */
+  /* line 185, src/sass/components/_forms.scss */
   .search-widget svg {
     fill: #fff;
   }
-  /* line 187, src/sass/components/_forms.scss */
+  /* line 189, src/sass/components/_forms.scss */
   .search-widget > [type="search"][disabled],
   .search-widget > [type="submit"][disabled] {
     opacity: .5;
   }
 }
 
-/* line 22, src/sass/main.scss */
+/* class applies to select element itself, not a wrapper element */
+/* line 206, src/sass/components/_forms.scss */
+.select-css {
+  display: block;
+  color: #444;
+  line-height: 1.3;
+  padding: .6em 1.4em .5em .8em;
+  width: 100%;
+  max-width: 100%;
+  /* useful when width is set to anything other than 100% */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  -webkit-box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: .5em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient.
+    for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
+  */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e5e5));
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  background-repeat: no-repeat, repeat;
+  /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+  background-position: right .7em top 50%, 0 0;
+  /* icon size, then gradient */
+  background-size: .65em auto, 100%;
+}
+
+/* Hide arrow icon in IE browsers */
+/* line 237, src/sass/components/_forms.scss */
+.select-css::-ms-expand {
+  display: none;
+}
+
+/* Hover style */
+/* line 241, src/sass/components/_forms.scss */
+.select-css:hover {
+  border-color: #888;
+}
+
+/* Focus style */
+/* line 245, src/sass/components/_forms.scss */
+.select-css:focus {
+  border-color: #aaa;
+  /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+  -webkit-box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+          box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222;
+  outline: none;
+}
+
+/* Set options to normal weight */
+/* line 255, src/sass/components/_forms.scss */
+.select-css option {
+  font-weight: normal;
+}
+
+/* Support for rtl text, explicit support for Arabic and Hebrew */
+/* line 260, src/sass/components/_forms.scss */
+*[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css {
+  background-position: left .7em top 50%, 0 0;
+  padding: .6em .8em .5em 1.4em;
+}
+
+/* line 3, src/sass/components/_list_utils.scss */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* line 10, src/sass/components/_list_utils.scss */
+.list-unstyled {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/**
+ * @bugfix Prevent webkit from removing list semantics
+ * https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+ * 1. Add a non-breaking space
+ * 2. Make sure it doesn't mess up the DOM flow
+ */
+/* line 21, src/sass/components/_list_utils.scss */
+.list-unstyled > li:before {
+  content: "\200B";
+  /* 1 */
+  position: absolute;
+  /* 2 */
+}
+
+/* line 27, src/sass/components/_list_utils.scss */
+.list-inline {
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  padding-left: 0;
+}
+
+/* line 33, src/sass/components/_list_utils.scss */
+.list-inline > li {
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+/**
+ * @bugfix Prevent webkit from removing list semantics
+ * https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+ * 1. Add a non-breaking space
+ * 2. Make sure it doesn't mess up the DOM flow
+ */
+/* line 45, src/sass/components/_list_utils.scss */
+.list-inline > li:before {
+  content: "\200B";
+  /* 1 */
+  position: absolute;
+  /* 2 */
+}
+
+/* line 3, src/sass/components/_tables.scss */
 .table-container {
   overflow-x: auto;
 }
 
 @media (min-width: 400px) {
-  /* line 27, src/sass/main.scss */
+  /* line 8, src/sass/components/_tables.scss */
   .table-container {
     display: block;
   }
-  /* line 31, src/sass/main.scss */
+  /* line 12, src/sass/components/_tables.scss */
   .lists-container {
     display: none;
   }
 }
 
-/* line 40, src/sass/main.scss */
+/* line 20, src/sass/components/_tables.scss */
+table {
+  border-top: 1px solid #999;
+  border-left: 1px solid #999;
+  margin: 1em 0;
+}
+
+/* line 27, src/sass/components/_tables.scss */
+caption {
+  color: #933;
+}
+
+/* line 31, src/sass/components/_tables.scss */
+th, td {
+  padding: 10px;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+/* line 6, src/sass/components/_code.scss */
+code {
+  color: #9b9b3d;
+  font-size: 1.275em;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
+  line-height: normal;
+}
+
+/* line 7, src/sass/components/_skip_links.scss */
+#skip-links {
+  position: absolute;
+  bottom: 1.5vh;
+  left: -51em;
+  width: 10em;
+  border: 1px solid red;
+}
+
+/* line 14, src/sass/components/_skip_links.scss */
+#skip-links a {
+  display: block;
+  background: #000;
+  color: #fff;
+  -webkit-text-decoration-color: #fff;
+          text-decoration-color: #fff;
+  margin: 0.335em;
+  padding: 0.335em;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+}
+
+/* line 23, src/sass/components/_skip_links.scss */
+#skip-links a:focus {
+  background: #060;
+}
+
+/* line 26, src/sass/components/_skip_links.scss */
+#skip-links a:focus,
+#skip-links a:focus ~ a {
+  -webkit-transform: translate(52em);
+          transform: translate(52em);
+}
+
+/* line 30, src/sass/components/_skip_links.scss */
+#skip-links:focus-within a {
+  -webkit-transform: translate(52em);
+          transform: translate(52em);
+}
+
+@media (max-height: 42em) {
+  /* line 34, src/sass/components/_skip_links.scss */
+  #skip-links {
+    width: auto;
+  }
+  /* line 37, src/sass/components/_skip_links.scss */
+  #skip-links a {
+    display: inline-block;
+  }
+}
+
+/**
+ * credit Andy Bell https://andy-bell.design/wrote/creating-an-aspect-ratio-css-utility/
+ * ASPECT RATIO
+ * A utility that provides you with a predictable aspect ratio
+ *
+ * ratio-wide: a 16:9 aspect
+ * ratio-square: a perfect square
+ */
+/* line 11, src/sass/components/_aspect_ratio.scss */
+[class*='aspect-ratio-'] {
+  display: block;
+  position: relative;
+}
+
+/* line 16, src/sass/components/_aspect_ratio.scss */
+[class*='aspect-ratio-'] > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 25, src/sass/components/_aspect_ratio.scss */
+.aspect-ratio-wide {
+  padding-top: 56.25%;
+}
+
+/* line 29, src/sass/components/_aspect_ratio.scss */
+.aspect-ratio-square {
+  padding-top: 100%;
+}
+
+/* line 36, src/sass/components/_aspect_ratio.scss */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  grid-gap: 0.4rem;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 46, src/sass/components/_aspect_ratio.scss */
+.gallery img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* line 7, src/sass/components/_svg_link_icons.scss */
+.special-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 15, src/sass/components/_svg_link_icons.scss */
+.special-link-icon {
+  font-size: .9em;
+  margin-left: .2em;
+}
+
+/* line 3, src/sass/components/_media_objects.scss */
+div.slat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+/* line 7, src/sass/components/_media_objects.scss */
+div.slat div.slat-copy {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 1rem;
+}
+
+/* line 2, src/sass/components/_breakout.scss */
 .special {
   width: 100vw;
   position: relative;
@@ -501,35 +996,39 @@ input[type="search"]::-webkit-search-cancel-button {
   margin-left: -50vw;
 }
 
-/* line 66, src/sass/main.scss */
-.prose ol, .prose ul {
-  margin-left: 1.5em;
-  padding-left: 1em;
-}
-
-/* line 71, src/sass/main.scss */
+/* line 35, src/sass/main.scss */
 main {
-  /* ideal min-width: $text-measure-min-in-ems+em; */
-  max-width: 30em;
+  max-width: 34em;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* line 79, src/sass/main.scss */
+@media screen and (min-width: 40.5em) {
+  /* line 35, src/sass/main.scss */
+  main {
+    padding: 0;
+  }
+}
+
+/* line 48, src/sass/main.scss */
 #global-footer {
   background: #333;
   color: #fff;
-  padding: 1em;
-  padding: 1em calc(50% - 15em);
+  padding: 0 1rem;
 }
 
-/* line 84, src/sass/main.scss */
-#global-footer a {
+/* line 53, src/sass/main.scss */
+#global-footer a:link,
+#global-footer a:visited {
   color: #fff;
 }
 
-/* line 91, src/sass/main.scss */
-#global-footer ul,
-#global-footer li {
-  list-style: none;
+@media screen and (min-width: 40.5em) {
+  /* line 48, src/sass/main.scss */
+  #global-footer {
+    padding: 0 1rem;
+    padding: 0 calc(50% - 17em);
+  }
 }
 
 /**
@@ -539,7 +1038,8 @@ main {
 .houdini {
   display: none;
   /**
-	 * Remove focus styles from revealed content (because although tabindex=-1 has allowed us to use JS’s focus(), in a11y terms it’s a non-interactive element so shouldn’t appear like one)
+	 * Remove focus styles from revealed content
+   * because although tabindex=-1 has allowed us to use JS’s focus(), in a11y terms it’s a non-interactive element so shouldn’t appear like one
 	 * @type {String}
 	 */
   /**
@@ -547,12 +1047,12 @@ main {
 	 */
 }
 
-/* line 11, src/sass/components/_houdini.scss */
+/* line 12, src/sass/components/_houdini.scss */
 .houdini[tabindex="-1"]:focus {
   outline: none;
 }
 
-/* line 18, src/sass/components/_houdini.scss */
+/* line 19, src/sass/components/_houdini.scss */
 .houdini.is-expanded {
   display: block;
 }
@@ -560,7 +1060,7 @@ main {
 /**
  * Remove button appearance from heading buttons
  */
-/* line 26, src/sass/components/_houdini.scss */
+/* line 27, src/sass/components/_houdini.scss */
 .houdini-heading .houdini-toggle {
   background: inherit;
   border: none;
@@ -574,7 +1074,7 @@ main {
 /**
  * Style icon
  */
-/* line 39, src/sass/components/_houdini.scss */
+/* line 40, src/sass/components/_houdini.scss */
 .houdini-toggle-icon {
   padding: 0 0.5em;
 }
