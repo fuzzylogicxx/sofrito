@@ -1,0 +1,269 @@
+@@include('./head.html')
+
+<body>
+
+  <!-- Header begins -->
+  <header id="global-header">
+
+    <a href="https://fuzzylogicxx.github.io/sofrito/" id="logo">Sofrito</a>
+
+    <nav aria-label="page" id="skip-links">
+      <a href="#primary-content">Main content</a>
+      <a href="#global-footer">Footer and Navigation</a>
+    </nav>
+
+    <nav aria-label="site" id="header-menu">
+      <ul class="list-inline">
+        <li class="header-menu-hidden"><a href="/">News</a></li>
+        <li class="header-menu-hidden"><a href="/">Products</a></li>
+        <li class="header-menu-hidden"><a href="/">Jobs</a></li>
+        <li id="header-menu-toggle"><a href="#footer-menu">Menu</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn" href="https://github.com/fuzzylogicxx/sofrito">See on GitHub</a>
+
+  </header>
+
+  <!-- Page contents begin -->
+  <div class="container">
+
+    <main id="primary-content">
+
+      <h2>Default form elements</h2>
+
+      <div>
+        <label for="default-text-input">Text</label>
+        <input type="text" name="default-text-input" id="default-text-input" value="Generic text">
+      </div>
+
+      <div>
+        <label for="default-email-input">Search</label>
+        <input type="email" name="default-email-input" id="default-email-input" autocapitalize="none" autocorrect="off" value="user@email.com">
+      </div>
+
+      <div>
+        <label for="default-search-input">Search</label>
+        <input type="search" name="default-search-input" id="default-search-input" autocorrect="off" value="Some search terms">
+      </div>
+
+      <div>
+        <label for="default-number-input">Number</label>
+        <input type="number" name="default-number-input" id="default-number-input" min="1" max="999" step="1" value="123">
+      </div>
+
+      <div>
+        <label for="default-tel-input">Tel</label>
+        <input type="tel" name="default-tel-input" id="default-tel-input" value="01234 567 890">
+      </div>
+
+      <div>
+        <label for="default-textarea">Textarea</label>
+        <textarea name="default-textarea" id="default-textarea">Some multiline text</textarea>
+      </div>
+
+      <div>
+        <select name="default-select" id="default-select">
+          <option>Select an item</option>
+          <option value="1">Item 1</option>
+          <option value="2">Item 2</option>
+          <option value="3">Item 3</option>
+          <option value="4">Item 5</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="checkbox-field">A checkbox field</label>
+        <input type="checkbox" name="checkbox-field" id="checkbox-field">
+      </div>
+
+      <div>
+          <input type="radio" name="radio-field" id="radio-field-1">
+          <label for="radio-field-1">Radio button 1</label>
+          <input type="radio" name="radio-field" id="radio-field-2">
+          <label for="radio-field-2">Radio button 2</label>
+      </div>
+
+      <div>
+
+        <input type="submit" name="Subscribe" value="Input of type submit"  />
+
+        <button type="submit">Button type submit</button>
+
+        <button>Button generic</button>
+
+      </div>
+
+      <hr />
+
+
+      <h2>Scoped Custom HTML & CSS form components</h2>
+
+      <form class="form-custom" aria-label="Unique identifier goes here"  method="post" action="">
+
+        <div class="form-group">
+          <label for="default-text-input">Text</label>
+          <input type="text" name="default-text-input" id="default-text-input" value="Generic text">
+        </div>
+
+        <div class="form-group">
+          <label for="default-email-input">Email</label>
+          <input type="email" name="default-email-input" id="default-email-input" autocapitalize="none" autocorrect="off" value="user@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="srch_v">
+            Search for
+          </label>
+          <div class="search-widget">
+            <input type="search"
+              id="srch_v"
+              name="srch_v"
+              aria-label="Search for...">
+            <button type="submit"
+              id="srch_btn_v"
+              aria-label="Submit Search">
+              <svg
+                width="1em"
+                height="1em"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="50 461 23 23">
+                <path d="M65.7857143,470.571429 C65.7857143,468.919635 65.1986666,467.506702 64.0245536,466.332589 C62.8504406,465.158476 61.4375083,464.571429 59.7857143,464.571429 C58.1339203,464.571429 56.720988,465.158476 55.546875,466.332589 C54.372762,467.506702 53.7857143,468.919635 53.7857143,470.571429 C53.7857143,472.223223 54.372762,473.636155 55.546875,474.810268 C56.720988,475.984381 58.1339203,476.571429 59.7857143,476.571429 C61.4375083,476.571429 62.8504406,475.984381 64.0245536,474.810268 C65.1986666,473.636155 65.7857143,472.223223 65.7857143,470.571429 Z M72.6428571,481.714286 C72.6428571,482.178574 72.473216,482.580355 72.1339286,482.919643 C71.7946412,483.25893 71.3928595,483.428571 70.9285714,483.428571 C70.4464262,483.428571 70.0446445,483.25893 69.7232143,482.919643 L65.1294643,478.339286 C63.531242,479.446434 61.7500098,480 59.7857143,480 C58.5089222,480 57.2879523,479.752235 56.1227679,479.256696 C54.9575835,478.761158 53.9531292,478.091522 53.109375,477.247768 C52.2656208,476.404014 51.5959846,475.399559 51.1004464,474.234375 C50.6049082,473.069191 50.3571429,471.848221 50.3571429,470.571429 C50.3571429,469.294636 50.6049082,468.073667 51.1004464,466.908482 C51.5959846,465.743298 52.2656208,464.738844 53.109375,463.895089 C53.9531292,463.051335 54.9575835,462.381699 56.1227679,461.886161 C57.2879523,461.390623 58.5089222,461.142857 59.7857143,461.142857 C61.0625064,461.142857 62.2834763,461.390623 63.4486607,461.886161 C64.6138451,462.381699 65.6182994,463.051335 66.4620536,463.895089 C67.3058078,464.738844 67.975444,465.743298 68.4709821,466.908482 C68.9665203,468.073667 69.2142857,469.294636 69.2142857,470.571429 C69.2142857,472.535724 68.6607198,474.316956 67.5535714,475.915179 L72.1473214,480.508929 C72.4776802,480.839287 72.6428571,481.241069 72.6428571,481.714286 Z"
+                id="icon_search" stroke="none" fill-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="default-number-input">Number</label>
+          <input type="number" name="default-number-input" id="default-number-input" min="1" max="999" step="1" value="123">
+        </div>
+
+        <div class="form-group">
+          <label for="default-tel-input">Tel</label>
+          <input type="tel" name="default-tel-input" id="default-tel-input" value="01234 567 890">
+        </div>
+
+        <div class="form-group">
+          <label for="default-textarea">Textarea</label>
+          <textarea name="default-textarea" id="default-textarea">Some multiline text</textarea>
+        </div>
+
+        <div class="form-group">
+          <select name="default-select" id="default-select">
+            <option>Select an item</option>
+            <option value="1">Item 1</option>
+            <option value="2">Item 2</option>
+            <option value="3">Item 3</option>
+            <option value="4">Item 5</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="checkbox-field">A checkbox field</label>
+          <input type="checkbox" name="checkbox-field" id="checkbox-field">
+        </div>
+
+        <div class="form-group">
+            <input type="radio" name="radio-field" id="radio-field-1">
+            <label for="radio-field-1">Radio button 1</label>
+            <input type="radio" name="radio-field" id="radio-field-2">
+            <label for="radio-field-2">Radio button 2</label>
+        </div>
+
+        <div class="form-group">
+
+          <input type="submit" name="Subscribe" value="Input of type submit"  />
+
+          <button type="submit">Button type submit</button>
+
+          <button>Button generic</button>
+
+        </div>
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--       <form action="" method="post">
+
+        <label class="form-group">
+          <b class="label-text">Text</b>
+          <input type="text">
+        </label>
+
+        <label class="form-group required">
+          <b class="label-text">Required Text</b>
+          <input type="text" required="">
+        </label>
+
+        <label class="form-group disabled">
+          <b class="label-text">Disabled Text</b>
+          <input type="text" disabled="">
+        </label>
+
+        <label class="form-group">
+          <b class="label-text">Choose:</b>
+          <select class="select-css">
+            <option>This is a native select element</option>
+            <option>Apples</option>
+            <option>Bananas</option>
+            <option>Grapes</option>
+            <option>Oranges</option>
+          </select>
+        </label>
+
+        <ul class="options">
+          <li>
+          <label><input type="checkbox" /> Junk</label>
+          </li>
+          <li>
+          <label><input type="checkbox" /> Conspiracies</label>
+          </li>
+        </ul>
+
+        <input type="submit" name="Subscribe" value="Subscribe"  />
+
+      </form> -->
+
+<!--       <h3>Search</h3>
+
+      <form role="search" aria-label="Site">
+        <label class="form-group" for="srch_v">
+          <b>Search for</b>
+          <div class="search-widget">
+            <input type="search"
+              id="srch_v"
+              name="srch_v">
+            <button type="submit"
+              id="srch_btn_v"
+              aria-label="Submit Search">
+              <svg
+                width="1em"
+                height="1em"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="50 461 23 23">
+                <path d="M65.7857143,470.571429 C65.7857143,468.919635 65.1986666,467.506702 64.0245536,466.332589 C62.8504406,465.158476 61.4375083,464.571429 59.7857143,464.571429 C58.1339203,464.571429 56.720988,465.158476 55.546875,466.332589 C54.372762,467.506702 53.7857143,468.919635 53.7857143,470.571429 C53.7857143,472.223223 54.372762,473.636155 55.546875,474.810268 C56.720988,475.984381 58.1339203,476.571429 59.7857143,476.571429 C61.4375083,476.571429 62.8504406,475.984381 64.0245536,474.810268 C65.1986666,473.636155 65.7857143,472.223223 65.7857143,470.571429 Z M72.6428571,481.714286 C72.6428571,482.178574 72.473216,482.580355 72.1339286,482.919643 C71.7946412,483.25893 71.3928595,483.428571 70.9285714,483.428571 C70.4464262,483.428571 70.0446445,483.25893 69.7232143,482.919643 L65.1294643,478.339286 C63.531242,479.446434 61.7500098,480 59.7857143,480 C58.5089222,480 57.2879523,479.752235 56.1227679,479.256696 C54.9575835,478.761158 53.9531292,478.091522 53.109375,477.247768 C52.2656208,476.404014 51.5959846,475.399559 51.1004464,474.234375 C50.6049082,473.069191 50.3571429,471.848221 50.3571429,470.571429 C50.3571429,469.294636 50.6049082,468.073667 51.1004464,466.908482 C51.5959846,465.743298 52.2656208,464.738844 53.109375,463.895089 C53.9531292,463.051335 54.9575835,462.381699 56.1227679,461.886161 C57.2879523,461.390623 58.5089222,461.142857 59.7857143,461.142857 C61.0625064,461.142857 62.2834763,461.390623 63.4486607,461.886161 C64.6138451,462.381699 65.6182994,463.051335 66.4620536,463.895089 C67.3058078,464.738844 67.975444,465.743298 68.4709821,466.908482 C68.9665203,468.073667 69.2142857,469.294636 69.2142857,470.571429 C69.2142857,472.535724 68.6607198,474.316956 67.5535714,475.915179 L72.1473214,480.508929 C72.4776802,480.839287 72.6428571,481.241069 72.6428571,481.714286 Z" id="icon_search" stroke="none" fill-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </label>
+      </form> -->
+
+    </main>
+
+  </div>
+
+  @@include('./foot.html')

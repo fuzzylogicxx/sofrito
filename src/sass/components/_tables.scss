@@ -4,6 +4,8 @@
   overflow-x: auto;
 }
 
+// Not sure what I was doing here - comment out for now
+/*
 @media (min-width: 400px) {
   .table-container {
     display: block;
@@ -13,11 +15,14 @@
     display: none;
   }
 }
+*/
+
 
 // Old school: Dan C.
 // To Do: refine with variables, relative padding etc.
 
 table {
+  border-collapse: collapse;
   border-top: 1px solid #999;
   border-left: 1px solid #999;
   //

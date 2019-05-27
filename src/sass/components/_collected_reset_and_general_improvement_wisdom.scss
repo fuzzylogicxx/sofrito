@@ -38,6 +38,45 @@ html {
 
 
 
+///////////////////////////////////
+// Reset
+///////////////////////////////////
+
+// We’re now resetting much less aggressively than previous versions. I’ve found that resetting aggressive only:
+// i) breaks default elements so is less resilient; and
+// ii) makes bringing in 3rd party CSS more difficult because rules tend to conflict with reset rules.
+
+// Remove margins and padding
+// Exclude form fields and lists – they deserve special attention.
+
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+dd,
+figure,
+figcaption,
+dl,
+dd,
+dt {
+  margin: 0;
+  padding: 0;
+
+  // other possible values we can bring in if we find a need.
+  // vertical-align: baseline;
+  // border: 0;
+  // font: inherit;
+}
+
+// Render HTML5 structural elements correctly
+
+main, article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+
+
+
 ////////////////////////////////////
 // Images
 ///////////////////////////////////
@@ -142,13 +181,19 @@ video {
 // A better looking default horizontal rule
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1rem 0;
-    padding: 0;
+  // normalize.css
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  // H5BP main.css
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
+
 
 // Focus Outlines
 // Remove the outline for mouse users but preserve it for keyboard users.
@@ -157,17 +202,28 @@ hr {
 
 :focus:not(:focus-visible) { outline: none }
 
+
+// normalize.css: "Correct the inheritance and scaling of font size in all browsers. Correct the odd `em` font sizing in all browsers."
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+
 // normalize.css: "Add the correct display in Edge, IE 10+, and Firefox."
 
 details {
   display: block;
 }
 
+
 // normalize.css: "Add the correct display in all browsers."
 
 summary {
   display: list-item;
 }
+
 
 // Scott Hara: arrow styling for details/summary (from https://www.scottohara.me/blog/2018/09/03/details-and-summary.html)
 // Covers styling for i) Firefox and other non-webkit/blink browsers; and ii) styling for webkit and blink
@@ -178,11 +234,13 @@ summary {
 //  list-style-image: url('/assets/svg/a-large-file.svg');
 //}
 
+
 // normalize.css: "Add the correct display in IE 10+."
 
 template {
   display: none;
 }
+
 
 // H5BP’s main.css: Clearfix: contain floats
 
@@ -195,6 +253,7 @@ template {
 .clearfix:after {
   clear: both;
 }
+
 
 // Remove _all_ animations and transitions for people that prefer not to see them
 

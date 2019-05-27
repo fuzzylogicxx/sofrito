@@ -63,7 +63,7 @@ var banner = {
 		' | (c) ' + new Date().getFullYear() + ' <%= package.author.name %>' +
 		' | <%= package.license %> License' +
 		' | <%= package.repository.url %>' +
-    ' * credits: <%= package.openSource.credits %>' +
+    ' | credits: <%= package.openSource.credits %>' +
 		' */\n'
 };
 
