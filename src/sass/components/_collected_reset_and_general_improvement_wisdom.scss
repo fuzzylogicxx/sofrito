@@ -38,7 +38,7 @@ html {
 
 
 
-///////////////////////////////////
+////////////////////////////////////
 // Images
 ///////////////////////////////////
 
@@ -139,6 +139,18 @@ video {
 // Miscellaneous
 ///////////////////////////////////
 
+// A better looking default horizontal rule
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+// Focus Outlines
 // Remove the outline for mouse users but preserve it for keyboard users.
 // Rule will be ignored by browsers that don’t support :focus-visible.
 // Credit Lea Verou (https://twitter.com/leaverou/status/1045768279753666562)
