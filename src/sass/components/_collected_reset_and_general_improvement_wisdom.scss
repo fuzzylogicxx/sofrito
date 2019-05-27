@@ -21,7 +21,7 @@ html {
 // Box-sizing
 ///////////////////////////////////
 
-// 'content-box' applies the element‘s declared width to its content only, placing padding and border outside the element's box.
+// The browser default, 'content-box', applies the element‘s declared width to its content only, placing padding and border outside the element's box.
 // This effectively increases how much space the element takes up.
 // border-box puts the padding and border inside the box so box is as wide as the width we declared.
 // Also, use the 'inheritance' based approach https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
@@ -43,8 +43,8 @@ html {
 ///////////////////////////////////
 
 // We’re now resetting much less aggressively than previous versions. I’ve found that resetting aggressive only:
-// i) breaks default elements so is less resilient; and
-// ii) makes bringing in 3rd party CSS more difficult because rules tend to conflict with reset rules.
+// i) breaks default elements (forms, lists etc) so is less resilient; and
+// ii) makes bringing in 3rd party CSS components more difficult because rules tend to conflict with reset rules.
 
 // Remove margins and padding
 // Exclude form fields and lists – they deserve special attention.
