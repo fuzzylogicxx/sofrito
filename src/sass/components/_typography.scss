@@ -187,12 +187,48 @@ a:active {
   color: $color-complimentary;
 }
 
+// Abbreviations
+// from normalize.css: 1. Remove the bottom border in Chrome 57-; and 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+// Bold / Emphasis
+// from normalize.css: Add the correct font weight in Chrome, Edge, and Safari.
+
+b,
+strong {
+  font-weight: bolder;
+}
 
 // Small Text (captions, labels, help text, or for use when screen real estate is limited, as in banner ads. But small text involves more than simply reducing the font size.)
 
 small {
   font-size: scale-value(-2)+rem;
 }
+
+// From normalize.css: prevent `sub` and `sup` elements from affecting the line height in all browsers.
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+// Headings
 
 h6,
 h5,
@@ -235,9 +271,13 @@ h1 {
   color: $color-accent;
 }
 
+ol, ul, li {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 p,
-ul,
-summary {
+ul {
   margin-bottom: $space-xxs;
 }
 
