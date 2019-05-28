@@ -134,6 +134,16 @@
     width: 100%;
   }
 
+  // Container for a field and adjacent button, for example a newsletter subscription form
+
+  .field-button-pair {
+    display: flex;
+
+    input:not([type=submit]) {
+      margin-right: $space-s;
+    }
+  }
+
 
   // Buttons
 
@@ -146,6 +156,7 @@
     border: 0;
     color: #fff;
     display: inline-block;
+    white-space: nowrap;
     border-radius: 2px;
     padding: .5em 1em;
     transition: all 0.3s ease;
