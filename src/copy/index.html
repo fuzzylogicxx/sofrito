@@ -2,28 +2,7 @@
 
 <body id="page-home">
 
-  <!-- Header begins -->
-  <header id="global-header">
-
-    <a href="https://fuzzylogicxx.github.io/sofrito/" id="logo">Sofrito</a>
-
-    <nav aria-label="page" id="skip-links">
-      <a href="#primary-content">Main content</a>
-      <a href="#global-footer">Footer and Navigation</a>
-    </nav>
-
-    <nav aria-label="site" id="header-menu">
-      <ul>
-        <li class="header-menu-hidden"><a href="/">News</a></li>
-        <li class="header-menu-hidden"><a href="/">Products</a></li>
-        <li class="header-menu-hidden"><a href="/">Jobs</a></li>
-        <li id="header-menu-toggle"><a href="#footer-menu">Menu</a></li>
-      </ul>
-    </nav>
-
-    <a class="btn" href="https://github.com/fuzzylogicxx/sofrito">See on GitHub</a>
-
-  </header>
+  @@include('./global_header.html')
 
   <!-- Page contents begin -->
   <div class="container">
@@ -79,7 +58,7 @@
   <footer aria-label="site" id="global-footer">
 
     <nav id="footer-menu">
-      <ul class="list-unstyled">
+      <ul class="list-custom">
         <li><a href="/">News</a></li>
         <li><a href="/">Products</a></li>
         <li><a href="/">Jobs</a></li>
