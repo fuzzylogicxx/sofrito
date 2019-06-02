@@ -7,7 +7,7 @@ $text-color: rgb(18,18,18); // like the Guardian // alternatively rgb(34,34,34) 
 $color-accent: rgb(155,61,61); // mexican salsa reddish color
 $color-complimentary: rgb(155,155,61); // guacamole-esque colour I got as compliment to $color-accent via https://www.sessions.edu/color-calculator/. Should prob use hues.
 $color-light: #eee; // e.g. grey background and dividers (came from from Scott O’Hara button colour)
-$accessible-border-color: #565656; // direct from Scott O’Hara. Will want to customise but retain accessible colour contrast.
+$border-color: #b8b8b8;
 
 // add alert colours from bootstrap here
 // https://getbootstrap.com/docs/4.0/components/alerts/
