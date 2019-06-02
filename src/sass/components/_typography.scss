@@ -116,6 +116,27 @@ $min-acceptable-gutter_in_vw: 4.89; // Using vw for main gutter has the advantag
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////
+// Responsive breakpoints
+// defined here because:
+// i) they’re set in ems so relative to type size; and
+// ii) we can now use them in rules below e.g. for increasing h1 size on large screens
+//////////////////////////////////////////////////////////////////////////////////////
+
+// Max-width we want our site's content to go.
+// NB this is not the same as our $text-measure. This is for an outer wrapper.
+// ...
+
+
+// Breakpoint values
+// Note that media queries work on 1em = 16px so if our root font-size is not 1em we need to:
+// multiply the em-based target width/height for our media query by our root font-size (in ems) value.
+
+$bp-wide-one: ( ($text-measure-max-in-ems + 2) * $ms-base)+em;
+
+
+
+
 ///////////////////////////////////
 // Variables
 ///////////////////////////////////
@@ -141,16 +162,6 @@ $space-l: scale-value(3)+rem;
   color: $text-color;
   font-family: $base-font-family-fonts-loaded;
   font-size: $ms-base-rem;
-  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
-}
-
-@supports (font-kerning: normal) and (font-variant-ligatures: common-ligatures contextual) and (font-variant-numeric: oldstyle-nums proportional-nums) {
-  :root {
-    font-kerning: normal;
-    font-variant-ligatures: common-ligatures contextual;
-    font-variant-numeric: oldstyle-nums proportional-nums;
-    font-feature-settings: normal;
-  }
 }
 
 //body{
@@ -253,17 +264,33 @@ h2 {
 h3 {
   font-size: scale-value(0)+rem;
   font-weight: 700;
+
+  // Add typographic "contrast".
+  @include at-least($width-pressure-point-one) {
+    font-size: scale-value(1)+rem;
+  }
+
 }
 
 h2 {
   font-size: scale-value(1)+rem;
   font-weight: 700;
+
+  // Add typographic "contrast".
+  @include at-least($width-pressure-point-one) {
+    font-size: scale-value(2)+rem;
+  }
+
 }
 
 h1 {
-  //save this larger font-size for larger screen sizes where the layout is less focused and needs more typog. contrast. //font-size: (scale-value(2) + scale-value(-5))+rem;
-  //font-size: ( scale-value(2) + scale-value(-5) )+rem;
   font-size: scale-value(2)+rem;
+
+  // Add typographic "contrast".
+  @include at-least($width-pressure-point-one) {
+    font-size: ( scale-value(2) + scale-value(-6) )+rem;
+  }
+
   font-weight: 700;
   line-height: 1;
   margin-top: $space-s;
@@ -283,12 +310,17 @@ ul {
 
 .prose {
   hyphens: auto;
+  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
 }
 
-/*.prose ol, .prose ul {
-  margin-left: 1.5em;
-  padding-left: 1em;
-}*/
+@supports (font-kerning: normal) and (font-variant-ligatures: common-ligatures contextual) and (font-variant-numeric: oldstyle-nums proportional-nums) {
+  .prose {
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures contextual;
+    font-variant-numeric: oldstyle-nums proportional-nums;
+    font-feature-settings: normal;
+  }
+}
 
 
 
