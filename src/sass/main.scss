@@ -15,18 +15,23 @@
 
 // Note: there are a few additional imports at the end of this file, too. (houdini show-and-hide, print CSS, layout-enhanced/grid, cookie consent).
 
-// Spacing
-
-summary,
-form {
-  margin-bottom: $space-xxs;
-}
-
 //
 
 body {
   //margin: 0 $space-s;
 }
+
+
+// Common patterns
+
+@include at-least($bp-wide-one) {
+  .trio {
+    display: grid;
+    grid-column-gap: $space-s;
+    grid-template-columns: repeat(3, 33%);
+  }
+}
+
 
 #global-header,
 #primary-content,
@@ -38,9 +43,10 @@ main {
   // ideal min-width: $text-measure-min-in-ems+em;
   max-width: $text-measure-max-in-ems+em;
   margin: 0 auto;
-  padding: 0 $space-s;
+  padding: 0 $space-s $space-l;
   @include at-least($bp-wide-one) {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -48,12 +54,30 @@ main {
 // Global Header
 
 #global-header {
-  max-width: $text-measure-max-in-ems+em;
-  width: 100%;
-  margin: 0 auto;
+
+  padding: $space-s;
+
+  @include at-least($bp-wide-one) {
+    // Lea Verou’s "fluid background, fixed content" (i.e. full-width background)
+    // Note this solves a different problem than our "breakout.scss" utility.
+    // With breakout we’re starting in a centred fixed width column and need to break out to full width.
+    // With this, we’re starting at full width and need to centre the content at the same width as our <main> content.
+    padding: $space-m $space-s;
+    padding: $space-m calc(50% - #{$text-measure-max-in-ems/2+em}); // where the second part of the calc is half of the target width for your inner content
+    // End Lea
+  }
+
   display: flex;
   flex: 1;
-  //justify-content: space-between;
+  background-color: $color-light;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $color-complimentary;
+  }
 
   ul {
     margin: 0;
@@ -61,15 +85,19 @@ main {
     list-style: none;
   }
 
-  .logo {
-    margin-right: auto;
-  }
+}
 
-  #header-menu {
-    margin-right: $space-s;
-  }
+.logo {
+  margin-right: auto;
+}
 
+#header-menu {
+  margin-right: $space-s;
+}
 
+#header-menu-toggle .special-link-icon {
+  font-size: .6em;
+  margin-top: .3em;
 }
 
 
@@ -78,11 +106,11 @@ main {
 #global-footer {
   background: #333;
   color: #fff;
-  padding: 0 $space-s;
+  padding: $space-l $space-s;
 
-  a:link,
-  a:visited {
+  a {
     color: #fff;
+    text-decoration: none;
   }
 
   @include at-least($bp-wide-one) {
@@ -90,8 +118,8 @@ main {
     // Note this solves a different problem than our "breakout.scss" utility.
     // With breakout we’re starting in a centred fixed width column and need to break out to full width.
     // With this, we’re starting at full width and need to centre the content at the same width as our <main> content.
-    padding: 0 $space-s;
-    padding: 0 calc(50% - #{$text-measure-max-in-ems/2+em}); // where the second part of the calc is half of the target width for your inner content
+    padding: $space-l $space-s;
+    padding: $space-l calc(50% - #{$text-measure-max-in-ems/2+em}); // where the second part of the calc is half of the target width for your inner content
     // End Lea
   }
 
@@ -99,6 +127,22 @@ main {
 }
 
 
+
+// Homepage
+
+.intro {
+  hyphens: none;
+  margin: $space-l 0 0; //scale-value(5)+rem
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-weight: 400;
+  }
+
+}
 
 
 

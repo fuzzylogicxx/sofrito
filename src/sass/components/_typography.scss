@@ -182,21 +182,51 @@ body {
 
 // Links
 
-a:link {
+a {
   color: $color-accent;
-}
-
-a:visited {
-  color: rebeccapurple;
 }
 
 a:hover {
   color: darken($color-accent, 25%);
 }
 
-a:active {
-  color: $color-complimentary;
+
+// Links using fancy borders (and related considerations because any non-simple underline technique has foibles!)
+
+.prose {
+
+  a {
+    text-decoration: none;
+    color: $color-accent;
+    background: linear-gradient($border-color, $border-color) no-repeat;
+    background-size: 100% 1px;
+    background-position: 0 1.15em;
+    text-shadow: .05em 0 white, -.05em 0 white;
+  }
+
+  a:hover {
+    background-image: linear-gradient($color-accent, $color-accent);
+  }
+
 }
+
+@mixin block_anchor_underline_position_fix() {
+  background-position: 0 1.2em;
+}
+
+@mixin anchor_remove_underline() {
+  background: none;
+  text-shadow: none;
+}
+
+// note that when <a>s are flex children (or for some other reason display: block / display: inline-block) the border appears too high
+// let’s treat the most noticable issue – links with icons (because they might exist within flowing prose beside normal links)
+ .special-link {
+  @include block_anchor_underline_position_fix;
+}
+
+
+
 
 // Abbreviations
 // from normalize.css: 1. Remove the bottom border in Chrome 57-; and 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
@@ -237,6 +267,17 @@ sub {
 
 sup {
   top: -0.5em;
+}
+
+// Quoting
+
+blockquote {
+  border-left: 0.625em solid $border-color;
+  color: lighten($text-color, 20%);
+  font-style: italic;
+  margin: scale-value(4)+rem 0;
+  margin-left: -($space-l);
+  padding-left: $space-s;
 }
 
 // Headings
@@ -304,7 +345,8 @@ ol, ul, li {
 }
 
 p,
-ul {
+ul,
+details {
   margin-bottom: $space-xxs;
 }
 

@@ -7,7 +7,9 @@ code {
   font-family: monospace, monospace;
   // end normalize.css goodness
 
-  font-size: 1.025em;
+  // decided that this is not better but this could change if we’re using different body or code fonts.
+  // font-size: 1.025em;
+
   color: $color-complimentary;
   hyphens: none;
   line-height: normal;
