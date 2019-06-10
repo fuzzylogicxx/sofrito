@@ -1,0 +1,469 @@
+<!doctype html>
+<html dir="ltr" lang="en-GB">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Laurence Hughes">
+
+  <!-- SEO inc title -->
+  <title>Sofrito – a front-end base for web developers.</title>
+  <meta name="description" content="A savoury front-end base with tasty typographic, layout, performance and build ingredients.">
+  <meta name="keywords" content="front-end boilerplate, web typography, grid layout, accessibility, performance" />
+
+  <!-- Avoid Google "duplicate content" penalties -->
+  <link rel="canonical" href="https://fuzzylogicxx.github.io/sofrito/" />
+
+  <!-- Meta Robots Starting Point: block all the things! When ready, update per page as appropriate. For example, we want articles indexed but might not want listing pages indexed. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- OG (Open Graph) tags -->
+  <!-- may want to change og:type when not on Homepage -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sofrito" />
+  <meta property="og:locale" content="en_gb" />
+  <meta property="og:url" content="https://fuzzylogicxx.github.io/sofrito/" />
+  <meta property="og:title" content="Sofrito – a front-end base for web developers." />
+  <meta property="og:description" content="A savoury front-end base with tasty typographic, layout, performance and build ingredients" />
+  <!-- Image: see FB guidelines for sharing / Open Graph. Here I’m using their example image size for an "article" type page. So this differ for e.g. homepage -->
+  <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image:width" content="971" />
+  <meta property="og:image:height" content="509" />
+
+  <!-- only required if OG type is article -->
+  <!-- <meta property="article:publisher" content="https://www.facebook.com/Sofrito/" /> -->
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sofrito – a savoury front-end base" />
+  <meta name="twitter:description" content="A savoury front-end base with tasty typographic, layout, performance and build ingredients" />
+  <!-- ToDo: 400x400 – is that right? -->
+  <meta name="twitter:image" content="https://fuzzylogicxx.github.io/sofrito/assets/img/logo-400x400.png" />
+
+  <!-- Advice for devices which can 'install' this website on their home scren -->
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Icons: favicon and related  -->
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <!-- Icons: PWA Splash images for iOS  -->
+  <!-- ToDo: add here  -->
+
+  <!-- Web Fonts -->
+  <!-- If using a service such as typekit, add code here  -->
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/assets/css/main_v0.0.1.min.css">
+
+  <!-- Page-Specific Styles -->
+  <!-- If any, add here <style></style> -->
+
+  <!-- Service Worker -->
+  <!-- <link rel="serviceworker" href="/serviceworker.js"> -->
+
+  <!-- RSS feed, if you have it -->
+  <link href="https://fuzzylogicxx.github.io/sofrito/news/rss" rel="alternate" type="application/rss+xml" title="Sofrito News RSS feed">
+  <link href="https://fuzzylogicxx.github.io/sofrito/news/jsonfeed.json" rel="alternate" type="application/json" title="Sofrito News JSON feed">
+
+</head>
+
+
+<body>
+
+    <!-- Header begins -->
+  <header id="global-header" class="global-header">
+
+    <div class="header-content container">
+
+      <a class="logo" href="https://fuzzylogicxx.github.io/sofrito/">
+        <svg viewBox="19 14 63 72" width="1em"><path fill="currentColor" d="M81.3 22.9c.3-.4.2-1.1-.2-1.4-.4-.3-1.1-.2-1.4.2l-3.6 5 1.3-11.1c.1-.5-.3-1-.9-1.1-.6-.1-1 .3-1.1.9L74 27.5c-.4-.2-.8-.4-1.3-.6-2.6-1-5.3-.6-7.1 1-2.5 2.2-5.2 6.4-6.9 9.1-.2-1.2-.6-2.3-1.1-3.3-1.2-1.9-3-2.9-5.5-3.1-2.6-.2-4.5.5-5.8 2-.8.9-1.2 2.1-1.4 3.2-1-.9-2.5-1.6-4.6-1.9-1.9-.3-3.5.1-4.7 1.3-1.4 1.3-2 3.4-2.2 5-.5-.4-1.2-.7-2-.8-1.6-.2-3.3.8-4.8 2.8-1.7 2.2-2.3 4.3-1.7 6.3.4 1.3 1.3 2.4 2.2 3.2h-6.6c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7.4 12.6 6.2 21 17.2 24.9 0 0 0 .1-.1.1l-1.3 6.6c-.1.3 0 .6.2.8.2.2.5.4.8.4h28c.3 0 .6-.1.8-.4.2-.2.3-.5.2-.8L64 77.7v-.1c8.5-3.1 16.7-9.9 17.2-24.9 0-.3-.1-.5-.3-.7-.2-.2-.4-.3-.7-.3H69.5c1.8-2 9.8-10.9 9.1-16.9-.2-2-1-3.8-2.3-5.2l5-6.7zm-54.6 25c-.4-1.3.1-2.9 1.4-4.5.8-1 1.9-2.1 3-2 1.1.1 2 1.4 2.2 1.9.2.4.7.7 1.2.5.5-.1.8-.6.7-1-.1-1.2 0-4.6 1.6-6.1.7-.7 1.7-.9 3.1-.7 3.1.5 4.3 1.8 4.9 3 .1 1.2.3 2.1.4 2.2.1.5.6.8 1 .7.5 0 .9-.4.9-.9 0 0 .1-1.1-.4-2.4-.1-1.5 0-3.4 1-4.7.8-1 2.2-1.4 4.1-1.3 1.8.1 3.1.9 4 2.2 2.9 4.8-1.1 15.4-1.7 16.9h-4.9l1.2-7.4c.1-.5-.3-1.1-.8-1.2-.5-.1-1.1.3-1.2.8l-1.3 7.7h-6.3l-3.2-5.1c-.3-.5-.9-.6-1.4-.3-.5.3-.6.9-.3 1.4l2.5 4.1h-7.7c-.6-.3-3.4-1.6-4-3.8zM63 83.5H37.4l1.1-5.3c2.9.9 6.1 1.4 9.7 1.7 0 0 .9.1 2.1.1.6 0 1.3 0 1.9-.1 2.9-.2 6.3-.6 9.7-1.7l1.1 5.3zm-10.9-5.6c-1.9.1-3.8 0-3.8 0-16.9-1.4-26-9.6-26.9-24.3H79c-1.2 18.8-15.2 23.6-26.9 24.3zm18.2-30.2C69 46.4 66.6 45 65 44.2c-.5-.3-1.1-.1-1.3.4-.3.5-.1 1.1.4 1.3 2.3 1.2 4.5 2.7 5 3.3-.5.6-.9 1-1.3 1.4-.3.3-.3.7-.2 1H56.2c.7-2 2.3-6.6 2.5-11.1 0-.1.1-.1.1-.2 0 0 1.4-2.5 3.2-5.2 4-.2 7.4 4 7.4 4 .2.2.5.4.8.4.2 0 .4-.1.6-.2.4-.3.5-1 .1-1.4-.2-.2-3.4-4.1-7.6-4.7 1.1-1.5 2.3-3 3.4-3.9 1.2-1.1 3.1-1.4 5-.6 2 .8 4.5 2.9 4.8 6.2.6 3.6-3.2 9.2-6.2 12.8z"/></svg>
+      </a>
+
+      <nav aria-label="page" id="skip-links" class="skip-links" >
+        <a href="#primary-content">Main content</a>
+        <a href="#global-footer">Footer and Navigation</a>
+      </nav>
+
+      <nav aria-label="site" class="header-menu">
+        <ul class="list-custom">
+          <li class="header-menu-hidden"><a href="/guidance.html">Typical Page</a></li>
+          <li class="header-menu-hidden"><a href="/blog-index.html">Blog Index</a></li>
+          <li class="header-menu-hidden"><a href="/blog-article.html">Blog Article</a></li>
+          <li class="header-menu-hidden"><a href="/corporate.html">Corporate</a></li> <!-- use CloudFour inspiration -->
+          <li class="header-menu-hidden"><a href="/form.html">Forms</a></li>
+          <li class="header-menu-hidden"><a href="/contact.html">Contact</a></li>
+          <li class="header-menu-hidden"><a href="/svg.html">SVG</a></li>
+          <li class="header-menu-hidden"><a href="/team.html">The Team</a></li>
+          <li class="header-menu-hidden"><a href="/all.html">Miscellaneous</a></li>
+          <li class="header-menu-hidden"><a href="/test-polyfills.html">Testing</a></li>
+          <li class="header-menu-toggle">
+            <a href="#footer-menu" class="special-link">
+              <span>Menu</span>
+              <svg class="special-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="1em" width="1em" viewBox="0 0 129 129"><path fill="currentColor" d="M121.3 34.6c-1.6-1.6-4.2-1.6-5.8 0l-51 51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8l53.9 53.9c.8.8 1.8 1.2 2.9 1.2 1 0 2.1-.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2.1-5.8z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="https://github.com/fuzzylogicxx/sofrito" class="special-link">
+        <span>View on Github</span>
+        <svg class="special-link-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- Page contents begin -->
+  <div class="container">
+
+    <main id="primary-content">
+
+      <h2>Scoped Custom HTML & CSS form components</h2>
+
+      <form class="form-custom" aria-label="Unique identifier goes here"  method="post" action="">
+
+        <div class="form-group field-button-pair field-button-pair-search">
+          <label class="a11y-only" for="srch_v">Search for</label>
+          <input type="search" id="srch_v" name="srch_v" aria-label="Search for..." placeholder="Search for anything">
+          <button type="submit" class="btn-search-submit btn-icon" id="srch_btn_v" aria-label="Submit Search">
+              <svg width="1em" height="1em" viewBox="0 0 56.966 56.966">
+                <path fill="currentColor" d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"/>
+              </svg>
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="default-text-input">Text</label>
+          <input type="text" name="default-text-input" id="default-text-input" value="Generic text">
+        </div>
+
+        <div class="form-group">
+          <label for="default-email-input">Email</label>
+          <input type="email" name="default-email-input" id="default-email-input" autocapitalize="none" autocorrect="off" value="user@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="default-number-input">Number</label>
+          <input type="number" name="default-number-input" id="default-number-input" min="1" max="999" step="1" value="123">
+        </div>
+
+        <div class="form-group">
+          <label for="default-tel-input">Tel</label>
+          <input type="tel" name="default-tel-input" id="default-tel-input" value="01234 567 890">
+        </div>
+
+        <div class="form-group">
+          <label for="default-textarea">Textarea</label>
+          <textarea name="default-textarea" id="default-textarea">Some multiline text</textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Choose:</label>
+          <select>
+            <option>Apples</option>
+            <option>Bananas</option>
+            <option>Grapes</option>
+            <option>Oranges</option>
+          </select>
+        </div>
+
+        <p>Select your interests:</p>
+
+        <div class="form-group form-group-checkbox">
+          <div>
+            <input type="checkbox" name="interest" id="coding">
+            <label for="coding">Coding</label>
+          </div>
+          <div>
+            <input type="checkbox" name="interest" id="music">
+            <label for="music">Music</label>
+          </div>
+        </div>
+
+        <div class="form-group form-group-checkbox">
+          <div>
+            <input type="checkbox" name="newsletter-subscribe" id="newsletter-subscribe">
+            <label for="newsletter-subscribe">Add me to the mailing list</label>
+          </div>
+        </div>
+
+        <div class="form-group form-group-radio">
+            <div>
+              <input type="radio" id="huey" name="drone" value="huey" checked>
+              <label for="huey">Huey</label>
+            </div>
+            <div>
+              <input type="radio" id="dewey" name="drone" value="dewey">
+              <label for="dewey">Dewey</label>
+            </div>
+            <div>
+              <input type="radio" id="louie" name="drone" value="louie">
+              <label for="louie">Louie</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+          <input type="submit" name="Subscribe" value="Input of type submit"  />
+
+          <button type="submit">Button type submit</button>
+
+          <button type="button">Button generic</button>
+
+        </div>
+
+      </form>
+
+      <form class="form-custom" aria-label="Unique identifier goes here"  method="post" action="">
+
+        <h3>Sign up to our newsletter</h3>
+
+        <div class="form-group field-button-pair">
+          <label class="a11y-only" for="mailchimp-email">Email Address</label>
+          <input type="email" name="mailchimp-email" id="mailchimp-email" placeholder="Your email address..." required="">
+          <button type="submit">Submit</button>
+        </div>
+
+      </form>
+
+
+      <hr />
+
+      <h2>Default form elements are left untouched</h2>
+
+      <div>
+        <label for="default-text-input">Text</label>
+        <input type="text" name="default-text-input" id="default-text-input" value="Generic text">
+      </div>
+
+      <div>
+        <label for="default-email-input">Search</label>
+        <input type="email" name="default-email-input" id="default-email-input" autocapitalize="none" autocorrect="off" value="user@email.com">
+      </div>
+
+      <div>
+        <label for="default-search-input">Search</label>
+        <input type="search" name="default-search-input" id="default-search-input" autocorrect="off" value="Some search terms">
+      </div>
+
+      <div>
+        <label for="default-number-input">Number</label>
+        <input type="number" name="default-number-input" id="default-number-input" min="1" max="999" step="1" value="123">
+      </div>
+
+      <div>
+        <label for="default-tel-input">Tel</label>
+        <input type="tel" name="default-tel-input" id="default-tel-input" value="01234 567 890">
+      </div>
+
+      <div>
+        <label for="default-textarea">Textarea</label>
+        <textarea name="default-textarea" id="default-textarea">Some multiline text</textarea>
+      </div>
+
+      <div>
+        <select name="default-select" id="default-select">
+          <option>Select an item</option>
+          <option value="1">Item 1</option>
+          <option value="2">Item 2</option>
+          <option value="3">Item 3</option>
+          <option value="4">Item 5</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="checkbox-field">A checkbox field</label>
+        <input type="checkbox" name="checkbox-field" id="checkbox-field">
+      </div>
+
+      <div>
+          <input type="radio" name="radio-field" id="radio-field-1">
+          <label for="radio-field-1">Radio button 1</label>
+          <input type="radio" name="radio-field" id="radio-field-2">
+          <label for="radio-field-2">Radio button 2</label>
+      </div>
+
+      <div>
+
+        <input type="submit" name="Subscribe" value="Input of type submit"  />
+
+        <button type="submit">Button type submit</button>
+
+        <button type="button">Button generic</button>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+<!--       <form action="" method="post">
+
+        <label class="form-group">
+          <b class="label-text">Text</b>
+          <input type="text">
+        </label>
+
+        <label class="form-group required">
+          <b class="label-text">Required Text</b>
+          <input type="text" required="">
+        </label>
+
+        <label class="form-group disabled">
+          <b class="label-text">Disabled Text</b>
+          <input type="text" disabled="">
+        </label>
+
+        <label class="form-group">
+          <b class="label-text">Choose:</b>
+          <select class="select-css">
+            <option>This is a native select element</option>
+            <option>Apples</option>
+            <option>Bananas</option>
+            <option>Grapes</option>
+            <option>Oranges</option>
+          </select>
+        </label>
+
+        <ul class="options">
+          <li>
+          <label><input type="checkbox" /> Junk</label>
+          </li>
+          <li>
+          <label><input type="checkbox" /> Conspiracies</label>
+          </li>
+        </ul>
+
+        <input type="submit" name="Subscribe" value="Subscribe"  />
+
+      </form> -->
+
+<!--       <h3>Search</h3>
+
+      <form role="search" aria-label="Site">
+        <label class="form-group" for="srch_v">
+          <b>Search for</b>
+          <div class="search-widget">
+            <input type="search"
+              id="srch_v"
+              name="srch_v">
+            <button type="submit"
+              id="srch_btn_v"
+              aria-label="Submit Search">
+              <svg
+                width="1em"
+                height="1em"
+                aria-hidden="true"
+                focusable="false"
+                viewBox="50 461 23 23">
+                <path d="M65.7857143,470.571429 C65.7857143,468.919635 65.1986666,467.506702 64.0245536,466.332589 C62.8504406,465.158476 61.4375083,464.571429 59.7857143,464.571429 C58.1339203,464.571429 56.720988,465.158476 55.546875,466.332589 C54.372762,467.506702 53.7857143,468.919635 53.7857143,470.571429 C53.7857143,472.223223 54.372762,473.636155 55.546875,474.810268 C56.720988,475.984381 58.1339203,476.571429 59.7857143,476.571429 C61.4375083,476.571429 62.8504406,475.984381 64.0245536,474.810268 C65.1986666,473.636155 65.7857143,472.223223 65.7857143,470.571429 Z M72.6428571,481.714286 C72.6428571,482.178574 72.473216,482.580355 72.1339286,482.919643 C71.7946412,483.25893 71.3928595,483.428571 70.9285714,483.428571 C70.4464262,483.428571 70.0446445,483.25893 69.7232143,482.919643 L65.1294643,478.339286 C63.531242,479.446434 61.7500098,480 59.7857143,480 C58.5089222,480 57.2879523,479.752235 56.1227679,479.256696 C54.9575835,478.761158 53.9531292,478.091522 53.109375,477.247768 C52.2656208,476.404014 51.5959846,475.399559 51.1004464,474.234375 C50.6049082,473.069191 50.3571429,471.848221 50.3571429,470.571429 C50.3571429,469.294636 50.6049082,468.073667 51.1004464,466.908482 C51.5959846,465.743298 52.2656208,464.738844 53.109375,463.895089 C53.9531292,463.051335 54.9575835,462.381699 56.1227679,461.886161 C57.2879523,461.390623 58.5089222,461.142857 59.7857143,461.142857 C61.0625064,461.142857 62.2834763,461.390623 63.4486607,461.886161 C64.6138451,462.381699 65.6182994,463.051335 66.4620536,463.895089 C67.3058078,464.738844 67.975444,465.743298 68.4709821,466.908482 C68.9665203,468.073667 69.2142857,469.294636 69.2142857,470.571429 C69.2142857,472.535724 68.6607198,474.316956 67.5535714,475.915179 L72.1473214,480.508929 C72.4776802,480.839287 72.6428571,481.241069 72.6428571,481.714286 Z" id="icon_search" stroke="none" fill-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </label>
+      </form> -->
+
+    </main>
+
+  </div>
+
+    <!-- Footer begins -->
+  <footer aria-label="site" id="global-footer" class="global-footer">
+
+    <div class="container">
+
+      <h3>Browse pages and patterns</h3>
+
+      <nav id="footer-menu">
+        <ul class="list-custom min-duo-max-trio">
+          <li><a href="/guidance.html">Typical Page</a></li>
+          <li><a href="/blog-index.html">Blog Index</a></li>
+          <li><a href="/blog-article.html">Blog Article</a></li>
+          <li><a href="/corporate.html">Corporate</a></li> <!-- use CloudFour inspiration -->
+          <li><a href="/form.html">Forms</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/svg.html">SVG</a></li>
+          <li><a href="/team.html">The Team</a></li>
+          <li><a href="/all.html">Miscellaneous</a></li>
+          <li><a href="/test-polyfills.html">Testing</a></li>
+        </ul>
+      </nav>
+
+      <small class="copyright">&copy; 2017–2019 <a href="https://fuzzylogic.me">Laurence Hughes</a></small>
+
+    </div>
+
+  </footer>
+
+  <!-- Scripts at bottom -->
+
+  <!-- polyfills first so that subsequent scripts (which might use matches() and so on) etc are polyfilled -->
+  <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+  <!-- website’s global javascript file including any globally required polyfills (that aren’t provided by polyfill.io) -->
+  <script src="/assets/js/main.polyfills_v0.0.1.min.js"></script>
+
+  <!-- add any page-specific JS here (files or inline) -->
+
+  <!--  for example: -->
+  <!-- <script src="/assets/js/another-file_v0.0.1.min.js"></script> -->
+
+  <!-- or initialise a disclosure element -->
+  <!--
+  <script>
+    var disclosure = new Houdini('[data-houdini]');
+  </script>
+  -->
+
+  <!-- register a service worker (for improved resilience and performance) -->
+  <!--
+  <script>
+  if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('/serviceworker.js');
+      window.addEventListener('load', function() {
+          if (navigator.serviceWorker.controller) {
+              navigator.serviceWorker.controller.postMessage({'command': 'clean up caches'});
+          }
+      });
+  }
+  </script>
+  -->
+
+  <!-- Google Analytics using the https://minimalanalytics.com/ snippet. Note: if require advanced features such as tracking AdWords, switch to a traditional GA snippet.  -->
+  <!-- Replace UA-xxxxxxxxx-x with your analytics ID -->
+  <!--
+  <script>
+    (function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
+    h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
+    l=function(){return g.cid||(g.cid=k()),g.cid},m=function(r){var s=[];for(var t in r)
+    r.hasOwnProperty(t)&&void 0!==r[t]&&s.push(h(t)+"="+h(r[t]));return s.join("&")},
+    n=function(r,s,t,u,v,w,x){var z="https://www.google-analytics.com/collect",
+    A=m({v:"1",ds:"web",aip:c.anonymizeIp?1:void 0,tid:b,cid:l(),t:r||"pageview",
+    sd:c.colorDepth&&screen.colorDepth?screen.colorDepth+"-bits":void 0,dr:e.referrer||
+    void 0,dt:e.title,dl:e.location.origin+e.location.pathname+e.location.search,ul:c.language?
+    (f.language||"").toLowerCase():void 0,de:c.characterSet?e.characterSet:void 0,
+    sr:c.screenSize?(a.screen||{}).width+"x"+(a.screen||{}).height:void 0,vp:c.screenSize&&
+    a.visualViewport?(a.visualViewport||{}).width+"x"+(a.visualViewport||{}).height:void 0,
+    ec:s||void 0,ea:t||void 0,el:u||void 0,ev:v||void 0,exd:w||void 0,exf:"undefined"!=typeof x&&
+    !1==!!x?0:void 0});if(f.sendBeacon)f.sendBeacon(z,A);else{var y=new XMLHttpRequest;
+    y.open("POST",z,!0),y.send(A)}};d.pushState=function(r){return"function"==typeof d.onpushstate&&
+    d.onpushstate({state:r}),setTimeout(n,c.delay||10),i.apply(d,arguments)},n(),
+    a.ma={trackEvent:function o(r,s,t,u){return n("event",r,s,t,u)},
+    trackException:function q(r,s){return n("exception",null,null,null,null,r,s)}}})
+    (window,"UA-xxxxxxxxx-x",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true});
+  </script>
+  -->
+
+  <!-- You might also consider an alternative to Google Analytics: see https://adactio.com/journal/13853 -->
+
+</body>
+</html>
+
