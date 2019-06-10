@@ -207,50 +207,13 @@ body {
 
 a {
   color: $color-accent;
+  text-decoration: underline solid lighten($color-accent, 25%);
 }
 
 a:hover {
   color: darken($color-accent, 25%);
+  text-decoration: underline solid darken($color-accent, 25%);
 }
-
-
-// Links using fancy borders
-// so as to get thinner underlines, or better spacing
-// (and any related considerations, because every non-simple underline technique has foibles!)
-
-.prose {
-
-  a {
-    text-decoration: none;
-    color: $color-accent;
-    background: linear-gradient($border-color, $border-color) no-repeat;
-    background-size: 100% 1px;
-    background-position: 0 1.15em;
-    text-shadow: .05em 0 white, -.05em 0 white;
-  }
-
-  a:hover {
-    background-image: linear-gradient($color-accent, $color-accent);
-  }
-
-}
-
-@mixin block_anchor_underline_position_fix() {
-  background-position: 0 1.2em;
-}
-
-@mixin anchor_remove_underline() {
-  background: none;
-  text-shadow: none;
-}
-
-// note that when <a>s are flex children (or for some other reason display: block / display: inline-block) the border appears too high
-// let’s treat the most noticable issue – links with icons (because they might exist within flowing prose beside normal links)
- .special-link {
-  @include block_anchor_underline_position_fix;
-}
-
-
 
 
 // Abbreviations
@@ -262,6 +225,7 @@ abbr[title] {
   text-decoration: underline dotted; /* 2 */
 }
 
+
 // Bold / Emphasis
 // from normalize.css: Add the correct font weight in Chrome, Edge, and Safari.
 
@@ -270,11 +234,13 @@ strong {
   font-weight: bolder;
 }
 
+
 // Small Text (captions, labels, help text, or for use when screen real estate is limited, as in banner ads. But small text involves more than simply reducing the font size.)
 
 small {
   font-size: scale-value(-2)+rem;
 }
+
 
 // From normalize.css: prevent `sub` and `sup` elements from affecting the line height in all browsers.
 
@@ -294,16 +260,18 @@ sup {
   top: -0.5em;
 }
 
+
 // Quoting
 
 blockquote {
-  border-left: scale-value(-2)+rem solid $border-color;
+  border-left: scale-value(-3)+rem solid $border-color;
   color: lighten($text-color, 20%);
   font-style: italic;
   margin: scale-value(4)+rem 0;
   margin-left: -($space-l);
   padding-left: $space-s;
 }
+
 
 // Headings
 
@@ -338,6 +306,10 @@ h3 {
     font-size: scale-value(1)+rem;
   }
 
+  .prose & {
+    margin-top: $space-m;
+  }
+
 }
 
 h2 {
@@ -347,6 +319,10 @@ h2 {
   // Add typographic "contrast".
   @include at-least($width-pressure-point-one) {
     font-size: scale-value(2)+rem;
+  }
+
+  .prose & {
+    margin-top: $space-m;
   }
 
 }
@@ -380,6 +356,7 @@ details {
 .prose {
   hyphens: auto;
   font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+  max-width: $text-measure-max-in-ems+rem;
 }
 
 @supports (font-kerning: normal) and (font-variant-ligatures: common-ligatures contextual) and (font-variant-numeric: oldstyle-nums proportional-nums) {

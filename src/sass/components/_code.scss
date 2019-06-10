@@ -2,6 +2,7 @@
 // Code elements can (dependent on typeface) tend to look a bit small hence we increase.
 // Tweak as/if appropriate.
 // Note: using ems so that our tweaked size scales up whether in a <p> or <h1>
+
 code {
 
   // normalize.css – if we’re using default monospace, use this hack to avoid browser weirdness with regard to font-sizing.
@@ -16,3 +17,24 @@ code {
   line-height: normal;
 
 }
+
+
+// <pre>-based code snippets
+
+pre {
+    background: #fafafa;
+    border: 1px dotted #aaa;
+    color: #111;
+    font-size: scale-value(-1)+rem;
+    padding: 1em;
+    margin: $space-m 0;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre code {
+    font-size: 1em;
+    color: #111;
+}
+
