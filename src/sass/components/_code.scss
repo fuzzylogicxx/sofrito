@@ -3,14 +3,17 @@
 // Tweak as/if appropriate.
 // Note: using ems so that our tweaked size scales up whether in a <p> or <h1>
 code {
-  // normalize.css goodness
-  font-family: monospace, monospace;
-  // end normalize.css goodness
 
-  // decided that this is not better but this could change if we’re using different body or code fonts.
+  // normalize.css – if we’re using default monospace, use this hack to avoid browser weirdness with regard to font-sizing.
+  // font-family: monospace, monospace;
+
+  font-family: Source Code Pro, monospace;
+
+  // With some code fonts, we might want to enlarge.
   // font-size: 1.025em;
 
   color: $color-complimentary;
   hyphens: none;
   line-height: normal;
+
 }
