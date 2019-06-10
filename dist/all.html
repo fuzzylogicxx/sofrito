@@ -71,43 +71,72 @@
 
 <body id="page-home">
 
-  <!-- Header begins -->
-  <header id="global-header">
+    <!-- Header begins -->
+  <header id="global-header" class="global-header">
 
-    <a href="https://fuzzylogicxx.github.io/sofrito/" id="logo">Sofrito</a>
+    <div class="header-content container">
 
-    <nav aria-label="page" id="skip-links">
-      <a href="#primary-content">Main content</a>
-      <a href="#global-footer">Footer and Navigation</a>
-    </nav>
+      <a class="logo" href="https://fuzzylogicxx.github.io/sofrito/">
+        <svg viewBox="19 14 63 72" width="1em"><path fill="currentColor" d="M81.3 22.9c.3-.4.2-1.1-.2-1.4-.4-.3-1.1-.2-1.4.2l-3.6 5 1.3-11.1c.1-.5-.3-1-.9-1.1-.6-.1-1 .3-1.1.9L74 27.5c-.4-.2-.8-.4-1.3-.6-2.6-1-5.3-.6-7.1 1-2.5 2.2-5.2 6.4-6.9 9.1-.2-1.2-.6-2.3-1.1-3.3-1.2-1.9-3-2.9-5.5-3.1-2.6-.2-4.5.5-5.8 2-.8.9-1.2 2.1-1.4 3.2-1-.9-2.5-1.6-4.6-1.9-1.9-.3-3.5.1-4.7 1.3-1.4 1.3-2 3.4-2.2 5-.5-.4-1.2-.7-2-.8-1.6-.2-3.3.8-4.8 2.8-1.7 2.2-2.3 4.3-1.7 6.3.4 1.3 1.3 2.4 2.2 3.2h-6.6c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7.4 12.6 6.2 21 17.2 24.9 0 0 0 .1-.1.1l-1.3 6.6c-.1.3 0 .6.2.8.2.2.5.4.8.4h28c.3 0 .6-.1.8-.4.2-.2.3-.5.2-.8L64 77.7v-.1c8.5-3.1 16.7-9.9 17.2-24.9 0-.3-.1-.5-.3-.7-.2-.2-.4-.3-.7-.3H69.5c1.8-2 9.8-10.9 9.1-16.9-.2-2-1-3.8-2.3-5.2l5-6.7zm-54.6 25c-.4-1.3.1-2.9 1.4-4.5.8-1 1.9-2.1 3-2 1.1.1 2 1.4 2.2 1.9.2.4.7.7 1.2.5.5-.1.8-.6.7-1-.1-1.2 0-4.6 1.6-6.1.7-.7 1.7-.9 3.1-.7 3.1.5 4.3 1.8 4.9 3 .1 1.2.3 2.1.4 2.2.1.5.6.8 1 .7.5 0 .9-.4.9-.9 0 0 .1-1.1-.4-2.4-.1-1.5 0-3.4 1-4.7.8-1 2.2-1.4 4.1-1.3 1.8.1 3.1.9 4 2.2 2.9 4.8-1.1 15.4-1.7 16.9h-4.9l1.2-7.4c.1-.5-.3-1.1-.8-1.2-.5-.1-1.1.3-1.2.8l-1.3 7.7h-6.3l-3.2-5.1c-.3-.5-.9-.6-1.4-.3-.5.3-.6.9-.3 1.4l2.5 4.1h-7.7c-.6-.3-3.4-1.6-4-3.8zM63 83.5H37.4l1.1-5.3c2.9.9 6.1 1.4 9.7 1.7 0 0 .9.1 2.1.1.6 0 1.3 0 1.9-.1 2.9-.2 6.3-.6 9.7-1.7l1.1 5.3zm-10.9-5.6c-1.9.1-3.8 0-3.8 0-16.9-1.4-26-9.6-26.9-24.3H79c-1.2 18.8-15.2 23.6-26.9 24.3zm18.2-30.2C69 46.4 66.6 45 65 44.2c-.5-.3-1.1-.1-1.3.4-.3.5-.1 1.1.4 1.3 2.3 1.2 4.5 2.7 5 3.3-.5.6-.9 1-1.3 1.4-.3.3-.3.7-.2 1H56.2c.7-2 2.3-6.6 2.5-11.1 0-.1.1-.1.1-.2 0 0 1.4-2.5 3.2-5.2 4-.2 7.4 4 7.4 4 .2.2.5.4.8.4.2 0 .4-.1.6-.2.4-.3.5-1 .1-1.4-.2-.2-3.4-4.1-7.6-4.7 1.1-1.5 2.3-3 3.4-3.9 1.2-1.1 3.1-1.4 5-.6 2 .8 4.5 2.9 4.8 6.2.6 3.6-3.2 9.2-6.2 12.8z"/></svg>
+      </a>
 
-    <nav aria-label="site" id="header-menu">
-      <ul>
-        <li class="header-menu-hidden"><a href="/">News</a></li>
-        <li class="header-menu-hidden"><a href="/">Products</a></li>
-        <li class="header-menu-hidden"><a href="/">Jobs</a></li>
-        <li id="header-menu-toggle"><a href="#footer-menu">Menu</a></li>
-      </ul>
-    </nav>
+      <nav aria-label="page" id="skip-links" class="skip-links" >
+        <a href="#primary-content">Main content</a>
+        <a href="#global-footer">Footer and Navigation</a>
+      </nav>
 
-    <a class="btn" href="https://github.com/fuzzylogicxx/sofrito">See on GitHub</a>
+      <nav aria-label="site" class="header-menu">
+        <ul class="list-custom">
+          <li class="header-menu-hidden"><a href="/guidance.html">Typical Page</a></li>
+          <li class="header-menu-hidden"><a href="/blog-index.html">Blog Index</a></li>
+          <li class="header-menu-hidden"><a href="/blog-article.html">Blog Article</a></li>
+          <li class="header-menu-hidden"><a href="/corporate.html">Corporate</a></li> <!-- use CloudFour inspiration -->
+          <li class="header-menu-hidden"><a href="/form.html">Forms</a></li>
+          <li class="header-menu-hidden"><a href="/contact.html">Contact</a></li>
+          <li class="header-menu-hidden"><a href="/svg.html">SVG</a></li>
+          <li class="header-menu-hidden"><a href="/team.html">The Team</a></li>
+          <li class="header-menu-hidden"><a href="/all.html">Miscellaneous</a></li>
+          <li class="header-menu-hidden"><a href="/test-polyfills.html">Testing</a></li>
+          <li class="header-menu-toggle">
+            <a href="#footer-menu" class="special-link">
+              <span>Menu</span>
+              <svg class="special-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" height="1em" width="1em" viewBox="0 0 129 129"><path fill="currentColor" d="M121.3 34.6c-1.6-1.6-4.2-1.6-5.8 0l-51 51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8l53.9 53.9c.8.8 1.8 1.2 2.9 1.2 1 0 2.1-.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2.1-5.8z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="https://github.com/fuzzylogicxx/sofrito" class="special-link">
+        <span>View on Github</span>
+        <svg class="special-link-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+      </a>
+
+    </div>
 
   </header>
+
 
   <!-- Page contents begin -->
   <div class="container">
 
     <main id="primary-content">
 
+      <p>To do: add modals and alerts.</p>
+
+      <details>
+        <summary>More about the summary element</summary>
+        <p>The summary element is a clickable and focusable element which can be used to show and hide the other children of the details element.</p>
+      </details>
+
       <h2>De-bulleted/numbered (but still accessible) List</h2>
-      <ul class="list-unstyled">
+      <ul class="list-custom">
         <li>Item 1</li>
         <li>Item 2</li>
         <li>Item 3</li>
       </ul>
 
       <h2>De-bulleted, inline lists</h2>
-      <ul class="list-inline">
+      <ul class="list-compact">
         <li>Neville</li>
         <li>Hermione</li>
         <li>Harry Potter</li>
@@ -185,7 +214,6 @@
           </div>
         </li>
       </ul>
-
 
       <div class="table-container" aria-labelledby="caption-9b6k0m3tt" role="group">
         <table>
@@ -374,6 +402,7 @@
         <p>This is a paragraph. It’s just something I threw together. This sentence contains <a href="http://www.w3.org/">a link</a> to W3C, which you have probably visited. This sentence contains a link to <a href="http://www.foo.net/">someplace else</a>. This is <a href="http://www.htmlhelp.com/" class="offsite">an offsite link</a>. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
         <hr />
         <p>A blog is useful for many reasons. <small>This is small.</small> It can be<span style="color: green;">c</span>ome <a href="/">a source of leads</a>, it can <span style="color: red;">b</span>e the place where, in the future, you might sell your products if you want to become an indie developer, or it can simply be the place where you have your audience and express your ideas.</p>
+
         <h2>I’m Heading 2 and I like to wrap whenever I can</h2>
         <p>This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
         <h3>I’m Heading 3</h3>
@@ -386,6 +415,8 @@
         <p>This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
 
         <aside class="special">
+          <h3>Breakout element</h3>
+          <p>Perhaps the right element for these is a figure? Although I think that’s only if it could also be a standalone thing.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -497,8 +528,7 @@
         This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
         </p>
         <dl>
-          <dt>
-          Definition Term
+          <dt>Definition Term</dt>
           <dd>
           Definition data. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</dd>
         </dl>
@@ -540,7 +570,7 @@
           This is an Address.
         </address>
 
-      </div> <!-- ./prose -->
+      </article>
 
     </main>
 
@@ -550,7 +580,7 @@
   <footer aria-label="site" id="global-footer">
 
     <nav id="footer-menu">
-      <ul>
+      <ul class="list-custom">
         <li><a href="/">News</a></li>
         <li><a href="/">Products</a></li>
         <li><a href="/">Jobs</a></li>

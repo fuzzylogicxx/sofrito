@@ -4,7 +4,7 @@
  * (c) 2019 Laurence Hughes
  * MIT License
  * https://github.com/fuzzylogicxx/sofrito
- */
+ * credits:  */
 
 /*!
  * Cookie Consent by https://cookieconsent.insites.com/

@@ -4,70 +4,15 @@
  * (c) 2019 Laurence Hughes
  * MIT License
  * https://github.com/fuzzylogicxx/sofrito
- */
+ * credits:  */
 
 @charset "UTF-8";
-/* line 3, src/sass/components/_custom_reset.scss */
-html, body, section, nav, article, aside, h1, h2, h3, h4, h5, h6, hgroup, header, footer, address,
-p, hr, pre, blockquote, dl, dt, dd, figure, figcaption, div,
-a, em, strong, small, s, cite, q, dfn, abbr, time, code, var, samp, kbd, i, b, mark, span, br,
-ins, del,
-img, iframe, embed, object, video, audio, canvas, map, area,
-table, caption, colgroup, tbody, thead, tfoot, tr, td, th,
-form, fieldset, legend, label, input, button, select, textarea, button,
-details, summary, command, menu {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-}
-
-/* line 19, src/sass/components/_custom_reset.scss */
-ol, ul, li {
-  vertical-align: baseline;
-  margin-top: 0;
-  padding-top: 0;
-  font-size: 100%;
-}
-
-/* line 28, src/sass/components/_custom_reset.scss */
-html, body, section, nav, article, aside, h1, h2, h3, h4, h5, h6, hgroup, header, footer, address,
-p, hr, pre, blockquote, ol, ul, li, dl, dt, dd, figure, figcaption, div,
-a, em, strong, small, s, cite, q, dfn, abbr, time, var, samp, kbd, i, b, mark, span, br,
-ins, del,
-img, iframe, embed, object, video, audio, canvas, map, area,
-table, caption, colgroup, tbody, thead, tfoot, tr, td, th,
-form, fieldset, legend, label, input, button, select, textarea, button,
-details, summary, command, menu {
-  font: inherit;
-}
-
-/* line 44, src/sass/components/_custom_reset.scss */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-/* line 52, src/sass/components/_custom_reset.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-size: 100%;
-}
-
-/* line 58, src/sass/components/_custom_reset.scss */
-.highlight, mark {
-  background-color: rgba(255, 255, 0, 0.5);
-}
-
 @-ms-viewport {
   width: device-width;
 }
-
 @-o-viewport {
   width: device-width;
 }
-
 @viewport {
   width: device-width;
 }
@@ -89,14 +34,34 @@ html {
           box-sizing: inherit;
 }
 
-/* line 47, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 52, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+dd,
+figure,
+figcaption,
+dl,
+dd,
+dt {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 72, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+main, article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 86, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 img {
   display: block;
   max-width: 100%;
   border-style: none;
 }
 
-/* line 64, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 103, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 audio,
 canvas,
 iframe,
@@ -106,7 +71,7 @@ video {
   vertical-align: middle;
 }
 
-/* line 82, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 121, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 ::-moz-selection {
   background: rgba(82, 32, 85, 0.25);
   text-shadow: none;
@@ -116,12 +81,12 @@ video {
   text-shadow: none;
 }
 
-/* line 99, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 138, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 [hidden] {
   display: none;
 }
 
-/* line 106, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 145, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 .a11y-only {
   border: 0;
   clip: rect(0 0 0 0);
@@ -135,7 +100,7 @@ video {
   /* 1 */
 }
 
-/* line 116, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 155, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 .a11y-only.focusable:active, .a11y-only.focusable:focus {
   clip: auto;
   height: auto;
@@ -146,32 +111,54 @@ video {
   white-space: inherit;
 }
 
-/* line 131, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 170, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 146, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 183, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 203, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-/* line 150, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 208, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* line 216, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 details {
   display: block;
 }
 
-/* line 156, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 223, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 summary {
   display: list-item;
 }
 
-/* line 171, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 240, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 template {
   display: none;
 }
 
-/* line 177, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 247, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -180,17 +167,17 @@ template {
   /* 2 */
 }
 
-/* line 183, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+/* line 253, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
 .clearfix:after {
   clear: both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* line 190, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+  /* line 261, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
   body {
     scroll-behavior: auto;
   }
-  /* line 194, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+  /* line 265, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
   * {
     -webkit-animation: none !important;
     animation: none !important;
@@ -199,9 +186,10 @@ template {
   }
 }
 
-/* line 2, src/sass/components/_typography.scss */
-#global-header {
-  display: none;
+@font-face {
+  font-family: Source Sans Pro;
+  src: url(/assets/type/SourceSansPro-Light.ttf.woff2) format("woff2"), url(/assets/type/SourceSansPro-Light.ttf.woff) format("woff"), url(/assets/type/SourceSansPro-Light.otf) format("opentype");
+  font-display: swap;
 }
 
 @font-face {
@@ -213,13 +201,7 @@ template {
 
 @font-face {
   font-family: Source Sans Pro;
-  src: url(/assets/type/SourceSansPro-Light.ttf.woff2) format("woff2"), url(/assets/type/SourceSansPro-Light.ttf.woff) format("woff"), url(/assets/type/SourceSansPro-Light.otf) format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Source Sans Pro;
-  src: url(/assets/type/SourceSansPro-SemiBold.ttf.woff2) format("woff2"), url(/assets/type/SourceSansPro-SemiBold.ttf.woff) format("woff"), url(/assets/type/SourceSansPro-SemiBold.otf) format("opentype");
+  src: url(/assets/type/SourceSansPro-Semibold.ttf.woff2) format("woff2"), url(/assets/type/SourceSansPro-Semibold.ttf.woff) format("woff"), url(/assets/type/SourceSansPro-Semibold.otf) format("opentype");
   font-weight: 700;
   font-display: swap;
 }
@@ -231,18 +213,199 @@ template {
   font-display: swap;
 }
 
-/* line 145, src/sass/components/_typography.scss */
+@font-face {
+  font-family: Source Code Pro;
+  src: url(/assets/type/SourceCodePro-Light.ttf.woff2) format("woff2"), url(/assets/type/SourceCodePro-Light.ttf.woff) format("woff"), url(/assets/type/SourceCodePro-Light.otf) format("opentype");
+  font-display: swap;
+}
+
+/* line 184, src/sass/components/_typography.scss */
 :root {
-  color: #222222;
+  color: #121212;
   font-family: Source Sans Pro, Helvetica Neue, sans-serif;
   font-size: 1.125rem;
+}
+
+/* line 197, src/sass/components/_typography.scss */
+body {
+  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
+  line-height: 1.33959;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 197, src/sass/components/_typography.scss */
+  body {
+    line-height: 1.44;
+  }
+}
+
+/* line 208, src/sass/components/_typography.scss */
+a {
+  color: #d66351;
+  -webkit-text-decoration: underline solid #efc0b9;
+          text-decoration: underline solid #efc0b9;
+}
+
+/* line 213, src/sass/components/_typography.scss */
+a:hover {
+  color: #882e20;
+  -webkit-text-decoration: underline solid #882e20;
+          text-decoration: underline solid #882e20;
+}
+
+/* line 222, src/sass/components/_typography.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/* line 232, src/sass/components/_typography.scss */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* line 240, src/sass/components/_typography.scss */
+small {
+  font-size: 0.69444rem;
+}
+
+/* line 247, src/sass/components/_typography.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 255, src/sass/components/_typography.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 259, src/sass/components/_typography.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 266, src/sass/components/_typography.scss */
+blockquote {
+  border-left: 0.5787rem solid #dbdbdb;
+  color: #454545;
+  font-style: italic;
+  margin: 2.0736rem 0;
+  margin-left: -1.728rem;
+  padding-left: 1rem;
+}
+
+/* line 278, src/sass/components/_typography.scss */
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+  margin: 0 0 0.6698rem;
+}
+
+/* line 287, src/sass/components/_typography.scss */
+h6,
+h5,
+h4 {
+  font-weight: 700;
+}
+
+/* line 293, src/sass/components/_typography.scss */
+h3,
+h2 {
+  line-height: 1.2;
+}
+
+/* line 298, src/sass/components/_typography.scss */
+h3 {
+  font-weight: 700;
+  font-size: 1.07167rem;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 298, src/sass/components/_typography.scss */
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* line 309, src/sass/components/_typography.scss */
+.prose h3 {
+  margin-top: 1.728rem;
+}
+
+/* line 315, src/sass/components/_typography.scss */
+h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 315, src/sass/components/_typography.scss */
+  h2 {
+    font-size: 1.44rem;
+  }
+}
+
+/* line 324, src/sass/components/_typography.scss */
+.prose h2 {
+  margin-top: 1.728rem;
+}
+
+/* line 330, src/sass/components/_typography.scss */
+h1 {
+  font-size: 1.44rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: #d66351;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 330, src/sass/components/_typography.scss */
+  h1 {
+    font-size: 1.7749rem;
+  }
+}
+
+/* line 345, src/sass/components/_typography.scss */
+ol, ul, li {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* line 350, src/sass/components/_typography.scss */
+p,
+ul,
+details,
+.entry-meta {
+  margin-bottom: 0.6698rem;
+}
+
+/* line 357, src/sass/components/_typography.scss */
+.prose {
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
           font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+  max-width: 34rem;
 }
 
 @supports ((-webkit-font-kerning: normal) or (font-kerning: normal)) and ((-webkit-font-variant-ligatures: common-ligatures contextual) or (font-variant-ligatures: common-ligatures contextual)) and (font-variant-numeric: oldstyle-nums proportional-nums) {
-  /* line 153, src/sass/components/_typography.scss */
-  :root {
+  /* line 364, src/sass/components/_typography.scss */
+  .prose {
     -webkit-font-kerning: normal;
             font-kerning: normal;
     -webkit-font-variant-ligatures: common-ligatures contextual;
@@ -253,241 +416,67 @@ template {
   }
 }
 
-/* line 168, src/sass/components/_typography.scss */
-body {
-  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
-  line-height: 1.33959;
+/* line 40, src/sass/components/_forms_and_buttons.scss */
+.btn-wrap {
+  margin-top: 0.83333rem;
 }
 
-@media screen and (min-width: 38.25em) {
-  /* line 168, src/sass/components/_typography.scss */
-  body {
-    line-height: 1.44;
-  }
-}
-
-/* line 179, src/sass/components/_typography.scss */
-a:link {
-  color: #9b3d3d;
-}
-
-/* line 183, src/sass/components/_typography.scss */
-a:visited {
-  color: rebeccapurple;
-}
-
-/* line 187, src/sass/components/_typography.scss */
-a:hover {
-  color: #401919;
-}
-
-/* line 191, src/sass/components/_typography.scss */
-a:active {
-  color: #9b9b3d;
-}
-
-/* line 198, src/sass/components/_typography.scss */
-small {
-  font-size: 0.69444rem;
-}
-
-/* line 202, src/sass/components/_typography.scss */
-h6,
-h5,
-h4,
-h3,
-h2,
-h1 {
-  margin: 0 0 0.6698rem;
-}
-
-/* line 211, src/sass/components/_typography.scss */
-h6,
-h5,
-h4 {
-  font-weight: 700;
-}
-
-/* line 217, src/sass/components/_typography.scss */
-h3,
-h2 {
-  line-height: 1.2;
-}
-
-/* line 222, src/sass/components/_typography.scss */
-h3 {
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-/* line 227, src/sass/components/_typography.scss */
-h2 {
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-/* line 232, src/sass/components/_typography.scss */
-h1 {
-  font-size: 1.44rem;
-  font-weight: 700;
-  line-height: 1;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  color: #9b3d3d;
-}
-
-/* line 243, src/sass/components/_typography.scss */
-p,
-ul {
+/* line 44, src/sass/components/_forms_and_buttons.scss */
+form {
   margin-bottom: 0.6698rem;
 }
 
-/* line 248, src/sass/components/_typography.scss */
-.prose {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+/* line 50, src/sass/components/_forms_and_buttons.scss */
+.form-custom {
+  /**
+   * Shared styling among the different form controls.
+   * Much of these styles are pulled from normalize.css.
+   * Use as necessary within your own style sheets.
+   */
+  /**
+  * Remove the Clear button added by MS browsers
+  */
+  /**
+  * <button> Focus Normalization:
+  * remove FireFox specific inner focus styles.
+  * focus style will be reapplied later.
+  */
+  /**
+  * Restore the focus styles unset by the previous rule.
+  */
+  /**
+  * 1. Correct color inheritance in IE
+  * 2. Correct the text wrapping in Edge and IE
+  */
+  /**
+   * 1. Remove webkit redesign of searches
+   *
+   * 2. Remove inner padding & search cancel button in Safari & Chrome on
+   *    OS X. Safari (but not Chrome) clips the cancel button when the
+   *    search input has padding (& `textfield` appearance).
+   */
 }
 
-/*.prose ol, .prose ul {
-  margin-left: 1.5em;
-  padding-left: 1em;
-}*/
-/* Forms
-   ========================================================================== */
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
-/**
- * Remove the inner border and padding in Firefox.
- */
-/**
- * Restore the focus styles unset by the previous rule.
- */
-/**
- * Correct the padding in Firefox.
- */
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
-            box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
-  }
-  50% {
-    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.9);
-            box-shadow: 0 0 12px rgba(51, 204, 255, 0.9);
-  }
-  100% {
-    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
-            box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
-  }
+/* line 54, src/sass/components/_forms_and_buttons.scss */
+.form-custom fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
-            box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
-  }
-  50% {
-    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.9);
-            box-shadow: 0 0 12px rgba(51, 204, 255, 0.9);
-  }
-  100% {
-    -webkit-box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
-            box-shadow: 0 0 12px rgba(51, 204, 255, 0.2);
-  }
+/* line 63, src/sass/components/_forms_and_buttons.scss */
+.form-custom button,
+.form-custom [type="button"],
+.form-custom [type="reset"],
+.form-custom [type="submit"] {
+  -webkit-appearance: button;
 }
 
-/* line 197, src/sass/components/_buttons.scss */
-input[type="submit"] {
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  padding: 8px 15px;
-  font-weight: bold;
-  line-height: 1;
-  color: #444;
-  border: none;
-}
-
-/* line 208, src/sass/components/_buttons.scss */
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-  -webkit-animation: pulse 1.5s infinite ease-in-out;
-          animation: pulse 1.5s infinite ease-in-out;
-}
-
-/* line 217, src/sass/components/_buttons.scss */
-a.foo {
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  display: inline-block;
-  padding: 5px 10px;
-  background: #9c3;
-  -webkit-transition: all 0.3s ease;
-  -webkit-transition: all  0.3s ease;
-  transition: all  0.3s ease;
-}
-
-/* line 229, src/sass/components/_buttons.scss */
-a.foo:hover,
-a.foo:focus {
-  color: #030;
-  background: #690;
-}
-
-/**
- * Scott O’Hara https://scottaohara.github.io/a11y_styled_form_controls/
- * Shared styling among the different form controls.
- * Much of these styles are pulled from normalize.css.
- * Use as necessary within your own style sheets.
- */
-/* line 8, src/sass/components/_forms.scss */
-input,
-button,
-textarea,
-select {
+/* line 79, src/sass/components/_forms_and_buttons.scss */
+.form-custom input,
+.form-custom button,
+.form-custom textarea,
+.form-custom select {
   border-radius: 0;
   /* may change, but start consistently */
   -webkit-box-sizing: border-box;
@@ -503,33 +492,32 @@ select {
   /* remove inheritance Edge, Firefox, IE */
 }
 
-/**
- * Remove the Clear button added by MS browsers
- */
-/* line 26, src/sass/components/_forms.scss */
-input::-ms-clear {
+/* line 97, src/sass/components/_forms_and_buttons.scss */
+.form-custom input::-ms-clear {
   display: none;
   height: 0;
   width: 0;
 }
 
-/**
- * <button> Focus Normalization:
- * remove FireFox specific inner focus styles.
- * focus style will be reapplied later.
- */
-/* line 38, src/sass/components/_forms.scss */
-button::-moz-focus-inner {
+/* line 108, src/sass/components/_forms_and_buttons.scss */
+.form-custom button::-moz-focus-inner,
+.form-custom [type="button"]::-moz-focus-inner,
+.form-custom [type="reset"]::-moz-focus-inner,
+.form-custom [type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-/**
- * 1. Correct color inheritance in IE
- * 2. Correct the text wrapping in Edge and IE
- */
-/* line 48, src/sass/components/_forms.scss */
-legend {
+/* line 121, src/sass/components/_forms_and_buttons.scss */
+.form-custom button:-moz-focusring,
+.form-custom [type="button"]:-moz-focusring,
+.form-custom [type="reset"]:-moz-focusring,
+.form-custom [type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* line 132, src/sass/components/_forms_and_buttons.scss */
+.form-custom legend {
   color: inherit;
   /* 1 */
   display: table;
@@ -541,199 +529,210 @@ legend {
   /* 2 */
 }
 
-/* line 60, src/sass/components/_forms.scss */
-.form-group {
-  display: block;
+/* line 142, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group {
+  margin-bottom: 0.6698rem;
 }
 
-/* line 62, src/sass/components/_forms.scss */
-.form-group b {
+/* line 146, src/sass/components/_forms_and_buttons.scss */
+.form-custom label {
   display: block;
   font-weight: 700;
 }
 
-/* line 68, src/sass/components/_forms.scss */
-input[type=text],
-textarea {
-  border: 1px solid #565656;
+/* line 151, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type=text],
+.form-custom input[type=email],
+.form-custom input[type=number],
+.form-custom input[type=tel],
+.form-custom input[type=search],
+.form-custom textarea,
+.form-custom select {
+  border: 1px solid #dbdbdb;
+}
+
+/* line 161, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type=text],
+.form-custom input[type=email],
+.form-custom input[type=number],
+.form-custom input[type=tel],
+.form-custom input[type=search],
+.form-custom textarea,
+.form-custom select {
   padding: .5em;
+}
+
+/* line 171, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type=text],
+.form-custom input[type=email],
+.form-custom input[type=search],
+.form-custom textarea {
+  border-radius: 4px;
   width: 100%;
 }
 
-/**
- * 1. Remove webkit redesign of searches
- *
- * 2. Remove inner padding & search cancel button in Safari & Chrome on
- *    OS X. Safari (but not Chrome) clips the cancel button when the
- *    search input has padding (& `textfield` appearance).
- */
-/* line 89, src/sass/components/_forms.scss */
-input[type="search"] {
+/* line 182, src/sass/components/_forms_and_buttons.scss */
+.form-custom button,
+.form-custom [type="button"],
+.form-custom [type="submit"],
+.form-custom [type="reset"] {
+  background: #d66351;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 0.48225em 1em 0.5787em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* line 190, src/sass/components/_forms_and_buttons.scss */
+.form-custom .btn-large,
+.form-custom .btn-large {
+  padding: 0.48225em 1em 0.5787em;
+}
+
+/* line 195, src/sass/components/_forms_and_buttons.scss */
+.form-custom button:hover,
+.form-custom [type="button"]:hover,
+.form-custom [type="submit"]:hover,
+.form-custom [type="reset"]:hover {
+  background: #c6432f;
+  color: #e6e6e6;
+}
+
+/* line 206, src/sass/components/_forms_and_buttons.scss */
+.form-custom textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+/* line 224, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type="search"] {
   -webkit-appearance: none;
   /* 1 */
 }
 
-/* line 93, src/sass/components/_forms.scss */
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button {
+/* line 228, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type="search"]::-webkit-search-decoration,
+.form-custom input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
   /* 2 */
   appearance: none;
 }
 
-/**
- * Component Specific Styling
- */
-/* line 102, src/sass/components/_forms.scss */
-.search-widget {
-  border: 1px solid #565656;
+/* line 240, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group-checkbox div,
+.form-custom .form-group-radio div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 245, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group-checkbox input[type="checkbox"],
+.form-custom .form-group-checkbox input[type="checkbox"]:focus,
+.form-custom .form-group-radio input[type="checkbox"],
+.form-custom .form-group-radio input[type="checkbox"]:focus {
+  border-radius: 10%;
+}
+
+/* line 250, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group-checkbox input[type="checkbox"] + label,
+.form-custom .form-group-checkbox label + input[type="checkbox"],
+.form-custom .form-group-radio input[type="checkbox"] + label,
+.form-custom .form-group-radio label + input[type="checkbox"] {
+  margin-left: 0.48225em;
+}
+
+/* line 255, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group-checkbox input[type="radio"],
+.form-custom .form-group-radio input[type="radio"] {
+  border-radius: 100%;
+  margin-right: 0.48225em;
+}
+
+/* line 260, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group-checkbox label,
+.form-custom .form-group-radio label {
+  font-weight: 400;
+}
+
+/* line 267, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type="checkbox"],
+.form-custom input[type="radio"] {
+  padding: 0;
+  border: 0;
+}
+
+/* line 276, src/sass/components/_forms_and_buttons.scss */
+.form-custom .field-button-pair {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 279, src/sass/components/_forms_and_buttons.scss */
+.form-custom .field-button-pair input:not([type=submit]) {
+  min-width: 0;
+  margin-right: 1rem;
+}
+
+/* line 289, src/sass/components/_forms_and_buttons.scss */
+.form-custom .field-button-pair-search input:not([type=submit]) {
+  margin-right: 0;
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 296, src/sass/components/_forms_and_buttons.scss */
+.form-custom .field-button-pair-search [type=submit] {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+/* line 308, src/sass/components/_forms_and_buttons.scss */
+.form-custom select {
+  font-size: 1rem;
+  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
+  color: #121212;
   display: block;
-  padding-right: 2.5em;
-  position: relative;
-  /**
-  * When input and button are disabled
-  */
-}
-
-/* line 108, src/sass/components/_forms.scss */
-.search-widget svg {
-  display: block;
-  margin: 0 auto;
-}
-
-/* line 113, src/sass/components/_forms.scss */
-.search-widget > input[type="search"] {
-  border-right: 1px solid #565656;
-  padding: .5em;
-  width: 100%;
-}
-
-/* line 119, src/sass/components/_forms.scss */
-.search-widget > [type="submit"] {
-  background: #eee;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  width: 2.5em;
-}
-
-/* line 130, src/sass/components/_forms.scss */
-.search-widget > input[type="search"]:focus,
-.search-widget > [type="submit"]:not([disabled]):hover,
-.search-widget > [type="submit"]:focus {
-  -webkit-box-shadow: inset 0 0 0 1px #9b3d3d;
-          box-shadow: inset 0 0 0 1px #9b3d3d;
-  outline: 1px solid #9b3d3d;
-  outline-offset: 0;
-}
-
-/* line 138, src/sass/components/_forms.scss */
-.search-widget > input[type="search"]:focus {
-  border-right-color: #9b3d3d;
-}
-
-/* line 142, src/sass/components/_forms.scss */
-.search-widget > [type="submit"]:not([disabled]):hover,
-.search-widget > [type="submit"]:focus {
-  background: #9b3d3d;
-}
-
-/* line 147, src/sass/components/_forms.scss */
-.search-widget > [type="submit"]:focus svg,
-.search-widget > [type="submit"]:not([disabled]):hover svg {
-  fill: #fff;
-}
-
-/* line 156, src/sass/components/_forms.scss */
-.search-widget > [type="search"][disabled],
-.search-widget > [type="submit"][disabled] {
-  background: #fafafa;
-  cursor: not-allowed;
-  opacity: .5;
-}
-
-@media screen and (-ms-high-contrast: active) {
-  /* line 102, src/sass/components/_forms.scss */
-  .search-widget {
-    border: none;
-  }
-  /* line 170, src/sass/components/_forms.scss */
-  .search-widget > input[type="search"] {
-    border: 1px solid;
-    border-right: 1px solid;
-    position: relative;
-  }
-  /* line 176, src/sass/components/_forms.scss */
-  .search-widget > [type="submit"],
-  .search-widget > input[type="search"]:focus {
-    z-index: 4;
-  }
-  /* line 181, src/sass/components/_forms.scss */
-  .search-widget > [type="submit"]:focus {
-    border: 1px solid;
-  }
-  /* line 185, src/sass/components/_forms.scss */
-  .search-widget svg {
-    fill: #fff;
-  }
-  /* line 189, src/sass/components/_forms.scss */
-  .search-widget > [type="search"][disabled],
-  .search-widget > [type="submit"][disabled] {
-    opacity: .5;
-  }
-}
-
-/* class applies to select element itself, not a wrapper element */
-/* line 206, src/sass/components/_forms.scss */
-.select-css {
-  display: block;
-  color: #444;
-  line-height: 1.3;
-  padding: .6em 1.4em .5em .8em;
-  width: 100%;
   max-width: 100%;
-  /* useful when width is set to anything other than 100% */
+  width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
-  border: 1px solid #aaa;
-  -webkit-box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-  border-radius: .5em;
+  border-radius: 4px;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
   background-color: #fff;
-  /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient.
-    for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
-  */
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e5e5));
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23dcdcdc%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23dcdcdc%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(to bottom, #fff 0%, #fff 100%);
   background-repeat: no-repeat, repeat;
-  /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
   background-position: right .7em top 50%, 0 0;
-  /* icon size, then gradient */
   background-size: .65em auto, 100%;
 }
 
-/* Hide arrow icon in IE browsers */
-/* line 237, src/sass/components/_forms.scss */
-.select-css::-ms-expand {
+/* line 332, src/sass/components/_forms_and_buttons.scss */
+.form-custom select::-ms-expand {
   display: none;
 }
 
-/* Hover style */
-/* line 241, src/sass/components/_forms.scss */
-.select-css:hover {
+/* line 335, src/sass/components/_forms_and_buttons.scss */
+.form-custom select:hover {
   border-color: #888;
 }
 
-/* Focus style */
-/* line 245, src/sass/components/_forms.scss */
-.select-css:focus {
+/* line 338, src/sass/components/_forms_and_buttons.scss */
+.form-custom select:focus {
   border-color: #aaa;
-  /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
   -webkit-box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
           box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
   box-shadow: 0 0 0 3px -moz-mac-focusring;
@@ -741,17 +740,56 @@ input[type="search"]::-webkit-search-cancel-button {
   outline: none;
 }
 
-/* Set options to normal weight */
-/* line 255, src/sass/components/_forms.scss */
-.select-css option {
+/* line 345, src/sass/components/_forms_and_buttons.scss */
+.form-custom select option {
   font-weight: normal;
 }
 
-/* Support for rtl text, explicit support for Arabic and Hebrew */
-/* line 260, src/sass/components/_forms.scss */
-*[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css {
-  background-position: left .7em top 50%, 0 0;
-  padding: .6em .8em .5em 1.4em;
+/* line 355, src/sass/components/_forms_and_buttons.scss */
+.btn {
+  background: #d66351;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 0.48225em 1em 0.5787em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* line 360, src/sass/components/_forms_and_buttons.scss */
+.btn:link, .btn:visited {
+  color: #fff;
+}
+
+/* line 364, src/sass/components/_forms_and_buttons.scss */
+.btn:hover {
+  background: #c6432f;
+  color: #e6e6e6;
+}
+
+/* line 368, src/sass/components/_forms_and_buttons.scss */
+.btn-small:link, .btn-small:visited {
+  padding: 0.3349em 0.5787em 0.40188em;
+}
+
+/* line 376, src/sass/components/_forms_and_buttons.scss */
+.btn-icon:link, .btn-icon:hover,
+.form-custom button.btn-icon, .form-custom [type="button"].btn-icon, .form-custom [type="reset"].btn-icon {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 382, src/sass/components/_forms_and_buttons.scss */
+.btn-icon > *:last-child {
+  margin-left: 0.3349em;
 }
 
 /* line 3, src/sass/components/_list_utils.scss */
@@ -761,34 +799,20 @@ ol[class] {
 }
 
 /* line 10, src/sass/components/_list_utils.scss */
-.list-unstyled {
+.list-custom {
   margin-left: 0;
   padding-left: 0;
 }
 
-/**
- * @bugfix Prevent webkit from removing list semantics
- * https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
- * 1. Add a non-breaking space
- * 2. Make sure it doesn't mess up the DOM flow
- */
-/* line 21, src/sass/components/_list_utils.scss */
-.list-unstyled > li:before {
-  content: "\200B";
-  /* 1 */
-  position: absolute;
-  /* 2 */
-}
-
-/* line 27, src/sass/components/_list_utils.scss */
-.list-inline {
+/* line 17, src/sass/components/_list_utils.scss */
+.list-compact {
   margin-left: -0.5em;
   margin-right: -0.5em;
   padding-left: 0;
 }
 
-/* line 33, src/sass/components/_list_utils.scss */
-.list-inline > li {
+/* line 23, src/sass/components/_list_utils.scss */
+.list-compact > li {
   display: inline-block;
   margin-left: 0.5em;
   margin-right: 0.5em;
@@ -800,8 +824,9 @@ ol[class] {
  * 1. Add a non-breaking space
  * 2. Make sure it doesn't mess up the DOM flow
  */
-/* line 45, src/sass/components/_list_utils.scss */
-.list-inline > li:before {
+/* line 35, src/sass/components/_list_utils.scss */
+.list-custom > li:before,
+.list-compact > li:before {
   content: "\200B";
   /* 1 */
   position: absolute;
@@ -813,30 +838,31 @@ ol[class] {
   overflow-x: auto;
 }
 
+/*
 @media (min-width: 400px) {
-  /* line 8, src/sass/components/_tables.scss */
   .table-container {
     display: block;
   }
-  /* line 12, src/sass/components/_tables.scss */
+
   .lists-container {
     display: none;
   }
 }
-
-/* line 20, src/sass/components/_tables.scss */
+*/
+/* line 24, src/sass/components/_tables.scss */
 table {
+  border-collapse: collapse;
   border-top: 1px solid #999;
   border-left: 1px solid #999;
   margin: 1em 0;
 }
 
-/* line 27, src/sass/components/_tables.scss */
+/* line 32, src/sass/components/_tables.scss */
 caption {
   color: #933;
 }
 
-/* line 31, src/sass/components/_tables.scss */
+/* line 36, src/sass/components/_tables.scss */
 th, td {
   padding: 10px;
   border-right: 1px solid #999;
@@ -845,24 +871,39 @@ th, td {
 
 /* line 6, src/sass/components/_code.scss */
 code {
-  color: #9b9b3d;
-  font-size: 1.275em;
-  -webkit-hyphens: none;
-      -ms-hyphens: none;
-          hyphens: none;
+  font-family: Source Code Pro, monospace;
+  color: #42615a;
   line-height: normal;
+}
+
+/* line 24, src/sass/components/_code.scss */
+pre {
+  background: #fafafa;
+  border: 1px dotted #aaa;
+  color: #111;
+  font-size: 0.83333rem;
+  padding: 1em;
+  margin: 1.33959rem 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 38, src/sass/components/_code.scss */
+pre code {
+  font-size: 1em;
+  color: #111;
 }
 
 /* line 7, src/sass/components/_skip_links.scss */
 #skip-links {
   position: absolute;
-  bottom: 1.5vh;
+  top: 1.5vh;
   left: -51em;
   width: 10em;
-  border: 1px solid red;
 }
 
-/* line 14, src/sass/components/_skip_links.scss */
+/* line 13, src/sass/components/_skip_links.scss */
 #skip-links a {
   display: block;
   background: #000;
@@ -875,30 +916,30 @@ code {
   transition: 150ms;
 }
 
-/* line 23, src/sass/components/_skip_links.scss */
+/* line 22, src/sass/components/_skip_links.scss */
 #skip-links a:focus {
   background: #060;
 }
 
-/* line 26, src/sass/components/_skip_links.scss */
+/* line 25, src/sass/components/_skip_links.scss */
 #skip-links a:focus,
 #skip-links a:focus ~ a {
   -webkit-transform: translate(52em);
           transform: translate(52em);
 }
 
-/* line 30, src/sass/components/_skip_links.scss */
+/* line 29, src/sass/components/_skip_links.scss */
 #skip-links:focus-within a {
   -webkit-transform: translate(52em);
           transform: translate(52em);
 }
 
 @media (max-height: 42em) {
-  /* line 34, src/sass/components/_skip_links.scss */
+  /* line 33, src/sass/components/_skip_links.scss */
   #skip-links {
     width: auto;
   }
-  /* line 37, src/sass/components/_skip_links.scss */
+  /* line 36, src/sass/components/_skip_links.scss */
   #skip-links a {
     display: inline-block;
   }
@@ -996,39 +1037,187 @@ div.slat div.slat-copy {
   margin-left: -50vw;
 }
 
-/* line 35, src/sass/main.scss */
-main {
-  max-width: 34em;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* line 49, src/sass/main.scss */
+.container {
+  margin: 0 1rem;
 }
 
-@media screen and (min-width: 40.5em) {
-  /* line 35, src/sass/main.scss */
-  main {
-    padding: 0;
+@media screen and (min-width: 64em) {
+  /* line 49, src/sass/main.scss */
+  .container {
+    margin: 0 2%;
   }
 }
 
-/* line 48, src/sass/main.scss */
-#global-footer {
-  background: #333;
-  color: #fff;
-  padding: 0 1rem;
-}
-
-/* line 53, src/sass/main.scss */
-#global-footer a:link,
-#global-footer a:visited {
-  color: #fff;
-}
-
-@media screen and (min-width: 40.5em) {
-  /* line 48, src/sass/main.scss */
-  #global-footer {
-    padding: 0 1rem;
-    padding: 0 calc(50% - 17em);
+@media screen and (min-width: 80em) {
+  /* line 49, src/sass/main.scss */
+  .container {
+    margin: 0 6%;
   }
+}
+
+@media screen and (min-width: 100em) {
+  /* line 49, src/sass/main.scss */
+  .container {
+    margin: 0 10%;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  /* line 49, src/sass/main.scss */
+  .container {
+    margin: 0 auto;
+    max-width: 80em;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  /* line 62, src/sass/main.scss */
+  .trio {
+    display: grid;
+    grid-column-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* line 68, src/sass/main.scss */
+.min-duo-max-trio {
+  -webkit-columns: 2;
+          columns: 2;
+}
+
+@media screen and (min-width: 48em) {
+  /* line 68, src/sass/main.scss */
+  .min-duo-max-trio {
+    -webkit-columns: unset;
+            columns: unset;
+    display: grid;
+    grid-column-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* line 79, src/sass/main.scss */
+.header-banner {
+  background: #f2f2f2;
+  overflow: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* line 89, src/sass/main.scss */
+.meta {
+  color: gray;
+  margin: 0;
+}
+
+/* line 94, src/sass/main.scss */
+.dt-published {
+  color: gray;
+}
+
+/* line 98, src/sass/main.scss */
+.entry-meta .posted-on::before {
+  content: " · ";
+}
+
+/* line 106, src/sass/main.scss */
+.global-header {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 1rem 0;
+}
+
+/* line 110, src/sass/main.scss */
+.global-header a {
+  text-decoration: none;
+}
+
+/* line 116, src/sass/main.scss */
+.header-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 121, src/sass/main.scss */
+.logo {
+  margin-right: auto;
+  font-size: 2.48832rem;
+}
+
+/* line 125, src/sass/main.scss */
+.logo svg {
+  display: block;
+}
+
+/* line 130, src/sass/main.scss */
+.header-menu {
+  margin-right: 1rem;
+}
+
+/* line 133, src/sass/main.scss */
+.header-menu ul {
+  margin-bottom: 0;
+}
+
+/* line 141, src/sass/main.scss */
+.header-menu-hidden {
+  display: none;
+}
+
+/* line 145, src/sass/main.scss */
+.header-menu-toggle .special-link-icon {
+  font-size: .6em;
+  margin-top: .3em;
+}
+
+/* line 157, src/sass/main.scss */
+.global-footer {
+  background: #121212;
+  color: #fff;
+  padding: 1.728rem 0 0.83333rem;
+}
+
+/* line 162, src/sass/main.scss */
+.global-footer ul {
+  margin-bottom: 1rem;
+  -webkit-columns: 2;
+          columns: 2;
+}
+
+/* line 167, src/sass/main.scss */
+.global-footer li {
+  margin-bottom: 0.40188rem;
+  font-size: 0.83333rem;
+}
+
+/* line 172, src/sass/main.scss */
+.global-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 176, src/sass/main.scss */
+.global-footer a:hover {
+  text-decoration: underline;
+}
+
+/* line 189, src/sass/main.scss */
+.primary-content {
+  padding: 1rem 0 1.728rem;
+}
+
+/* line 192, src/sass/main.scss */
+.primary-content.with-header-banner {
+  padding-top: 0;
+}
+
+/* line 206, src/sass/main.scss */
+.features-benefits section {
+  margin-top: 1.33959rem;
 }
 
 /**
@@ -1077,6 +1266,19 @@ main {
 /* line 40, src/sass/components/_houdini.scss */
 .houdini-toggle-icon {
   padding: 0 0.5em;
+}
+
+@supports (display: grid) {
+  /* line 6, src/sass/components/_layout_enhanced.scss */
+  html {
+    height: 100%;
+  }
+  /* line 10, src/sass/components/_layout_enhanced.scss */
+  body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
 }
 
 /* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */

@@ -4,6 +4,6 @@
  * (c) 2019 Laurence Hughes
  * MIT License
  * https://github.com/fuzzylogicxx/sofrito
- */
+ * credits:  */
 
 console.log('detects.js file loaded');

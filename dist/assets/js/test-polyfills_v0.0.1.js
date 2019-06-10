@@ -4,7 +4,7 @@
  * (c) 2019 Laurence Hughes
  * MIT License
  * https://github.com/fuzzylogicxx/sofrito
- */
+ * credits:  */
 
 document.addEventListener('click', (function (event) {
 	if (!event.target.matches('#click-me')) return;
