@@ -90,7 +90,7 @@ var optimizejs = require('gulp-optimize-js');
 
 // Styles
 var sass = require('gulp-sass');
-var prefix = require('gulp-autoprefixer');
+var prefixer = require('gulp-autoprefixer');
 var minify = require('gulp-cssnano');
 
 // SVGs
@@ -212,7 +212,7 @@ var buildStyles = function (done) {
 			outputStyle: 'expanded',
 			sourceComments: true
 		}))
-		.pipe(prefix({
+		.pipe(prefixer({
 			browsers: ['last 2 version', '> 0.25%'],
 			cascade: true,
 			remove: true
