@@ -4,10 +4,10 @@
 
 $selected-text-background: rgba(82,32,85,.25);
 $text-color: rgb(18,18,18); // like the Guardian // alternatively rgb(34,34,34) i.e. #222, not quite black.
-$color-accent: rgb(155,61,61); // mexican salsa reddish color
-$color-complimentary: rgb(155,155,61); // guacamole-esque colour I got as compliment to $color-accent via https://www.sessions.edu/color-calculator/. Should prob use hues.
-$color-light: #f1f1f1;
-$border-color: #dcdcdc;
+$color-accent: hsl(8, 62%, 58%);
+$color-complimentary: hsl(166, 19%, 32%);
+$color-light: hsl(0, 0%, 95%);
+$border-color: hsl(0, 0%, 95%);
 
 // add alert colours from bootstrap here
 // https://getbootstrap.com/docs/4.0/components/alerts/
