@@ -54,6 +54,16 @@ $alt-font-family-fonts-loaded: Source Serif Pro, serif;
   font-display: swap;
 }
 
+// Code / monospace
+
+@font-face {
+  font-family: Source Code Pro;
+  src: url(/assets/type/SourceCodePro-Light.ttf.woff2) format("woff2"),
+       url(/assets/type/SourceCodePro-Light.ttf.woff) format("woff"),
+       url(/assets/type/SourceCodePro-Light.otf) format("opentype");
+  font-display: swap;
+}
+
 
 
 ///////////////////////////////////

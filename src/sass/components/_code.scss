@@ -7,11 +7,10 @@ code {
   // normalize.css – if we’re using default monospace, use this hack to avoid browser weirdness with regard to font-sizing.
   // font-family: monospace, monospace;
 
-  font-family: Source Code Pro, monospace;
-
   // With some code fonts, we might want to enlarge.
   // font-size: 1.025em;
 
+  font-family: Source Code Pro, monospace;
   color: $color-complimentary;
   hyphens: none;
   line-height: normal;
