@@ -307,7 +307,7 @@ h3 {
   }
 
   .prose & {
-    margin-top: $space-m;
+    margin-top: $space-l;
   }
 
 }
@@ -322,7 +322,7 @@ h2 {
   }
 
   .prose & {
-    margin-top: $space-m;
+    margin-top: $space-l;
   }
 
 }
@@ -349,7 +349,8 @@ ol, ul, li {
 
 p,
 ul,
-details {
+details,
+.entry-meta {
   margin-bottom: $space-xxs;
 }
 

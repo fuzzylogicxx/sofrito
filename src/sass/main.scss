@@ -81,11 +81,23 @@
   overflow: auto;
   padding-top: $space-s;
   padding-bottom: $space-s;
-
-
 }
 
 
+// Blog stuff
+
+.meta {
+  color: gray;
+  margin: 0;
+}
+
+.dt-published {
+  color: gray;
+}
+
+.entry-meta .posted-on::before {
+    content: " · ";
+}
 
 ///////////////////////////////////
 // Header
@@ -181,6 +193,8 @@
     padding-top: 0;
   }
 }
+
+
 
 
 ///////////////////
