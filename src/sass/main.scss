@@ -1,13 +1,8 @@
 @import "components/variables_general.scss";
 @import "components/mixins_general.scss";
-@import "components/custom_reset.scss";
 @import "components/collected_reset_and_general_improvement_wisdom.scss";
 @import "components/typography.scss";
-@import "components/responsive_prep.scss";
-@import "components/buttons.scss";
-    // Bring formcore back in wholesale if we want to, or gradually
-    // @import "components/formcore.scss";
-@import "components/forms.scss";
+@import "components/forms_and_buttons.scss";
 @import "components/list_utils.scss";
 @import "components/tables.scss";
 @import "components/tabs.scss";
@@ -20,57 +15,199 @@
 
 // Note: there are a few additional imports at the end of this file, too. (houdini show-and-hide, print CSS, layout-enhanced/grid, cookie consent).
 
-//
 
-body {
-  //margin: 0 $space-s;
+
+///////////////////////////////////
+// Common patterns
+///////////////////////////////////
+
+// Container utility for sensible component widths within a responsive layout
+
+@mixin container() {
+
+  margin: 0 $space-s;
+
+  @include at-least($bp-wide-two) {
+    margin: 0 2%;
+  }
+
+  @include at-least($bp-wide-three) {
+    margin: 0 6%;
+  }
+
+  @include at-least($bp-wide-four) {
+    margin: 0 10%;
+  }
+
+  @include at-least($bp-wide-five) {
+    margin: 0 auto;
+    max-width: 80em;
+  }
+
 }
 
-#global-header,
-#primary-content,
-#global-footer {
-  //padding: 0 $min-acceptable-gutter_in_vw+vw;
+.container {
+  @include container();
 }
 
-main {
-  // ideal min-width: $text-measure-min-in-ems+em;
-  max-width: $text-measure-max-in-ems+em;
-  margin: 0 auto;
-  padding: 0 $space-s;
+
+// Create a grid with 3 flexible-and-equal-width colummns
+
+@mixin trio() {
+  display: grid;
+  grid-column-gap: $space-s;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.trio {
   @include at-least($bp-wide-one) {
-    padding: 0;
+    @include trio();
+  }
+}
+
+.min-duo-max-trio {
+  columns: 2;
+  @include at-least($bp-wide-one) {
+    columns: unset;
+    @include trio();
   }
 }
 
 
+// Header Banners
+
+.header-banner {
+  background: $color-light;
+  overflow: auto;
+  padding-top: $space-s;
+  padding-bottom: $space-s;
+}
 
 
-#global-footer {
-  background: #333;
+// Blog stuff
+
+.meta {
+  color: gray;
+  margin: 0;
+}
+
+.dt-published {
+  color: gray;
+}
+
+.entry-meta .posted-on::before {
+    content: " · ";
+}
+
+///////////////////////////////////
+// Header
+///////////////////////////////////
+
+.global-header {
+  border-bottom: 1px solid $border-color;
+  padding: $space-s 0;
+
+  a {
+    text-decoration: none;
+  }
+
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: auto;
+  font-size: scale-value(5)+rem;
+
+  svg {
+    display: block;
+  }
+}
+
+.header-menu {
+  margin-right: $space-s;
+
+  ul {
+    margin-bottom: 0;
+  }
+
+}
+
+// BBC-style greedy navigation
+
+.header-menu-hidden {
+  display: none;
+}
+
+.header-menu-toggle .special-link-icon {
+  font-size: .6em;
+  margin-top: .3em;
+}
+
+
+
+
+/////////////
+// Footer
+/////////////
+
+.global-footer {
+  background: $text-color;
   color: #fff;
-  padding: 0 $space-s;
+  padding: $space-l 0 $space-xs;
 
-  a:link,
-  a:visited {
+  ul {
+    margin-bottom: $space-s;
+    columns: 2;
+  }
+
+  li {
+    margin-bottom: scale-value(-5)+rem;
+    font-size: scale-value(-1)+rem;
+  }
+
+  a {
     color: #fff;
-  }
+    text-decoration: none;
 
-  @include at-least($bp-wide-one) {
-    // Lea Verou’s "fluid background, fixed content" (i.e. full-width background)
-    // Note this solves a different problem than our "breakout.scss" utility.
-    // With breakout we’re starting in a centred fixed width column and need to break out to full width.
-    // With this, we’re starting at full width and need to centre the content at the same width as our <main> content.
-    padding: 0 $space-s;
-    padding: 0 calc(50% - #{$text-measure-max-in-ems/2+em}); // where the second part of the calc is half of the target width for your inner content
-    // End Lea
+    &:hover {
+      text-decoration: underline;
+    }
   }
-
 
 }
 
 
 
+///////////////////
+// Primary Content
+///////////////////
 
+.primary-content {
+  padding: $space-s 0 $space-l;
+
+  &.with-header-banner {
+    padding-top: 0;
+  }
+}
+
+
+
+
+///////////////////
+// Index page
+///////////////////
+
+.features-benefits {
+
+  section {
+    margin-top: $space-m;
+  }
+
+}
 
 
 

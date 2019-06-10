@@ -1,44 +1,30 @@
-@@include('./header.html')
+@@include('./head.html')
 
 <body id="page-home">
 
-  <!-- Header begins -->
-  <header id="global-header">
-
-    <a href="https://fuzzylogicxx.github.io/sofrito/" id="logo">Sofrito</a>
-
-    <nav aria-label="page" id="skip-links">
-      <a href="#primary-content">Main content</a>
-      <a href="#global-footer">Footer and Navigation</a>
-    </nav>
-
-    <nav aria-label="site" id="header-menu">
-      <ul>
-        <li class="header-menu-hidden"><a href="/">News</a></li>
-        <li class="header-menu-hidden"><a href="/">Products</a></li>
-        <li class="header-menu-hidden"><a href="/">Jobs</a></li>
-        <li id="header-menu-toggle"><a href="#footer-menu">Menu</a></li>
-      </ul>
-    </nav>
-
-    <a class="btn" href="https://github.com/fuzzylogicxx/sofrito">See on GitHub</a>
-
-  </header>
+  @@include('./global_header.html')
 
   <!-- Page contents begin -->
   <div class="container">
 
     <main id="primary-content">
 
+      <p>To do: add modals and alerts.</p>
+
+      <details>
+        <summary>More about the summary element</summary>
+        <p>The summary element is a clickable and focusable element which can be used to show and hide the other children of the details element.</p>
+      </details>
+
       <h2>De-bulleted/numbered (but still accessible) List</h2>
-      <ul class="list-unstyled">
+      <ul class="list-custom">
         <li>Item 1</li>
         <li>Item 2</li>
         <li>Item 3</li>
       </ul>
 
       <h2>De-bulleted, inline lists</h2>
-      <ul class="list-inline">
+      <ul class="list-compact">
         <li>Neville</li>
         <li>Hermione</li>
         <li>Harry Potter</li>
@@ -116,7 +102,6 @@
           </div>
         </li>
       </ul>
-
 
       <div class="table-container" aria-labelledby="caption-9b6k0m3tt" role="group">
         <table>
@@ -305,6 +290,7 @@
         <p>This is a paragraph. It’s just something I threw together. This sentence contains <a href="http://www.w3.org/">a link</a> to W3C, which you have probably visited. This sentence contains a link to <a href="http://www.foo.net/">someplace else</a>. This is <a href="http://www.htmlhelp.com/" class="offsite">an offsite link</a>. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
         <hr />
         <p>A blog is useful for many reasons. <small>This is small.</small> It can be<span style="color: green;">c</span>ome <a href="/">a source of leads</a>, it can <span style="color: red;">b</span>e the place where, in the future, you might sell your products if you want to become an indie developer, or it can simply be the place where you have your audience and express your ideas.</p>
+
         <h2>I’m Heading 2 and I like to wrap whenever I can</h2>
         <p>This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
         <h3>I’m Heading 3</h3>
@@ -317,6 +303,8 @@
         <p>This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
 
         <aside class="special">
+          <h3>Breakout element</h3>
+          <p>Perhaps the right element for these is a figure? Although I think that’s only if it could also be a standalone thing.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -428,8 +416,7 @@
         This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.
         </p>
         <dl>
-          <dt>
-          Definition Term
+          <dt>Definition Term</dt>
           <dd>
           Definition data. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</dd>
         </dl>
@@ -471,7 +458,7 @@
           This is an Address.
         </address>
 
-      </div> <!-- ./prose -->
+      </article>
 
     </main>
 
@@ -481,7 +468,7 @@
   <footer aria-label="site" id="global-footer">
 
     <nav id="footer-menu">
-      <ul>
+      <ul class="list-custom">
         <li><a href="/">News</a></li>
         <li><a href="/">Products</a></li>
         <li><a href="/">Jobs</a></li>

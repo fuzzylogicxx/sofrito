@@ -1,2 +1,90 @@
-.standfirst
+@@include('./head.html')
 
+<body itemscope="" itemtype="http://schema.org/Article">
+
+  @@include('./global_header.html')
+
+    <!-- Dominant content of page begins -->
+    <!-- <div class="multicol-container"> | only required when we have a sidebar/aside at same level as <main> -->
+
+    <main id="primary-content" class="primary-content">
+
+      <div class="container">
+
+        <article class="hentry prose">
+
+          <!-- <figure class="hero-wide" itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject">
+            <div>
+              <img>
+            </div>
+            <figcaption itemprop="contributor" itemscope="" itemtype="http://schema.org/Person">Illustration by <a href="/" title="Website of Clair Irwin" class="author url fn" rel="author">Kevin Cornell</a></span>
+          </figure> -->
+
+          <header class="entry-header">
+            <h1 class="entry-title" itemprop="headline">Website Delivery Principles wraps onto two lines</h1>
+            <div class="entry-meta">
+              <span class="byline"> by
+                <span class="author vcard" itemprop="author" itemscope="" itemtype="http://schema.org/Person"><a class="url fn n" href="https://alistapart.com/author/larahogan/" itemprop="url"><span itemprop="name">Laurence Hughes</span></a></span>
+              </span>
+              <span class="posted-on">
+                <time class="entry-date published" datetime="2019-06-06T09:30:51-04:00">June 06, 2019</time>
+              </span>
+              <div class="entry-topic">
+                <span class="cat-links">Published in <a href="https://alistapart.com/topic/business/" rel="category tag">Business</a></span>
+              </div>
+            </div><!-- .entry-meta -->
+          </header>
+
+          <div class="entry-content">
+
+            <p>I realised last night while watching a presentation by Lea Verou that I could streamline my CSS Grid layouts. I’d previously been creating an overall page grid on the <code>body</code> then defining some grid areas, but was frustrated that this didn’t help with aligning nested elements to that grid.</p>
+
+            <pre><code>&lt;iframe src=&quot;signal.svg&quot; onload=&quot;this.before((this.contentDocument.body || this.contentDocument).children[0]);this.remove()&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+
+            <h2>Use the right tool for the job wraps onto two lines</h2>
+
+            <p>For example in the case of the main header, if I wanted its child logo, <code>nav</code> and search box elements to snap to the grid I found myself having to set <code>display:grid</code> and <code>grid-template-areas</code> again on the header.</p>
+            <p>It didn’t feel very <abbr class="" title="Don’t Repeat Yourself">DRY</abbr> but my understanding was that while we await subgrid, this was a necessary evil.</p>
+            <p>What I should have been using is <code>display:contents</code>.</p>
+            <p>This is a paragraph. It’s just something I threw together. This sentence contains <a href="http://www.w3.org/">a link</a> to W3C, which you have probably visited. This sentence contains a link to <a href="http://www.foo.net/">someplace else</a>. This is <a href="http://www.htmlhelp.com/" class="special-link"><span>an offsite link</span> <svg viewBox="0 0 24 24" width="1em" height="1em" class="special-link-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
+            <p>A blog is useful for many reasons. It can be<span style="color: green;">c</span>ome <a href="/">a source of leads</a>, it can <span style="color: red;">b</span>e the place where, in the future, you might sell your products if you want to become an indie developer, or it can simply be the place where you have your audience and express your ideas.</p>
+
+            <ul>
+              <li>Use proper accents e.g. résumé and jalapeño.</li>
+              <li>Use proper math symbols, like × instead of x.</li>
+              <li>Smarten quotation marks ("that's it" should be “that’s it”).</li>
+              <li>Use primes as needed (10’6” tall should be 10′6″ tall).
+              <li>Use an en dash (–) rather than a hyphen (-) to represent a range in strings of digits (99–103), days (Mon–Fri), dates (May 5–8), and times (10:00–11:00“). Set these en dashes either unspaced or with very thin surrounding spaces.</li>
+              <li>Mark up abbreviations with abbr tags. Style them independently, applying small caps as needed, using attribute selectors or classes: 5:00<abbr class="time" title="post meridiem">pm</abbr>.</li>
+              <li>Lowercase text can be styled as small caps. (So can uppercase text). Some abbreviations may look better uppercased: <abbr title="New York">NY</abbr>; consider this before applying small caps to all abbr tags.</li>
+              <li>Surround long sequences of numbers with spans, so you can use the CSS letter-spacing property to add subtle breathing room: <span class="number">1,385,600</span>.</li>
+              <li>Plan for case-sensitivity near case changes and numerals. To style characters like hyphens, dashes, and parentheses with case-sensitive forms you need to account for them in markup. For example, keep parentheses like these inside the abbreviation markup: <abbr>(PDF)</abbr>. Many fonts bundle case-sensitive forms with caps-related OpenType features. Similarly, case-sensitive forms are often bundled with figure features: <span class="number">(845)555–3333</span>.</li>
+              <li>In headings, mark up ampersands so you have the option of giving them special stylistic treatment, such as italicizing them (sometimes a nice touch): Hatfields <span class="and">&</span> McCoys.</li>
+              <li>If certain strings should not break onto two lines, mark those strings up so you can later apply a CSS white-space declaration: <cite class="nobreak">Robert Jones</cite>.</li>
+              <li>Use Unicode’s fraction characters when possible: when she was 2½ years old. (Search Charcod.es for “fraction” and copy/paste the character you need rather than use the HTML entity.) Mark up any fractions that aren’t in Unicode so you can apply fraction-related OpenType features later: you’ll need a <span class="frac">5/16</span> wrench.</li>
+            </ul>
+
+            <hr />
+            <p>A blog is useful for many reasons. <small>This is small.</small> It can be<span style="color: green;">c</span>ome <a href="/">a source of leads</a>, it can <span style="color: red;">b</span>e the place where, in the future, you might sell your products if you want to become an indie developer, or it can simply be the place where you have your audience and express your ideas.</p>
+            <h2>I’m Heading 2 and I like to wrap whenever I can</h2>
+            <p>This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
+            <h3>I’m Heading 3</h3>
+            <p>This is a paragraph. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
+
+            <h2>I’m Heading 2</h2>
+            <h3>I’m Heading 3 coming immediately after an h2; it happens!</h3>
+
+          </div> <!-- /.entry-content -->
+
+        </article> <!-- ./prose -->
+
+      </div> <!-- ./container -->
+
+    </main>
+
+    <!-- </div> --> <!-- /.multicol-container -->
+
+  </div>
+
+  @@include('./footer.html')
