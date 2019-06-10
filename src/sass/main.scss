@@ -15,61 +15,111 @@
 
 // Note: there are a few additional imports at the end of this file, too. (houdini show-and-hide, print CSS, layout-enhanced/grid, cookie consent).
 
-//
-
-body {
-  //margin: 0 $space-s;
-}
 
 
+///////////////////////////////////
 // Common patterns
+///////////////////////////////////
 
-@include at-least($bp-wide-one) {
-  .trio {
-    display: grid;
-    grid-column-gap: $space-s;
-    grid-template-columns: repeat(3, 33%);
+// Container utility for responsive layout
+
+@mixin container() {
+
+  @include at-least($bp-wide-two) {
+    margin: 0 2%;
   }
+
+  @include at-least($bp-wide-three) {
+    margin: 0 6%;
+  }
+
+  @include at-least($bp-wide-four) {
+    margin: 0 10%;
+  }
+
+  @include at-least($bp-wide-five) {
+    margin: 0 auto;
+    max-width: 80em;
+  }
+
+}
+
+.container {
+  @include container();
 }
 
 
-#global-header,
-#primary-content,
-#global-footer {
-  //padding: 0 $min-acceptable-gutter_in_vw+vw;
+// Grid with 3 equal-width colummns
+
+@mixin trio() {
+  display: grid;
+  grid-column-gap: $space-s;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-main {
-  // ideal min-width: $text-measure-min-in-ems+em;
-  max-width: $text-measure-max-in-ems+em;
-  margin: 0 auto;
-  padding: 0 $space-s $space-l;
+.trio {
   @include at-least($bp-wide-one) {
-    padding-left: 0;
-    padding-right: 0;
+    @include trio();
+  }
+}
+
+.min-duo-max-trio {
+  columns: 2;
+  @include at-least($bp-wide-one) {
+    columns: unset;
+    @include trio();
   }
 }
 
 
-// Global Header
+// Header Banners
 
-#global-header {
+.header-banner {
+  background: $color-light;
+  overflow: auto;
+  padding-top: $space-s;
+  padding-bottom: $space-s;
+}
 
+
+
+///////////////////////////////////
+// Layout (page-level)
+///////////////////////////////////
+
+// We want a good "document outline" with proper sectioning elements at the top-level as far as possible
+// Percentage-based padding within top-level elements works well until screen gets crazy-wide
+// Then you ideally want a max-width and margin 0 auto on the content.
+// But if you want flexibility to have solid full-width backgrounds on elements then you need a nested element to be able to set a width and margin
+
+
+/*.global-header {
   padding: $space-s;
+}
 
-  @include at-least($bp-wide-one) {
-    // Lea Verou’s "fluid background, fixed content" (i.e. full-width background)
-    // Note this solves a different problem than our "breakout.scss" utility.
-    // With breakout we’re starting in a centred fixed width column and need to break out to full width.
-    // With this, we’re starting at full width and need to centre the content at the same width as our <main> content.
-    padding: $space-m $space-s;
-    padding: $space-m calc(50% - #{$text-measure-max-in-ems/2+em}); // where the second part of the calc is half of the target width for your inner content
-    // End Lea
+.primary-content {
+  padding: $space-s $space-s $space-l;
+
+  &.with-header-banner {
+    padding-top: 0;
   }
+}
 
-  display: flex;
-  flex: 1;
-  background-color: $color-light;
+.global-footer {
+  padding: $space-l $space-s;
+}
+*/
+
+
+
+///////////////////////////////////
+// Header
+///////////////////////////////////
+
+
+.global-header {
+  border-bottom: 1px solid $border-color;
+  padding: $space-s 0;
 
   a {
     text-decoration: none;
@@ -79,72 +129,88 @@ main {
     color: $color-complimentary;
   }
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+}
 
+.header-content {
+  display: flex;
 }
 
 .logo {
   margin-right: auto;
 }
 
-#header-menu {
+.header-menu {
   margin-right: $space-s;
+
+  ul {
+    margin-bottom: 0;
+  }
+
 }
 
-#header-menu-toggle .special-link-icon {
+.header-menu-toggle .special-link-icon {
   font-size: .6em;
   margin-top: .3em;
 }
 
 
-// Global Footer
 
-#global-footer {
-  background: #333;
+
+/////////////
+// Footer
+/////////////
+
+.global-footer {
+  background: $text-color;
   color: #fff;
-  padding: $space-l $space-s;
+  padding: $space-l 0 $space-m;
+
+  ul {
+    margin-bottom: $space-s;
+    columns: 2;
+  }
+
+  li {
+    margin-bottom: scale-value(-5)+rem;
+  }
 
   a {
     color: #fff;
     text-decoration: none;
-  }
 
-  @include at-least($bp-wide-one) {
-    // Lea Verou’s "fluid background, fixed content" (i.e. full-width background)
-    // Note this solves a different problem than our "breakout.scss" utility.
-    // With breakout we’re starting in a centred fixed width column and need to break out to full width.
-    // With this, we’re starting at full width and need to centre the content at the same width as our <main> content.
-    padding: $space-l $space-s;
-    padding: $space-l calc(50% - #{$text-measure-max-in-ems/2+em}); // where the second part of the calc is half of the target width for your inner content
-    // End Lea
-  }
-
-
-}
-
-
-
-// Homepage
-
-.intro {
-  hyphens: none;
-  margin: $space-l 0 0; //scale-value(5)+rem
-
-  h1 {
-    margin-bottom: 0;
-  }
-
-  h2 {
-    font-weight: 400;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
 }
 
 
+
+///////////////////
+// Primary Content
+///////////////////
+
+.primary-content {
+  padding: $space-s 0 $space-l;
+
+  &.with-header-banner {
+    padding-top: 0;
+  }
+}
+
+
+///////////////////
+// Index page
+///////////////////
+
+.features-benefits {
+
+  section {
+    margin-top: $space-m;
+  }
+
+}
 
 
 

@@ -20,8 +20,7 @@
   display: inline-block;
   font-weight: 700;
   white-space: nowrap;
-  //padding: scale-value(-6)+em 1em scale-value(-5)+em;
-  padding: .5em 1em;
+  padding: scale-value(-4)+em 1em scale-value(-3)+em;
   transition: all 0.3s ease;
 }
 
@@ -36,6 +35,10 @@
 
 @mixin large_button_style() {
   padding: scale-value(-4)+em 1em scale-value(-3)+em;
+}
+
+.btn-wrap {
+  margin-top: $space-xs;
 }
 
 form {

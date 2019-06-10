@@ -11,14 +11,7 @@ $alt-font-family-fonts-loaded: Source Serif Pro, serif;
 
 // @font-face declarations (if self-hosting)
 
-@font-face {
-  font-family: Source Sans Pro;
-  src: url(/assets/type/SourceSansPro-LightIt.ttf.woff2) format("woff2"),
-       url(/assets/type/SourceSansPro-LightIt.ttf.woff) format("woff"),
-       url(/assets/type/SourceSansPro-LightIt.otf) format("opentype");
-  font-style: italic;
-  font-display: swap;
-}
+// Sans: Light (activated by font-weight: 400)
 
 @font-face {
   font-family: Source Sans Pro;
@@ -28,14 +21,29 @@ $alt-font-family-fonts-loaded: Source Serif Pro, serif;
   font-display: swap;
 }
 
+// Sans: Light Italic (activated by font-weight: 400 and font-style: italic)
+
+@font-face {
+  font-family: Source Sans Pro;
+  src: url(/assets/type/SourceSansPro-LightIt.ttf.woff2) format("woff2"),
+       url(/assets/type/SourceSansPro-LightIt.ttf.woff) format("woff"),
+       url(/assets/type/SourceSansPro-LightIt.otf) format("opentype");
+  font-style: italic;
+  font-display: swap;
+}
+
+// Sans: Semibold (activated by font-weight: 700)
+
 @font-face {
   font-family: Source Sans Pro;
   src: url(/assets/type/SourceSansPro-Semibold.ttf.woff2) format("woff2"),
        url(/assets/type/SourceSansPro-Semibold.ttf.woff) format("woff"),
        url(/assets/type/SourceSansPro-Semibold.otf) format("opentype");
-  font-weight:700;
+  font-weight: 700;
   font-display: swap;
 }
+
+// Serif: Regular (activated by font-weight: 500)
 
 @font-face {
   font-family: Source Serif Pro;
@@ -45,7 +53,6 @@ $alt-font-family-fonts-loaded: Source Serif Pro, serif;
   font-weight: 500;
   font-display: swap;
 }
-
 
 
 
@@ -129,10 +136,16 @@ $min-acceptable-gutter_in_vw: 4.89; // Using vw for main gutter has the advantag
 
 
 // Breakpoint values
-// Note that media queries work on 1em = 16px so if our root font-size is not 1em we need to:
-// multiply the em-based target width/height for our media query by our root font-size (in ems) value.
 
-$bp-wide-one: ( ($text-measure-max-in-ems + 2) * $ms-base)+em;
+$bp-wide-one: 48em; //( ($text-measure-max-in-ems + 2) * $ms-base)+em;
+
+$bp-wide-two: 64em;
+
+$bp-wide-three: 80em;
+
+$bp-wide-four: 100em;
+
+$bp-wide-five: 120em;
 
 
 
@@ -272,7 +285,7 @@ sup {
 // Quoting
 
 blockquote {
-  border-left: 0.625em solid $border-color;
+  border-left: scale-value(-2)+rem solid $border-color;
   color: lighten($text-color, 20%);
   font-style: italic;
   margin: scale-value(4)+rem 0;
@@ -303,8 +316,10 @@ h2 {
 }
 
 h3 {
-  font-size: scale-value(0)+rem;
   font-weight: 700;
+
+  // A font-size that is only just larger than the body font-size is a common requirement so let’s make one by adding scale values.
+  font-size: ( (scale-value(-6) * 2) + scale-value(-5) )+rem;
 
   // Add typographic "contrast".
   @include at-least($width-pressure-point-one) {
@@ -334,7 +349,7 @@ h1 {
 
   font-weight: 700;
   line-height: 1;
-  margin-top: $space-s;
+  //margin-top: $space-s;
   margin-bottom: $space-s;
   color: $color-accent;
 }
