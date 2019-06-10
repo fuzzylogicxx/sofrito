@@ -29,11 +29,10 @@ pre {
     padding: 1em;
     margin: $space-m 0;
     overflow: auto;
+
+    // note: these aren’t fully working properly as yet. Getting horizontal scrollbars when hyphens set to none. Need to tear back styles and find problem.
     white-space: pre-wrap;
     word-wrap: break-word;
-    white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap;
 }
 
 pre code {
