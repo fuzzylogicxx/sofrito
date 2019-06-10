@@ -21,9 +21,11 @@
 // Common patterns
 ///////////////////////////////////
 
-// Container utility for responsive layout
+// Container utility for sensible component widths within a responsive layout
 
 @mixin container() {
+
+  margin: 0 $space-s;
 
   @include at-least($bp-wide-two) {
     margin: 0 2%;
@@ -49,7 +51,7 @@
 }
 
 
-// Grid with 3 equal-width colummns
+// Create a grid with 3 flexible-and-equal-width colummns
 
 @mixin trio() {
   display: grid;
@@ -79,43 +81,15 @@
   overflow: auto;
   padding-top: $space-s;
   padding-bottom: $space-s;
+
+
 }
-
-
-
-///////////////////////////////////
-// Layout (page-level)
-///////////////////////////////////
-
-// We want a good "document outline" with proper sectioning elements at the top-level as far as possible
-// Percentage-based padding within top-level elements works well until screen gets crazy-wide
-// Then you ideally want a max-width and margin 0 auto on the content.
-// But if you want flexibility to have solid full-width backgrounds on elements then you need a nested element to be able to set a width and margin
-
-
-/*.global-header {
-  padding: $space-s;
-}
-
-.primary-content {
-  padding: $space-s $space-s $space-l;
-
-  &.with-header-banner {
-    padding-top: 0;
-  }
-}
-
-.global-footer {
-  padding: $space-l $space-s;
-}
-*/
 
 
 
 ///////////////////////////////////
 // Header
 ///////////////////////////////////
-
 
 .global-header {
   border-bottom: 1px solid $border-color;
@@ -125,18 +99,20 @@
     text-decoration: none;
   }
 
-  a:hover {
-    color: $color-complimentary;
-  }
-
 }
 
 .header-content {
   display: flex;
+  align-items: center;
 }
 
 .logo {
   margin-right: auto;
+  font-size: scale-value(5)+rem;
+
+  svg {
+    display: block;
+  }
 }
 
 .header-menu {
@@ -146,6 +122,10 @@
     margin-bottom: 0;
   }
 
+}
+
+.header-menu-hidden {
+  display: none;
 }
 
 .header-menu-toggle .special-link-icon {
@@ -163,7 +143,7 @@
 .global-footer {
   background: $text-color;
   color: #fff;
-  padding: $space-l 0 $space-m;
+  padding: $space-l 0 $space-xs;
 
   ul {
     margin-bottom: $space-s;
@@ -172,6 +152,7 @@
 
   li {
     margin-bottom: scale-value(-5)+rem;
+    font-size: scale-value(-1)+rem;
   }
 
   a {

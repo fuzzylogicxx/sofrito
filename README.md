@@ -23,5 +23,8 @@ This project is inspired by and or adapts elements of the following:
 - https://www.filamentgroup.com/lab/select-css.html
 - https://inclusive-components.design/data-tables/
 
+## Logo
+https://thenounproject.com/term/vegetables/105844/
+
 ## License
 The code is available under the MIT License.
