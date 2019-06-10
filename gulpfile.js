@@ -36,6 +36,7 @@ var paths = {
 	},
 	copy: {
 		input: 'src/copy/**/*',
+    inputHTML: 'src/copy/**/*.html',
 		output: 'dist/'
 	},
 	reload: './dist/'
@@ -54,6 +55,7 @@ var banner = {
 		' * (c) ' + new Date().getFullYear() + ' <%= package.author.name %>\n' +
 		' * <%= package.license %> License\n' +
 		' * <%= package.repository.url %>\n' +
+    ' * credits: <%= package.openSource.credits %>' +
 		' */\n\n',
 	min:
 		'/*!' +
@@ -61,6 +63,7 @@ var banner = {
 		' | (c) ' + new Date().getFullYear() + ' <%= package.author.name %>' +
 		' | <%= package.license %> License' +
 		' | <%= package.repository.url %>' +
+    ' | credits: <%= package.openSource.credits %>' +
 		' */\n'
 };
 
@@ -87,7 +90,7 @@ var optimizejs = require('gulp-optimize-js');
 
 // Styles
 var sass = require('gulp-sass');
-var prefix = require('gulp-autoprefixer');
+var prefixer = require('gulp-autoprefixer');
 var minify = require('gulp-cssnano');
 
 // SVGs
@@ -95,6 +98,9 @@ var svgmin = require('gulp-svgmin');
 
 // BrowserSync
 var browserSync = require('browser-sync');
+
+// fileinclude for "includes" in HTML files
+var fileinclude = require('gulp-file-include')
 
 
 /**
@@ -206,7 +212,7 @@ var buildStyles = function (done) {
 			outputStyle: 'expanded',
 			sourceComments: true
 		}))
-		.pipe(prefix({
+		.pipe(prefixer({
 			browsers: ['last 2 version', '> 0.25%'],
 			cascade: true,
 			remove: true
@@ -250,9 +256,25 @@ var copyFiles = function (done) {
 	// Make sure this feature is activated before running
 	if (!settings.copy) return done();
 
-	// Copy static files
-	src(paths.copy.input)
+	// Copy everything except HTML files
+  src([paths.copy.input, '!'+paths.copy.inputHTML])
 		.pipe(dest(paths.copy.output));
+
+  // Copy only HTML files, replacing @@placeholders with real global "includes" e.g. header.html
+  src(paths.copy.inputHTML)
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(dest(paths.copy.output));
+
+
+  // gulp.src(['index.html'])
+  //   .pipe(fileinclude({
+  //     prefix: '@@',
+  //     basepath: '@file'
+  //   }))
+  //   .pipe(gulp.dest('./'));
 
 	// Signal completion
 	done();

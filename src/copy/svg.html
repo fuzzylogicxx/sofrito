@@ -1,0 +1,47 @@
+@@include('./head.html')
+
+<body>
+
+  @@include('./global_header.html')
+
+  <!-- Page contents begin -->
+  <div class="container">
+
+    <main id="primary-content">
+
+      <h2>Icons in buttons</h2>
+
+      <p>Note: aria-hidden on icon because it’s purely decorative.</p>
+
+      <p> <!-- this <p> is just for demo purposes and not part of the button pattern -->
+        <a href="/" class="btn btn-icon cart-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="btn-icon-text">3 items</span>
+        </a>
+      </p>
+
+      <h2>Icons used repeatedly on the page</h2>
+
+      <p>This is currently implemented using <code>symbol</code> and <code>use</code>.</p>
+
+      <p>This is <a href="http://www.htmlhelp.com/" class="special-link"><span>an offsite link</span> <svg class="special-link-icon" aria-hidden="true" width="1em" height="1em"><use xlink:href="#icon-offsite" /></svg></a>. This is <a href="http://www.htmlhelp.com/" class="special-link"><span>another offsite link</span> <svg class="special-link-icon" aria-hidden="true" width="1em" height="1em"><use xlink:href="#icon-offsite" /></svg></a>.</p>
+    </main>
+
+  </div>
+
+
+
+
+  <!-- SVGs used repeatedly on the page are better defined as symbols then <use>d -->
+  <svg width="0" height="0" style="display: none;">
+    <symbol id="icon-offsite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <title>@CoolCompany on Twitter</title>
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+    </symbol>
+    <!-- add more symbols here -->
+  </svg>
+
+
+  @@include('./footer.html')
+
+

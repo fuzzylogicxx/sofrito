@@ -1,4 +1,30 @@
 # Sofrito
+
+TO DO:
+
+When preparing the Github demo page (in the gh-pages branch):
+
+- index.html and any other HTML pages:
+  - need any changes to header, footer etc brought in. Maybe just copy in a page from /dist?
+  - refs to static assets need to be dist/assets/css/main_v0.0.1.min.css whereas in a real page we wouldn’t have the dist part
+- favicon and sitemanifest
+  - both paths need prefixed with dist/
+- *.min.css 
+  - refs /assets need to be /sofrito/dist/assets whereas in a real page we wouldn’t have the /sofrito/dist part
+
+
+
+- could handle the above in a different/separate build step?
+- or with more simple find and replace?
+
+
+
+
+
+
+
+
+
 A savoury front-end base with advanced typographic, layout, performance and build ingredients.
 
 ## Updates required when using in production

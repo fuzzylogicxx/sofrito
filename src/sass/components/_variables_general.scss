@@ -3,10 +3,22 @@
 ///////////////////////////////////
 
 $selected-text-background: rgba(82,32,85,.25);
-$text-color: rgb(34,34,34); // #222, not quite black.
-$color-accent: rgb(155,61,61); // mexican salsa reddish color
-$color-light: #eee; // e.g. grey background and dividers (came from from Scott O’Hara button colour)
-$accessible-border-color: #565656; // direct from Scott O’Hara. Will want to customise but retain accessible colour contrast.
+$text-color: rgb(18,18,18); // like the Guardian // alternatively rgb(34,34,34) i.e. #222, not quite black.
+$color-accent: hsl(8, 62%, 58%);
+$color-complimentary: hsl(166, 19%, 32%);
+$color-light: hsl(0, 0%, 95%);
+$border-color: hsl(0, 0%, 86%);
 
-// add alert colours from bootstrap here
+
+
+// Alert colours: add alert colours from bootstrap here
 // https://getbootstrap.com/docs/4.0/components/alerts/
+
+
+
+
+///////////////////////////////////
+// Rounded Corners
+///////////////////////////////////
+
+$global-border-radius: 4px;

@@ -1,0 +1,42 @@
+// start with basic inline code element i.e. could appear within the running text of a paragraph or heading
+// Code elements can (dependent on typeface) tend to look a bit small hence we increase.
+// Tweak as/if appropriate.
+// Note: using ems so that our tweaked size scales up whether in a <p> or <h1>
+
+code {
+
+  // normalize.css – if we’re using default monospace, use this hack to avoid browser weirdness with regard to font-sizing.
+  // font-family: monospace, monospace;
+
+  // With some code fonts, we might want to enlarge.
+  // font-size: 1.025em;
+
+  font-family: Source Code Pro, monospace;
+  color: $color-complimentary;
+  //hyphens: none;
+  line-height: normal;
+
+}
+
+
+// <pre>-based code snippets
+
+pre {
+    background: #fafafa;
+    border: 1px dotted #aaa;
+    color: #111;
+    font-size: scale-value(-1)+rem;
+    padding: 1em;
+    margin: $space-m 0;
+    overflow: auto;
+
+    // note: these aren’t fully working properly as yet. Getting horizontal scrollbars when hyphens set to none. Need to tear back styles and find problem.
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre code {
+    font-size: 1em;
+    color: #111;
+}
+

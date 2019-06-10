@@ -1,9 +1,3 @@
-// Temporary
-
-#global-header {
-  display: none;
-}
-
 ///////////////////////////////////
 // Chosen Typefaces
 ///////////////////////////////////
@@ -14,11 +8,20 @@ $base-font-family-fonts-loaded: Source Sans Pro,Helvetica Neue,sans-serif;
 $alt-font-family: serif;
 $alt-font-family-fonts-loaded: Source Serif Pro, serif;
 
-$alt-font-family: $base-font-family;
-$alt-font-family-fonts-loaded: $base-font-family-fonts-loaded;
-
 
 // @font-face declarations (if self-hosting)
+
+// Sans: Light (activated by font-weight: 400)
+
+@font-face {
+  font-family: Source Sans Pro;
+  src: url(/assets/type/SourceSansPro-Light.ttf.woff2) format("woff2"),
+       url(/assets/type/SourceSansPro-Light.ttf.woff) format("woff"),
+       url(/assets/type/SourceSansPro-Light.otf) format("opentype");
+  font-display: swap;
+}
+
+// Sans: Light Italic (activated by font-weight: 400 and font-style: italic)
 
 @font-face {
   font-family: Source Sans Pro;
@@ -29,22 +32,18 @@ $alt-font-family-fonts-loaded: $base-font-family-fonts-loaded;
   font-display: swap;
 }
 
-@font-face {
-  font-family: Source Sans Pro;
-  src: url(/assets/type/SourceSansPro-Light.ttf.woff2) format("woff2"),
-       url(/assets/type/SourceSansPro-Light.ttf.woff) format("woff"),
-       url(/assets/type/SourceSansPro-Light.otf) format("opentype");
-  font-display: swap;
-}
+// Sans: Semibold (activated by font-weight: 700)
 
 @font-face {
   font-family: Source Sans Pro;
-  src: url(/assets/type/SourceSansPro-SemiBold.ttf.woff2) format("woff2"),
-       url(/assets/type/SourceSansPro-SemiBold.ttf.woff) format("woff"),
-       url(/assets/type/SourceSansPro-SemiBold.otf) format("opentype");
-  font-weight:700;
+  src: url(/assets/type/SourceSansPro-Semibold.ttf.woff2) format("woff2"),
+       url(/assets/type/SourceSansPro-Semibold.ttf.woff) format("woff"),
+       url(/assets/type/SourceSansPro-Semibold.otf) format("opentype");
+  font-weight: 700;
   font-display: swap;
 }
+
+// Serif: Regular (activated by font-weight: 500)
 
 @font-face {
   font-family: Source Serif Pro;
@@ -55,6 +54,15 @@ $alt-font-family-fonts-loaded: $base-font-family-fonts-loaded;
   font-display: swap;
 }
 
+// Code / monospace
+
+@font-face {
+  font-family: Source Code Pro;
+  src: url(/assets/type/SourceCodePro-Light.ttf.woff2) format("woff2"),
+       url(/assets/type/SourceCodePro-Light.ttf.woff) format("woff"),
+       url(/assets/type/SourceCodePro-Light.otf) format("opentype");
+  font-display: swap;
+}
 
 
 
@@ -93,7 +101,11 @@ $ms-ratio: 1.2;
 
 // arrived at by trying em-based values for max-width and min-width in browser and deciding what’s best by eye
 $text-measure-min-in-ems: 18;
-$text-measure-max-in-ems: 30;
+$text-measure-max-in-ems: 34;
+
+// media query friendly equivalent of our max measure width
+// (note media queries work on 1em = 16px hence the required calculation when our 1em != 16px)
+$width-pressure-point-one: ($text-measure-max-in-ems * $ms-base)+em;
 
 
 
@@ -106,18 +118,45 @@ $text-measure-max-in-ems: 30;
 // but since that model is quite inflexible to apply across all the site’s elements, we’re just as well picking line-height values from the scale throughout the site.
 // Start with ones for standard body copy.
 
-$body-line-height-min: 1.35; // scale-value(2); // = 1.44.
-$body-line-height-max: 1.5;
+$body-line-height-min: scale-value(-6) * 4; // 1.33959 (i.e. 1.34)
+$body-line-height-max: scale-value(2);
+
 
 
 
 ///////////////////////////////////
 // Gutter
 ///////////////////////////////////
-
-// Gutter
 
 $min-acceptable-gutter_in_vw: 4.89; // Using vw for main gutter has the advantage of gutter width scaling with viewport width.
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+// Responsive breakpoints
+// defined here because:
+// i) they’re set in ems so relative to type size; and
+// ii) we can now use them in rules below e.g. for increasing h1 size on large screens
+//////////////////////////////////////////////////////////////////////////////////////
+
+// Max-width we want our site's content to go.
+// NB this is not the same as our $text-measure. This is for an outer wrapper.
+// ...
+
+
+// Breakpoint values
+
+$bp-wide-one: 48em; //( ($text-measure-max-in-ems + 2) * $ms-base)+em;
+
+$bp-wide-two: 64em;
+
+$bp-wide-three: 80em;
+
+$bp-wide-four: 100em;
+
+$bp-wide-five: 120em;
+
 
 
 
@@ -128,7 +167,6 @@ $min-acceptable-gutter_in_vw: 4.89; // Using vw for main gutter has the advantag
 // Set some vars we’ll use as utilities and in calculations
 
 $ms-base-rem: ($ms-base * 1)+rem;
-$ms-base-percentage: ($ms-base*100)+%;
 $ms-base-px: ($ms-base * 16px)+px;
 
 
@@ -136,32 +174,17 @@ $space-xxs: ($body-line-height-min/2)+rem;
 $space-xs: scale-value(-1)+rem;
 $space-s: 1rem;
 $space-m: $body-line-height-min+rem;
-$space-lg: scale-value(3)+rem;
+$space-l: scale-value(3)+rem;
 
 
 
 
 // Body Text
 
-// rems?
-// can i override on problem element?
-// ** subpixel values? (18px or font-size: 112.5%; works ok) **
-  // so can either: 1) not use subpixel value at root, or 2) override font-size of problem element using a non-subpixel value (it works, but prob an unnecessary faff.)
-
 :root {
   color: $text-color;
   font-family: $base-font-family-fonts-loaded;
   font-size: $ms-base-rem;
-  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
-}
-
-@supports (font-kerning: normal) and (font-variant-ligatures: common-ligatures contextual) and (font-variant-numeric: oldstyle-nums proportional-nums) {
-  :root {
-    font-kerning: normal;
-    font-variant-ligatures: common-ligatures contextual;
-    font-variant-numeric: oldstyle-nums proportional-nums;
-    font-feature-settings: normal;
-  }
 }
 
 //body{
@@ -172,21 +195,85 @@ $space-lg: scale-value(3)+rem;
 //}
 
 body {
-  //margin: 0 1em; //temp
   font-family: $base-font-family-fonts-loaded;
-  line-height: $body-line-height-min; // set leading on body per Tim Brown rather than on html/root level per normalize.css
-  //@include at-least($width-pressure-point-one) {
-  //  line-height: $text-line-height-max;
-  //}
+  line-height: $body-line-height-min; // set leading on body per Tim Brown rather than on html/root per normalize.css
+  @include at-least($width-pressure-point-one) {
+    line-height: $body-line-height-max;
+  }
 }
 
 
+// Links
+
+a {
+  color: $color-accent;
+  text-decoration: underline solid lighten($color-accent, 25%);
+}
+
+a:hover {
+  color: darken($color-accent, 25%);
+  text-decoration: underline solid darken($color-accent, 25%);
+}
+
+
+// Abbreviations
+// from normalize.css: 1. Remove the bottom border in Chrome 57-; and 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+
+// Bold / Emphasis
+// from normalize.css: Add the correct font weight in Chrome, Edge, and Safari.
+
+b,
+strong {
+  font-weight: bolder;
+}
 
 
 // Small Text (captions, labels, help text, or for use when screen real estate is limited, as in banner ads. But small text involves more than simply reducing the font size.)
+
 small {
   font-size: scale-value(-2)+rem;
 }
+
+
+// From normalize.css: prevent `sub` and `sup` elements from affecting the line height in all browsers.
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+
+// Quoting
+
+blockquote {
+  border-left: scale-value(-3)+rem solid $border-color;
+  color: lighten($text-color, 20%);
+  font-style: italic;
+  margin: scale-value(4)+rem 0;
+  margin-left: -($space-l);
+  padding-left: $space-s;
+}
+
+
+// Headings
 
 h6,
 h5,
@@ -209,27 +296,79 @@ h2 {
 }
 
 h3 {
-  font-size: scale-value(0)+rem;
   font-weight: 700;
+
+  // A font-size that is only just larger than the body font-size is a common requirement so let’s make one by adding scale values.
+  font-size: ( (scale-value(-6) * 2) + scale-value(-5) )+rem;
+
+  // Add typographic "contrast".
+  @include at-least($width-pressure-point-one) {
+    font-size: scale-value(1)+rem;
+  }
+
+  .prose & {
+    margin-top: $space-l;
+  }
+
 }
 
 h2 {
   font-size: scale-value(1)+rem;
   font-weight: 700;
+
+  // Add typographic "contrast".
+  @include at-least($width-pressure-point-one) {
+    font-size: scale-value(2)+rem;
+  }
+
+  .prose & {
+    margin-top: $space-l;
+  }
+
 }
 
 h1 {
   font-size: scale-value(2)+rem;
+
+  // Add typographic "contrast".
+  @include at-least($width-pressure-point-one) {
+    font-size: ( scale-value(2) + scale-value(-6) )+rem;
+  }
+
   font-weight: 700;
-  line-height: scale-value(0);
-  margin-top: $space-s;
+  line-height: 1;
+  //margin-top: $space-s;
+  margin-bottom: $space-s;
   color: $color-accent;
 }
 
+ol, ul, li {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 p,
-ul {
+ul,
+details,
+.entry-meta {
   margin-bottom: $space-xxs;
 }
+
+.prose {
+  hyphens: auto;
+  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+  max-width: $text-measure-max-in-ems+rem;
+}
+
+@supports (font-kerning: normal) and (font-variant-ligatures: common-ligatures contextual) and (font-variant-numeric: oldstyle-nums proportional-nums) {
+  .prose {
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures contextual;
+    font-variant-numeric: oldstyle-nums proportional-nums;
+    font-feature-settings: normal;
+  }
+}
+
 
 
 
