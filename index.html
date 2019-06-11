@@ -14,32 +14,30 @@
   <!-- Avoid Google "duplicate content" penalties -->
   <link rel="canonical" href="https://fuzzylogicxx.github.io/sofrito/" />
 
-  <!-- Meta Robots Starting Point: block all the things! When ready, update per page as appropriate. For example, we want articles indexed but might not want listing pages indexed. -->
+  <!-- Meta Robots Starting Point: block all the things! -->
+  <!-- When ready, update per page as appropriate. For example, we want articles indexed but might not want listing pages indexed. -->
   <meta name="robots" content="noindex, nofollow">
 
   <!-- OG (Open Graph) tags -->
-  <!-- may want to change og:type when not on Homepage -->
+  <!-- may want to change og:type from 'website' when not on Homepage -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sofrito" />
   <meta property="og:locale" content="en_gb" />
   <meta property="og:url" content="https://fuzzylogicxx.github.io/sofrito/" />
   <meta property="og:title" content="Sofrito – a front-end base for web developers." />
   <meta property="og:description" content="A savoury front-end base with tasty typographic, layout, performance and build ingredients" />
-  <!-- Image: see FB guidelines for sharing / Open Graph. Here I’m using their example image size for an "article" type page. So this differ for e.g. homepage -->
+  <!-- Image: see FB guidelines for sharing / Open Graph -->
   <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
   <meta property="og:image:type" content="image/jpg" />
   <meta property="og:image:width" content="971" />
   <meta property="og:image:height" content="509" />
 
-  <!-- only required if OG type is article -->
-  <!-- <meta property="article:publisher" content="https://www.facebook.com/Sofrito/" /> -->
-
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Sofrito – a savoury front-end base" />
   <meta name="twitter:description" content="A savoury front-end base with tasty typographic, layout, performance and build ingredients" />
-  <!-- ToDo: 400x400 – is that right? -->
-  <meta name="twitter:image" content="https://fuzzylogicxx.github.io/sofrito/dist/assets/img/logo-400x400.png" />
+  <!-- ref: https://sproutsocial.com/insights/social-media-image-sizes-guide/#twitter. Min 440 x 220 pixels (a 2:1 ratio). Max: 1024 x 512 -->
+  <meta name="twitter:image" content="https://fuzzylogicxx.github.io/sofrito/dist/assets/img/logo-440x220.png" />
 
   <!-- Advice for devices which can 'install' this website on their home scren -->
   <link rel="manifest" href="/sofrito/dist/site.webmanifest">
@@ -47,31 +45,14 @@
   <!-- Icons: favicon and related  -->
   <link rel="apple-touch-icon" href="/sofrito/dist/icon.png">
 
-  <!-- Icons: PWA Splash images for iOS  -->
-  <!-- ToDo: add here  -->
-
-  <!-- Web Fonts -->
-  <!-- If using a service such as typekit, add code here  -->
-
   <!-- Global Styles -->
   <link rel="stylesheet" href="/sofrito/dist/assets/css/main_v0.0.1.min.css">
 
-  <!-- Page-Specific Styles -->
-  <!-- If any, add here <style></style> -->
-
-  <!-- Service Worker -->
-  <!-- <link rel="serviceworker" href="/serviceworker.js"> -->
-
-  <!-- RSS feed, if you have it -->
-  <link href="https://fuzzylogicxx.github.io/sofrito/news/rss" rel="alternate" type="application/rss+xml" title="Sofrito News RSS feed">
-  <link href="https://fuzzylogicxx.github.io/sofrito/news/jsonfeed.json" rel="alternate" type="application/json" title="Sofrito News JSON feed">
-
 </head>
-
 
 <body id="page-home">
 
-    <!-- Header begins -->
+  <!-- Header begins -->
   <header id="global-header" class="global-header">
 
     <div class="header-content container">
@@ -115,15 +96,11 @@
 
   </header>
 
+  <main id="primary-content" class="primary-content with-header-banner">
 
-  <!-- Dominant content of page begins -->
-  <!-- <div class="multicol-container"> | only required when we have a sidebar/aside at same level as <main> -->
+    <div class="site-intro header-banner special">
 
-    <main id="primary-content" class="primary-content with-header-banner">
-
-      <div class="site-intro header-banner special">
-
-        <div class="container">
+      <div class="container">
 
         <h1>Sofrito</h1>
         <!-- <h2>A savoury front-end base with tasty typographic, pattern and performance ingredients.</h2> --> <!-- layout, performance and build -->
@@ -143,11 +120,11 @@
           </a>
         </p>
 
-        </div>
+      </div> <!-- /.container -->
 
-      </div>
+    </div> <!-- /.header-banner -->
 
-      <div class="container">
+    <div class="container">
 
       <div class="trio features-benefits">
 
@@ -166,15 +143,13 @@
           <p>Loaded with solutions to common front-end challenges: SVG icons, sticky footers, accessible forms, modals, tabs, navigation and more.</p>
         </section>
 
-      </div>
+      </div> <!-- /.trio -->
 
-      </div>
+    </div> <!-- /.container -->
 
-    </main>
+  </main>
 
-  <!-- </div> --> <!-- /.multicol-container -->
-
-    <!-- Footer begins -->
+  <!-- Footer begins -->
   <footer aria-label="site" id="global-footer" class="global-footer">
 
     <div class="container">
@@ -198,46 +173,22 @@
 
       <small class="copyright">&copy; 2017–2019 <a href="https://fuzzylogic.me">Laurence Hughes</a></small>
 
-    </div>
+    </div> <!-- /.container -->
 
   </footer>
 
   <!-- Scripts at bottom -->
 
-  <!-- polyfills first so that subsequent scripts (which might use matches() and so on) etc are polyfilled -->
+  <!-- polyfills first so that subsequent scripts (which might use e.g. matches()) are polyfilled -->
   <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
   <!-- website’s global javascript file including any globally required polyfills (that aren’t provided by polyfill.io) -->
   <script src="/sofrito/dist/assets/js/main.polyfills_v0.0.1.min.js"></script>
 
-  <!-- add any page-specific JS here (files or inline) -->
-
-  <!--  for example: -->
-  <!-- <script src="/assets/js/another-file_v0.0.1.min.js"></script> -->
-
-  <!-- or initialise a disclosure element -->
-  <!--
-  <script>
-    var disclosure = new Houdini('[data-houdini]');
-  </script>
-  -->
-
-  <!-- register a service worker (for improved resilience and performance) -->
-  <!--
-  <script>
-  if (navigator.serviceWorker) {
-      navigator.serviceWorker.register('/serviceworker.js');
-      window.addEventListener('load', function() {
-          if (navigator.serviceWorker.controller) {
-              navigator.serviceWorker.controller.postMessage({'command': 'clean up caches'});
-          }
-      });
-  }
-  </script>
-  -->
-
-  <!-- Google Analytics using the https://minimalanalytics.com/ snippet. Note: if require advanced features such as tracking AdWords, switch to a traditional GA snippet.  -->
+  <!-- Google Analytics using the https://minimalanalytics.com/ snippet. -->
   <!-- Replace UA-xxxxxxxxx-x with your analytics ID -->
+  <!-- Note: if you require advanced features such as tracking AdWords, switch to a traditional GA snippet. -->
+  <!-- You might also consider an alternative to Google Analytics: see https://adactio.com/journal/13853 -->
   <!--
   <script>
     (function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
@@ -260,8 +211,6 @@
     (window,"UA-xxxxxxxxx-x",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true});
   </script>
   -->
-
-  <!-- You might also consider an alternative to Google Analytics: see https://adactio.com/journal/13853 -->
 
 </body>
 </html>
