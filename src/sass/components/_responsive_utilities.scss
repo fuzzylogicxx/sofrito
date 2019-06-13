@@ -1,0 +1,58 @@
+///////////////////////////////////
+// Responsive utilities
+///////////////////////////////////
+
+// Container utility for sensible maximum component widths within a responsive layout
+
+@mixin container() {
+
+  margin: 0 $space-s;
+
+  @include at-least($bp-wide-two) {
+    margin: 0 2%;
+  }
+
+  @include at-least($bp-wide-three) {
+    margin: 0 6%;
+  }
+
+  @include at-least($bp-wide-four) {
+    margin: 0 10%;
+  }
+
+  @include at-least($bp-wide-five) {
+    margin: 0 auto;
+    max-width: 80em;
+  }
+
+}
+
+.container {
+  @include container();
+}
+
+
+// Create a grid with 3 flexible-and-equal-width colummns
+
+@mixin trio() {
+  display: grid;
+  grid-column-gap: $space-s;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.trio {
+  @include at-least($bp-wide-one) {
+    @include trio();
+  }
+}
+
+
+// Create a row with 2 equal-width columns but when space allows, 3 equal-width columns.
+
+.min-duo-max-trio {
+  columns: 2;
+  @include at-least($bp-wide-one) {
+    columns: unset;
+    @include trio();
+  }
+}
