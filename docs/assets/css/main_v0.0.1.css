@@ -188,34 +188,34 @@ template {
 
 @font-face {
   font-family: Source Sans Pro;
-  src: url(/assets/type/SourceSansPro-Light.ttf.woff2) format("woff2"), url(/assets/type/SourceSansPro-Light.ttf.woff) format("woff"), url(/assets/type/SourceSansPro-Light.otf) format("opentype");
+  src: url(../../assets/type/SourceSansPro-Light.ttf.woff2) format("woff2"), url(../../assets/type/SourceSansPro-Light.ttf.woff) format("woff"), url(../../assets/type/SourceSansPro-Light.otf) format("opentype");
   font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
-  src: url(/assets/type/SourceSansPro-LightIt.ttf.woff2) format("woff2"), url(/assets/type/SourceSansPro-LightIt.ttf.woff) format("woff"), url(/assets/type/SourceSansPro-LightIt.otf) format("opentype");
+  src: url(../../assets/type/SourceSansPro-LightIt.ttf.woff2) format("woff2"), url(../../assets/type/SourceSansPro-LightIt.ttf.woff) format("woff"), url(../../assets/type/SourceSansPro-LightIt.otf) format("opentype");
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
-  src: url(/assets/type/SourceSansPro-Semibold.ttf.woff2) format("woff2"), url(/assets/type/SourceSansPro-Semibold.ttf.woff) format("woff"), url(/assets/type/SourceSansPro-Semibold.otf) format("opentype");
+  src: url(../../assets/type/SourceSansPro-Semibold.ttf.woff2) format("woff2"), url(../../assets/type/SourceSansPro-Semibold.ttf.woff) format("woff"), url(../../assets/type/SourceSansPro-Semibold.otf) format("opentype");
   font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
   font-family: Source Serif Pro;
-  src: url(/assets/type/SourceSerifPro-Regular.ttf.woff2) format("woff2"), url(/assets/type/SourceSerifPro-Regular.ttf.woff) format("woff"), url(/assets/type/SourceSerifPro-Regular.otf) format("opentype");
+  src: url(../../assets/type/SourceSerifPro-Regular.ttf.woff2) format("woff2"), url(../../assets/type/SourceSerifPro-Regular.ttf.woff) format("woff"), url(../../assets/type/SourceSerifPro-Regular.otf) format("opentype");
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: Source Code Pro;
-  src: url(/assets/type/SourceCodePro-Light.ttf.woff2) format("woff2"), url(/assets/type/SourceCodePro-Light.ttf.woff) format("woff"), url(/assets/type/SourceCodePro-Light.otf) format("opentype");
+  src: url(../../assets/type/SourceCodePro-Light.ttf.woff2) format("woff2"), url(../../assets/type/SourceCodePro-Light.ttf.woff) format("woff"), url(../../assets/type/SourceCodePro-Light.otf) format("opentype");
   font-display: swap;
 }
 
