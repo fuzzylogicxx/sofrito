@@ -3,6 +3,7 @@
 ///////////////////////////////////
 
 // Container utility for sensible maximum component widths within a responsive layout
+// Defined as a mixin so it can be used in different places; not just via the .container class defined later.
 
 @mixin container() {
 

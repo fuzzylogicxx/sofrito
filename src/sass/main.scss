@@ -9,10 +9,10 @@
 @import "components/code.scss";
 @import "components/skip_links.scss";
 @import "components/aspect_ratio.scss";
-@import "components/svg_link_icons.scss";
+@import "components/svg_and_text_pairs.scss";
 @import "components/media_objects.scss";
 @import "components/breakout.scss";
-@import "components/_responsive_utilities.scss";
+@import "components/_responsive_layout_utilities.scss";
 
 ///////////////////////////////////
 // Common patterns
@@ -44,6 +44,16 @@
 }
 
 
+// Offsite links
+// Note 1) may consider applying the class automatically so that it’s not reliant on the CMS administrator
+// e.g. a:not([href*='yourdomain.com']):not([href^='#']):not([href^='/']):after {}
+// Note 2) since there might be many offsite links on a page, might consider using a background image (rather than inline SVG) to take advantage of cacheing.
+
+.offsite svg {
+  font-size: .9em; // just works better for the icon we’re currently using.
+}
+
+
 
 
 ///////////////////////////////////
@@ -72,6 +82,15 @@
   svg {
     display: block;
   }
+
+/*  span {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-left: .5rem;
+    text-transform: uppercase;
+    line-height: 1;
+  }*/
+
 }
 
 .header-menu {
@@ -90,9 +109,9 @@
   display: none;
 }
 
-.header-menu-toggle .special-link-icon {
+.header-menu-toggle .text-icon-pair-icon {
   font-size: .6em;
-  margin-top: .3em;
+  margin-top: .2em;
 }
 
 
