@@ -2,6 +2,12 @@
 
 TO DO:
 
+NEW
+- in branch develop, delete /docs then copy /dist and paste a duplicate then rename as /docs
+- in sublime, right-click docs/assets/css and Find in Folder /assets and replace all with ../../assets
+- That’s it.
+
+OLD
 When preparing the Github demo page (in the gh-pages branch):
 
 - index.html and any other HTML pages:
