@@ -34,14 +34,19 @@
 
 .container-centred-text {
   text-align: center;
-  /*display: flex;
-  flex-direction: column;
-  align-items: center;*/
 
   & > * {
     max-width: $text-measure-max-in-ems+rem;
-    margin-left: auto;
-    margin-right: auto;
+
+    // Add a little more breathing space on narrow screens
+    margin-left: $space-s;
+    margin-right: $space-s;
+
+    // We need to centre our max-width-ed elements on wider screens
+    @include at-least($width-pressure-point-one) {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
 
