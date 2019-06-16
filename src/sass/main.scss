@@ -25,6 +25,12 @@
   overflow: auto;
   padding-top: $space-s;
   padding-bottom: $space-s;
+
+  .container {
+    max-width: $width-pressure-point-one;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 
@@ -73,6 +79,10 @@
 .header-content {
   display: flex;
   align-items: center;
+
+  & > * + * {
+    margin-left: $space-s;
+  }
 }
 
 .logo {
@@ -82,24 +92,12 @@
   svg {
     display: block;
   }
-
-/*  span {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-left: .5rem;
-    text-transform: uppercase;
-    line-height: 1;
-  }*/
-
 }
 
 .header-menu {
-  margin-right: $space-s;
-
   ul {
     margin-bottom: 0;
   }
-
 }
 
 
