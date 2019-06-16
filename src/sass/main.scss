@@ -23,13 +23,26 @@
 .header-banner {
   background: $color-light;
   overflow: auto;
-  padding-top: $space-s;
-  padding-bottom: $space-s;
+  padding: $space-m 0 $space-l;
 
-  .container {
-    max-width: $width-pressure-point-one;
-    margin: 0 auto;
-    text-align: center;
+  .container > * {
+    margin-bottom: 0;
+  }
+
+  .container > * + * {
+    margin-top: $space-m;
+  }
+
+  @include at-least($width-pressure-point-one) {
+    padding: $space-l 0 scale-value(4)+rem;
+
+    .container > * + * {
+      margin-top: $space-l;
+    }
+  }
+
+  @include at-least($bp-wide-three) {
+    padding: scale-value(6)+rem 0 scale-value(7)+rem;
   }
 }
 
@@ -86,11 +99,18 @@
 }
 
 .logo {
+  line-height: 1;
   margin-right: auto;
   font-size: scale-value(5)+rem;
 
   svg {
     display: block;
+
+  }
+
+  :last-child {
+    font-size: 1rem;
+    margin-left: scale-value(-5)+rem;
   }
 }
 
@@ -154,7 +174,7 @@
 ///////////////////
 
 .primary-content {
-  padding: $space-s 0 $space-l;
+  padding: $space-m 0 $space-l; // padding: $space-s 0 $space-l;
 
   &.with-header-banner {
     padding-top: 0;
@@ -172,8 +192,11 @@
 
   section {
     margin-top: $space-m;
-  }
 
+    @include at-least($width-pressure-point-one) {
+      margin-top: $space-l;
+    }
+  }
 }
 
 

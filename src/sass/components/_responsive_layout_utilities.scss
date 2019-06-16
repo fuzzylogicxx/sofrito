@@ -32,12 +32,27 @@
   @include container();
 }
 
+.container-centred-text {
+  text-align: center;
+  /*display: flex;
+  flex-direction: column;
+  align-items: center;*/
+
+  & > * {
+    max-width: $text-measure-max-in-ems+rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+}
+
 
 // Create a grid with 3 flexible-and-equal-width colummns
 
 @mixin trio() {
   display: grid;
-  grid-column-gap: $space-s;
+  grid-column-gap: $space-l;
   grid-template-columns: repeat(3, 1fr);
 }
 

@@ -290,16 +290,13 @@ h4 {
   font-weight: 700;
 }
 
-h3,
-h2 {
-  line-height: scale-value(1);
-}
-
 h3 {
   font-weight: 700;
 
-  // A font-size that is only just larger than the body font-size is a common requirement so let’s make one by adding scale values.
+  // A font-size only just larger than the body font-size is a common requirement so let’s make one by adding scale values.
   font-size: ( (scale-value(-6) * 2) + scale-value(-5) )+rem;
+
+  line-height: scale-value(1);
 
   // Add typographic "contrast".
   @include at-least($width-pressure-point-one) {
@@ -307,7 +304,7 @@ h3 {
   }
 
   .prose & {
-    margin-top: $space-l;
+    margin-top: scale-value(4)+rem;
   }
 
 }
@@ -316,18 +313,23 @@ h2 {
   font-size: scale-value(1)+rem;
   font-weight: 700;
 
+
+  // Tighter line-height. Just a little looser than "setting solid" works for this typeface.
+  line-height: (scale-value(0) + ( (scale-value(-3)) - (scale-value(-4)) ));
+
   // Add typographic "contrast".
   @include at-least($width-pressure-point-one) {
     font-size: scale-value(2)+rem;
   }
 
   .prose & {
-    margin-top: $space-l;
+    margin-top: scale-value(4)+rem;
   }
 
 }
 
 h1 {
+  color: $color-accent;
   font-size: scale-value(2)+rem;
 
   // Add typographic "contrast".
@@ -337,9 +339,7 @@ h1 {
 
   font-weight: 700;
   line-height: 1;
-  //margin-top: $space-s;
   margin-bottom: $space-s;
-  color: $color-accent;
 }
 
 ol, ul, li {
