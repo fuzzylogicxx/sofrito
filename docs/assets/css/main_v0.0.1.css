@@ -1,0 +1,1783 @@
+/*!
+ * Sofrito v0.0.1
+ * A savoury front-end base with advanced typographic, layout, performance and build ingredients.
+ * (c) 2019 Laurence Hughes
+ * MIT License
+ * https://github.com/fuzzylogicxx/sofrito
+ * credits:  */
+
+@charset "UTF-8";
+@-ms-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+
+/* line 11, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+html {
+  -webkit-text-size-adjust: auto;
+}
+
+/* line 31, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* line 34, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+/* line 52, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+dd,
+figure,
+figcaption,
+dl,
+dd,
+dt {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 72, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+main, article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 86, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+img {
+  display: block;
+  max-width: 100%;
+  border-style: none;
+}
+
+/* line 103, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/* line 121, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+::-moz-selection {
+  background: rgba(82, 32, 85, 0.25);
+  text-shadow: none;
+}
+::selection {
+  background: rgba(82, 32, 85, 0.25);
+  text-shadow: none;
+}
+
+/* line 138, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+[hidden] {
+  display: none;
+}
+
+/* line 146, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+.a11y-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  /* 1 */
+}
+
+/* line 156, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+.a11y-only.focusable:active, .a11y-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+/* line 171, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 184, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 204, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* line 209, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* line 217, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+details {
+  display: block;
+}
+
+/* line 224, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+summary {
+  display: list-item;
+}
+
+/* line 241, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+template {
+  display: none;
+}
+
+/* line 248, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 254, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+.clearfix:after {
+  clear: both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* line 262, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+  body {
+    scroll-behavior: auto;
+  }
+  /* line 266, src/sass/components/_collected_reset_and_general_improvement_wisdom.scss */
+  * {
+    -webkit-animation: none !important;
+    animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
+@font-face {
+  font-family: Source Sans Pro;
+  src: url(/assets/type/SourceSansPro-Light.ttf.woff2) format("woff2"), url(/assets/type/SourceSansPro-Light.ttf.woff) format("woff"), url(/assets/type/SourceSansPro-Light.otf) format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Source Sans Pro;
+  src: url(/assets/type/SourceSansPro-LightIt.ttf.woff2) format("woff2"), url(/assets/type/SourceSansPro-LightIt.ttf.woff) format("woff"), url(/assets/type/SourceSansPro-LightIt.otf) format("opentype");
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Source Sans Pro;
+  src: url(/assets/type/SourceSansPro-Semibold.ttf.woff2) format("woff2"), url(/assets/type/SourceSansPro-Semibold.ttf.woff) format("woff"), url(/assets/type/SourceSansPro-Semibold.otf) format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Source Serif Pro;
+  src: url(/assets/type/SourceSerifPro-Regular.ttf.woff2) format("woff2"), url(/assets/type/SourceSerifPro-Regular.ttf.woff) format("woff"), url(/assets/type/SourceSerifPro-Regular.otf) format("opentype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Source Code Pro;
+  src: url(/assets/type/SourceCodePro-Light.ttf.woff2) format("woff2"), url(/assets/type/SourceCodePro-Light.ttf.woff) format("woff"), url(/assets/type/SourceCodePro-Light.otf) format("opentype");
+  font-display: swap;
+}
+
+/* line 184, src/sass/components/_typography.scss */
+:root {
+  color: #121212;
+  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
+  font-size: 1.125rem;
+}
+
+/* line 197, src/sass/components/_typography.scss */
+body {
+  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
+  line-height: 1.33959;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 197, src/sass/components/_typography.scss */
+  body {
+    line-height: 1.44;
+  }
+}
+
+/* line 208, src/sass/components/_typography.scss */
+a {
+  color: #d66351;
+  -webkit-text-decoration: underline solid #efc0b9;
+          text-decoration: underline solid #efc0b9;
+}
+
+/* line 213, src/sass/components/_typography.scss */
+a:hover {
+  color: #882e20;
+  -webkit-text-decoration: underline solid #882e20;
+          text-decoration: underline solid #882e20;
+}
+
+/* line 222, src/sass/components/_typography.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/* line 232, src/sass/components/_typography.scss */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* line 240, src/sass/components/_typography.scss */
+small {
+  font-size: 0.69444rem;
+}
+
+/* line 247, src/sass/components/_typography.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 255, src/sass/components/_typography.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 259, src/sass/components/_typography.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 266, src/sass/components/_typography.scss */
+blockquote {
+  border-left: 0.5787rem solid #dbdbdb;
+  color: #454545;
+  font-style: italic;
+  margin: 2.0736rem 0;
+  margin-left: -1.728rem;
+  padding-left: 1rem;
+}
+
+/* line 278, src/sass/components/_typography.scss */
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+  margin: 0 0 0.6698rem;
+}
+
+/* line 287, src/sass/components/_typography.scss */
+h6,
+h5,
+h4 {
+  font-weight: 700;
+}
+
+/* line 293, src/sass/components/_typography.scss */
+h3 {
+  font-weight: 700;
+  font-size: 1.07167rem;
+  line-height: 1.2;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 293, src/sass/components/_typography.scss */
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* line 306, src/sass/components/_typography.scss */
+.prose h3 {
+  margin-top: 2.0736rem;
+}
+
+/* line 312, src/sass/components/_typography.scss */
+h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.09645;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 312, src/sass/components/_typography.scss */
+  h2 {
+    font-size: 1.44rem;
+  }
+}
+
+/* line 325, src/sass/components/_typography.scss */
+.prose h2 {
+  margin-top: 2.0736rem;
+}
+
+/* line 331, src/sass/components/_typography.scss */
+h1 {
+  color: #d66351;
+  font-size: 1.44rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 331, src/sass/components/_typography.scss */
+  h1 {
+    font-size: 1.7749rem;
+  }
+}
+
+/* line 345, src/sass/components/_typography.scss */
+ol, ul, li {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* line 350, src/sass/components/_typography.scss */
+p,
+ul,
+details,
+.entry-meta {
+  margin-bottom: 0.6698rem;
+}
+
+/* line 357, src/sass/components/_typography.scss */
+.prose {
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+          font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+  max-width: 34rem;
+}
+
+@supports ((-webkit-font-kerning: normal) or (font-kerning: normal)) and ((-webkit-font-variant-ligatures: common-ligatures contextual) or (font-variant-ligatures: common-ligatures contextual)) and (font-variant-numeric: oldstyle-nums proportional-nums) {
+  /* line 364, src/sass/components/_typography.scss */
+  .prose {
+    -webkit-font-kerning: normal;
+            font-kerning: normal;
+    -webkit-font-variant-ligatures: common-ligatures contextual;
+            font-variant-ligatures: common-ligatures contextual;
+    font-variant-numeric: oldstyle-nums proportional-nums;
+    -webkit-font-feature-settings: normal;
+            font-feature-settings: normal;
+  }
+}
+
+/* line 40, src/sass/components/_forms_and_buttons.scss */
+.btn-wrap {
+  margin-top: 0.83333rem;
+}
+
+/* line 44, src/sass/components/_forms_and_buttons.scss */
+form {
+  margin-bottom: 0.6698rem;
+}
+
+/* line 50, src/sass/components/_forms_and_buttons.scss */
+.form-custom {
+  /**
+   * Shared styling among the different form controls.
+   * Much of these styles are pulled from normalize.css.
+   * Use as necessary within your own style sheets.
+   */
+  /**
+  * Remove the Clear button added by MS browsers
+  */
+  /**
+  * <button> Focus Normalization:
+  * remove FireFox specific inner focus styles.
+  * focus style will be reapplied later.
+  */
+  /**
+  * Restore the focus styles unset by the previous rule.
+  */
+  /**
+  * 1. Correct color inheritance in IE
+  * 2. Correct the text wrapping in Edge and IE
+  */
+  /**
+   * 1. Remove webkit redesign of searches
+   *
+   * 2. Remove inner padding & search cancel button in Safari & Chrome on
+   *    OS X. Safari (but not Chrome) clips the cancel button when the
+   *    search input has padding (& `textfield` appearance).
+   */
+}
+
+/* line 54, src/sass/components/_forms_and_buttons.scss */
+.form-custom fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 63, src/sass/components/_forms_and_buttons.scss */
+.form-custom button,
+.form-custom [type="button"],
+.form-custom [type="reset"],
+.form-custom [type="submit"] {
+  -webkit-appearance: button;
+}
+
+/* line 79, src/sass/components/_forms_and_buttons.scss */
+.form-custom input,
+.form-custom button,
+.form-custom textarea,
+.form-custom select {
+  border-radius: 0;
+  /* may change, but start consistently */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: normal;
+  margin: 0;
+  overflow: visible;
+  /* show overflow in Edge */
+  text-transform: none;
+  /* remove inheritance Edge, Firefox, IE */
+}
+
+/* line 97, src/sass/components/_forms_and_buttons.scss */
+.form-custom input::-ms-clear {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+/* line 108, src/sass/components/_forms_and_buttons.scss */
+.form-custom button::-moz-focus-inner,
+.form-custom [type="button"]::-moz-focus-inner,
+.form-custom [type="reset"]::-moz-focus-inner,
+.form-custom [type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* line 121, src/sass/components/_forms_and_buttons.scss */
+.form-custom button:-moz-focusring,
+.form-custom [type="button"]:-moz-focusring,
+.form-custom [type="reset"]:-moz-focusring,
+.form-custom [type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* line 132, src/sass/components/_forms_and_buttons.scss */
+.form-custom legend {
+  color: inherit;
+  /* 1 */
+  display: table;
+  /* 2 */
+  line-height: normal;
+  max-width: 100%;
+  /* 2 */
+  white-space: normal;
+  /* 2 */
+}
+
+/* line 142, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group {
+  margin-bottom: 0.6698rem;
+}
+
+/* line 146, src/sass/components/_forms_and_buttons.scss */
+.form-custom label {
+  display: block;
+  font-weight: 700;
+}
+
+/* line 151, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type=text],
+.form-custom input[type=email],
+.form-custom input[type=number],
+.form-custom input[type=tel],
+.form-custom input[type=search],
+.form-custom textarea,
+.form-custom select {
+  border: 1px solid #dbdbdb;
+}
+
+/* line 161, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type=text],
+.form-custom input[type=email],
+.form-custom input[type=number],
+.form-custom input[type=tel],
+.form-custom input[type=search],
+.form-custom textarea,
+.form-custom select {
+  padding: .5em;
+}
+
+/* line 171, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type=text],
+.form-custom input[type=email],
+.form-custom input[type=search],
+.form-custom textarea {
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* line 182, src/sass/components/_forms_and_buttons.scss */
+.form-custom button,
+.form-custom [type="button"],
+.form-custom [type="submit"],
+.form-custom [type="reset"] {
+  background: #d66351;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 0.48225em 1em 0.5787em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* line 190, src/sass/components/_forms_and_buttons.scss */
+.form-custom .btn-large,
+.form-custom .btn-large {
+  padding: 0.48225em 1em 0.5787em;
+}
+
+/* line 195, src/sass/components/_forms_and_buttons.scss */
+.form-custom button:hover,
+.form-custom [type="button"]:hover,
+.form-custom [type="submit"]:hover,
+.form-custom [type="reset"]:hover {
+  background: #c6432f;
+  color: #e6e6e6;
+}
+
+/* line 206, src/sass/components/_forms_and_buttons.scss */
+.form-custom textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+/* line 224, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type="search"] {
+  -webkit-appearance: none;
+  /* 1 */
+}
+
+/* line 228, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type="search"]::-webkit-search-decoration,
+.form-custom input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  /* 2 */
+  appearance: none;
+}
+
+/* line 240, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group-checkbox div,
+.form-custom .form-group-radio div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 245, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group-checkbox input[type="checkbox"],
+.form-custom .form-group-checkbox input[type="checkbox"]:focus,
+.form-custom .form-group-radio input[type="checkbox"],
+.form-custom .form-group-radio input[type="checkbox"]:focus {
+  border-radius: 10%;
+}
+
+/* line 250, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group-checkbox input[type="checkbox"] + label,
+.form-custom .form-group-checkbox label + input[type="checkbox"],
+.form-custom .form-group-radio input[type="checkbox"] + label,
+.form-custom .form-group-radio label + input[type="checkbox"] {
+  margin-left: 0.48225em;
+}
+
+/* line 255, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group-checkbox input[type="radio"],
+.form-custom .form-group-radio input[type="radio"] {
+  border-radius: 100%;
+  margin-right: 0.48225em;
+}
+
+/* line 260, src/sass/components/_forms_and_buttons.scss */
+.form-custom .form-group-checkbox label,
+.form-custom .form-group-radio label {
+  font-weight: 400;
+}
+
+/* line 267, src/sass/components/_forms_and_buttons.scss */
+.form-custom input[type="checkbox"],
+.form-custom input[type="radio"] {
+  padding: 0;
+  border: 0;
+}
+
+/* line 276, src/sass/components/_forms_and_buttons.scss */
+.form-custom .field-button-pair {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 279, src/sass/components/_forms_and_buttons.scss */
+.form-custom .field-button-pair input:not([type=submit]) {
+  min-width: 0;
+  margin-right: 1rem;
+}
+
+/* line 289, src/sass/components/_forms_and_buttons.scss */
+.form-custom .field-button-pair-search input:not([type=submit]) {
+  margin-right: 0;
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 296, src/sass/components/_forms_and_buttons.scss */
+.form-custom .field-button-pair-search [type=submit] {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+/* line 308, src/sass/components/_forms_and_buttons.scss */
+.form-custom select {
+  font-size: 1rem;
+  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
+  color: #121212;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  border-radius: 4px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23dcdcdc%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23dcdcdc%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(to bottom, #fff 0%, #fff 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+}
+
+/* line 332, src/sass/components/_forms_and_buttons.scss */
+.form-custom select::-ms-expand {
+  display: none;
+}
+
+/* line 335, src/sass/components/_forms_and_buttons.scss */
+.form-custom select:hover {
+  border-color: #888;
+}
+
+/* line 338, src/sass/components/_forms_and_buttons.scss */
+.form-custom select:focus {
+  border-color: #aaa;
+  -webkit-box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+          box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222;
+  outline: none;
+}
+
+/* line 345, src/sass/components/_forms_and_buttons.scss */
+.form-custom select option {
+  font-weight: normal;
+}
+
+/* line 355, src/sass/components/_forms_and_buttons.scss */
+.btn {
+  background: #d66351;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 0.48225em 1em 0.5787em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* line 360, src/sass/components/_forms_and_buttons.scss */
+.btn:link, .btn:visited {
+  color: #fff;
+}
+
+/* line 364, src/sass/components/_forms_and_buttons.scss */
+.btn:hover {
+  background: #c6432f;
+  color: #e6e6e6;
+  text-decoration: none;
+}
+
+/* line 369, src/sass/components/_forms_and_buttons.scss */
+.btn-small:link, .btn-small:visited {
+  padding: 0.3349em 0.5787em 0.40188em;
+}
+
+/* line 377, src/sass/components/_forms_and_buttons.scss */
+.btn-icon:link, .btn-icon:hover,
+.form-custom button.btn-icon, .form-custom [type="button"].btn-icon, .form-custom [type="reset"].btn-icon {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 383, src/sass/components/_forms_and_buttons.scss */
+.btn-icon > *:last-child {
+  margin-left: 0.3349em;
+}
+
+/* line 3, src/sass/components/_list_utils.scss */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* line 10, src/sass/components/_list_utils.scss */
+.list-custom {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 17, src/sass/components/_list_utils.scss */
+.list-compact {
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  padding-left: 0;
+}
+
+/* line 23, src/sass/components/_list_utils.scss */
+.list-compact > li {
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+/**
+ * @bugfix Prevent webkit from removing list semantics
+ * https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+ * 1. Add a non-breaking space
+ * 2. Make sure it doesn't mess up the DOM flow
+ */
+/* line 35, src/sass/components/_list_utils.scss */
+.list-custom > li:before,
+.list-compact > li:before {
+  content: "\200B";
+  /* 1 */
+  position: absolute;
+  /* 2 */
+}
+
+/* line 3, src/sass/components/_tables.scss */
+.table-container {
+  overflow-x: auto;
+}
+
+/*
+@media (min-width: 400px) {
+  .table-container {
+    display: block;
+  }
+
+  .lists-container {
+    display: none;
+  }
+}
+*/
+/* line 24, src/sass/components/_tables.scss */
+table {
+  border-collapse: collapse;
+  border-top: 1px solid #999;
+  border-left: 1px solid #999;
+  margin: 1em 0;
+}
+
+/* line 32, src/sass/components/_tables.scss */
+caption {
+  color: #933;
+}
+
+/* line 36, src/sass/components/_tables.scss */
+th, td {
+  padding: 10px;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+/* line 6, src/sass/components/_code.scss */
+code {
+  font-family: Source Code Pro, monospace;
+  color: #42615a;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
+  line-height: normal;
+}
+
+/* line 24, src/sass/components/_code.scss */
+pre {
+  background: #fafafa;
+  border: 1px dotted #aaa;
+  color: #111;
+  font-size: 0.83333rem;
+  padding: 1em;
+  margin: 1.33959rem 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 38, src/sass/components/_code.scss */
+pre code {
+  font-size: 1em;
+  color: #111;
+}
+
+/* line 7, src/sass/components/_skip_links.scss */
+#skip-links {
+  position: absolute;
+  top: 1.5vh;
+  left: -51em;
+  width: 10em;
+}
+
+/* line 13, src/sass/components/_skip_links.scss */
+#skip-links a {
+  display: block;
+  background: #000;
+  color: #fff;
+  -webkit-text-decoration-color: #fff;
+          text-decoration-color: #fff;
+  margin: 0.335em;
+  padding: 0.335em;
+  -webkit-transition: 150ms;
+  transition: 150ms;
+}
+
+/* line 22, src/sass/components/_skip_links.scss */
+#skip-links a:focus {
+  background: #060;
+}
+
+/* line 25, src/sass/components/_skip_links.scss */
+#skip-links a:focus,
+#skip-links a:focus ~ a {
+  -webkit-transform: translate(52em);
+          transform: translate(52em);
+}
+
+/* line 29, src/sass/components/_skip_links.scss */
+#skip-links:focus-within a {
+  -webkit-transform: translate(52em);
+          transform: translate(52em);
+}
+
+@media (max-height: 42em) {
+  /* line 33, src/sass/components/_skip_links.scss */
+  #skip-links {
+    width: auto;
+  }
+  /* line 36, src/sass/components/_skip_links.scss */
+  #skip-links a {
+    display: inline-block;
+  }
+}
+
+/**
+ * credit Andy Bell https://andy-bell.design/wrote/creating-an-aspect-ratio-css-utility/
+ * ASPECT RATIO
+ * A utility that provides you with a predictable aspect ratio
+ *
+ * ratio-wide: a 16:9 aspect
+ * ratio-square: a perfect square
+ */
+/* line 11, src/sass/components/_aspect_ratio.scss */
+[class*='aspect-ratio-'] {
+  display: block;
+  position: relative;
+}
+
+/* line 16, src/sass/components/_aspect_ratio.scss */
+[class*='aspect-ratio-'] > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 25, src/sass/components/_aspect_ratio.scss */
+.aspect-ratio-wide {
+  padding-top: 56.25%;
+}
+
+/* line 29, src/sass/components/_aspect_ratio.scss */
+.aspect-ratio-square {
+  padding-top: 100%;
+}
+
+/* line 36, src/sass/components/_aspect_ratio.scss */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  grid-gap: 0.4rem;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 46, src/sass/components/_aspect_ratio.scss */
+.gallery img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* line 13, src/sass/components/_svg_and_text_pairs.scss */
+.text-icon-pair {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 18, src/sass/components/_svg_and_text_pairs.scss */
+.text-icon-pair :last-child {
+  margin-left: .2em;
+}
+
+/* line 3, src/sass/components/_media_objects.scss */
+div.slat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+/* line 7, src/sass/components/_media_objects.scss */
+div.slat div.slat-copy {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 1rem;
+}
+
+/* line 2, src/sass/components/_breakout.scss */
+.special {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+}
+
+/* line 31, src/sass/components/_responsive_layout_utilities.scss */
+.container {
+  margin: 0 1rem;
+}
+
+@media screen and (min-width: 64em) {
+  /* line 31, src/sass/components/_responsive_layout_utilities.scss */
+  .container {
+    margin: 0 2%;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  /* line 31, src/sass/components/_responsive_layout_utilities.scss */
+  .container {
+    margin: 0 6%;
+  }
+}
+
+@media screen and (min-width: 100em) {
+  /* line 31, src/sass/components/_responsive_layout_utilities.scss */
+  .container {
+    margin: 0 10%;
+  }
+}
+
+@media screen and (min-width: 120em) {
+  /* line 31, src/sass/components/_responsive_layout_utilities.scss */
+  .container {
+    margin: 0 auto;
+    max-width: 80em;
+  }
+}
+
+/* line 35, src/sass/components/_responsive_layout_utilities.scss */
+.container-centred-text {
+  text-align: center;
+  /*display: flex;
+  flex-direction: column;
+  align-items: center;*/
+}
+
+/* line 41, src/sass/components/_responsive_layout_utilities.scss */
+.container-centred-text > * {
+  max-width: 34rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 48em) {
+  /* line 59, src/sass/components/_responsive_layout_utilities.scss */
+  .trio {
+    display: grid;
+    grid-column-gap: 1.728rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* line 68, src/sass/components/_responsive_layout_utilities.scss */
+.min-duo-max-trio {
+  -webkit-columns: 2;
+          columns: 2;
+}
+
+@media screen and (min-width: 48em) {
+  /* line 68, src/sass/components/_responsive_layout_utilities.scss */
+  .min-duo-max-trio {
+    -webkit-columns: unset;
+            columns: unset;
+    display: grid;
+    grid-column-gap: 1.728rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* line 23, src/sass/main.scss */
+.header-banner {
+  background: #f2f2f2;
+  overflow: auto;
+  padding: 1.33959rem 0 1.728rem;
+}
+
+/* line 28, src/sass/main.scss */
+.header-banner .container > * {
+  margin-bottom: 0;
+}
+
+/* line 32, src/sass/main.scss */
+.header-banner .container > * + * {
+  margin-top: 1.33959rem;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 23, src/sass/main.scss */
+  .header-banner {
+    padding: 1.728rem 0 2.0736rem;
+  }
+  /* line 39, src/sass/main.scss */
+  .header-banner .container > * + * {
+    margin-top: 1.728rem;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  /* line 23, src/sass/main.scss */
+  .header-banner {
+    padding: 2.98598rem 0 3.58318rem;
+  }
+}
+
+/* line 52, src/sass/main.scss */
+.meta {
+  color: gray;
+  margin: 0;
+}
+
+/* line 57, src/sass/main.scss */
+.dt-published {
+  color: gray;
+}
+
+/* line 61, src/sass/main.scss */
+.entry-meta .posted-on::before {
+  content: " · ";
+}
+
+/* line 71, src/sass/main.scss */
+.offsite svg {
+  font-size: .9em;
+}
+
+/* line 82, src/sass/main.scss */
+.global-header {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 1rem 0;
+}
+
+/* line 86, src/sass/main.scss */
+.global-header a {
+  text-decoration: none;
+}
+
+/* line 92, src/sass/main.scss */
+.header-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 96, src/sass/main.scss */
+.header-content > * + * {
+  margin-left: 1rem;
+}
+
+/* line 101, src/sass/main.scss */
+.logo {
+  line-height: 1;
+  margin-right: auto;
+  font-size: 2.48832rem;
+}
+
+/* line 106, src/sass/main.scss */
+.logo svg {
+  display: block;
+}
+
+/* line 111, src/sass/main.scss */
+.logo :last-child {
+  font-size: 1rem;
+  margin-left: 0.40188rem;
+}
+
+/* line 118, src/sass/main.scss */
+.header-menu ul {
+  margin-bottom: 0;
+}
+
+/* line 126, src/sass/main.scss */
+.header-menu-hidden {
+  display: none;
+}
+
+/* line 130, src/sass/main.scss */
+.header-menu-toggle .text-icon-pair-icon {
+  font-size: .6em;
+  margin-top: .2em;
+}
+
+/* line 143, src/sass/main.scss */
+.global-footer {
+  background: #121212;
+  color: #fff;
+  padding: 1.728rem 0 0.83333rem;
+}
+
+/* line 148, src/sass/main.scss */
+.global-footer ul {
+  margin-bottom: 1rem;
+  -webkit-columns: 2;
+          columns: 2;
+}
+
+/* line 153, src/sass/main.scss */
+.global-footer li {
+  margin-bottom: 0.40188rem;
+  font-size: 0.83333rem;
+}
+
+/* line 158, src/sass/main.scss */
+.global-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* line 162, src/sass/main.scss */
+.global-footer a:hover {
+  text-decoration: underline;
+}
+
+/* line 176, src/sass/main.scss */
+.primary-content {
+  padding: 1.33959rem 0 1.728rem;
+}
+
+/* line 179, src/sass/main.scss */
+.primary-content.with-header-banner {
+  padding-top: 0;
+}
+
+/* line 193, src/sass/main.scss */
+.features-benefits section {
+  margin-top: 1.33959rem;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 193, src/sass/main.scss */
+  .features-benefits section {
+    margin-top: 1.728rem;
+  }
+}
+
+@supports (display: grid) {
+  /* line 6, src/sass/components/_layout_enhanced.scss */
+  html {
+    height: 100%;
+  }
+  /* line 10, src/sass/components/_layout_enhanced.scss */
+  body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  /* line 17, src/sass/components/_layout_enhanced.scss */
+  main {
+    min-width: 0;
+  }
+}
+
+/* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-window {
+  opacity: 1;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+
+/* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-window.cc-invisible {
+  opacity: 0;
+}
+
+/* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-animate.cc-revoke {
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+/* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-animate.cc-revoke.cc-top {
+  -webkit-transform: translateY(-2em);
+          transform: translateY(-2em);
+}
+
+/* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-animate.cc-revoke.cc-bottom {
+  -webkit-transform: translateY(2em);
+          transform: translateY(2em);
+}
+
+/* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-animate.cc-revoke.cc-active.cc-bottom, .cc-animate.cc-revoke.cc-active.cc-top, .cc-revoke:hover {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+/* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-grower {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 1s;
+  transition: max-height 1s;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-link, .cc-revoke:hover {
+  text-decoration: underline;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-revoke, .cc-window {
+  position: fixed;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Helvetica,Calibri,Arial,sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  z-index: 9999;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-window.cc-static {
+  position: static;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-window.cc-floating {
+  padding: 2em;
+  max-width: 24em;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-window.cc-banner {
+  padding: 1em 1.8em;
+  width: 100%;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-revoke {
+  padding: .5em;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-header {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-btn, .cc-close, .cc-link, .cc-revoke {
+  cursor: pointer;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-link {
+  opacity: .8;
+  display: inline-block;
+  padding: .2em;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-link:hover {
+  opacity: 1;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-link:active, .cc-link:visited {
+  color: initial;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-btn {
+  display: block;
+  padding: .4em .8em;
+  font-size: .9em;
+  font-weight: 700;
+  border-width: 2px;
+  border-style: solid;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-highlight .cc-btn:first-child {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-highlight .cc-btn:first-child:focus, .cc-highlight .cc-btn:first-child:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-close {
+  display: block;
+  position: absolute;
+  top: .5em;
+  right: .5em;
+  font-size: 1.6em;
+  opacity: .9;
+  line-height: .75;
+}
+
+/* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-close:focus, .cc-close:hover {
+  opacity: 1;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-revoke.cc-top {
+  top: 0;
+  left: 3em;
+  border-bottom-left-radius: .5em;
+  border-bottom-right-radius: .5em;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-revoke.cc-bottom {
+  bottom: 0;
+  left: 3em;
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-revoke.cc-left {
+  left: 3em;
+  right: unset;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-revoke.cc-right {
+  right: 3em;
+  left: unset;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-top {
+  top: 1em;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-left {
+  left: 1em;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-right {
+  right: 1em;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-bottom {
+  bottom: 1em;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-floating > .cc-link {
+  margin-bottom: 1em;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-floating .cc-message {
+  display: block;
+  margin-bottom: 1em;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-window.cc-floating .cc-compliance {
+  -ms-flex: 1 0 auto;
+  -webkit-box-flex: 1;
+          flex: 1 0 auto;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-window.cc-banner {
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-banner.cc-top {
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-banner.cc-bottom {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-banner .cc-message {
+  display: block;
+  -ms-flex: 1 1 auto;
+  -webkit-box-flex: 1;
+          flex: 1 1 auto;
+  max-width: 100%;
+  margin-right: 1em;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-compliance {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-floating .cc-compliance > .cc-btn {
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+          flex: 1;
+}
+
+/* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-btn + .cc-btn {
+  margin-left: .5em;
+}
+
+@media print {
+  /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+  .cc-revoke, .cc-window {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+  .cc-btn {
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 414px) and (orientation: portrait), screen and (max-width: 736px) and (orientation: landscape) {
+  /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+  .cc-window.cc-top {
+    top: 0;
+  }
+  /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+  .cc-window.cc-bottom {
+    bottom: 0;
+  }
+  /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+  .cc-window.cc-banner, .cc-window.cc-floating, .cc-window.cc-left, .cc-window.cc-right {
+    left: 0;
+    right: 0;
+  }
+  /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+  .cc-window.cc-banner {
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+  /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+  .cc-window.cc-banner .cc-compliance {
+    -ms-flex: 1 1 auto;
+    -webkit-box-flex: 1;
+            flex: 1 1 auto;
+  }
+  /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+  .cc-window.cc-floating {
+    max-width: none;
+  }
+  /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+  .cc-window .cc-message {
+    margin-bottom: 1em;
+  }
+  /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+  .cc-window.cc-banner {
+    -ms-flex-align: unset;
+    -webkit-box-align: unset;
+            align-items: unset;
+  }
+  /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+  .cc-window.cc-banner .cc-message {
+    margin-right: 0;
+  }
+}
+
+/* line 5, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-floating.cc-theme-classic {
+  padding: 1.2em;
+  border-radius: 5px;
+}
+
+/* line 5, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-floating.cc-type-info.cc-theme-classic .cc-compliance {
+  text-align: center;
+  display: inline;
+  -ms-flex: none;
+  -webkit-box-flex: 0;
+          flex: none;
+}
+
+/* line 5, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-theme-classic .cc-btn {
+  border-radius: 5px;
+}
+
+/* line 5, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-theme-classic .cc-btn:last-child {
+  min-width: 140px;
+}
+
+/* line 5, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-floating.cc-type-info.cc-theme-classic .cc-btn {
+  display: inline-block;
+}
+
+/* line 6, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-theme-edgeless.cc-window {
+  padding: 0;
+}
+
+/* line 6, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-floating.cc-theme-edgeless .cc-message {
+  margin: 2em 2em 1.5em;
+}
+
+/* line 6, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-banner.cc-theme-edgeless .cc-btn {
+  margin: 0;
+  padding: .8em 1.8em;
+  height: 100%;
+}
+
+/* line 6, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-banner.cc-theme-edgeless .cc-message {
+  margin-left: 1em;
+}
+
+/* line 6, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-floating.cc-theme-edgeless .cc-btn + .cc-btn {
+  margin-left: 0;
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+@media print {
+  /* line 17, src/sass/components/_print.scss */
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  /* line 27, src/sass/components/_print.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  /* line 32, src/sass/components/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  /* line 36, src/sass/components/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  /* line 45, src/sass/components/_print.scss */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  /* line 50, src/sass/components/_print.scss */
+  pre {
+    white-space: pre-wrap !important;
+  }
+  /* line 53, src/sass/components/_print.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  /* line 64, src/sass/components/_print.scss */
+  thead {
+    display: table-header-group;
+  }
+  /* line 68, src/sass/components/_print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  /* line 73, src/sass/components/_print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  /* line 80, src/sass/components/_print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
