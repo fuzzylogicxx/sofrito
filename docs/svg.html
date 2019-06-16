@@ -66,7 +66,7 @@
 </head>
 
 
-<body id="page-home">
+<body>
 
     <!-- Header begins -->
   <header id="global-header" class="global-header">
@@ -113,57 +113,43 @@
   </header>
 
 
-  <!-- Dominant content of page begins -->
-  <!-- <div class="multicol-container"> | only required when we have a sidebar/aside at same level as <main> -->
+  <!-- Page contents begin -->
+  <div class="container">
 
-  <main id="primary-content" class="primary-content with-header-banner">
+    <main id="primary-content">
 
-    <div class="site-intro header-banner">
+      <h2>Icons in buttons</h2>
 
-      <div class="container container-centred-text">
+      <p>Note: aria-hidden on icon because it’s purely decorative.</p>
 
-        <!-- <h1>Sofrito</h1> -->
-        <h1>A tasty base for front-end web development</h1>
+      <p> <!-- this <p> is just for demo purposes and not part of the button pattern -->
+        <a href="/" class="btn btn-icon cart-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="btn-icon-text">3 items</span>
+        </a>
+      </p>
 
-        <p>Sofrito is a flexible starting point for responsible, responsive websites. Its main ingredients are semantic HTML, modern CSS and vanilla JavaScript.</p>
+      <h2>Icons used repeatedly on the page</h2>
 
-        <p class="btn-wrap">
-          <a href="https://github.com/fuzzylogicxx/sofrito" class="btn btn-icon">
-            <span class="btn-icon-text">Download v1.0</span>
-            <svg aria-hidden="true" class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </p>
+      <p>This is currently implemented using <code>symbol</code> and <code>use</code>.</p>
 
-      </div> <!-- /.container -->
+      <p>This is <a href="http://www.htmlhelp.com/" class="text-icon-pair"><span>an offsite link</span> <svg class="text-icon-pair-icon" aria-hidden="true" width="1em" height="1em"><use xlink:href="#icon-offsite" /></svg></a>. This is <a href="http://www.htmlhelp.com/" class="text-icon-pair"><span>another offsite link</span> <svg class="text-icon-pair-icon" aria-hidden="true" width="1em" height="1em"><use xlink:href="#icon-offsite" /></svg></a>.</p>
+    </main>
 
-    </div> <!-- /.header-banner -->
+  </div>
 
-    <div class="container">
 
-      <div class="trio features-benefits">
 
-        <section>
-          <h3>Principles</h3>
-          <p>Accessible from the ground up. Favours web standards over frameworks. IndieWeb–friendly. Lean and fast. Resilient and non-reliant on JavaScript. Focused on user experience. Handles modern UI challenges.</p>
-        </section>
 
-        <section>
-          <h3>Techniques</h3>
-          <p>Packed full of best practices and developer insights for accessibility, layout, performance, and cross-browser compatibility. Sofrito stands on the shoulders of giants. Includes modern layouts via CSS Grid and Flexbox. Lots of typographic detail for a great reading experience.</p>
-        </section>
+  <!-- SVGs used repeatedly on the page are better defined as symbols then <use>d -->
+  <svg width="0" height="0" style="display: none;">
+    <symbol id="icon-offsite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <title>@CoolCompany on Twitter</title>
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+    </symbol>
+    <!-- add more symbols here -->
+  </svg>
 
-        <section>
-          <h3>Patterns</h3>
-          <p>Every developer needs reliable, go-to components. Sofrito is brimming with framework-free solutions to common front-end challenges such as SVG icons, responsive images, fixed footers, mobile navigation, accessible forms, modals, tabs, animated messaging and more.</p>
-        </section>
-
-      </div> <!-- /.trio -->
-
-    </div> <!-- /.container -->
-
-  </main>
-
-  <!-- </div> --> <!-- /.multicol-container -->
 
     <!-- Footer begins -->
   <footer aria-label="site" id="global-footer" class="global-footer">
@@ -256,4 +242,6 @@
 
 </body>
 </html>
+
+
 
