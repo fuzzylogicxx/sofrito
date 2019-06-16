@@ -1073,20 +1073,25 @@ div.slat div.slat-copy {
 /* line 35, src/sass/components/_responsive_layout_utilities.scss */
 .container-centred-text {
   text-align: center;
-  /*display: flex;
-  flex-direction: column;
-  align-items: center;*/
 }
 
-/* line 41, src/sass/components/_responsive_layout_utilities.scss */
+/* line 38, src/sass/components/_responsive_layout_utilities.scss */
 .container-centred-text > * {
   max-width: 34rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media screen and (min-width: 38.25em) {
+  /* line 38, src/sass/components/_responsive_layout_utilities.scss */
+  .container-centred-text > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media screen and (min-width: 48em) {
-  /* line 59, src/sass/components/_responsive_layout_utilities.scss */
+  /* line 64, src/sass/components/_responsive_layout_utilities.scss */
   .trio {
     display: grid;
     grid-column-gap: 1.728rem;
@@ -1094,14 +1099,14 @@ div.slat div.slat-copy {
   }
 }
 
-/* line 68, src/sass/components/_responsive_layout_utilities.scss */
+/* line 73, src/sass/components/_responsive_layout_utilities.scss */
 .min-duo-max-trio {
   -webkit-columns: 2;
           columns: 2;
 }
 
 @media screen and (min-width: 48em) {
-  /* line 68, src/sass/components/_responsive_layout_utilities.scss */
+  /* line 73, src/sass/components/_responsive_layout_utilities.scss */
   .min-duo-max-trio {
     -webkit-columns: unset;
             columns: unset;
