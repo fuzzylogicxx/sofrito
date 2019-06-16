@@ -9,78 +9,41 @@
 @import "components/code.scss";
 @import "components/skip_links.scss";
 @import "components/aspect_ratio.scss";
-@import "components/svg_link_icons.scss";
+@import "components/svg_and_text_pairs.scss";
 @import "components/media_objects.scss";
 @import "components/breakout.scss";
-
-// Note: there are a few additional imports at the end of this file, too. (houdini show-and-hide, print CSS, layout-enhanced/grid, cookie consent).
-
-
+@import "components/_responsive_layout_utilities.scss";
 
 ///////////////////////////////////
 // Common patterns
 ///////////////////////////////////
-
-// Container utility for sensible component widths within a responsive layout
-
-@mixin container() {
-
-  margin: 0 $space-s;
-
-  @include at-least($bp-wide-two) {
-    margin: 0 2%;
-  }
-
-  @include at-least($bp-wide-three) {
-    margin: 0 6%;
-  }
-
-  @include at-least($bp-wide-four) {
-    margin: 0 10%;
-  }
-
-  @include at-least($bp-wide-five) {
-    margin: 0 auto;
-    max-width: 80em;
-  }
-
-}
-
-.container {
-  @include container();
-}
-
-
-// Create a grid with 3 flexible-and-equal-width colummns
-
-@mixin trio() {
-  display: grid;
-  grid-column-gap: $space-s;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.trio {
-  @include at-least($bp-wide-one) {
-    @include trio();
-  }
-}
-
-.min-duo-max-trio {
-  columns: 2;
-  @include at-least($bp-wide-one) {
-    columns: unset;
-    @include trio();
-  }
-}
-
 
 // Header Banners
 
 .header-banner {
   background: $color-light;
   overflow: auto;
-  padding-top: $space-s;
-  padding-bottom: $space-s;
+  padding: $space-m 0 $space-l;
+
+  .container > * {
+    margin-bottom: 0;
+  }
+
+  .container > * + * {
+    margin-top: $space-m;
+  }
+
+  @include at-least($width-pressure-point-one) {
+    padding: $space-l 0 scale-value(4)+rem;
+
+    .container > * + * {
+      margin-top: $space-l;
+    }
+  }
+
+  @include at-least($bp-wide-three) {
+    padding: scale-value(6)+rem 0 scale-value(7)+rem;
+  }
 }
 
 
@@ -96,11 +59,24 @@
 }
 
 .entry-meta .posted-on::before {
-    content: " · ";
+  content: " · ";
 }
 
+
+// Offsite links
+// Note 1) may consider applying the class automatically so that it’s not reliant on the CMS administrator
+// e.g. a:not([href*='yourdomain.com']):not([href^='#']):not([href^='/']):after {}
+// Note 2) since there might be many offsite links on a page, might consider using a background image (rather than inline SVG) to take advantage of cacheing.
+
+.offsite svg {
+  font-size: .9em; // just works better for the icon we’re currently using.
+}
+
+
+
+
 ///////////////////////////////////
-// Header
+// Global Header
 ///////////////////////////////////
 
 .global-header {
@@ -116,25 +92,34 @@
 .header-content {
   display: flex;
   align-items: center;
+
+  & > * + * {
+    margin-left: $space-s;
+  }
 }
 
 .logo {
+  line-height: 1;
   margin-right: auto;
   font-size: scale-value(5)+rem;
 
   svg {
     display: block;
+
+  }
+
+  :last-child {
+    font-size: 1rem;
+    margin-left: scale-value(-5)+rem;
   }
 }
 
 .header-menu {
-  margin-right: $space-s;
-
   ul {
     margin-bottom: 0;
   }
-
 }
+
 
 // BBC-style greedy navigation
 
@@ -142,17 +127,18 @@
   display: none;
 }
 
-.header-menu-toggle .special-link-icon {
+.header-menu-toggle .text-icon-pair-icon {
   font-size: .6em;
-  margin-top: .3em;
+  margin-top: .2em;
 }
 
 
 
 
-/////////////
-// Footer
-/////////////
+
+/////////////////
+// Global Footer
+/////////////////
 
 .global-footer {
   background: $text-color;
@@ -182,12 +168,13 @@
 
 
 
+
 ///////////////////
 // Primary Content
 ///////////////////
 
 .primary-content {
-  padding: $space-s 0 $space-l;
+  padding: $space-m 0 $space-l; // padding: $space-s 0 $space-l;
 
   &.with-header-banner {
     padding-top: 0;
@@ -205,16 +192,18 @@
 
   section {
     margin-top: $space-m;
-  }
 
+    @include at-least($width-pressure-point-one) {
+      margin-top: $space-l;
+    }
+  }
 }
 
 
 
 
-
 // Houdini for disclosure elements including dropdowns
-@import "components/houdini.scss";
+// @import "components/houdini.scss";
 
 // Enhance our basic layout using CSS grid.
 @import "components/layout_enhanced.scss";

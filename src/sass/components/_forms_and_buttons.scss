@@ -363,6 +363,7 @@ form {
 
 .btn:hover {
   @include button_hover_style();
+  text-decoration: none;
 }
 
 .btn-small:link, .btn-small:visited {

@@ -140,13 +140,14 @@ video {
 }
 
 // H5BP’s main.css: Hide only visually, but make available to screen readers.
+// Now includes Joe Watkins’s suggested updates (ref https://zellwk.com/blog/hide-content-accessibly/)
 // NB .a11y-only (meaning "for accessibility aids only" - credit @wilto) feels like a better class name than ".visually-hidden".
 
 .a11y-only {
   border: 0;
   clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
+  height: auto;
+  margin: 0;
   overflow: hidden;
   padding: 0;
   position: absolute;
