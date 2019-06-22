@@ -1,0 +1,44 @@
+@@include('./head.html')
+
+<body id="page-home">
+
+  @@include('./global_header.html')
+
+  <!-- Dominant content of page begins -->
+  <!-- <div class="multicol-container"> | only required when we have a sidebar/aside at same level as <main> -->
+
+  <main id="primary-content" class="primary-content">
+
+    <div class="container">
+
+      <article class="prose">
+
+        <h1>Modal Dialogues</h1>
+
+        <p>Credit: Scott O’Hara’s <a href="https://scottaohara.github.io/accessible_modal_window/">Accessible Modal Dialogs with Vanilla JS</a></p>
+
+        <p>Without Javascript, the modal content simply shows on the page. Therefore it probably makes little sense to do as I used to and use an anchor linking to a real page as the pre-enhancement baseline (although that is an option) since the modal content is already available. Better instead to use a <code>button</code>. I like the option of using the <code>hidden</code> attribute (rather than <code>disabled</code>) on the button so that without Javascript enhancement it doesn’t show at all.</p>
+
+        <button type="button" class="btn" data-modal-open="suitable-id-for-modal" hidden>Launch My Modal</button>
+
+        <div id="suitable-id-for-modal" data-modal>
+          <div data-modal-document>
+            <h1>Modal Title</h1>
+            <div>
+                <p>Modal content. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.</p>
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+    </div> <!-- /.container -->
+
+  </main>
+
+  <!-- </div> --> <!-- /.multicol-container -->
+
+  @@include('./footer.html')
