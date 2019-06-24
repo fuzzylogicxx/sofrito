@@ -862,6 +862,278 @@ Copyright © 2019 Javan Makhmali
 
 }));
 
+/*
+ * Copyright 2015 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+if (!('inert' in HTMLElement.prototype)) {
+  Object.defineProperty(HTMLElement.prototype, 'inert', {
+    enumerable: true,
+
+    /**
+     * @return {boolean}
+     * @this {Element}
+     */
+    get: function() { return this.hasAttribute('inert'); },
+
+    /**
+     * @param {boolean} inert
+     * @this {Element}
+     */
+    set: function(inert) {
+      if (inert) {
+        this.setAttribute('inert', '');
+      } else {
+        this.removeAttribute('inert');
+      }
+    }
+  });
+
+  window.addEventListener('load', (function() {
+    function applyStyle(css) {
+      var style = document.createElement('style');
+      style.type = 'text/css';
+      if (style.styleSheet) {
+        style.styleSheet.cssText = css;
+      } else {
+        style.appendChild(document.createTextNode(css));
+      }
+      document.body.appendChild(style);
+    }
+    var css = "/*[inert]*/*[inert]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none}";
+    applyStyle(css);
+
+    /**
+     * Sends a fake tab event. This is only supported by some browsers.
+     *
+     * @param {boolean=} opt_shiftKey whether to send this tab with shiftKey
+     */
+    function dispatchTabEvent(opt_shiftKey) {
+      var ev = null;
+      try {
+        ev = new KeyboardEvent('keydown', {
+          keyCode: 9,
+          which: 9,
+          key: 'Tab',
+          code: 'Tab',
+          keyIdentifier: 'U+0009',
+          shiftKey: !!opt_shiftKey,
+          bubbles: true
+        });
+      } catch (e) {
+        try {
+          // Internet Explorer
+          ev = document.createEvent('KeyboardEvent');
+          ev.initKeyboardEvent(
+            'keydown',
+            true,
+            true,
+            window,
+            'Tab',
+            0,
+            opt_shiftKey ? 'Shift' : '',
+            false,
+            'en'
+          )
+        } catch (e) {}
+      }
+      if (ev) {
+        try {
+          Object.defineProperty(ev, 'keyCode', { value: 9 });
+        } catch (e) {}
+        document.dispatchEvent(ev);
+      }
+    }
+
+    /**
+     * Determines whether the specified element is inert, and returns the element
+     * which caused this state. This is limited to, but may include, the body
+     * element.
+     *
+     * @param {Element} e to check
+     * @return {Element} element is made inert by, if any
+     */
+    function madeInertBy(e) {
+      while (e && e !== document.documentElement) {
+        if (e.hasAttribute('inert')) {
+          return e;
+        }
+        e = e.parentElement;
+      }
+      return null;
+    }
+
+    /**
+     * Finds the nearest shadow root from an element that's within said shadow root.
+     *
+     * TODO(samthor): We probably want to find the highest shadow root.
+     *
+     * @param {Element} e to check
+     * @return {Node} shadow root, if any
+     */
+    var findShadowRoot = function(e) { return null; };
+    if (window.ShadowRoot) {
+      findShadowRoot = function(e) {
+        while (e && e !== document.documentElement) {
+          if (e instanceof window.ShadowRoot) { return e; }
+          e = e.parentNode;
+        }
+        return null;
+      }
+    }
+
+    /**
+     * Returns the target of the passed event. If there's a path (shadow DOM only), then prefer it.
+     *
+     * @param {!Event} event
+     * @return {Element} target of event
+     */
+    function targetForEvent(event) {
+      var p = event.path;
+      return  /** @type {Element} */ (p && p[0] || event.target);
+    }
+
+    // Hold onto the last tab direction: next (tab) or previous (shift-tab). This
+    // can be used to step over inert elements in the correct direction. Mouse
+    // or non-tab events should reset this and inert events should focus nothing.
+    var lastTabDirection = 0;
+    document.addEventListener('keydown', (function(ev) {
+      if (ev.keyCode === 9) {
+        lastTabDirection = ev.shiftKey ? -1 : +1;
+      } else {
+        lastTabDirection = 0;
+      }
+    }));
+    document.addEventListener('mousedown', (function(ev) {
+      lastTabDirection = 0;
+    }));
+
+    // Retain the currently focused shadowRoot.
+    var focusedShadowRoot = null;
+    function updateFocusedShadowRoot(root) {
+      if (root == focusedShadowRoot) { return; }
+      if (focusedShadowRoot) {
+        if (!(focusedShadowRoot instanceof window.ShadowRoot)) {
+          throw new Error('not shadow root: ' + focusedShadowRoot);
+        }
+        focusedShadowRoot.removeEventListener('focusin', shadowFocusHandler, true);  // remove
+      }
+      if (root) {
+        root.addEventListener('focusin', shadowFocusHandler, true);  // add
+      }
+      focusedShadowRoot = root;
+    }
+
+    /**
+     * Focus handler on a Shadow DOM host. This traps focus events within that root.
+     *
+     * @param {!Event} ev
+     */
+    function shadowFocusHandler(ev) {
+      // ignore "direct" focus, we only want shadow root focus
+      var last = ev.path[ev.path.length - 1];
+      if (last === /** @type {*} */ (window)) { return; }
+      sharedFocusHandler(targetForEvent(ev));
+      ev.preventDefault();
+      ev.stopPropagation();
+    }
+
+    /**
+     * Called indirectly by both the regular focus handler and Shadow DOM host focus handler. This
+     * is the bulk of the polyfill which prevents focus.
+     *
+     * @param {Element} target focused on
+     */
+    function sharedFocusHandler(target) {
+      var inertElement = madeInertBy(target);
+      if (!inertElement) { return; }
+
+      // If the page has been tabbed recently, then focus the next element
+      // in the known direction (if available).
+      if (document.hasFocus() && lastTabDirection !== 0) {
+        function getFocused() {
+          return (focusedShadowRoot || document).activeElement;
+        }
+
+        // Send a fake tab event to enumerate through the browser's view of
+        // focusable elements. This is supported in some browsers (not Firefox).
+        var previous = getFocused();
+        dispatchTabEvent(lastTabDirection < 0 ? true : false);
+        if (previous != getFocused()) { return; }
+
+        // Otherwise, enumerate through adjacent elements to find the next
+        // focusable element. This won't respect any custom tabIndex.
+        var filter = /** @type {NodeFilter} */ ({
+          /**
+           * @param {Node} node
+           * @return {number}
+           */
+          acceptNode: function(node) {
+            if (!node || !node.focus || node.tabIndex < 0) {
+              return NodeFilter.FILTER_SKIP;  // look at descendants
+            }
+            var contained = inertElement.contains(node);
+            return contained ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+          },
+        });
+        var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT, filter);
+        walker.currentNode = inertElement;
+
+        var nextFunc = Math.sign(lastTabDirection) === -1 ? walker.previousNode : walker.nextNode
+        var next = nextFunc.bind(walker);
+        for (var candidate; candidate = next(); ) {
+          candidate.focus();
+          if (getFocused() !== previous) { return; }
+        }
+
+        // FIXME: If a focusable element can't be found here, it's likely to mean
+        // that this is the start or end of the page. Blurring is then not quite
+        // right, as it prevents access to the browser chrome.
+      }
+
+      // Otherwise, immediately blur the targeted element. Technically, this
+      // still generates focus and blur events on the element. This is (probably)
+      // the price to pay for this polyfill.
+      target.blur();
+    }
+
+    // The 'focusin' event bubbles, but instead, use 'focus' with useCapture set
+    // to true as this is supported in Firefox. Additionally, target the body so
+    // this doesn't generate superfluous events on document itself.
+    document.body.addEventListener('focus', (function(ev) {
+      var target = targetForEvent(ev);
+      updateFocusedShadowRoot((target == ev.target ? null : findShadowRoot(target)));
+      sharedFocusHandler(target);  // either real DOM node or shadow node
+    }), true);
+
+    // Use a capturing click listener as both a safety fallback where pointer-events is not
+    // available (IE10 and below), and to prevent accessKey access to inert elements.
+    // TODO(samthor): Note that pointer-events polyfills trap more mouse events, e.g.-
+    //   https://github.com/kmewhort/pointer_events_polyfill
+    document.addEventListener('click', (function(ev) {
+      var target = targetForEvent(ev);
+      if (madeInertBy(target)) {
+        ev.preventDefault();
+        ev.stopPropagation();
+      }
+    }), true);
+  }));
+}
+
+;(function(w,doc,undefined){'use strict';var ARIAmodal={};w.ARIAmodal=ARIAmodal;ARIAmodal.NS='ARIAmodal';ARIAmodal.AUTHOR='Scott O\'Hara';ARIAmodal.VERSION='3.4.0';ARIAmodal.LICENSE='https://github.com/scottaohara/accessible_modal_window/blob/master/LICENSE';var activeClass='modal-open';var body=doc.body;var main=doc.getElementsByTagName('main')[0]||body;var modal=doc.querySelectorAll('[data-modal]');var children=doc.querySelectorAll('body > *:not([data-modal])');var initialTrigger;var activeModal;var useAriaModal=false;var returnToBody=false;var firstClass='js-first-focus';var lastClass='js-last-focus';var tabFocusElements='button:not([hidden]):not([disabled]), [href]:not([hidden]), input:not([hidden]):not([type="hidden"]):not([disabled]), select:not([hidden]):not([disabled]), textarea:not([hidden]):not([disabled]), [tabindex="0"]:not([hidden]):not([disabled]), summary:not([hidden]), [contenteditable]:not([hidden]), audio[controls]:not([hidden]), video[controls]:not([hidden])';ARIAmodal.organizeDOM=function(){var refEl=body.firstElementChild||null;var i;for(i=0;i<modal.length;i+=1){body.insertBefore(modal[i],refEl)}};ARIAmodal.setupTrigger=function(){var trigger=doc.querySelectorAll('[data-modal-open]');var self;var i;for(i=0;i<trigger.length;i+=1){self=trigger[i];var getOpenTarget=self.getAttribute('data-modal-open');var hasHref=self.getAttribute('href');if(self.nodeName!=='BUTTON'){self.setAttribute('role','button');self.tabIndex=0}if(getOpenTarget===''&&hasHref){self.setAttribute('data-modal-open',hasHref.split('#')[1]);getOpenTarget=hasHref.split('#')[1]}self.removeAttribute('href');if(getOpenTarget){if(self.hasAttribute('disabled')&&!self.hasAttribute('data-modal-disabled')){self.removeAttribute('disabled')}self.removeAttribute('hidden');self.id=getOpenTarget+'__trigger-'+self.nodeName;self.addEventListener('click',ARIAmodal.openModal);self.addEventListener('keydown',ARIAmodal.keyEvents,false)}else{console.warn('Missing target modal dialog - [data-modal-open="IDREF"]')}}};ARIAmodal.setupModal=function(){var self;var i;for(i=0;i<modal.length;i+=1){var self=modal[i];var modalType=self.getAttribute('data-modal');var getClass=self.getAttribute('data-modal-class')||'a11y-modal';var heading=self.querySelector('h1, h2, h3, h4, h5, h6');var modalLabel=self.getAttribute('data-modal-label');var hideHeading=self.hasAttribute('data-modal-hide-heading');var modalDesc=self.querySelector('[data-modal-description]');var modalDoc=self.querySelector('[data-modal-document]');if(modalType==='alert'){self.setAttribute('role','alertdialog')}else{self.setAttribute('role','dialog')}self.classList.add(getClass);self.hidden=true;self.tabIndex='-1';if(modalDoc){modalDoc.setAttribute('role','document')}ARIAmodal.setupModalCloseBtn(self,getClass,modalType);if(self.hasAttribute('data-aria-modal')){self.setAttribute('aria-modal','true')}if(modalDesc){modalDesc.id=modalDesc.id||'md_desc_'+Math.floor(Math.random()*999)+1;self.setAttribute('aria-describedby',modalDesc.id)}if(modalLabel){self.setAttribute('aria-label',modalLabel)}else{if(heading){var makeHeading=self.id+'_heading';heading.classList.add(getClass+'__heading');heading.id=makeHeading;self.setAttribute('aria-labelledby',makeHeading);if(heading.hasAttribute('data-autofocus')){heading.tabIndex='-1'}}else{console.warn('Dialogs should have their purpose conveyed by a heading element (h1).')}}if(hideHeading){self.querySelector('#'+heading.id).classList.add('at-only')}var focusable=self.querySelectorAll(tabFocusElements);focusable[0].classList.add(firstClass);focusable[focusable.length-1].classList.add(lastClass)}};ARIAmodal.setupModalCloseBtn=function(self,modalClass,modalType){var doNotGenerate=self.hasAttribute('data-modal-manual-close');var manualClose=self.querySelectorAll('[data-modal-close-btn]');var modalClose=self.getAttribute('data-modal-close');var modalCloseClass=self.getAttribute('data-modal-close-class');var closeIcon='<span data-modal-x></span>';var btnClass=modalClass;var i;if(!doNotGenerate){if(manualClose.length<2){var closeBtn=doc.createElement('button');closeBtn.type='button';self.classList.add(modalClass);closeBtn.classList.add(modalClass+'__close-btn');if(!modalClose&&modalType!=='alert'){closeBtn.innerHTML=closeIcon;closeBtn.setAttribute('aria-label','Close');closeBtn.classList.add('is-icon-btn')}else{closeBtn.innerHTML=modalClose;if(modalCloseClass){closeBtn.classList.add(modalCloseClass)}}if(modalType!=='alert'){if(self.querySelector('[role="document"]')){self.querySelector('[role="document"]').appendChild(closeBtn)}else{self.appendChild(closeBtn)}}closeBtn.addEventListener('click',ARIAmodal.closeModal)}}for(i=0;i<manualClose.length;i+=1){manualClose[i].addEventListener('click',ARIAmodal.closeModal)}doc.addEventListener('keydown',ARIAmodal.keyEvents,false)};ARIAmodal.openModal=function(e,autoOpen){var i;var getTargetModal=autoOpen||this.getAttribute('data-modal-open');activeModal=doc.getElementById(getTargetModal);var focusTarget=activeModal;var getAutofocus=activeModal.querySelector('[autofocus]')||activeModal.querySelector('[data-autofocus]');useAriaModal=activeModal.hasAttribute('aria-modal');if(autoOpen){returnToBody=true}if(!autoOpen){e.preventDefault();initialTrigger=this.id}if(getAutofocus){focusTarget=getAutofocus}else if(activeModal.hasAttribute('data-modal-close-focus')){focusTarget=activeModal.querySelector('[class*="close-btn"]')}if(!body.classList.contains(activeClass)){body.classList.add(activeClass);for(i=0;i<children.length;i+=1){if(!useAriaModal){if(children[i].hasAttribute('aria-hidden')){children[i].setAttribute('data-keep-hidden',children[i].getAttribute('aria-hidden'))}children[i].setAttribute('aria-hidden','true')}if(children[i].getAttribute('inert')){children[i].setAttribute('data-keep-inert','')}else{children[i].setAttribute('inert','true')}}}else{console.warn('It is not advised to open dialogs from within other dialogs. Instead consider replacing the contents of this dialog with new content. Or providing a stepped, or tabbed interface within this dialog.')}activeModal.removeAttribute('hidden');requestAnimationFrame((function(){focusTarget.focus()}));doc.addEventListener('click',ARIAmodal.outsideClose,false);doc.addEventListener('touchend',ARIAmodal.outsideClose,false);return[initialTrigger,activeModal,returnToBody]};ARIAmodal.closeModal=function(e){var trigger=doc.getElementById(initialTrigger)||null;var i;var m;for(i=0;i<children.length;i+=1){if(!children[i].hasAttribute('data-keep-inert')){children[i].removeAttribute('inert')}children[i].removeAttribute('data-keep-inert');if(children[i].getAttribute('data-keep-hidden')){children[i].setAttribute('aria-hidden',children[i].getAttribute('data-keep-hidden'))}else{children[i].removeAttribute('aria-hidden')}children[i].removeAttribute('data-keep-hidden')}body.classList.remove(activeClass);for(m=0;m<modal.length;m+=1){if(!modal[m].hasAttribute('hidden')){modal[m].hidden=true}}if(trigger!==null){trigger.focus()}else{if(main&&!returnToBody){main.tabIndex=-1;main.focus()}else{body.tabIndex=-1;body.focus()}}initialTrigger=undefined;activeModal=undefined;returnToBody=false;return[initialTrigger,activeModal,returnToBody]};ARIAmodal.keyEvents=function(e){var keyCode=e.keyCode||e.which;var escKey=27;var enterKey=13;var spaceKey=32;var tabKey=9;if(e.target.hasAttribute('data-modal-open')){switch(keyCode){case enterKey:case spaceKey:e.preventDefault();e.target.click();break}}if(body.classList.contains(activeClass)){switch(keyCode){case escKey:ARIAmodal.closeModal();break;default:break}if(body.classList.contains(activeClass)){var firstFocus=activeModal.querySelector('.'+firstClass);var lastFocus=activeModal.querySelector('.'+lastClass)}if(doc.activeElement.classList.contains(lastClass)){if(keyCode===tabKey&&!e.shiftKey){e.preventDefault();firstFocus.focus()}}if(doc.activeElement.classList.contains(firstClass)){if(keyCode===tabKey&&e.shiftKey){e.preventDefault();lastFocus.focus()}}}};ARIAmodal.outsideClose=function(e){if(body.classList.contains(activeClass)&&!e.target.hasAttribute('data-modal-open')){var isClickInside=activeModal.contains(e.target);if(!isClickInside&&activeModal.getAttribute('role')!=='alertdialog'){ARIAmodal.closeModal()}}};ARIAmodal.autoLoad=function(){var getAuto=doc.querySelectorAll('[data-modal-auto]');var hashValue=w.location.hash||null;var autoOpen;var useHash=false;var e=null;if(hashValue!==null){autoOpen=hashValue.split('#')[1];if(autoOpen===''){return false}else if(autoOpen==='!null'){return false}else{var checkforDialog=doc.getElementById(autoOpen)||null;if(checkforDialog!==null){if(checkforDialog.getAttribute('role')==='dialog'||checkforDialog.getAttribute('role')==='alertdialog'){useHash=true}}}}if(useHash){ARIAmodal.openModal(e,autoOpen);if(getAuto.length>1){console.warn('Only the modal indicated by the hash value will load.')}}else if(getAuto.length!==0){if(getAuto[0].getAttribute('role')==='dialog'||getAuto[0].getAttribute('role')==='alertdialog'){autoOpen=getAuto[0].id;ARIAmodal.openModal(e,autoOpen);if(getAuto.length>1){console.warn('Multiple modal dialogs can not auto load.')}}else if(getAuto[0].getAttribute('role')==='button'||getAuto[0].tagName==='BUTTON'){autoOpen=getAuto[0].id;getAuto[0].click()}}if(getAuto.length!==0&&!doc.getElementById(autoOpen).hasAttribute('data-modal-auto-persist')){w.location.replace("#!null")}};ARIAmodal.init=function(){ARIAmodal.organizeDOM();ARIAmodal.setupTrigger();ARIAmodal.setupModal();ARIAmodal.autoLoad()};ARIAmodal.init()})(window,document);
+
 ;(function () {
 
     'use strict';
