@@ -9,14 +9,68 @@
 
     <main id="primary-content">
 
-      <h2>Icons in buttons</h2>
+      <h2>Icons in links and buttons</h2>
+
+      <h3>Buttons</h3>
+
+        <!-- accessible icon buttons (ref https://www.sarasoueidan.com/blog/accessible-icon-buttons/) -->
+
+        <h4>Icons sitting next to text</h4>
+        <div>
+          <button aria-expanded="false" id="menu-trigger">
+            <svg viewBox="0 0 32 32" width="32px" height="32px" aria-hidden="true" focusable="false">
+              <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+              <path d="M3 7h18c0.6 0 1-0.4 1-1s-0.4-1-1-1h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1z"></path>
+              <path d="M21 17h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+            </svg>
+            Menu
+          </button>
+        </div>
+
+        <h4>Icon only, no text, accessibility technique #1: accessible visually hidden text</h4>
+        <div>
+          <button class="icon-button">
+              <svg width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+                  <path d="M3 7h18c0.6 0 1-0.4 1-1s-0.4-1-1-1h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1z"></path>
+                  <path d="M21 17h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+              </svg>
+              <span class="a11y-only">Menu</span>
+          </button>
+        </div>
+
+        <h4>Icon only, no text, accessibility technique #2: accessible visually hidden text with [hidden] and aria-labelledby</h4>
+        <div>
+        <button class="menu-trigger" aria-labelledby="button-label">
+            <span id="button-label" hidden>Menu</span>
+            <svg width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+                <path d="M3 7h18c0.6 0 1-0.4 1-1s-0.4-1-1-1h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1z"></path>
+                <path d="M21 17h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+            </svg>
+        </button>
+      </div>
+
+        <h4>Icon only, no text, accessibility technique #3: using aria-label</h4>
+        <div>
+          <button class="icon-button" aria-label="Menu">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+              <path d="M3 7h18c0.6 0 1-0.4 1-1s-0.4-1-1-1h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1z"></path>
+              <path d="M21 17h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+            </svg>
+          </button>
+        </div>
+
+
+      <h3>Links</h3>
 
       <p>Note: aria-hidden on icon because it’s purely decorative.</p>
 
       <p> <!-- this <p> is just for demo purposes and not part of the button pattern -->
         <a href="/" class="btn btn-icon cart-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
-          <span class="btn-icon-text">3 items</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="btn-icon-text">Cart: 3 items</span>
         </a>
       </p>
 
@@ -24,7 +78,7 @@
 
       <p>This is currently implemented using <code>symbol</code> and <code>use</code>.</p>
 
-      <p>This is <a href="http://www.htmlhelp.com/" class="text-icon-pair"><span>an offsite link</span> <svg class="text-icon-pair-icon" aria-hidden="true" width="1em" height="1em"><use xlink:href="#icon-offsite" /></svg></a>. This is <a href="http://www.htmlhelp.com/" class="text-icon-pair"><span>another offsite link</span> <svg class="text-icon-pair-icon" aria-hidden="true" width="1em" height="1em"><use xlink:href="#icon-offsite" /></svg></a>.</p>
+      <p>This is <a href="http://www.htmlhelp.com/" class="text-icon-pair"><span>an offsite link</span> <svg class="text-icon-pair-icon" aria-hidden="true" focusable="false" width="1em" height="1em"><use xlink:href="#icon-offsite" /></svg></a>. This is <a href="http://www.htmlhelp.com/" class="text-icon-pair"><span>another offsite link</span> <svg class="text-icon-pair-icon" aria-hidden="true" focusable="false" width="1em" height="1em"><use xlink:href="#icon-offsite" /></svg></a>.</p>
     </main>
 
   </div>
@@ -43,5 +97,3 @@
 
 
   @@include('./footer.html')
-
-
