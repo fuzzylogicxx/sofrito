@@ -6,12 +6,12 @@
 code {
 
   // normalize.css – if we’re using default monospace, use this hack to avoid browser weirdness with regard to font-sizing.
-  // font-family: monospace, monospace;
+  font-family: monospace, monospace;
 
   // With some code fonts, we might want to enlarge.
-  // font-size: 1.025em;
+  font-size: 1.025em;
 
-  font-family: Source Code Pro, monospace;
+  font-weight: 700;
   color: $color-complimentary;
   hyphens: none;
 }
@@ -25,16 +25,14 @@ pre {
     color: #111;
     font-size: scale-value(-1)+rem;
     padding: 1em;
-    margin: $space-m 0;
     overflow: auto;
-
-    // note: these aren’t fully working properly as yet. Getting horizontal scrollbars when hyphens set to none. Need to tear back styles and find problem.
     white-space: pre-wrap;
     word-wrap: break-word;
 }
 
 pre code {
-    font-size: 1em;
+    font-size: scale-value(-1)+rem;
+    font-weight: 400;
     color: #111;
 }
 
