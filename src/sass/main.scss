@@ -2,212 +2,154 @@
 @import "components/mixins_general.scss";
 @import "components/resets_and_improvements.scss";
 @import "components/typography.scss";
-@import "components/forms_and_buttons.scss";
-@import "components/list_utils.scss";
-@import "components/tables.scss";
-@import "components/tabs.scss";
 @import "components/code.scss";
-@import "components/skip_links.scss";
-@import "components/aspect_ratio.scss";
-@import "components/svg_and_text_pairs.scss";
-@import "components/media_objects.scss";
-@import "components/breakout.scss";
+//@import "components/forms_and_buttons.scss";
+@import "components/list_utils.scss";
 @import "components/responsive_layout_utilities.scss";
-@import "components/show_and_hide.scss";
-@import "components/rooted_footer.scss";
-@import "components/modals.scss";
-@import "components/cookieconsent2_3.1.0.min.scss";
 
-///////////////////////////////////
-// Common patterns
-///////////////////////////////////
+// Margins: add only to elements which need margins.
+// Ref: Heydon Pickering and Andy Bell
+// https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/
+// http://alistapart.com/article/axiomatic-css-and-lobotomized-owls/
 
-// Header Banners
-
-.header-banner {
-  background: $color-light;
-  overflow: auto;
-  padding: $space-m 0 $space-l;
-
-  .container > * {
-    margin-bottom: 0;
-  }
-
-  .container > * + * {
-    margin-top: $space-m;
-  }
-
-  @include at-least($width-pressure-point-one) {
-    padding: $space-l 0 scale-value(4)+rem;
-
-    .container > * + * {
-      margin-top: $space-l;
-    }
-  }
-
-  @include at-least($bp-wide-three) {
-    padding: scale-value(6)+rem 0 scale-value(7)+rem;
-  }
+:root {
+  --flow-space: #{$body-line-height-min}rem;
 }
 
-
-// Blog stuff
-
-.meta {
-  color: gray;
-  margin: 0;
-}
-
-.dt-published {
-  color: gray;
-}
-
-.entry-meta .posted-on::before {
-  content: " · ";
-}
-
-
-// Offsite links
-// Note 1) may consider applying the class automatically so that it’s not reliant on the CMS administrator
-// e.g. a:not([href*='yourdomain.com']):not([href^='#']):not([href^='/']):after {}
-// Note 2) since there might be many offsite links on a page, might consider using a background image (rather than inline SVG) to take advantage of cacheing.
-
-.offsite svg {
-  font-size: .9em; // just works better for the icon we’re currently using.
-}
-
-
-
-
-///////////////////////////////////
-// Global Header
-///////////////////////////////////
-
-.global-header {
-  border-bottom: 1px solid $border-color;
-  padding: $space-s 0;
-
-  a {
-    text-decoration: none;
-  }
-
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
+@mixin stack() {
+  //--flow-space: #{$body-line-height-min}rem;
 
   & > * + * {
-    margin-left: $space-s;
+    margin-top: $body-line-height-min+rem;
+    margin-top: var(--flow-space);
   }
 }
 
-.logo {
-  line-height: 1;
-  margin-right: auto;
-  font-size: scale-value(5)+rem;
+// Use sparingly; only when we know exactly what the inner content will be
+@mixin stack_recursive() {
+  //--flow-space: #{$body-line-height-min}rem;
 
-  svg {
-    display: block;
+  & * + * {
+    margin-top: $body-line-height-min+em;
+    margin-top: var(--flow-space);
   }
 }
 
-.header-menu {
-  ul {
-    margin-bottom: 0;
-  }
+.stack,
+main,
+.container,
+.prose,
+.entry-header,
+.entry-content {
+  //--flow-space: #{$body-line-height-min}rem;
+  @include stack();
 }
 
-
-// BBC-style greedy navigation
-
-.header-menu-hidden {
-  display: none;
+.trio {
+  //--flow-space: #{$body-line-height-min}rem;
+  @include stack_recursive();
 }
 
-.header-menu-toggle .text-icon-pair-icon {
-  font-size: .6em;
-  margin-top: .2em;
-}
-
-
-
-
-
-/////////////////
-// Global Footer
-/////////////////
-
-.global-footer {
-  background: $text-color;
-  color: #fff;
-  padding: $space-l 0 $space-xs;
-
-  ul {
-    margin-bottom: $space-s;
-    columns: 2;
-  }
-
-  li {
-    margin-bottom: scale-value(-5)+rem;
-    font-size: scale-value(-1)+rem;
-  }
-
-  a {
-    color: #fff;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
+main {
+  padding-top: var(--flow-space);
+  padding-bottom: var(--flow-space);
 }
 
 
 
-
-///////////////////
-// Primary Content
-///////////////////
-
-.primary-content {
-  padding: $space-m 0 $space-l; // padding: $space-s 0 $space-l;
-
-  &.with-header-banner {
-    padding-top: 0;
-  }
+/** + * {
+  margin-top: 1.5em;
 }
 
-
-
-
-///////////////////
-// Index page
-///////////////////
-
-.features-benefits {
-
-  section {
-    margin-top: $space-m;
-
-    @include at-least($width-pressure-point-one) {
-      margin-top: $space-l;
-    }
-  }
+.compact * + * {
+  margin-top: 0.75em;
 }
 
-
-
-//
-// Any Other Business
-//
-
-.cc-btn:hover {
-  text-decoration: none;
+.flow-margins-off > * {
+  margin-top: 0;
 }
 
+.text-icon-pair > * {
+  margin-top: 0;
+}*/
 
 
-// Print styles
-@import "components/print.scss";
+
+
+// Sidebar Component (no media queries; wraps under a given min-width)
+// Note that if this is a first child of a full-width body i.e. not within a width-constrained container, you’d get horizontal scrollbars.
+// ref https://every-layout.dev/layouts/sidebar/
+
+.sidebar > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(1rem / 2 * -1); // todo: make 1rem ($space-between) a var
+}
+
+.sidebar > * > * {
+  margin: calc(1rem / 2); // todo: make 1rem ($space-between) a var
+  flex-basis: 20rem; // todo: make this line optional and only applied if the relevant var (i.e. 20rem) is supplied.
+  flex-grow: 1;
+
+  background-color: red;
+}
+
+.sidebar-left > * > :last-child { // todo: use either last-child or first-child (for content-area targetting) based on var $sidebar-side ('left' or 'right');
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 1rem); // todo: make 50% ($content-col-min-width) and 1rem ($space-between) vars
+}
+
+.sidebar-right > * > :first-child { // todo: use either last-child or first-child (for content-area targetting) based on var $sidebar-side ('left' or 'right');
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 1rem); // todo: make 50% ($content-col-min-width) and 1rem ($space-between) vars
+}
+
+.main {
+  background-color: green;
+}
+
+/*.with-sidebar > * {
+  display: flex;
+  flex-wrap: wrap;
+  //margin: calc(1rem / 2 * -1);
+  margin: -0.5rem;
+}
+
+.with-sidebar > * > * {
+  margin: 0.5rem;
+}
+
+.sidebar {
+  flex-basis: 20rem;
+  flex-grow: 1;
+}
+
+.not-sidebar {
+  ↓ grow from nothing
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 1rem);
+}*/
+
+
+
+
+
+/*.sidebar {
+  flex-basis: 20rem;
+  flex-grow: 1;
+
+  max-width: none;
+  min-width: 0;
+}
+
+.not-sidebar {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: 50%;
+}*/
+
+
+
