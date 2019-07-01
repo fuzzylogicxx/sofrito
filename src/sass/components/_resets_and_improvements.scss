@@ -47,7 +47,7 @@ html {
 // ii) makes bringing in 3rd party CSS components more difficult because rules tend to conflict with reset rules.
 
 // Remove margins and padding
-// Exclude form fields and lists – they deserve special attention.
+// Exclude form fields – they deserve special attention.
 
 body,
 h1, h2, h3, h4, h5, h6,
@@ -57,7 +57,10 @@ figure,
 figcaption,
 dl,
 dd,
-dt {
+dt,
+ul,
+ol,
+hr {
   margin: 0;
   padding: 0;
 
@@ -191,8 +194,6 @@ hr {
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
 }
 
 

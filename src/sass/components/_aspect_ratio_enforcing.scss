@@ -1,4 +1,5 @@
 // Maintaining image/video/etc aspect ratio in responsive context
+// Works by putting a wrapping div around the image/media then styling that wrapper to preserve the target aspect ratio.
 
 /**
  * credit Andy Bell https://andy-bell.design/wrote/creating-an-aspect-ratio-css-utility/
@@ -30,8 +31,9 @@
   padding-top: 100%;
 }
 
-// Gallery styles are just for .aspect-ratio-square demo and are not part of the ASPECT RATIO utility so might want to remove or move into "plugin" component
-// Although note that the object-fit: cover is important.
+// .gallery styles are just for the grid/list based .aspect-ratio-square demo and are not part of the above ASPECT RATIO utility
+// so might want to remove the following or move into "plugin" component
+// Although note that the object-fit: cover is important when (as per the demo) we’re taking images of variable size and aspect ratio and making them look OK as a square.
 
 .gallery {
   display: grid;

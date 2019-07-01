@@ -1,0 +1,33 @@
+// Sidebar Component (no media queries; wraps under a given min-width)
+// Note that if this is a first child of a full-width body i.e. not within a width-constrained container, you’d get horizontal scrollbars.
+// ref https://every-layout.dev/layouts/sidebar/
+
+.sidebar > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(1rem / 2 * -1); // todo: make 1rem ($space-between) a var
+}
+
+.sidebar > * > * {
+  margin: calc(1rem / 2); // todo: make 1rem ($space-between) a var
+  flex-basis: 20rem; // todo: make this line optional and only applied if the relevant var (i.e. 20rem) is supplied.
+  flex-grow: 1;
+
+  background-color: red;
+}
+
+.sidebar-left > * > :last-child { // todo: use either last-child or first-child (for content-area targetting) based on var $sidebar-side ('left' or 'right');
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 1rem); // todo: make 50% ($content-col-min-width) and 1rem ($space-between) vars
+}
+
+.sidebar-right > * > :first-child { // todo: use either last-child or first-child (for content-area targetting) based on var $sidebar-side ('left' or 'right');
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 1rem); // todo: make 50% ($content-col-min-width) and 1rem ($space-between) vars
+}
+
+.main {
+  background-color: green;
+}

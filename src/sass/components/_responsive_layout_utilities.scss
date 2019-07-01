@@ -7,22 +7,27 @@
 
 @mixin container() {
 
-  margin: 0 $space-s;
+  margin-left: $space-s;
+  margin-right: $space-s;
 
   @include at-least($bp-wide-two) {
-    margin: 0 2%;
+    margin-left: 2%;
+    margin-right: 2%;
   }
 
   @include at-least($bp-wide-three) {
-    margin: 0 6%;
+    margin-left: 6%;
+    margin-right: 6%;
   }
 
   @include at-least($bp-wide-four) {
-    margin: 0 10%;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   @include at-least($bp-wide-five) {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 80em;
   }
 
@@ -53,7 +58,8 @@
 }
 
 
-// Create a grid with 3 flexible-and-equal-width colummns
+// Create a grid with 3 flexible-width-but-always-equal-width colummns
+// (and auto-rows? - test to confirm)
 
 @mixin trio() {
   display: grid;
@@ -68,7 +74,7 @@
 }
 
 
-// Create a row with 2 equal-width columns but when space allows, 3 equal-width columns.
+// Create a row with 2 equal-width columns (using multi-column) but when space allows, 3 equal-width columns.
 
 .min-duo-max-trio {
   columns: 2;
@@ -77,3 +83,55 @@
     @include trio();
   }
 }
+
+
+/*
+// Component lists of flexible/unknown quantity with equal width items.
+// To achieve wrapping, we can use the auto-fit or auto-fill keywords.
+// auto-fill inserts empty columns to end of line if necessary
+// auto-fit also inserts empty columns but collapses them so they don’t take up space then allocates their space to the items.
+// See https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
+
+
+
+
+// Create a grid that shows two across on narrow screens
+// but on wider screens, auto-fits columns and rows (inserts empty columns to end of line if necessary)
+// and never lets items get too wide, by virtue of using a vw-based grid-gap
+// Ref: https://www.sarasoueidan.com/work/
+// Note: should test/decide whether grid or flexbox is best here
+
+.flexible-list-component {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding: 5em 1em 3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15vw;
+}
+
+@media (min-width: 800px)
+  .flexible-list-component {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 7em 7vw;
+  }
+}
+
+
+// another auto-populating grid, this time using auto-fill (perhaps better if we don’t want items to get too wide?)
+
+.another-flexible-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-gap: 3em;
+}
+
+@media (min-width: 900px)
+  .another-flexible-list {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+*/
