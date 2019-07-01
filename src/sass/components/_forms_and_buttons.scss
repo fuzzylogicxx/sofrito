@@ -20,7 +20,7 @@
   display: inline-block;
   font-weight: 700;
   white-space: nowrap;
-  padding: scale-value(-4)+em 1em scale-value(-3)+em;
+  padding: scale-value(-6)+em scale-value(-3)+em scale-value(-5)+em;
   transition: all 0.3s ease;
 }
 
@@ -29,20 +29,21 @@
   color: darken(#fff, 10%);
 }
 
-@mixin small_button_style() {
-  padding: scale-value(-6)+em scale-value(-3)+em scale-value(-5)+em;
-}
+// is a smaller button style necessary if the default is pretty small?
+//@mixin small_button_style() {
+//  padding: scale-value(-6)+em scale-value(-3)+em scale-value(-5)+em;
+//}
 
 @mixin large_button_style() {
   padding: scale-value(-4)+em 1em scale-value(-3)+em;
 }
 
 .btn-wrap {
-  margin-top: $space-xs;
+  //margin-top: $space-xs;
 }
 
 form {
-  margin-bottom: $space-xxs;
+  //margin-bottom: $space-xxs;
 }
 
 // Begin "custom forms" styles
@@ -140,7 +141,7 @@ form {
   // Some common styles for consistency
 
   .form-group {
-    margin-bottom: $space-xxs;
+    //margin-bottom: $space-xxs;
   }
 
   label {
@@ -314,7 +315,9 @@ form {
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
     border-radius: $global-border-radius;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -366,13 +369,19 @@ form {
   text-decoration: none;
 }
 
-.btn-small:link, .btn-small:visited {
-  @include small_button_style();
+// is a smaller button style necessary if the default is pretty small?
+//.btn-small:link, .btn-small:visited {
+//  @include small_button_style();
+//}
+
+.btn-large:link, .btn-large:visited {
+  @include large_button_style();
 }
 
 
 
 // Buttons with icons (button-style links AND form buttons)
+// todo: try sharing/reusing the style/component used in svg_and_text_pairs.scss
 
 .btn-icon:link, .btn-icon:hover,
 .form-custom button.btn-icon, .form-custom [type="button"].btn-icon, .form-custom [type="reset"].btn-icon {
@@ -380,7 +389,7 @@ form {
   align-items: center;
 }
 
-.btn-icon > *:last-child {
+.btn-icon > * + * {
   margin-left: scale-value(-6)+em;
 }
 
