@@ -1,155 +1,30 @@
+// Presets, functions and resets
 @import "components/variables_general.scss";
 @import "components/mixins_general.scss";
 @import "components/resets_and_improvements.scss";
+
+// Typographic and other core HTML elements
 @import "components/typography.scss";
-@import "components/code.scss";
-//@import "components/forms_and_buttons.scss";
 @import "components/list_utils.scss";
+@import "components/demoing_code.scss";
+@import "components/tables.scss";
+
+// Layout and responsiveness
+@import "components/spacing_and_rhythm.scss";
 @import "components/responsive_layout_utilities.scss";
+@import "components/sidebar_layouts.scss";
+@import "components/aspect_ratio_enforcing.scss";
+@import "components/media_objects.scss";
+@import "components/breakout.scss";
+@import "components/rooted_footer.scss";
 
-// Margins: add only to elements which need margins.
-// Ref: Heydon Pickering and Andy Bell
-// https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/
-// http://alistapart.com/article/axiomatic-css-and-lobotomized-owls/
+// Buttons, special links, and forms
+@import "components/svg_and_text_pairs.scss";
+@import "components/forms_and_buttons.scss";
 
-:root {
-  --flow-space: #{$body-line-height-min}rem;
-}
-
-@mixin stack() {
-  //--flow-space: #{$body-line-height-min}rem;
-
-  & > * + * {
-    margin-top: $body-line-height-min+rem;
-    margin-top: var(--flow-space);
-  }
-}
-
-// Use sparingly; only when we know exactly what the inner content will be
-@mixin stack_recursive() {
-  //--flow-space: #{$body-line-height-min}rem;
-
-  & * + * {
-    margin-top: $body-line-height-min+em;
-    margin-top: var(--flow-space);
-  }
-}
-
-.stack,
-main,
-.container,
-.prose,
-.entry-header,
-.entry-content {
-  //--flow-space: #{$body-line-height-min}rem;
-  @include stack();
-}
-
-.trio {
-  //--flow-space: #{$body-line-height-min}rem;
-  @include stack_recursive();
-}
-
-main {
-  padding-top: var(--flow-space);
-  padding-bottom: var(--flow-space);
-}
-
-
-
-/** + * {
-  margin-top: 1.5em;
-}
-
-.compact * + * {
-  margin-top: 0.75em;
-}
-
-.flow-margins-off > * {
-  margin-top: 0;
-}
-
-.text-icon-pair > * {
-  margin-top: 0;
-}*/
-
-
-
-
-// Sidebar Component (no media queries; wraps under a given min-width)
-// Note that if this is a first child of a full-width body i.e. not within a width-constrained container, you’d get horizontal scrollbars.
-// ref https://every-layout.dev/layouts/sidebar/
-
-.sidebar > * {
-  display: flex;
-  flex-wrap: wrap;
-  margin: calc(1rem / 2 * -1); // todo: make 1rem ($space-between) a var
-}
-
-.sidebar > * > * {
-  margin: calc(1rem / 2); // todo: make 1rem ($space-between) a var
-  flex-basis: 20rem; // todo: make this line optional and only applied if the relevant var (i.e. 20rem) is supplied.
-  flex-grow: 1;
-
-  background-color: red;
-}
-
-.sidebar-left > * > :last-child { // todo: use either last-child or first-child (for content-area targetting) based on var $sidebar-side ('left' or 'right');
-  flex-basis: 0;
-  flex-grow: 999;
-  min-width: calc(50% - 1rem); // todo: make 50% ($content-col-min-width) and 1rem ($space-between) vars
-}
-
-.sidebar-right > * > :first-child { // todo: use either last-child or first-child (for content-area targetting) based on var $sidebar-side ('left' or 'right');
-  flex-basis: 0;
-  flex-grow: 999;
-  min-width: calc(50% - 1rem); // todo: make 50% ($content-col-min-width) and 1rem ($space-between) vars
-}
-
-.main {
-  background-color: green;
-}
-
-/*.with-sidebar > * {
-  display: flex;
-  flex-wrap: wrap;
-  //margin: calc(1rem / 2 * -1);
-  margin: -0.5rem;
-}
-
-.with-sidebar > * > * {
-  margin: 0.5rem;
-}
-
-.sidebar {
-  flex-basis: 20rem;
-  flex-grow: 1;
-}
-
-.not-sidebar {
-  ↓ grow from nothing
-  flex-basis: 0;
-  flex-grow: 999;
-  min-width: calc(50% - 1rem);
-}*/
-
-
-
-
-
-/*.sidebar {
-  flex-basis: 20rem;
-  flex-grow: 1;
-
-  max-width: none;
-  min-width: 0;
-}
-
-.not-sidebar {
-  flex-basis: 0;
-  flex-grow: 999;
-  min-width: 50%;
-}*/
-
-
-
+// Other components
+@import "components/tabs.scss";
+@import "components/skip_links.scss";
+@import "components/modals.scss";
+@import "components/show_and_hide.scss";
+@import "components/cookieconsent2_3.1.0.min.scss";
