@@ -100,6 +100,8 @@ body.modal-open {
   right: 1em;
   top: 1em;
   width: 2em;
+
+  margin-top: 0; // override global spacing rules.
 }
 
 .is-icon-btn:hover [data-modal-x],
