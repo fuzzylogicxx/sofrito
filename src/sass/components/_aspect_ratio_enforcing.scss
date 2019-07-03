@@ -1,10 +1,12 @@
 // Maintaining image/video/etc aspect ratio in responsive context
 // Works by putting a wrapping div around the image/media then styling that wrapper to preserve the target aspect ratio.
 
+// To Do: try Thierry Koblentz’s custom property based version of this as documented on https://css-tricks.com/aspect-ratio-boxes/
+
 /**
  * credit Andy Bell https://andy-bell.design/wrote/creating-an-aspect-ratio-css-utility/
  * ASPECT RATIO
- * A utility that provides you with a predictable aspect ratio
+ * A utility that provides you with a predictable aspect ratio.
  *
  * ratio-wide: a 16:9 aspect
  * ratio-square: a perfect square
