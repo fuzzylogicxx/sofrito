@@ -1,14 +1,21 @@
-// Sidebar Component (no media queries; wraps under a given min-width)
-// Note that if this is a first child of a full-width body i.e. not within a width-constrained container, you’d get horizontal scrollbars.
+// Sidebar Component
+// Flexbox-based.
+// It’s responsiveness is container-based, for optimum reusability. It wraps when .not-sidebar’s width is <50% of CONTAINER (rather than VIEWPORT per media queries))
+// Also at small widths flexbox works well since each element goes full-container-width thanks to flex-grow: 1.
+// This component can be used anywhere we want adjacent elements in which one should be smaller than the other, so could be a "search" component too (input + button).
+// Options: i) give "sidebar" a fixed width, or allow it to just be the width of its content; ii) insert gutter, or just let elements touch.
+// Note 1) if use this component as a direct child of <body> you’ll get horizontal scrollbars.
+// Note 2) a sidebar layout could instead be achieved with CSS Grid. Could start with no grid, just flow-based stacking, then apply grid styles for wider viewports.
+// But the flexbox approach feels more flexible for reuse in a design system, and we’re not setting so many explicit widths that flexbox feels wrong.
 // ref https://every-layout.dev/layouts/sidebar/
 
-.sidebar > * {
+.with-sidebar > * {
   display: flex;
   flex-wrap: wrap;
   margin: calc(1rem / 2 * -1); // todo: make 1rem ($space-between) a var
 }
 
-.sidebar > * > * {
+.with-sidebar > * > * {
   margin: calc(1rem / 2); // todo: make 1rem ($space-between) a var
   flex-basis: 20rem; // todo: make this line optional and only applied if the relevant var (i.e. 20rem) is supplied.
   flex-grow: 1;
@@ -16,18 +23,40 @@
   background-color: red;
 }
 
-.sidebar-left > * > :last-child { // todo: use either last-child or first-child (for content-area targetting) based on var $sidebar-side ('left' or 'right');
+.with-sidebar-on-left > * > :last-child { // todo: use either last-child or first-child (for content-area targetting) based on var $sidebar-side ('left' or 'right');
   flex-basis: 0;
   flex-grow: 999;
   min-width: calc(50% - 1rem); // todo: make 50% ($content-col-min-width) and 1rem ($space-between) vars
 }
 
-.sidebar-right > * > :first-child { // todo: use either last-child or first-child (for content-area targetting) based on var $sidebar-side ('left' or 'right');
+.with-sidebar-on-right > * > :first-child { // todo: use either last-child or first-child (for content-area targetting) based on var $sidebar-side ('left' or 'right');
   flex-basis: 0;
   flex-grow: 999;
   min-width: calc(50% - 1rem); // todo: make 50% ($content-col-min-width) and 1rem ($space-between) vars
 }
 
 .main {
+  background-color: green;
+}
+
+
+// No gutter in this one so requires one less div therefore targeting is slightly different, and also requires no margins and calcs.
+// To Do: merge this into above component, maybe as a mixin with arguments to control the CSS construction.
+
+.sidebar-esque {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  flex-basis: 20rem;
+  flex-grow: 1;
+  background-color: red;
+}
+
+.not-sidebar {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: 50%;
   background-color: green;
 }
