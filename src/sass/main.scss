@@ -44,7 +44,9 @@
   padding-bottom: scale-value(4)+em; //padding: $space-m 0 $space-l;
 
   h1 {
-    font-size: scale-value(4)+rem;
+    @include at-least($width-pressure-point-one) {
+      font-size: scale-value(4)+rem;
+    }
   }
 }
 
@@ -151,22 +153,6 @@
     font-size: scale-value(-1)+rem;
     margin-bottom: scale-value(-6)+rem;
   }
-
-  /*
-  li {
-    margin-bottom: scale-value(-5)+rem;
-    font-size: scale-value(-1)+rem;
-  }
-
-  a {
-    color: #fff;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  */
 }
 
 

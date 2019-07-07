@@ -243,6 +243,7 @@ $space-l: scale-value(3)+rem;
 .stack,
 main,
 .container,
+.contain-prose,
 .prose,
 .entry-header,
 .entry-content,
@@ -251,13 +252,18 @@ form,
   @include stack();
 }
 
+$space-compact: ($body-line-height-min/2);
+
 .stack-compact {
-  --flow-space: #{$body-line-height-min/2}rem;
+  --flow-space: #{$space-compact}rem;
   @include stack();
 }
 
-.stack-spacious {
-  --flow-space: #{$body-line-height-max}rem;
+$space-spacious: $body-line-height-max;
+
+.stack-spacious,
+.global-footer {
+  --flow-space: #{$space-spacious}rem;
   @include stack();
 }
 
