@@ -1,8 +1,14 @@
+// Useful layout refs:
+// https://noti.st/mbarker84/CkDXxM#sGZneIR
+// https://css-tricks.com/snippets/css/complete-guide-grid/, http://grid.malven.co/, https://cssgrid-generator.netlify.com/
+
+
 ///////////////////////////////////
 // Responsive utilities
 ///////////////////////////////////
 
-// Container utility for sensible maximum component widths within a responsive layout
+// Container
+// Use this to give wrappers a sensible maximum width.
 // Defined as a mixin so it can be used in different places; not just via the .container class defined later.
 
 @mixin container() {
@@ -37,6 +43,22 @@
   @include container();
 }
 
+.contain-prose {
+  margin-left: $space-s;
+  margin-right: $space-s;
+
+  @include at-least($bp-wide-two) {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  @include at-least($bp-wide-three) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $text-measure-max-in-ems+rem;
+  }
+}
+
 .container-centred-text {
   text-align: center;
 
@@ -53,9 +75,8 @@
       margin-right: auto;
     }
   }
-
-
 }
+
 
 
 // Create a grid with 3 flexible-width-but-always-equal-width colummns
@@ -68,10 +89,25 @@
 }
 
 .trio {
+  //--flow-space: #{$body-line-height-min}rem;
+  @include stack();
+
   @include at-least($bp-wide-one) {
     @include trio();
+
+    & > * {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    margin-top: ($body-line-height-min/2)+rem;
+    @include at-least($width-pressure-point-one) {
+      --flow-space: #{$body-line-height-max/2}rem;
+    }
   }
 }
+
 
 
 // Create a row with 2 equal-width columns (using multi-column) but when space allows, 3 equal-width columns.
@@ -85,7 +121,6 @@
 }
 
 
-/*
 // Component lists of flexible/unknown quantity with equal width items.
 // To achieve wrapping, we can use the auto-fit or auto-fill keywords.
 // auto-fill inserts empty columns to end of line if necessary
@@ -97,31 +132,34 @@
 
 // Create a grid that shows two across on narrow screens
 // but on wider screens, auto-fits columns and rows (inserts empty columns to end of line if necessary)
-// and never lets items get too wide, by virtue of using a vw-based grid-gap
+// and never lets items get too wide, by virtue of using a vw-based column-gap
 // Ref: https://www.sarasoueidan.com/work/
 // Note: should test/decide whether grid or flexbox is best here
 
 .flexible-list-component {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  padding: 5em 1em 3em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 15vw;
 }
 
-@media (min-width: 800px)
+@media (min-width: 50em) {
   .flexible-list-component {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 7em 7vw;
+
+    & > * {
+      //outline: 1px solid red;
+    }
   }
+
 }
 
 
-// another auto-populating grid, this time using auto-fill (perhaps better if we don’t want items to get too wide?)
 
-.another-flexible-list {
+// A flexible grid suited to items that can be narrow. It increases the minimum width of items beyond a breakpoint.
+
+.another-flexible-list-component {
     list-style: none;
     padding: 0;
     display: grid;
@@ -129,9 +167,8 @@
     grid-gap: 3em;
 }
 
-@media (min-width: 900px)
-  .another-flexible-list {
+@media (min-width: 56.25em) {
+  .another-flexible-list-component {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
 }
-*/
