@@ -10,7 +10,6 @@
 @import "components/tables.scss";
 
 // Layout and responsiveness
-@import "components/spacing_and_rhythm.scss";
 @import "components/responsive_layout_utilities.scss";
 @import "components/sidebar_layouts.scss";
 @import "components/aspect_ratio_enforcing.scss";
@@ -27,4 +26,190 @@
 @import "components/skip_links.scss";
 @import "components/modals.scss";
 @import "components/show_and_hide.scss";
+@import "components/content_slider.scss";
 @import "components/cookieconsent2_3.1.0.min.scss";
+
+
+
+
+///////////////////////////////////
+// Common patterns
+///////////////////////////////////
+
+// Header Banners
+
+.header-banner {
+  background: $color-light;
+  padding-top: scale-value(4)+em;
+  padding-bottom: scale-value(4)+em; //padding: $space-m 0 $space-l;
+
+  h1 {
+    font-size: scale-value(4)+rem;
+  }
+}
+
+
+// Blog stuff
+
+.meta {
+  color: gray;
+  //margin: 0;
+}
+
+.published { //.dt-published
+  color: gray;
+}
+
+.entry-meta .posted-on::before {
+  content: " · ";
+}
+
+
+
+///////////////////////////////////
+// Global Header
+///////////////////////////////////
+
+.global-header {
+  border-bottom: 1px solid $border-color;
+  padding-top: $space-xxs;
+  padding-bottom: $space-xxs;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+
+  & > * + * {
+    margin-top: 0;
+    margin-left: $space-s;
+  }
+}
+
+.logo {
+  line-height: 1;
+  margin-right: auto;
+
+  svg {
+    display: block;
+    height: 3em;
+    width: 2.625em; // divide height by 1.14285 to maintain our logo icon’s proportions.
+
+    @include at-least($bp-wide-four) {
+      height: scale-value(7)+rem;
+      width: (scale-value(7) / 1.14285)+em;
+    }
+  }
+}
+
+.header-menu-toggle a::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .2em;
+    vertical-align: .2em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+
+// BBC-style greedy navigation
+
+.header-menu-hidden {
+  display: none;
+}
+
+
+
+/////////////////
+// Global Footer
+/////////////////
+
+.global-footer {
+  background: $text-color;
+  color: #fff;
+  padding-top: var(--flow-space);
+  padding-bottom: var(--flow-space);
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  li {
+    font-size: scale-value(-1)+rem;
+    margin-bottom: scale-value(-6)+rem;
+  }
+
+  /*
+  li {
+    margin-bottom: scale-value(-5)+rem;
+    font-size: scale-value(-1)+rem;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  */
+}
+
+
+
+
+///////////////////
+// Primary Content
+///////////////////
+
+.primary-content {
+  //padding: $space-m 0 $space-l; // padding: $space-s 0 $space-l;
+  padding-top: $space-l;
+  padding-bottom: 3rem;
+
+  &.with-header-banner {
+    padding-top: 0;
+  }
+}
+
+
+
+
+///////////////////
+// Index page
+///////////////////
+
+/*.features-benefits {
+
+  section {
+    margin-top: $space-m;
+
+    @include at-least($width-pressure-point-one) {
+      margin-top: $space-l;
+    }
+  }
+}*/
+
+/*.features-benefits-wrap {
+  --flow-space: #{$space-l};
+}*/
+
+
+
+
+// Print styles
+@import "components/print.scss";

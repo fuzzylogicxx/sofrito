@@ -1,6 +1,5 @@
 // Full Viewport Width
 .special {
-  max-width: none; // in case this is nested within a .prose element, this will override the max-width applied on all .prose children.
 
   // Ref: https://css-tricks.com/full-width-containers-limited-width-parents/ (Sven Wolfermann https://codepen.io/maddesigns/pen/rOMgpQ/)
   // push to the exact middle of the browser window with left: 50%, then pull it back to the left edge with negative -50vw margin.

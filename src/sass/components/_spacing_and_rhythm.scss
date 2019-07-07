@@ -18,7 +18,7 @@
   }
 }
 
-// Use sparingly; only when we know exactly what the inner content will be
+// Recursive Stack: use sparingly; only when we know exactly what the inner content will be
 @mixin stack_recursive() {
   //--flow-space: #{$body-line-height-min}rem;
 
