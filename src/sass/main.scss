@@ -27,6 +27,7 @@
 @import "components/modals.scss";
 @import "components/show_and_hide.scss";
 @import "components/content_slider.scss";
+@import "components/user_avatars.scss";
 @import "components/cookieconsent2_3.1.0.min.scss";
 
 
@@ -44,9 +45,9 @@
   padding-bottom: scale-value(4)+em; //padding: $space-m 0 $space-l;
 
   h1 {
-    @include at-least($width-pressure-point-one) {
-      font-size: scale-value(4)+rem;
-    }
+    /*@include at-least($width-pressure-point-one) {
+      font-size: scale-value(3)+rem;
+    }*/
   }
 }
 
@@ -113,7 +114,7 @@
     width: 0;
     height: 0;
     margin-left: .2em;
-    vertical-align: .2em;
+    vertical-align: .15em;
     content: "";
     border-top: .3em solid;
     border-right: .3em solid transparent;
@@ -163,7 +164,6 @@
 ///////////////////
 
 .primary-content {
-  //padding: $space-m 0 $space-l; // padding: $space-s 0 $space-l;
   padding-top: $space-l;
   padding-bottom: 3rem;
 
