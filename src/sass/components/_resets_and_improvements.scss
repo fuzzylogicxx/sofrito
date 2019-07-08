@@ -58,9 +58,8 @@ figcaption,
 dl,
 dd,
 dt,
-ul,
-ol,
-hr {
+hr,
+pre {
   margin: 0;
   padding: 0;
 
@@ -69,6 +68,15 @@ hr {
   // border: 0;
   // font: inherit;
 }
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 
 // Render HTML5 structural elements correctly
 

@@ -47,12 +47,15 @@
   margin-left: $space-s;
   margin-right: $space-s;
 
-  @include at-least($bp-wide-two) {
+  /*@include at-least($bp-wide-two) {
     margin-left: 2%;
     margin-right: 2%;
-  }
+  }*/
 
-  @include at-least($bp-wide-three) {
+  // once the viewport is as wide as our $text-measure-max-in-ems plus a bit of gutter on each side, ...
+  // then centre the prose-container.
+  // NB this is for single-column layouts.
+  @include at-least(42em) {
     margin-left: auto;
     margin-right: auto;
     max-width: $text-measure-max-in-ems+rem;
@@ -90,20 +93,13 @@
 
 .trio {
   //--flow-space: #{$body-line-height-min}rem;
-  @include stack();
+  @include stack-recursive();
 
   @include at-least($bp-wide-one) {
     @include trio();
 
     & > * {
       margin-top: 0;
-    }
-  }
-
-  p {
-    margin-top: ($body-line-height-min/2)+rem;
-    @include at-least($width-pressure-point-one) {
-      --flow-space: #{$body-line-height-max/2}rem;
     }
   }
 }
@@ -157,7 +153,8 @@
 
 
 
-// A flexible grid suited to items that can be narrow. It increases the minimum width of items beyond a breakpoint.
+// A flexible grid suited to items that can be narrow.
+// It increases the minimum width of items beyond a breakpoint.
 
 .another-flexible-list-component {
     list-style: none;

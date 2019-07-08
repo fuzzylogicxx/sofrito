@@ -7,15 +7,15 @@
 code {
 
   color: $color-complimentary;
+  line-height: 1;
+  font-weight: 700;
+  hyphens: none;
 
   // normalize.css – if we’re using default monospace, use this hack to avoid browser weirdness with regard to font-sizing.
   font-family: monospace, monospace;
 
   // With some code fonts, we might want to enlarge.
   font-size: 1.025em;
-
-  font-weight: 700;
-  hyphens: none;
 }
 
 

@@ -215,9 +215,10 @@ $space-l: scale-value(3)+rem;
 // http://alistapart.com/article/axiomatic-css-and-lobotomized-owls/
 
 :root {
-  --flow-space: 1rem; //--flow-space: #{$body-line-height-min/2}rem;
-  /*@include at-least($width-pressure-point-one) {
-    --flow-space: #{$body-line-height-max/2}rem;
+  --flow-space: 1rem;
+  /*--flow-space: #{$body-line-height-min}rem; //--flow-space: 1rem; //--flow-space: #{$body-line-height-min/2}rem;
+  @include at-least($width-pressure-point-one) {
+    --flow-space: #{$body-line-height-max}rem;
   }*/
 }
 
@@ -252,18 +253,18 @@ form,
   @include stack();
 }
 
-$space-compact: ($body-line-height-min/2);
+$flow-space-compact: ($body-line-height-min/2);
 
 .stack-compact {
-  --flow-space: #{$space-compact}rem;
+  --flow-space: #{$flow-space-compact}rem;
   @include stack();
 }
 
-$space-spacious: $body-line-height-max;
+$flow-space-spacious: scale-value(3);
 
 .stack-spacious,
 .global-footer {
-  --flow-space: #{$space-spacious}rem;
+  --flow-space: #{$flow-space-spacious}rem;
   @include stack();
 }
 
@@ -396,7 +397,7 @@ h4 {
 h3 {
 
   // Increase the margin-top.
-  --flow-space: #{$space-l};
+  --flow-space: #{$body-line-height-max}rem;
 
   font-weight: 700;
 
@@ -406,20 +407,15 @@ h3 {
   line-height: scale-value(1);
 
   // Add typographic "contrast".
-  @include at-least($width-pressure-point-one) {
+  /*@include at-least($width-pressure-point-one) {
     font-size: scale-value(1)+rem;
-  }
-
-  .prose & {
-    //margin-top: scale-value(4)+rem;
-  }
-
+  }*/
 }
 
 h2 {
 
   // Increase the margin-top.
-  --flow-space: #{$space-l};
+  --flow-space: #{$body-line-height-max}rem;
 
   font-size: scale-value(1)+rem;
   font-weight: 700;
@@ -428,13 +424,9 @@ h2 {
   line-height: (scale-value(0) + ( (scale-value(-3)) - (scale-value(-4)) ));
 
   // Add typographic "contrast".
-  @include at-least($width-pressure-point-one) {
+  /*@include at-least($width-pressure-point-one) {
     font-size: scale-value(2)+rem;
-  }
-
-  .prose & {
-    //margin-top: scale-value(4)+rem;
-  }
+  }*/
 }
 
 h1 {
@@ -448,12 +440,16 @@ h1 {
 
   font-weight: 700;
   line-height: 1;
-  //margin-bottom: $space-s;
 }
 
-h3 + p,
-h2 + p {
-  --flow-space: #{scale-value(-6)}rem;
+h3 + *,
+h2 + * {
+  --flow-space: #{scale-value(-5)}rem;
+}
+
+.skip-custom-heading-spacing h3 + *,
+.skip-custom-heading-spacing h2 + * {
+  --flow-space: 1rem;
 }
 
 .prose {
