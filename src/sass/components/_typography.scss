@@ -215,16 +215,14 @@ $space-l: scale-value(3)+rem;
 // http://alistapart.com/article/axiomatic-css-and-lobotomized-owls/
 
 :root {
+  // It’d be interesting to try an em-based default so that spacing of child elements in components scales proprortionately to each element’s font-size.
+  // This might result in more adaptable components, in the context of a design system.
+  // And could always override flow-space with a rem value in a local element, if/when want to, to make spacing between elements uniform.
+  // One to experiment with. See Andy Bell’s usage for ref.
   --flow-space: 1rem;
-  /*--flow-space: #{$body-line-height-min}rem; //--flow-space: 1rem; //--flow-space: #{$body-line-height-min/2}rem;
-  @include at-least($width-pressure-point-one) {
-    --flow-space: #{$body-line-height-max}rem;
-  }*/
 }
 
 @mixin stack() {
-  //--flow-space: #{$body-line-height-min}rem;
-
   & > * + * {
     margin-top: 1rem;
     margin-top: var(--flow-space);
@@ -233,8 +231,6 @@ $space-l: scale-value(3)+rem;
 
 // Recursive Stack: use sparingly; only when we know exactly what the inner content will be
 @mixin stack_recursive() {
-  //--flow-space: #{$body-line-height-min}rem;
-
   & * + * {
     margin-top: 1rem;
     margin-top: var(--flow-space);
