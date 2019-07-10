@@ -22,12 +22,12 @@
 @import "components/forms_and_buttons.scss";
 
 // Other components
+@import "components/profile_pic.scss";
 @import "components/tabs.scss";
 @import "components/skip_links.scss";
 @import "components/modals.scss";
 @import "components/show_and_hide.scss";
 @import "components/content_slider.scss";
-@import "components/user_avatars.scss";
 @import "components/cookieconsent2_3.1.0.min.scss";
 
 
@@ -41,8 +41,8 @@
 
 .header-banner {
   background: $color-light;
-  padding-top: scale-value(4)+em;
-  padding-bottom: scale-value(4)+em; //padding: $space-m 0 $space-l;
+  padding-top: 3em;
+  padding-bottom: 3em;
 
   h1 {
     /*@include at-least($width-pressure-point-one) {
