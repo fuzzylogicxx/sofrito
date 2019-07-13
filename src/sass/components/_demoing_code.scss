@@ -33,22 +33,16 @@ code {
 pre {
   background: #f5f2f0;
   border: 1px solid #eee;
-  color: #666;
   border-radius: 8px;
-
-  padding: 1em;
-
-  //margin: .5em 0;
-  //font-size: calc(.9em + .1vw);
-
   min-width: 250px;
   max-width: 100vw;
   overflow: auto;
+  padding: 1em;
   resize: both;
 }
 
-code[class*=language-], pre[class*=language-] {
-    color: #000;
-    background: 0 0;
-    text-shadow: 0 1px #fff;
+pre code {
+  color: #000;
+  background: 0 0;
+  text-shadow: 0 1px #fff;
 }
