@@ -57,9 +57,9 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
 
 @font-face {
   font-family: Source Sans Pro;
-  src: url(../type/sans/SourceSansPro-Semibold.ttf.woff2) format("woff2"),
-       url(../type/sans/SourceSansPro-Semibold.otf.woff) format("woff"),
-       url(../type/sans/SourceSansPro-Semibold.otf) format("opentype");
+  src:    url(../type/sans/source-sans-pro-v12-latin-600.woff2) format("woff2"),
+          url(../type/sans/source-sans-pro-v12-latin-600.woff) format("woff"),
+          url(../type/sans/SourceSansPro-Semibold.otf) format("opentype");
   font-weight: 600;
   font-display: swap;
 }
@@ -71,10 +71,6 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
   src:    url(../type/sans/source-sans-pro-v12-latin-700.woff2) format("woff2"),
           url(../type/sans/source-sans-pro-v12-latin-700.woff) format("woff"),
           url(../type/sans/SourceSansPro-Bold.otf) format("opentype");
-
-  //src: url(../type/sans/SourceSansPro-Boldzzzz.ttf.woff2) format("woff2"),
-  //     url(../type/sans/SourceSansPro-Bold.otf.woff) format("woff"),
-  //     url(../type/sans/SourceSansPro-Bold.otf) format("opentype");
   font-weight: 700;
   font-display: swap;
 }
@@ -451,6 +447,7 @@ h1 {
 
   @include at-least($bp-wide-four) {
     font-size: scale-value(4)+rem;
+    letter-spacing: -0.01em;
   }
 
   font-weight: 700;
