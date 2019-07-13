@@ -4,37 +4,51 @@
 // - bold and coloured per https://andy-bell.design/wrote/keep-it-simple/; or
 // - regular, normal-coloured, on coloured background like on https://css-tricks.com/what-if-we-got-aspect-ratio-sized-images-by-doing-almost-nothing/
 
-code {
-
-  color: $color-complimentary;
-  line-height: 1;
-  font-weight: 700;
+code, pre {
+  color: #000;
+  background: 0 0;
+  text-shadow: 0 1px #fff;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  font-variant-ligatures: none;
+  word-wrap: normal;
+  tab-size: 4;
   hyphens: none;
-
-  // normalize.css – if we’re using default monospace, use this hack to avoid browser weirdness with regard to font-sizing.
-  font-family: monospace, monospace;
-
-  // With some code fonts, we might want to enlarge.
-  font-size: 1.025em;
 }
 
-
-// <pre>-based code snippets
+code {
+  background: #f6f3f2;
+  color: #333;
+  display: inline-block;
+  font-size: scale-value(-1)+rem;
+  font-feature-settings: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0 .275em;
+}
 
 pre {
-    background: #fafafa;
-    border: 1px dotted #aaa;
-    color: #111;
-    font-size: scale-value(-1)+rem;
-    padding: 1em;
-    overflow: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  background: #f5f2f0;
+  border: 1px solid #eee;
+  color: #666;
+  border-radius: 8px;
+
+  padding: 1em;
+
+  //margin: .5em 0;
+  //font-size: calc(.9em + .1vw);
+
+  min-width: 250px;
+  max-width: 100vw;
+  overflow: auto;
+  resize: both;
 }
 
-pre code {
-    font-size: scale-value(-1)+rem;
-    font-weight: 400;
-    color: #111;
+code[class*=language-], pre[class*=language-] {
+    color: #000;
+    background: 0 0;
+    text-shadow: 0 1px #fff;
 }
-
