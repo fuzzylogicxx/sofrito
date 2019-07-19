@@ -29,7 +29,6 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
 // Alternatively CLI tool pyftsubset (https://github.com/fonttools/fonttools) however glyphhanger is easier.
 // Alternatively FontSquirrel (https://www.fontsquirrel.com/tools/webfont-generator) offers a GUI but I don’t like/understand all the options.
 
-
 // Sans: Regular (activated by font-weight: 400)
 
 @font-face {
@@ -75,21 +74,10 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
   font-display: swap;
 }
 
-/*// Sans: Light (activated by font-weight: 300)
+//200 = SourceSansPro-ExtraLight
+//300 = SourceSansPro-Light
+//900 = SourceSansPro-Black
 
-@font-face {
-  font-family: Source Sans Pro;
-  src: url(../type/SourceSansPro-Light.ttf.woff2) format("woff2"),
-       url(../type/SourceSansPro-Light.ttf.woff) format("woff"),
-       url(../type/SourceSansPro-Light.otf) format("opentype");
-  font-weight: 300;
-  font-display: swap;
-}
-
-
-
-
-*/
 
 
 
