@@ -33,8 +33,8 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
 
 @font-face {
   font-family: Source Sans Pro;
-  src: url(../type/sans/SourceSansPro-Regular.ttf.woff2) format("woff2"),
-       url(../type/sans/SourceSansPro-Regular.otf.woff) format("woff"),
+  src: url(../type/sans/SourceSansPro-Regular-subset.woff2) format("woff2"),
+       url(../type/sans/SourceSansPro-Regular-subset.zopfli.woff) format("woff"),
        url(../type/sans/SourceSansPro-Regular.otf) format("opentype");
   font-weight: 400;
   font-display: swap;
@@ -300,6 +300,22 @@ body {
 }
 
 
+// Prose
+
+.prose {
+  hyphens: auto;
+  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+}
+
+@supports (font-kerning: normal) and (font-variant-ligatures: common-ligatures contextual) and (font-variant-numeric: oldstyle-nums proportional-nums) {
+  .prose {
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures contextual;
+    font-variant-numeric: oldstyle-nums proportional-nums;
+    font-feature-settings: normal;
+  }
+}
+
 
 // Links
 
@@ -318,13 +334,31 @@ a:hover {
 
 
 // Abbreviations
-// from normalize.css: 1. Remove the bottom border in Chrome 57-; and 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
 
 abbr[title] {
+  // from normalize.css: 1. Remove the bottom border in Chrome 57-; and 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   text-decoration: underline dotted; /* 2 */
 }
+
+abbr {
+  letter-spacing: 0.01em;
+  font-feature-settings: "c2sc", "smcp";
+  @supports (font-variant-caps: all-small-caps) {
+    font-variant-caps: all-small-caps;
+    font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+  }
+}
+
+
+// Numbers
+
+.number {
+  letter-spacing: 0.01em;
+}
+
+
 
 
 // Bold / Emphasis
@@ -365,7 +399,7 @@ sup {
 // Quoting
 
 blockquote {
-  border-left: scale-value(-6)+rem solid $border-color;
+  border-left: .1rem solid $color-accent;
   color: lighten($text-color, 20%);
   font-style: italic;
   margin-left: 0;
@@ -375,6 +409,13 @@ blockquote {
   margin-left: -($space-l);
   padding-left: $space-s;*/
 
+}
+
+
+// Lists
+
+ol {
+  //list-style-position: outside;
 }
 
 
@@ -429,6 +470,18 @@ h2 {
   }*/
 }
 
+.prose h3 + *,
+.prose h2 + * {
+  --flow-space: #{scale-value(-6)}rem;
+}
+
+/*
+.skip-custom-heading-spacing h3 + *,
+.skip-custom-heading-spacing h2 + * {
+  --flow-space: 1rem;
+}
+*/
+
 h1 {
   color: $color-accent;
   font-size: scale-value(2)+rem;
@@ -445,32 +498,6 @@ h1 {
 
   font-weight: 700;
   line-height: 1;
-}
-
-.prose h3 + *,
-.prose h2 + * {
-  --flow-space: #{scale-value(-6)}rem;
-}
-
-/*
-.skip-custom-heading-spacing h3 + *,
-.skip-custom-heading-spacing h2 + * {
-  --flow-space: 1rem;
-}
-*/
-
-.prose {
-  hyphens: auto;
-  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
-}
-
-@supports (font-kerning: normal) and (font-variant-ligatures: common-ligatures contextual) and (font-variant-numeric: oldstyle-nums proportional-nums) {
-  .prose {
-    font-kerning: normal;
-    font-variant-ligatures: common-ligatures contextual;
-    font-variant-numeric: oldstyle-nums proportional-nums;
-    font-feature-settings: normal;
-  }
 }
 
 

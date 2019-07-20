@@ -280,8 +280,14 @@ ul span {
             </div> -->
 
 
-            <p>This is a paragraph. It’s just something I threw together. This sentence contains <a href="http://www.w3.org/">a link</a> to W3C, which you have probably visited. This sentence contains a link to <a href="http://www.foo.net/">someplace else</a>. This is <a href="http://www.htmlhelp.com/" class="offsite text-icon-pair"><span>an offsite link</span> <svg viewBox="0 0 24 24" width="1em" height="1em" class="text-icon-pair-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
+            <p>This is a paragraph. It’s an affront to test ligatures so often. It’s just something I threw together. This sentence contains <a href="http://www.w3.org/">a link</a> to W3C, which you have probably visited. This sentence contains a link to <a href="http://www.foo.net/">someplace else</a>. This is <a href="http://www.htmlhelp.com/" class="offsite text-icon-pair"><span>an offsite link</span> <svg viewBox="0 0 24 24" width="1em" height="1em" class="text-icon-pair-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</p>
             <p>A blog is useful for many reasons. It can be<span style="color: green;">c</span>ome <a href="/">a source of leads</a>, it can <span style="color: red;">b</span>e the place where, in the future, you might sell your products if you want to become an indie developer, or it can simply be the place where you have your audience and express your ideas.</p>
+
+            <ol>
+              <li>this is an ordered list item. It's just something I threw together. In the beginning was the word. And the word wrapped. I'll be looking soon for opportunities to style this text. In the meantime it will do merely to occupy space.</li>
+              <li>this is another ordered list item</li>
+              <li>this is another ordered list item</li>
+            </ol>
 
             <ul>
               <li>Use proper accents e.g. résumé and jalapeño.</li>
@@ -289,7 +295,7 @@ ul span {
               <li>Smarten quotation marks ("that's it" should be “that’s it”).</li>
               <li>Use primes as needed (10’6” tall should be 10′6″ tall).
               <li>Use an en dash (–) rather than a hyphen (-) to represent a range in strings of digits (99–103), days (Mon–Fri), dates (May 5–8), and times (10:00–11:00“). Set these en dashes either unspaced or with very thin surrounding spaces.</li>
-              <li>Mark up abbreviations with abbr tags. Style them independently, applying small caps as needed, using attribute selectors or classes: 5:00<abbr class="time" title="post meridiem">pm</abbr>.</li>
+              <li>Mark up abbreviations with abbr tags. Style them independently, applying small caps as needed, using attribute selectors or classes: 5:00 <abbr class="time" title="post meridiem">pm</abbr>.</li>
               <li>Lowercase text can be styled as small caps. (So can uppercase text). Some abbreviations may look better uppercased: <abbr title="New York">NY</abbr>; consider this before applying small caps to all abbr tags.</li>
               <li>Surround long sequences of numbers with spans, so you can use the CSS letter-spacing property to add subtle breathing room: <span class="number">1,385,600</span>.</li>
               <li>Plan for case-sensitivity near case changes and numerals. To style characters like hyphens, dashes, and parentheses with case-sensitive forms you need to account for them in markup. For example, keep parentheses like these inside the abbreviation markup: <abbr>(PDF)</abbr>. Many fonts bundle case-sensitive forms with caps-related OpenType features. Similarly, case-sensitive forms are often bundled with figure features: <span class="number">(845)555–3333</span>.</li>
