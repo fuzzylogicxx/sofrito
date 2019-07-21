@@ -50,15 +50,85 @@
   <!-- Web Fonts -->
   <!-- If using a service such as Google Fonts or Adobe Fonts, add code here  -->
 
-  <!-- Webfonts should be treated as a progressive enhancement. Our fallback fonts are the accessible baseline. -->
-  <!-- We need to take steps to ensure that accessibility, and no FOIT -->
-  <!-- While we await better support for native webfont-loading technologies such as font-display, we need a custom approach. -->
+  <!-- Webfonts should be treated as a progressive enhancement; our fallback fonts being the accessible baseline. -->
+  <!-- However we need to take steps to ensure that accessibility, and that there is no FOIT -->
+  <!-- While we await better support (esp mobile browsers) for native webfont-loading technologies such as font-display, we need a custom approach. -->
   <!-- Unfortunately, the Font Loading API does not yet have widespread browser support so we need to use a JS library like https://fontfaceobserver.com/ -->
+  <!-- The current Sofrito Font Loadoing strategy is: FOUT with a class (https://www.zachleat.com/web/comprehensive-webfonts/#fout-class) -->
+
+  <!-- Preload critical fonts. Works best with self-hosted fonts although can use with a font service too so long as the URL is stable. -->
+  <!-- Disabled for now; using a JS-based font-loading approach instead. But in future we’ll remove the JS stuff and just have this in combination with font-display: swap. -->
+  <!-- <link rel="preload" href="assets/type/sans/SourceSansPro-Regular-subset.woff2" as="font" type="font/woff2" crossorigin> -->
+  <!-- <link rel="preload" href="assets/type/sans/source-sans-pro-v12-latin-700.woff2" as="font" type="font/woff2" crossorigin> -->
+
+  <style>
+  @font-face {
+    font-family: Source Sans Pro;
+    src: url(assets/type/sans/SourceSansPro-Regular-subset.woff2) format("woff2"),
+         url(assets/type/sans/SourceSansPro-Regular-subset.zopfli.woff) format("woff"),
+         url(assets/type/sans/SourceSansPro-Regular.otf) format("opentype");
+    font-weight: 400;
+
+    // Does no harm to include this even when we’re also using a JS-based font-loading strategy (ref: https://www.zachleat.com/web/comprehensive-webfonts/#font-display)
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Source Sans Pro;
+    src: url(assets/type/sans/SourceSansPro-It-subset.woff2) format("woff2"),
+         url(assets/type/sans/SourceSansPro-It-subset.zopfli.woff) format("woff"),
+         url(assets/type/sans/SourceSansPro-It.otf) format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Source Sans Pro;
+    src: url(assets/type/sans/source-sans-pro-v12-latin-600.woff2) format("woff2"),
+         url(assets/type/sans/source-sans-pro-v12-latin-600.woff) format("woff"),
+         url(assets/type/sans/SourceSansPro-Semibold.otf) format("opentype");
+    font-weight: 600;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: Source Sans Pro;
+    src: url(assets/type/sans/source-sans-pro-v12-latin-700.woff2) format("woff2"),
+         url(assets/type/sans/source-sans-pro-v12-latin-700.woff) format("woff"),
+         url(assets/type/sans/SourceSansPro-Bold.otf) format("opentype");
+    font-weight: 700;
+    font-display: swap;
+  }
+  body {
+    font-family: sans-serif;
+    letter-spacing: -0.6px;
+  }
+  .fonts-loaded body {
+    font-family: 'Source Sans Pro', Helvetica Neue, sans-serif;
+    letter-spacing: normal;
+  }
+  h2 {
+    letter-spacing: -1px;
+  }
+  .fonts-loaded h2 {
+    letter-spacing: normal;
+  }
+  h1 {
+    letter-spacing: -1.7px;
+  }
+  .fonts-loaded h1 {
+    letter-spacing: normal;
+  }
+  </style>
+
   <script>
-    var html = document.documentElement;
-    if (sessionStorage.fontsLoaded) {
-      html.classList.add('fonts-loaded');
-    } else {
+    ;(function () {
+
+      // Optimization for Repeat Views
+      if( sessionStorage.fontsLoaded ) {
+        console.log('Found key "fontsLoaded" in session storage.');
+        document.documentElement.className += " fonts-loaded";
+        return;
+      }
+
       // Avoid blocking rendering by loading fontfaceobserver.js asynchronously
       var script = document.createElement('script');
       script.src = 'assets/ffo/fontfaceobserver.js';
@@ -69,14 +139,20 @@
         var h1_font = new FontFaceObserver('Source Sans Pro', { weight: 700 });
         var subheadings_font = new FontFaceObserver('Source Sans Pro', { weight: 600 });
 
-        Promise.all([body_font.load(), h1_font.load(), subheadings_font.load()]).then(function () {
-          console.log('Source Sans Pro family has loaded.');
-          html.classList.add('fonts-loaded');
+        Promise.all([
+          body_font.load(),
+          h1_font.load(),
+          subheadings_font.load()
+        ]).then(function () {
+          console.log('Source Sans Pro family has loaded with Font Face Observer.');
+          document.documentElement.className += " fonts-loaded";
+          // Optimization for Repeat Views
           sessionStorage.fontsLoaded = true;
         });
-    };
-    document.head.appendChild(script);
-  }
+      };
+      document.head.appendChild(script);
+
+    })();
   </script>
 
   <!-- <script>
@@ -95,9 +171,6 @@
 
   </script>
  -->
-  <!-- Preload critical fonts. Works best with self-hosted fonts although can use with a font service too so long as the URL is stable. -->
-  <!-- <link rel="preload" href="assets/type/sans/SourceSansPro-Regular-subset.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/type/sans/source-sans-pro-v12-latin-700.woff2" as="font" type="font/woff2" crossorigin> -->
 
   <!-- Global Styles -->
   <link rel="stylesheet" href="assets/css/main_v0.0.1.min.css">
