@@ -44,8 +44,8 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
 
 @font-face {
   font-family: Source Sans Pro;
-  src: url(../type/sans/SourceSansPro-It.ttf.woff2) format("woff2"),
-       url(../type/sans/SourceSansPro-It.otf.woff) format("woff"),
+  src: url(../type/sans/SourceSansPro-It-subset.woff2) format("woff2"),
+       url(../type/sans/SourceSansPro-It-subset.zopfli.woff) format("woff"),
        url(../type/sans/SourceSansPro-It.otf) format("opentype");
   font-weight: 400;
   font-style: italic;
