@@ -101,6 +101,10 @@
     & > * {
       margin-top: 0;
     }
+
+    section {
+      --flow-space: #{$flow-space-compact}rem;
+    }
   }
 }
 
