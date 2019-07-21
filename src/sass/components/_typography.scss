@@ -29,7 +29,7 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
 // Alternatively CLI tool pyftsubset (https://github.com/fonttools/fonttools) however glyphhanger is easier.
 // Alternatively FontSquirrel (https://www.fontsquirrel.com/tools/webfont-generator) offers a GUI but I don’t like/understand all the options.
 
-/*
+
 
 // Sans: Regular (activated by font-weight: 400)
 
@@ -39,7 +39,7 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
        url(../type/sans/SourceSansPro-Regular-subset.zopfli.woff) format("woff"),
        url(../type/sans/SourceSansPro-Regular.otf) format("opentype");
   font-weight: 400;
-  font-display: swap;
+  //font-display: swap;
 }
 
 // Sans: Regular Italic (activated by font-weight: 400 and font-style: italic)
@@ -51,7 +51,7 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
        url(../type/sans/SourceSansPro-It.otf) format("opentype");
   font-weight: 400;
   font-style: italic;
-  font-display: swap;
+  //font-display: swap;
 }
 
 // Sans: Semibold (activated by font-weight: 600)
@@ -62,7 +62,7 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
           url(../type/sans/source-sans-pro-v12-latin-600.woff) format("woff"),
           url(../type/sans/SourceSansPro-Semibold.otf) format("opentype");
   font-weight: 600;
-  font-display: swap;
+  //font-display: swap;
 }
 
 // Sans: Bold (activated by font-weight: 700)
@@ -73,7 +73,7 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
           url(../type/sans/source-sans-pro-v12-latin-700.woff) format("woff"),
           url(../type/sans/SourceSansPro-Bold.otf) format("opentype");
   font-weight: 700;
-  font-display: swap;
+  //font-display: swap;
 }
 
 //200 = SourceSansPro-ExtraLight
@@ -81,7 +81,7 @@ $alt-font-family-fonts-loaded: 'Source Serif Pro', serif;
 //900 = SourceSansPro-Black
 
 
-*/
+
 
 ///////////////////////////////////
 // Sizing (parts 1 and 2)
@@ -282,12 +282,11 @@ $flow-space-spacious: scale-value(3);
 body {
   color: $text-color;
 
-  // WebFont-loading. For now, keeping it CSS-based and simple, leveraging font-display where supported.
-  // however this is non-optimal for old browsers. They will suffer from FOIT.
-  // So I should choose and implement a strategy from https://github.com/zachleat/web-font-loading-recipes/ / https://www.zachleat.com/web/comprehensive-webfonts/
-  // considering also Chris F’s article on font-loading and https://www.filamentgroup.com/lab/js-web-fonts.html
-  // But for now:
-  font-family: $base-font-family-fonts-loaded;
+  // Ensure older browsers do not suffer from FOIT
+  font-family: $base-font-family;
+
+  // Minimise any jarring shift when webfonts load by matching fallback font appearance to webfont as far as possible
+  letter-spacing: -0.6px;
 
   // set leading on body per Tim Brown rather than on html/root per normalize.css
   //line-height: $body-line-height-min;
@@ -299,6 +298,11 @@ body {
     line-height: 1.5;
   }
 
+}
+
+.fonts-loaded body {
+  font-family: $base-font-family-fonts-loaded;
+  letter-spacing: normal;
 }
 
 
@@ -468,6 +472,12 @@ h2 {
     --flow-space: #{$body-line-height-max}rem;
   }
 
+  // Minimise any jarring shift when webfonts load by matching fallback font appearance to webfont as far as possible
+  letter-spacing: -1px;
+  .fonts-loaded & {
+    letter-spacing: normal;
+  }
+
   font-size: scale-value(1)+rem;
   font-weight: 600;
 
@@ -491,6 +501,12 @@ h1 {
   color: $color-accent;
   font-size: scale-value(2)+rem;
 
+  // Minimise any jarring shift when webfonts load by matching fallback font appearance to webfont as far as possible
+  letter-spacing: -1.7px;
+  .fonts-loaded & {
+    letter-spacing: normal;
+  }
+
   // Add typographic "contrast".
   @include at-least($width-pressure-point-one) {
     font-size: ( scale-value(3) + scale-value(-6) )+rem;
@@ -498,7 +514,9 @@ h1 {
 
   @include at-least($bp-wide-four) {
     font-size: scale-value(4)+rem;
-    letter-spacing: -0.01em;
+    .fonts-loaded & {
+      letter-spacing: -0.01em;
+    }
   }
 
   font-weight: 700;
