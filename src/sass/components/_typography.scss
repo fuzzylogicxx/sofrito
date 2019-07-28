@@ -66,7 +66,7 @@ $ms-ratio: 1.2;
 
 // arrived at by trying em-based values for max-width and min-width in browser and deciding what’s best by eye
 $text-measure-min-in-ems: 18;
-$text-measure-max-in-ems: 34;
+$text-measure-max-in-ems: 36;
 
 // media query friendly equivalent of our max measure width
 // (note media queries work on 1em = 16px hence the required calculation when our 1em != 16px)
@@ -243,11 +243,12 @@ body {
 }
 
 
-// Prose (declared early in the cascade so that font-feature-settings are inherited by subsequent elements)
+// Prose – a text block designed for readability (Note: declared early in the cascade so that font-feature-settings are inherited by subsequent elements)
 
 .prose {
   hyphens: auto;
   font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+  max-width: $text-measure-max-in-ems+rem;
 }
 
 @supports (font-kerning: normal) and (font-variant-ligatures: common-ligatures contextual) and (font-variant-numeric: oldstyle-nums proportional-nums) {

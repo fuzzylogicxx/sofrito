@@ -8,7 +8,7 @@
 ///////////////////////////////////
 
 // Container
-// Use this to give wrappers a sensible maximum width.
+// Use this to give wrappers a sensible maximum width and some lateral breathing space.
 // Defined as a mixin so it can be used in different places; not just via the .container class defined later.
 
 @mixin container() {
@@ -27,58 +27,41 @@
   }
 
   @include at-least($bp-wide-four) {
-    margin-left: 10%;
-    margin-right: 10%;
+    //margin-left: 10%;
+    //margin-right: 10%;
+
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70vw; // change this as required based on the maximum width you want your content to go.
   }
 
   @include at-least($bp-wide-five) {
     margin-left: auto;
     margin-right: auto;
-    max-width: 80em;
   }
-
 }
 
 .container {
   @include container();
 }
 
-.contain-prose {
+
+// Container (centred inner content)
+// A container which centres its content early (rather than only at a very wide breakpoint like .container does)
+// By using flexbox centring, there is no need for a max-width on this which makes it more flexible.
+// The inner element should have the max-width.
+
+@mixin container-centred-content() {
   margin-left: $space-s;
   margin-right: $space-s;
-
-  /*@include at-least($bp-wide-two) {
-    margin-left: 2%;
-    margin-right: 2%;
-  }*/
-
-  // once the viewport is as wide as our $text-measure-max-in-ems plus a bit of gutter on each side, ...
-  // then centre the prose-container.
-  // NB this is for single-column layouts.
-  @include at-least(42em) {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $text-measure-max-in-ems+rem;
-  }
+  display: flex;
+  justify-content: center;
 }
 
-.container-centred-text {
-  text-align: center;
-
-  & > * {
-    max-width: $text-measure-max-in-ems+rem;
-
-    // Add a little more breathing space on narrow screens
-    margin-left: $space-s;
-    margin-right: $space-s;
-
-    // We need to centre our max-width-ed elements on wider screens
-    @include at-least($width-pressure-point-one) {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
+.container-centred-content {
+  @include container-centred-content();
 }
+
 
 
 

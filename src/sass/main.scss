@@ -37,6 +37,28 @@
 // Common patterns
 ///////////////////////////////////
 
+// Intro
+
+.intro {
+  --flow-space: #{scale-value(2)}rem;
+
+  @include at-least($bp-wide-one) {
+    padding-top: $space-l;
+    padding-bottom: $space-l;
+  }
+
+  h1 {
+    font-weight: 400;
+    font-size: scale-value(3)+rem;
+    @include at-least($width-pressure-point-one) {
+      font-size: scale-value(4)+rem;
+    }
+    @include at-least($bp-wide-four) {
+      font-size: scale-value(5)+rem;
+    }
+  }
+}
+
 // Header Banners
 
 .header-banner {
@@ -74,7 +96,7 @@
 ///////////////////////////////////
 
 .global-header {
-  border-bottom: 1px solid $border-color;
+  //border-bottom: 1px solid $border-color;
   padding-top: $space-xxs;
   padding-bottom: $space-xxs;
 
@@ -100,11 +122,11 @@
   svg {
     display: block;
     height: 3em;
-    width: 2.625em; // divide height by 1.14285 to maintain our logo icon’s proportions.
+    width: 2.625em; // divide height by 1.14285 to maintain our logomark’s proportions.
 
-    @include at-least($bp-wide-four) {
-      height: scale-value(7)+rem;
-      width: (scale-value(7) / 1.14285)+em;
+    @include at-least($bp-wide-two) {
+      height: (scale-value(4) + scale-value(1))+rem;
+      width: ((scale-value(4) + scale-value(1)) / 1.14285)+em;
     }
   }
 }
