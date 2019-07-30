@@ -46,22 +46,33 @@
 }
 
 
-// Container (centred inner content)
-// A container which centres its content early (rather than only at a very wide breakpoint like .container does)
-// By using flexbox centring, there is no need for a max-width on this which makes it more flexible.
-// The inner element should have the max-width.
+// Container (centred inner content e.g. a centred column)
+// A container which centres its content based on the max-width of that content.
+// By using flexbox centring, there is no need for a max-width on this parent which makes it more flexible.
+// Flex-direction is column so that subsequent sibling elements don’t align horizontally.
 
 @mixin container-centred-content() {
   margin-left: $space-s;
   margin-right: $space-s;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container-centred-content {
   @include container-centred-content();
 }
 
+
+// Container (centred content and centred text within)
+
+.container-centred-content-centred-text {
+  @include container-centred-content();
+  & > * {
+    text-align: center;
+    max-width: $text-measure-max-in-ems+rem;
+  }
+}
 
 
 
