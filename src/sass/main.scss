@@ -76,13 +76,16 @@
 
 // Blog stuff
 
-.meta {
-  color: gray;
-  //margin: 0;
+.entry-meta {
+  color: #999;
+
+  a {
+    color: #999;
+  }
 }
 
 .published { //.dt-published
-  color: gray;
+  //color: gray;
 }
 
 .entry-meta .posted-on::before {
