@@ -11,6 +11,10 @@ In bash/terminal/command line, cd into your project directory.
 -- `gulp` manually compiles files.
 -- `gulp watch` automatically compiles files when you save changes to source files and optionally uses BrowserSync to refresh your web browser.
 
+## Favicon
+
+Generated with [RealFaviconGenerator](https://realfavicongenerator.net/) [v0.16](https://realfavicongenerator.net/change_log#v0.16)
+
 Full documentation to follow.
 
 ## Credits
