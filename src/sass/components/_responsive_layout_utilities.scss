@@ -2,6 +2,51 @@
 // https://noti.st/mbarker84/CkDXxM#sGZneIR
 // https://css-tricks.com/snippets/css/complete-guide-grid/, http://grid.malven.co/, https://cssgrid-generator.netlify.com/
 
+///////////////////////////////////
+// Box
+///////////////////////////////////
+
+// Purpose: create a "visible box" which groups and demarcates some content.
+// Use cases: i) a note/message to stand out among flow content; or ii) a card in a grid; or iii) inside a positioned alert.
+// It should have:
+// i) padding on all sides or none at all; and or
+// ii) border on all sides or none at all; and or
+// iii) a background colour with contrasting text colour. If there’s no border, add a transparent outline because high-contrast themes eliminate backgrounds.
+// Ref: https://absolutely.every-layout.dev/layouts/box/
+
+// Temp til decide where to put this var
+:root {
+  --border-thin: 1px;
+}
+
+.box {
+  padding: $space-s;
+  border: var(--border-thin) solid;
+  --color-light: #eee;
+  --color-dark: #222;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+.box.box-no-padding {
+  padding: 0;
+}
+
+.box.box-no-border {
+  border: none;
+  outline: 0.125rem solid transparent;
+  outline-offset: -0.125rem;
+}
+
+.box * {
+  color: inherit;
+}
+
+.box.invert {
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
 
 ///////////////////////////////////
 // Responsive utilities
@@ -32,7 +77,7 @@
 
     margin-left: auto;
     margin-right: auto;
-    max-width: 70vw; // change this as required based on the maximum width you want your content to go.
+    max-width: 70vw; // change as required based on the maximum width you want your content to go.
   }
 
   @include at-least($bp-wide-five) {
