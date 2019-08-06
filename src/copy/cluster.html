@@ -1,0 +1,74 @@
+@@include('./head.html')
+
+<body>
+
+  @@include('./global_header.html')
+
+  <main id="primary-content" class="primary-content">
+
+    <div class="centre">
+
+      <div class="stack">
+
+        <h1>Cluster</h1>
+
+        <h2>List of links/tags</h2>
+
+        <div class="box">
+
+          <div class="cluster">
+
+            <ul style="list-style: none; padding: 0;">
+              <li><a class="cta" style="display: inline-block; padding: 1rem; border: 1px solid;" href="#">Layout</a></li>
+              <li><a class="cta" style="display: inline-block; padding: 1rem; border: 1px solid;" href="#">CSS</a></li>
+              <li><a class="cta" style="display: inline-block; padding: 1rem; border: 1px solid;" href="#">Web Design</a></li>
+              <li><a class="cta" style="display: inline-block; padding: 1rem; border: 1px solid;" href="#">Code</a></li>
+              <li><a class="cta" style="display: inline-block; padding: 1rem; border: 1px solid;" href="#">Front-end</a></li>
+              <li><a class="cta" style="display: inline-block; padding: 1rem; border: 1px solid;" href="#">Development</a></li>
+            </ul>
+
+        </div>
+
+      </div> <!-- ./box -->
+
+      <h2>Nested clusters (website header) with spacing via flex justify</h2>
+
+      <div class="box">
+
+        <div class="cluster">
+          <div style="justify-content: space-between;">
+            <div>Logo</div>
+            <div class="cluster">
+              <ul style="list-style: none; padding: 0;">
+                <li><a class="cta" href="#">CSS</a></li>
+                <li><a class="cta" href="#">Web Design</a></li>
+                <li><a class="cta" href="#">Front-end</a></li>
+                <li><a class="cta" href="#">Development</a></li>
+              </ul>
+            </div>
+        </div>
+
+      </div> <!-- ./box -->
+
+<!-- <cluster-l justify="space-between" data-i="Cluster-space-betweencentervar(--s1)">
+<div>
+<image-l ratio="2:5" minwidth="150px" data-i="Image-2:5150pxnone" aria-label="Image with 2:5 ratio" role="img"></image-l>
+<cluster-l justify="flex-start" space="var(--s-1)" data-i="Cluster-flex-startcentervar(--s-1)">
+<ul style="padding: 0; list-style: none">
+<li><a href="#">About</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Shop</a></li>
+<li><a href="#">Contact</a></li>
+<li><a href="#">Accessibility</a></li>
+</ul>
+</cluster-l>
+</div>
+</cluster-l> -->
+
+    </div> <!-- ./stack -->
+
+    </div>
+
+  </main>
+
+  @@include('./footer.html')

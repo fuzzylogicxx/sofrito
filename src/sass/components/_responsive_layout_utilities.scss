@@ -39,7 +39,7 @@
   outline-offset: -0.125rem;
 }
 
-.box * {
+.box *:not(a) {
   color: inherit;
 }
 
@@ -92,6 +92,34 @@
 
 
 ///////////////////////////////////
+// Cluster
+///////////////////////////////////
+
+// Purpose: reliable, responsive, non-ragged, flexible layout of any group of elements that differ in length and are liable to wrap.
+// Variables: i) 'justify' for horizontal alignment via CSS justify-content, e.g. flex-start; ii) 'align' for vertical alignment, e.g. 'center'; iii) 'space' between each element.
+// Note: requires an inner wrapper with -ve margins. Soon we’ll replace with "gap". But a.t.m. there’s only grid-gap support (none for flex), and cluster can’t be achieved with Grid.
+// Use cases: i) Buttons that appear together at the end of forms; ii) lists of tags, keywords, or other meta information; iii) page header.
+
+.cluster {
+  --space: 1rem;
+  overflow: hidden;
+}
+
+.cluster > * {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: calc(var(--space) / 2 * -1);
+}
+
+.cluster > * > * {
+  margin: calc(var(--space) / 2);
+}
+
+
+
+///////////////////////////////////
 // Cover
 ///////////////////////////////////
 
@@ -136,7 +164,7 @@
 // Scroll-Track
 ///////////////////////////////////
 
-// Purpose: horizontally aligns its inner items even in narrow contexts, using overflow and horizontal scrolling (rather than vertical stacking) when required.
+// Purpose: horizontally align a list items and retain this layout even in narrow contexts by using overflow + horizontal scrolling (rather than vertical stacking) when required.
 // Notes: tell flex items not to shrink; we’re intentionally letting them overflow rather than trying to squeeze them in.
 // Potential Use Cases: i) an image gallery; ii) navigation
 // Ref: https://andy-bell.design/wrote/progressive-overflow-management-with-a-scroll-track-utility/
@@ -158,8 +186,3 @@
 .scroll-track-intrinsic {
   display: inline-flex;
 }
-
-
-
-
-
