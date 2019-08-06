@@ -66,7 +66,7 @@ $ms-ratio: 1.2;
 
 // arrived at by trying em-based values for max-width and min-width in browser and deciding what’s best by eye
 $text-measure-min-in-ems: 18;
-$text-measure-max-in-ems: 36;
+$text-measure-max-in-ems: 34;
 
 // media query friendly equivalent of our max measure width
 // (note media queries work on 1em = 16px hence the required calculation when our 1em != 16px)
