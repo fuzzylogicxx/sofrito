@@ -120,6 +120,99 @@
 
 
 ///////////////////////////////////
+// Sidebar
+///////////////////////////////////
+
+// Purpose: a reusable "wide-elem + narrow-elem" layout which responds (stacks in a col or aligns in a row) to the width of its CONTAINER (so doesn’t need media queries)
+// Use cases: i) overall layout; ii) micro layouts; iii) media objects; iv) search components (input + submit_button)
+// Options: i) the min-width (e.g. 50%) of .not-sidebar; ii) fixed width or intrinsic-width .sidebar; iii) gutter between, or elements touching; iv) turn off "equal height";
+// Note: if use this component as a direct child of <body> you’ll get horizontal scrollbars.
+// ref https://every-layout.dev/layouts/sidebar/
+
+.with-sidebar {
+  overflow: hidden;
+}
+
+.with-sidebar > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(0px / 2 * -1); // Use 0px (the px is important) when you want the two elements to touch rather than have space between.
+}
+
+.with-sidebar-blog-layout > *,
+.with-sidebar-media-object > * {
+  margin: calc(1rem / 2 * -1); // instead of var(--s1) I’ve just inserted 1rem for now.
+}
+
+.with-sidebar > * > * {
+  margin: calc(0px / 2);
+  flex-grow: 1;
+}
+
+.with-sidebar-blog-layout > * > * {
+  margin: calc(1rem / 2);
+  flex-basis: 20rem;
+}
+
+.with-sidebar-media-object > * > * {
+  margin: calc(1rem / 2);
+  flex-basis: 15rem;
+}
+
+.with-sidebar-on-left > * > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 0px);
+}
+
+.with-sidebar-on-right > * > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 0px);
+}
+
+.with-sidebar-blog-layout.with-sidebar-on-left > * > :last-child,
+.with-sidebar-media-object.with-sidebar-on-left > * > :last-child
+ {
+  min-width: calc(50% - 1rem);
+}
+
+.with-sidebar-blog-layout.with-sidebar-on-right > * > :first-child,
+.with-sidebar-media-object.with-sidebar-on-right > * > :first-child {
+  min-width: calc(50% - 1rem);
+}
+
+
+
+///////////////////////////////////
+// Switcher
+///////////////////////////////////
+
+// Purpose: switch directly from a horizontal (one row) to a vertical (one column) layout, bypassing intermediary (potentially irregular) states.
+// Use cases: where each element should be considered equal, or part of a continuum. Product Cards; A set of numbered steps.
+
+.switcher > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc((1rem / 2) * -1); // 1rem is our "space between child elements" value, in place of var(--s1). If don’t want space, use 0px.
+}
+
+.switcher > * > * {
+  flex-grow: 1;
+  flex-basis: calc((#{$text-measure-max-in-ems}rem - (100% - 1rem)) * 999); // $text-measure-max-in-ems+rem (in place of var(--measure)): "break" when the container is narrower.
+  margin: calc(1rem / 2);
+}
+
+// default max of 4 items allowed in the horizontal version or else it’ll be too cramped and we should display as a column.
+
+.switcher > * > :nth-last-child(n+5),
+.switcher > * > :nth-last-child(n+5) ~ * {
+  flex-basis: 100%;
+}
+
+
+
+///////////////////////////////////
 // Cover
 ///////////////////////////////////
 
@@ -156,6 +249,19 @@
 .cover > .centred {
   margin-top: auto;
   margin-bottom: auto;
+}
+
+
+
+///////////////////////////////////
+// Grid
+///////////////////////////////////
+
+// Purpose:
+
+
+.grid {
+
 }
 
 
