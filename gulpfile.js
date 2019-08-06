@@ -90,7 +90,7 @@ var optimizejs = require('gulp-optimize-js');
 
 // Styles
 var sass = require('gulp-sass');
-var prefixer = require('gulp-autoprefixer');
+//var prefixer = require('gulp-autoprefixer');
 var minify = require('gulp-cssnano');
 
 // SVGs
@@ -212,11 +212,11 @@ var buildStyles = function (done) {
 			outputStyle: 'expanded',
 			sourceComments: true
 		}))
-		.pipe(prefixer({
-			browsers: ['last 2 version', '> 0.25%'],
-			cascade: true,
-			remove: true
-		}))
+		// .pipe(prefixer({
+		// 	browsers: ['last 2 version', '> 0.25%'],
+		// 	cascade: true,
+		// 	remove: true
+		// }))
 		.pipe(header(banner.full, { package : package }))
     .pipe(rename({suffix: '_v' + package.version}))
 		.pipe(dest(paths.styles.output))
@@ -267,14 +267,6 @@ var copyFiles = function (done) {
       basepath: '@file'
     }))
     .pipe(dest(paths.copy.output));
-
-
-  // gulp.src(['index.html'])
-  //   .pipe(fileinclude({
-  //     prefix: '@@',
-  //     basepath: '@file'
-  //   }))
-  //   .pipe(gulp.dest('./'));
 
 	// Signal completion
 	done();
