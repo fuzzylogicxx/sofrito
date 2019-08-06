@@ -1,0 +1,44 @@
+@@include('./head.html')
+
+<body>
+
+  @@include('./global_header.html')
+
+  <main id="primary-content" class="primary-content">
+
+    <div class="container">
+
+      <h1>Scroll Track</h1>
+
+      <h2>1: Scroll-track navigation</h2>
+
+      <nav class="scroll-nav-wrap">
+        <ul class="scroll-track scroll-nav">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Thoughts</a></li>
+          <li><a href="#">Subscribe</a></li>
+        </ul>
+      </nav>
+
+      <h2>2: Scroll track image gallery, centred</h2>
+
+      <div class="centre">
+        <ul class="scroll-track"> <!--  scroll-track-intrinsic gallery -->
+          <li><img style="max-width: 16rem;" src="https://source.unsplash.com/6ZDY7XhT8_0/800x600" alt="A curious Quokka" loading="lazy" /></li>
+          <li style="margin-left: 1rem;"><img style="max-width: 16rem;" src="https://source.unsplash.com/EKGBAu6QL10/800x600" alt="Swirly texture" loading="lazy" /></li>
+          <li style="margin-left: 1rem;"><img style="max-width: 16rem;" src="https://source.unsplash.com/567UmWZIYJ8/800x600" alt="Palm tree on a clear blue sky" loading="lazy" /></li>
+          <li style="margin-left: 1rem;"><img style="max-width: 16rem;" src="https://source.unsplash.com/0BZlxflMHJ8/800x600" alt="Mountains in a sunset" loading="lazy" /></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+
+  @@include('./footer.html')

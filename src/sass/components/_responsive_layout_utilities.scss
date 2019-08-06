@@ -1,6 +1,8 @@
 // Useful layout refs:
 // Grid: https://css-tricks.com/snippets/css/complete-guide-grid/, http://grid.malven.co/, https://cssgrid-generator.netlify.com/
 
+
+
 ///////////////////////////////////
 // Box
 ///////////////////////////////////
@@ -52,7 +54,7 @@
 // Centre
 ///////////////////////////////////
 
-// Purpose: horizontal centring.
+// Purpose: horizontal centring (as a composable unit)
 // Create a horizontally centered column, capping its width at a reasonable measure.
 // Optionally include gutter so that in narrower contexts the centred column is not cramped flush against its parent’s sides.
 // Set box-sizing such that any included gutter does not make the element’s width narrower.
@@ -127,6 +129,37 @@
   margin-top: auto;
   margin-bottom: auto;
 }
+
+
+
+///////////////////////////////////
+// Scroll-Track
+///////////////////////////////////
+
+// Purpose: horizontally aligns its inner items even in narrow contexts, using overflow and horizontal scrolling (rather than vertical stacking) when required.
+// Notes: tell flex items not to shrink; we’re intentionally letting them overflow rather than trying to squeeze them in.
+// Potential Use Cases: i) an image gallery; ii) navigation
+// Ref: https://andy-bell.design/wrote/progressive-overflow-management-with-a-scroll-track-utility/
+
+.scroll-track {
+  display: flex;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-track > * {
+  flex-shrink: 0;
+}
+
+// Make it centre-able. All that is needed is for the parent to use text-align: center;. Alternatively could avoid this class and just place inside a .centre.
+
+.scroll-track-intrinsic {
+  display: inline-flex;
+}
+
+
 
 
 
