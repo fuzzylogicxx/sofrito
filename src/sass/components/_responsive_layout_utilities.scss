@@ -1,13 +1,12 @@
 // Useful layout refs:
-// https://noti.st/mbarker84/CkDXxM#sGZneIR
-// https://css-tricks.com/snippets/css/complete-guide-grid/, http://grid.malven.co/, https://cssgrid-generator.netlify.com/
+// Grid: https://css-tricks.com/snippets/css/complete-guide-grid/, http://grid.malven.co/, https://cssgrid-generator.netlify.com/
 
 ///////////////////////////////////
 // Box
 ///////////////////////////////////
 
 // Purpose: create a "visible box" which groups and demarcates some content.
-// Use cases: i) a note/message to stand out among flow content; or ii) a card in a grid; or iii) inside a positioned alert.
+// Example use cases: i) a note/message to stand out among flow content; or ii) a card in a grid; or iii) inside a positioned alert.
 // It should have:
 // i) padding on all sides or none at all; and or
 // ii) border on all sides or none at all; and or
@@ -48,167 +47,86 @@
 }
 
 
+
 ///////////////////////////////////
-// Responsive utilities
+// Centre
 ///////////////////////////////////
 
-// Container
-// Use this to give wrappers a sensible maximum width and some lateral breathing space.
-// Defined as a mixin so it can be used in different places; not just via the .container class defined later.
+// Purpose: horizontal centring.
+// Create a horizontally centered column, capping its width at a reasonable measure.
+// Optionally include gutter so that in narrower contexts the centred column is not cramped flush against its parent’s sides.
+// Set box-sizing such that any included gutter does not make the element’s width narrower.
 
-@mixin container() {
-
-  margin-left: $space-s;
-  margin-right: $space-s;
-
-  @include at-least($bp-wide-two) {
-    margin-left: 2%;
-    margin-right: 2%;
-  }
-
-  @include at-least($bp-wide-three) {
-    margin-left: 6%;
-    margin-right: 6%;
-  }
-
-  @include at-least($bp-wide-four) {
-    //margin-left: 10%;
-    //margin-right: 10%;
-
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 70vw; // change as required based on the maximum width you want your content to go.
-  }
-
-  @include at-least($bp-wide-five) {
-    margin-left: auto;
-    margin-right: auto;
-  }
+.centre {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $text-measure-max-in-ems+rem;
+  padding-left: $space-s;
+  padding-right: $space-s;
 }
 
-.container {
-  @include container();
+.centre.centre-no-gutter {
+  padding-left: 0;
+  padding-right: 0;
 }
 
+.centre.centre-with-centred-text {
+  text-align: center;
+}
 
-// Container (centred inner content e.g. a centred column)
-// A container which centres its content based on the max-width of that content.
-// By using flexbox centring, there is no need for a max-width on this parent which makes it more flexible.
-// Flex-direction is column so that subsequent sibling elements don’t align horizontally.
+// .centre-intrinsic
+// Purpose: builds on .centre to further centre elements based on their natural, content-based widths.
+// Useful for naturally small elements like buttons, or elements with their own max-width set under our max. measure.
 
-@mixin container-centred-content() {
-  margin-left: $space-s;
-  margin-right: $space-s;
+.centre.centre-intrinsic {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.container-centred-content {
-  @include container-centred-content();
-}
-
-
-// Container (centred content and centred text within)
-
-.container-centred-content-centred-text {
-  @include container-centred-content();
-  & > * {
-    text-align: center;
-    max-width: $text-measure-max-in-ems+rem;
-  }
+  padding-left: 0;
+  padding-right: 0;
 }
 
 
 
-// Create a grid with 3 flexible-width-but-always-equal-width colummns
-// (and auto-rows? - test to confirm)
+///////////////////////////////////
+// Cover
+///////////////////////////////////
 
-@mixin trio() {
-  display: grid;
-  grid-column-gap: $space-l;
-  grid-template-columns: repeat(3, 1fr);
+// Purpose: vertical centring (as a composable unit) that also handles optional header and footer elements.
+// Default is to "cover" entire viewport height, however could customise by changing the min-height.
+// Requires a centred element, but can also handle one element above and/or one below (e.g. a close button at top right; a “read more” at bottom.
+// Use cases: i) full viewport height "book covers"; or ii) a full height “above the fold” header preeceding more content;
+// Ref: https://absolutely.every-layout.dev/layouts/cover/#the-generator
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
 }
 
-.trio {
-  //--flow-space: #{$body-line-height-min}rem;
-  @include stack-recursive();
-
-  @include at-least($bp-wide-one) {
-    @include trio();
-
-    & > * {
-      margin-top: 0;
-    }
-
-    section {
-      --flow-space: #{$flow-space-compact}rem;
-    }
-  }
+.cover.cover-no-padding {
+  padding: 0;
 }
 
-
-
-// Create a row with 2 equal-width columns (using multi-column) but when space allows, 3 equal-width columns.
-
-.min-duo-max-trio {
-  columns: 2;
-  @include at-least($bp-wide-one) {
-    columns: unset;
-    @include trio();
-  }
+.cover > * {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-
-// Component lists of flexible/unknown quantity with equal width items.
-// To achieve wrapping, we can use the auto-fit or auto-fill keywords.
-// auto-fill inserts empty columns to end of line if necessary
-// auto-fit also inserts empty columns but collapses them so they don’t take up space then allocates their space to the items.
-// See https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
-
-
-
-
-// Create a grid that shows two across on narrow screens
-// but on wider screens, auto-fits columns and rows (inserts empty columns to end of line if necessary)
-// and never lets items get too wide, by virtue of using a vw-based column-gap
-// Ref: https://www.sarasoueidan.com/work/
-// Note: should test/decide whether grid or flexbox is best here
-
-.flexible-list-component {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 15vw;
+.cover > :first-child:not(.centred) {
+  margin-top: 0;
 }
 
-@media (min-width: 50em) {
-  .flexible-list-component {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 7em 7vw;
+.cover > :last-child:not(.centred) {
+  margin-bottom: 0;
+}
 
-    & > * {
-      //outline: 1px solid red;
-    }
-  }
-
+.cover > .centred {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 
 
-// A flexible grid suited to items that can be narrow.
-// It increases the minimum width of items beyond a breakpoint.
-
-.another-flexible-list-component {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    grid-gap: 3em;
-}
-
-@media (min-width: 56.25em) {
-  .another-flexible-list-component {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  }
-}
