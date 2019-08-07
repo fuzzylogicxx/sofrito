@@ -72,6 +72,27 @@ $text-measure-max-in-ems: 34;
 // (note media queries work on 1em = 16px hence the required calculation when our 1em != 16px)
 $width-pressure-point-one: ($text-measure-max-in-ems * $ms-base)+em;
 
+// Global: avoid any element (with a few exceptions) exceeding the measure
+
+:root {
+  --measure: #{$text-measure-max-in-ems}rem;
+}
+
+* {
+  max-width: var(--measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer,
+.grid {
+  max-width: none;
+}
+
 
 
 
@@ -180,8 +201,6 @@ $space-l: scale-value(3)+rem;
 .stack,
 main,
 .container,
-.container-centred-content,
-.container-centred-content-centred-text,
 .prose,
 .entry-header,
 .entry-content,
@@ -249,7 +268,7 @@ body {
 .prose {
   hyphens: auto;
   font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
-  max-width: $text-measure-max-in-ems+rem;
+  //max-width: $text-measure-max-in-ems+rem;
 }
 
 @supports (font-kerning: normal) and (font-variant-ligatures: common-ligatures contextual) and (font-variant-numeric: oldstyle-nums proportional-nums) {
