@@ -37,6 +37,16 @@
 
   <!-- add any page-specific JS here (files or inline) -->
 
+  <!-- Use this on a page which contains a .grid. Patch support for CSS’s min() in our auto-grid (.grid) pattern -->
+  <script>
+  ready(function() {
+    const grid = document.querySelector('.grid');
+    if (grid) {
+      observeGrid(grid);
+    }
+  });
+</script>
+
   <!--  for example: -->
   <!-- <script src="/assets/js/another-file_v0.0.1.min.js"></script> -->
 
