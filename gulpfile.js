@@ -39,7 +39,7 @@ var paths = {
     inputHTML: 'src/copy/**/*.html',
 		output: 'dist/'
 	},
-	reload: './dist/'
+	reload: 'dist/'
 };
 
 
