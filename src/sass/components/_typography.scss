@@ -126,11 +126,6 @@ $min-acceptable-gutter_in_vw: 4.89; // Using vw for main gutter has the advantag
 // ii) we can now use them in rules below e.g. for increasing h1 size on large screens
 //////////////////////////////////////////////////////////////////////////////////////
 
-// Max-width we want our site's content to go.
-// NB this is not the same as our $text-measure. This is for an outer wrapper.
-// ...
-
-
 // Breakpoint values
 
 $bp-wide-one: 48em; //( ($text-measure-max-in-ems + 2) * $ms-base)+em;
