@@ -41,8 +41,8 @@
   --flow-space: #{scale-value(2)}rem;
 
   @include at-least($bp-wide-one) {
-    padding-top: $space-l;
-    padding-bottom: $space-l;
+    //padding-top: $space-l;
+    //padding-bottom: $space-l;
   }
 
   h1 {
@@ -173,12 +173,27 @@
       text-decoration: underline;
     }
   }
+}
+
+.footer-menu-list {
+  max-width: none;
+
+  // A simple 2–3 columns layout.
+  // It’s prescriptive (a min of 2 and max of 3 cols) so I’m opting not to use the more unpredictable .grid component. Also, multicol has great support.
+  columns: 2;
+  @include at-least($bp-wide-one) {
+    columns: 3;
+  }
 
   li {
     font-size: scale-value(-1)+rem;
-    margin-bottom: scale-value(-6)+rem;
+  }
+  li + li {
+    margin-top: scale-value(-6)+rem;
   }
 }
+
+
 
 
 
