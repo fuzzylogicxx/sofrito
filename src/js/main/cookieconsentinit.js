@@ -13,7 +13,8 @@
             "background": "#f1d600"
           }
         },
-        "theme": "classic"
+        "theme": "classic",
+        "position": "bottom-left"
       })
 
     });
