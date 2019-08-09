@@ -41,9 +41,13 @@
   --flow-space: #{scale-value(2)}rem;
 
   @include at-least($bp-wide-one) {
-    //padding-top: $space-l;
-    //padding-bottom: $space-l;
+    padding-top: $space-l;
+    padding-bottom: $space-l;
   }
+  /*@include at-least($bp-wide-four) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }*/
 
   h1 {
     font-weight: 400;
