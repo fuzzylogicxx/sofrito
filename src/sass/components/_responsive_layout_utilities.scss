@@ -2,6 +2,11 @@
 // Grid: https://css-tricks.com/snippets/css/complete-guide-grid/, http://grid.malven.co/, https://cssgrid-generator.netlify.com/
 
 
+// Temp til WE decide where to put these vars
+
+:root {
+  --border-thin: 1px;
+}
 
 ///////////////////////////////////
 // Box
@@ -14,11 +19,6 @@
 // ii) border on all sides or none at all; and or
 // iii) a background colour with contrasting text colour. If there’s no border, add a transparent outline because high-contrast themes eliminate backgrounds.
 // Ref: https://absolutely.every-layout.dev/layouts/box/
-
-// Temp til decide where to put this var
-:root {
-  --border-thin: 1px;
-}
 
 .box {
   padding: $space-s;
@@ -59,7 +59,7 @@
 // Optionally include gutter so that in narrower contexts the centred column is not cramped flush against its parent’s sides.
 // Set box-sizing such that any included gutter does not make the element’s width narrower.
 
-.centre {
+@mixin centre() {
   box-sizing: content-box;
   margin-left: auto;
   margin-right: auto;
@@ -68,25 +68,60 @@
   padding-right: $space-s;
 }
 
-.centre.centre-no-gutter {
+@mixin centre-no-gutter() {
   padding-left: 0;
   padding-right: 0;
 }
 
-.centre.centre-with-centred-text {
+@mixin centre-with-centred-text() {
   text-align: center;
 }
 
-// .centre-intrinsic
-// Purpose: builds on .centre to further centre elements based on their natural, content-based widths.
-// Useful for naturally small elements like buttons, or elements with their own max-width set under our max. measure.
-
-.centre.centre-intrinsic {
+@mixin centre-with-centre-intrinsic() {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-left: 0;
   padding-right: 0;
+}
+
+// Apply and re-use the styles via the above mixins, or by adding the following classes directly to HTML elements.
+
+.centre {
+  @include centre();
+}
+
+.centre.centre-no-gutter {
+  @include centre-no-gutter();
+}
+
+.centre.centre-with-centred-text {
+  @include centre-with-centred-text();
+}
+
+// .centre-intrinsic
+// Purpose: builds on .centre, going further by also centring the elements within the centred column based on their natural, content-based widths.
+// Useful for naturally small elements like buttons, or elements with their own max-width set under our max. measure.
+
+.centre.centre-intrinsic {
+  @include centre-with-centre-intrinsic();
+}
+
+
+// Container: a class for centring the outermost columns/containers in "centred" sites (i.e. no sidebar flush at viewport edge) like BBC, gov.uk etc.
+// I could have created dedicated styles but instead I’m creating an instance of .centre (slightly customised) so as to inherit .centre’s goodness.
+
+.container {
+  @include centre();
+
+  // set a generous but sensible final max-width (something bigger than just our text measure (.centre’s default max-width)
+  // But intervene with media queries on the way up to that final max-width to avoid too-wide content / too narrow gutters on narrower resolutions.
+  // Avoiding media queries is great but they make sense here because the element’s parent will always be viewport-width.
+  max-width: ($text-measure-max-in-ems * 1.8)+rem;
+  @include at-least($bp-wide-one) {
+    padding-left: scale-value(2)+rem;;
+    padding-right: scale-value(2)+rem;;
+  }
 }
 
 
@@ -261,31 +296,29 @@
 // Purpose: create basic, context-independent grids which are automatically responsive (non-reliant on media queries) therefore more suited to design systems.
 // Note 1: favour CSS Grid over Flexbox because we can make items grow, shrink, and wrap together but importantly without breaching column boundaries (unlike last items in flexbox).
 // Note 2: minmax() without min() is flawed and requires setting "fixed minimums" (e.g. minmax(250px, 1fr)) that result in overflow when in narrow contexts.
-// Note 3: we use i) mixmax() with min(); or ii) JS’s ResizeObserver to trigger changes based on the width of the container and without "fixed minimums".
+// Note 3: we use i) mixmax() with min(); or if min() not supported ii) JS’s ResizeObserver... to trigger changes based on the width of the container and without "fixed minimums".
 // Note 4: if they are not supported, the fallback one-column layout is applied perpetually. (Could fallback to a flexbox grid but note would need -ve margin soln for gaps).
 // Vars: i) "minimum": the left-hand value of the min() function, e.g. 20rem; ii) "space": the space between grid cells, e.g. 1rem.
 
-@supports (display: grid) {
-  .grid {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 100%; // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+@mixin grid($min_trigger: 20rem, $space: 1rem) {
+  display: grid;
+  grid-gap: $space;
+  grid-template-columns: 100%;
+
+  &.aboveMin {
+    grid-template-columns: repeat(auto-fit, minmax($min_trigger, 1fr));
   }
 
-  .grid.aboveMin {
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  }
-}
-
-// To Do: find a fix for gulp/node-sass implementing the min() function without error.
-
-/*
-@supports (width: min(20rem, 100%)) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+  // Add min() into the mix to avoid overflows within narrow containers.
+  // To Do: find a way of getting gulp/node-sass to allow CSS’s min() without the hack of replacing "min" with "m#{i}n".
+  @supports (width: m#{i}n(20rem, 100%)) {
+    grid-template-columns: repeat(auto-fit, minmax(m#{i}n(20rem, 100%), 1fr));
   }
 }
-*/
+
+.grid {
+  @include grid();
+}
 
 
 
@@ -393,9 +426,9 @@
 
 
 
-///////////////////////////////////
+////////////////////////////////////////////////
 // Previous stuff for review (to keep or ditch)
-///////////////////////////////////
+////////////////////////////////////////////////
 
 /*
 ///////////////////////////////////
