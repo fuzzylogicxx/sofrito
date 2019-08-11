@@ -3,16 +3,18 @@
 ul[class],
 ol[class] {
   list-style: none;
+  margin-left: 0;
+  padding-left: 0
 }
 
-// Unbulleted stacked list
+// Unbulleted, vertically-stacked list
 
-.list-custom {
+/*.list-custom {
   margin-left: 0;
   padding-left: 0;
-}
+}*/
 
-// Unbulleted linear list
+// Unbulleted horizontally-linear list
 
 .list-compact {
   margin-left: -0.5em;

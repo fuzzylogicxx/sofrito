@@ -4,12 +4,16 @@
 
   @@include('./global_header.html')
 
-  <!-- Page contents begin -->
-  <div class="container">
 
-    <main id="primary-content">
+    <main id="primary-content" class="primary-content">
 
-      <h2>Scoped Custom HTML & CSS form components</h2>
+      <div class="container">
+
+        <h1>Forms</h1>
+
+        <h2>Scoped Custom HTML & CSS form components</h2>
+
+        <!-- for search forms based on a form with one input (other than the button), add role="search" to form -->
 
       <form class="form-custom" aria-label="Unique identifier goes here"  method="post" action="">
 
@@ -78,20 +82,26 @@
           </div>
         </div>
 
-        <div class="form-group form-group-radio">
-            <div>
-              <input type="radio" id="huey" name="drone" value="huey" checked>
-              <label for="huey">Huey</label>
-            </div>
-            <div>
-              <input type="radio" id="dewey" name="drone" value="dewey">
-              <label for="dewey">Dewey</label>
-            </div>
-            <div>
-              <input type="radio" id="louie" name="drone" value="louie">
-              <label for="louie">Louie</label>
-            </div>
-        </div>
+        <fieldset>
+
+          <p>Do we have a decent fieldset style? Accessibility-wise it’s good to group linked form controls.</p>
+
+          <div class="form-group form-group-radio">
+              <div>
+                <input type="radio" id="huey" name="drone" value="huey" checked>
+                <label for="huey">Huey</label>
+              </div>
+              <div>
+                <input type="radio" id="dewey" name="drone" value="dewey">
+                <label for="dewey">Dewey</label>
+              </div>
+              <div>
+                <input type="radio" id="louie" name="drone" value="louie">
+                <label for="louie">Louie</label>
+              </div>
+          </div>
+
+        </fieldset>
 
         <div class="form-group">
 
@@ -122,67 +132,71 @@
 
       <h2>Default form elements are left untouched</h2>
 
-      <div>
-        <label for="default-text-input">Text</label>
-        <input type="text" name="default-text-input" id="default-text-input" value="Generic text">
-      </div>
+      <form action="" method="post">
 
-      <div>
-        <label for="default-email-input">Search</label>
-        <input type="email" name="default-email-input" id="default-email-input" autocapitalize="none" autocorrect="off" value="user@email.com">
-      </div>
+        <div>
+          <label for="default-text-input">Text</label>
+          <input type="text" name="default-text-input" id="default-text-input" value="Generic text">
+        </div>
 
-      <div>
-        <label for="default-search-input">Search</label>
-        <input type="search" name="default-search-input" id="default-search-input" autocorrect="off" value="Some search terms">
-      </div>
+        <div>
+          <label for="default-email-input">Search</label>
+          <input type="email" name="default-email-input" id="default-email-input" autocapitalize="none" autocorrect="off" value="user@email.com">
+        </div>
 
-      <div>
-        <label for="default-number-input">Number</label>
-        <input type="number" name="default-number-input" id="default-number-input" min="1" max="999" step="1" value="123">
-      </div>
+        <div>
+          <label for="default-search-input">Search</label>
+          <input type="search" name="default-search-input" id="default-search-input" autocorrect="off" value="Some search terms">
+        </div>
 
-      <div>
-        <label for="default-tel-input">Tel</label>
-        <input type="tel" name="default-tel-input" id="default-tel-input" value="01234 567 890">
-      </div>
+        <div>
+          <label for="default-number-input">Number</label>
+          <input type="number" name="default-number-input" id="default-number-input" min="1" max="999" step="1" value="123">
+        </div>
 
-      <div>
-        <label for="default-textarea">Textarea</label>
-        <textarea name="default-textarea" id="default-textarea">Some multiline text</textarea>
-      </div>
+        <div>
+          <label for="default-tel-input">Tel</label>
+          <input type="tel" name="default-tel-input" id="default-tel-input" value="01234 567 890">
+        </div>
 
-      <div>
-        <select name="default-select" id="default-select">
-          <option>Select an item</option>
-          <option value="1">Item 1</option>
-          <option value="2">Item 2</option>
-          <option value="3">Item 3</option>
-          <option value="4">Item 5</option>
-        </select>
-      </div>
+        <div>
+          <label for="default-textarea">Textarea</label>
+          <textarea name="default-textarea" id="default-textarea">Some multiline text</textarea>
+        </div>
 
-      <div>
-        <label for="checkbox-field">A checkbox field</label>
-        <input type="checkbox" name="checkbox-field" id="checkbox-field">
-      </div>
+        <div>
+          <select name="default-select" id="default-select">
+            <option>Select an item</option>
+            <option value="1">Item 1</option>
+            <option value="2">Item 2</option>
+            <option value="3">Item 3</option>
+            <option value="4">Item 5</option>
+          </select>
+        </div>
 
-      <div>
-          <input type="radio" name="radio-field" id="radio-field-1">
-          <label for="radio-field-1">Radio button 1</label>
-          <input type="radio" name="radio-field" id="radio-field-2">
-          <label for="radio-field-2">Radio button 2</label>
-      </div>
+        <div>
+          <label for="checkbox-field">A checkbox field</label>
+          <input type="checkbox" name="checkbox-field" id="checkbox-field">
+        </div>
 
-      <div>
+        <div>
+            <input type="radio" name="radio-field" id="radio-field-1">
+            <label for="radio-field-1">Radio button 1</label>
+            <input type="radio" name="radio-field" id="radio-field-2">
+            <label for="radio-field-2">Radio button 2</label>
+        </div>
 
-        <input type="submit" name="Subscribe" value="Input of type submit"  />
+        <div>
 
-        <button type="submit">Button type submit</button>
+          <input type="submit" name="Subscribe" value="Input of type submit"  />
 
-        <button type="button">Button generic</button>
+          <button type="submit">Button type submit</button>
 
-      </div>
+          <button type="button">Button generic</button>
+
+        </div>
+
+      </form>
 
 
 
@@ -259,8 +273,8 @@
         </label>
       </form> -->
 
-    </main>
+      </div>
 
-  </div>
+    </main>
 
   @@include('./footer.html')

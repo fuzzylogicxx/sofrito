@@ -47,7 +47,7 @@ html {
 // ii) makes bringing in 3rd party CSS components more difficult because rules tend to conflict with reset rules.
 
 // Remove margins and padding
-// Exclude form fields and lists – they deserve special attention.
+// Exclude form fields – they deserve special attention.
 
 body,
 h1, h2, h3, h4, h5, h6,
@@ -57,7 +57,9 @@ figure,
 figcaption,
 dl,
 dd,
-dt {
+dt,
+hr,
+pre {
   margin: 0;
   padding: 0;
 
@@ -66,6 +68,15 @@ dt {
   // border: 0;
   // font: inherit;
 }
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 
 // Render HTML5 structural elements correctly
 
@@ -119,8 +130,8 @@ video {
 // Customized to match the site’s design.
 
 ::selection {
-    background: $selected-text-background;
-    text-shadow: none;
+  background: $selected-text-background;
+  text-shadow: none;
 }
 
 
@@ -191,8 +202,6 @@ hr {
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
 }
 
 

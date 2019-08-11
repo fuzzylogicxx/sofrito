@@ -1,81 +1,99 @@
+// Presets, functions and resets
 @import "components/variables_general.scss";
 @import "components/mixins_general.scss";
 @import "components/resets_and_improvements.scss";
+
+// Typographic and other core HTML elements
 @import "components/typography.scss";
-@import "components/forms_and_buttons.scss";
 @import "components/list_utils.scss";
+@import "components/demoing_code.scss";
 @import "components/tables.scss";
-@import "components/tabs.scss";
-@import "components/code.scss";
-@import "components/skip_links.scss";
-@import "components/aspect_ratio.scss";
-@import "components/svg_and_text_pairs.scss";
+
+// Layout and responsiveness
+@import "components/responsive_layout_utilities.scss";
 @import "components/media_objects.scss";
 @import "components/breakout.scss";
-@import "components/responsive_layout_utilities.scss";
-@import "components/show_and_hide.scss";
 @import "components/rooted_footer.scss";
+
+// Buttons, special links, and forms
+@import "components/svg_and_text_pairs.scss";
+@import "components/forms_and_buttons.scss";
+
+// Other components
+@import "components/profile_pic.scss";
+@import "components/tabs.scss";
+@import "components/skip_links.scss";
 @import "components/modals.scss";
+@import "components/show_and_hide.scss";
+@import "components/content_slider.scss";
 @import "components/cookieconsent2_3.1.0.min.scss";
+
+
+
 
 ///////////////////////////////////
 // Common patterns
 ///////////////////////////////////
 
+// Intro
+
+.intro {
+  --flow-space: #{scale-value(2)}rem;
+
+  @include at-least($bp-wide-one) {
+    padding-top: $space-l;
+    padding-bottom: $space-l;
+  }
+  /*@include at-least($bp-wide-four) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }*/
+
+  h1 {
+    font-weight: 400;
+    font-size: scale-value(3)+rem;
+    @include at-least($width-pressure-point-one) {
+      font-size: scale-value(4)+rem;
+    }
+    @include at-least($bp-wide-four) {
+      font-size: scale-value(5)+rem;
+    }
+  }
+}
+
 // Header Banners
 
 .header-banner {
   background: $color-light;
-  overflow: auto;
-  padding: $space-m 0 $space-l;
+  padding-top: 3em;
+  padding-bottom: 3em;
 
-  .container > * {
-    margin-bottom: 0;
-  }
-
-  .container > * + * {
-    margin-top: $space-m;
-  }
-
-  @include at-least($width-pressure-point-one) {
-    padding: $space-l 0 scale-value(4)+rem;
-
-    .container > * + * {
-      margin-top: $space-l;
-    }
-  }
-
-  @include at-least($bp-wide-three) {
-    padding: scale-value(6)+rem 0 scale-value(7)+rem;
+  h1 {
+    /*@include at-least($width-pressure-point-one) {
+      font-size: scale-value(3)+rem;
+    }*/
   }
 }
 
 
 // Blog stuff
 
-.meta {
-  color: gray;
-  margin: 0;
+.entry-meta {
+  color: #999;
+
+  a {
+    color: #999;
+    text-decoration: underline solid #999;
+  }
 }
 
-.dt-published {
-  color: gray;
+.published { //.dt-published
+  //color: gray;
 }
 
 .entry-meta .posted-on::before {
   content: " · ";
 }
-
-
-// Offsite links
-// Note 1) may consider applying the class automatically so that it’s not reliant on the CMS administrator
-// e.g. a:not([href*='yourdomain.com']):not([href^='#']):not([href^='/']):after {}
-// Note 2) since there might be many offsite links on a page, might consider using a background image (rather than inline SVG) to take advantage of cacheing.
-
-.offsite svg {
-  font-size: .9em; // just works better for the icon we’re currently using.
-}
-
 
 
 
@@ -84,13 +102,13 @@
 ///////////////////////////////////
 
 .global-header {
-  border-bottom: 1px solid $border-color;
-  padding: $space-s 0;
+  //border-bottom: 1px solid $border-color;
+  padding-top: $space-xxs;
+  padding-bottom: $space-xxs;
 
   a {
     text-decoration: none;
   }
-
 }
 
 .header-content {
@@ -98,6 +116,7 @@
   align-items: center;
 
   & > * + * {
+    margin-top: 0;
     margin-left: $space-s;
   }
 }
@@ -105,23 +124,30 @@
 .logo {
   line-height: 1;
   margin-right: auto;
-  font-size: scale-value(5)+rem;
 
   svg {
     display: block;
+    height: 3em;
+    width: 2.625em; // divide height by 1.14285 to maintain our logomark’s proportions.
 
-  }
-
-  :last-child {
-    font-size: 1rem;
-    margin-left: scale-value(-5)+rem;
+    @include at-least($bp-wide-two) {
+      height: (scale-value(4) + scale-value(1))+rem;
+      width: ((scale-value(4) + scale-value(1)) / 1.14285)+em;
+    }
   }
 }
 
-.header-menu {
-  ul {
-    margin-bottom: 0;
-  }
+.header-menu-toggle a::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .2em;
+    vertical-align: .15em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
 }
 
 
@@ -130,13 +156,6 @@
 .header-menu-hidden {
   display: none;
 }
-
-.header-menu-toggle .text-icon-pair-icon {
-  font-size: .6em;
-  margin-top: .2em;
-}
-
-
 
 
 
@@ -147,17 +166,8 @@
 .global-footer {
   background: $text-color;
   color: #fff;
-  padding: $space-l 0 $space-xs;
-
-  ul {
-    margin-bottom: $space-s;
-    columns: 2;
-  }
-
-  li {
-    margin-bottom: scale-value(-5)+rem;
-    font-size: scale-value(-1)+rem;
-  }
+  padding-top: var(--flow-space);
+  padding-bottom: var(--flow-space);
 
   a {
     color: #fff;
@@ -167,8 +177,27 @@
       text-decoration: underline;
     }
   }
-
 }
+
+.footer-menu-list {
+  max-width: none;
+
+  // A simple 2–3 columns layout.
+  // It’s prescriptive (a min of 2 and max of 3 cols) so I’m opting not to use the more unpredictable .grid component. Also, multicol has great support.
+  columns: 2;
+  @include at-least($bp-wide-one) {
+    columns: 3;
+  }
+
+  li {
+    font-size: scale-value(-1)+rem;
+  }
+  li + li {
+    margin-top: scale-value(-6)+rem;
+  }
+}
+
+
 
 
 
@@ -178,7 +207,8 @@
 ///////////////////
 
 .primary-content {
-  padding: $space-m 0 $space-l; // padding: $space-s 0 $space-l;
+  padding-top: $space-l;
+  padding-bottom: 3rem;
 
   &.with-header-banner {
     padding-top: 0;
@@ -192,7 +222,7 @@
 // Index page
 ///////////////////
 
-.features-benefits {
+/*.features-benefits {
 
   section {
     margin-top: $space-m;
@@ -201,17 +231,12 @@
       margin-top: $space-l;
     }
   }
-}
+}*/
 
+/*.features-benefits-wrap {
+  --flow-space: #{$space-l};
+}*/
 
-
-//
-// Any Other Business
-//
-
-.cc-btn:hover {
-  text-decoration: none;
-}
 
 
 

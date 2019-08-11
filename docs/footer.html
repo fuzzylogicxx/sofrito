@@ -3,10 +3,10 @@
 
     <div class="container">
 
-      <h3>Browse pages and patterns</h3>
+      <h3 class="h4">Browse pages and patterns</h3>
 
       <nav id="footer-menu">
-        <ul class="list-custom min-duo-max-trio">
+        <ul class="list-custom footer-menu-list">
           <li><a href="guidance.html">Typical Page</a></li>
           <li><a href="blog-index.html">Blog Index</a></li>
           <li><a href="blog-article.html">Blog Article</a></li>
@@ -17,6 +17,7 @@
           <li><a href="team.html">The Team</a></li>
           <li><a href="all.html">Miscellaneous</a></li>
           <li><a href="test-polyfills.html">Testing</a></li>
+          <li><a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Ffuzzylogicxx.github.io%2Fsofrito%2F">Validate HTML</a></li>
         </ul>
       </nav>
 
@@ -35,6 +36,16 @@
   <script src="assets/js/main.polyfills_v0.0.1.min.js"></script>
 
   <!-- add any page-specific JS here (files or inline) -->
+
+  <!-- Use this on a page which contains a .grid. Patch support for CSS’s min() in our auto-grid (.grid) pattern -->
+  <script>
+  ready(function() {
+    const grid = document.querySelector('.grid');
+    if (grid) {
+      observeGrid(grid);
+    }
+  });
+</script>
 
   <!--  for example: -->
   <!-- <script src="/assets/js/another-file_v0.0.1.min.js"></script> -->

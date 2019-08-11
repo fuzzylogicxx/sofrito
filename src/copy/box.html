@@ -1,0 +1,56 @@
+@@include('./head.html')
+
+<body>
+
+  @@include('./global_header.html')
+
+  <main id="primary-content" class="primary-content">
+
+    <div class="container">
+
+      <h1>Box</h1>
+
+      <h2>1: Box on its own</h2>
+      <div class="box">
+        <p>I’m a box that’s not nested within anything.</p>
+      </div>
+
+      <hr>
+
+      <h2>2: Box nested within a stack</h2>
+
+      <div class="stack">
+        <p>I’m the first element in a stack. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        <blockquote>
+          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </blockquote>
+
+        <div class="box">
+          <p>I’m a box nested within a stack. I should be a "visible box" and I should be separated from other content by virtue of the stack’s styles.</p>
+        </div>
+
+        <p>I’m the last element in a stack. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+
+      </div>
+
+      <hr>
+
+      <h2>3: Boxes inside a parent box</h2>
+
+      <div class="box box-no-padding">
+        <div class="box box-no-border invert">head</div>
+        <div class="box box-no-border">body</div>
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+
+
+  @@include('./footer.html')

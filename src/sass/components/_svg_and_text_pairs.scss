@@ -18,3 +18,13 @@
 .text-icon-pair :last-child {
   margin-left: .2em;
 }
+
+
+// Offsite links
+// Note 1) may consider applying the class automatically so that it’s not reliant on the CMS administrator
+// e.g. a:not([href*='yourdomain.com']):not([href^='#']):not([href^='/']):after {}
+// Note 2) since there might be many offsite links on a page, might consider using a background image (rather than inline SVG) to take advantage of cacheing.
+
+.offsite svg {
+  font-size: .9em; // just works better for the icon we’re currently using.
+}

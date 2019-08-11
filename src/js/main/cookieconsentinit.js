@@ -2,17 +2,21 @@
 
     'use strict';
 
-    window.addEventListener("load", function(){
-    window.cookieconsent.initialise({
-      "palette": {
-        "popup": {
-          "background": "#000"
+    window.addEventListener("load", function() {
+
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#000"
+          },
+          "button": {
+            "background": "#f1d600"
+          }
         },
-        "button": {
-          "background": "#f1d600"
-        }
-      },
-      "theme": "classic"
-    })});
+        "theme": "classic",
+        "position": "bottom-left"
+      })
+
+    });
 
 })();

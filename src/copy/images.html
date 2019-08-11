@@ -1,0 +1,107 @@
+@@include('./head.html')
+
+<body>
+
+  @@include('./global_header.html')
+
+  <main id="primary-content" class="primary-content">
+
+    <div class="container">
+
+      <h2>Aspect Ratio Maintenance</h2>
+
+      <p>Usually on any given image we’ll want to ensure a specific aspect ratio – usually the original aspect ratio e.g. 16:9 or 4:3 but not always, for example where we want a square thumbnail. Often images have an HTML height attribute set inline and when this combines with our responsive CSS of <code>img { width: 100%; }</code> the image will look broken.</p>
+
+      <div class="aspect-ratio-wide">
+        <img src="https://source.unsplash.com/WLUHO9A_xik/1600x900" loading="lazy" />
+      </div>
+
+      <p>At some point in the future this may be handled automatically by the browser
+      – see <a href="https://css-tricks.com/what-if-we-got-aspect-ratio-sized-images-by-doing-almost-nothing/">what-if-we-got-aspect-ratio-sized-images-by-doing-almost-nothing</a></p>
+
+      <!-- <img src="https://images-assets.nasa.gov/image/PIA03160/PIA03160~orig.jpg"> -->
+
+      <p>Developers tend to wrap images in a div to handle maintaining aspect ratio. See <a href="https://css-tricks.com/aspect-ratio-boxes/">https://css-tricks.com/aspect-ratio-boxes/</a> (todo: try Thierry Koblentz’s idea!)</p>
+
+
+
+      <ul class="gallery">
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/phvbkGThElM/800x600" alt="A neon ferris wheel" loading="lazy" />
+          </div>
+        </li>
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/H_mTtLykvKs/800x682" alt="A dimly lit drum kit" loading="lazy" />
+          </div>
+        </li>
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/Hc42xXu_WOg/800x567" alt="Blueberries, close up" loading="lazy" />
+          </div>
+        </li>
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/MfynxC5_tiU/800x999" alt="High angle waterfall" loading="lazy" />
+          </div>
+        </li>
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/7ZTx1iA7a7Q/800x397" alt="Sunset coastal scence" loading="lazy" />
+          </div>
+        </li>
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/pRvy1j4aINE/800x785" alt="High angle shot of a recording studio" loading="lazy" />
+          </div>
+        </li>
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/6ZDY7XhT8_0/800x800" alt="A curious Quokka" loading="lazy" />
+          </div>
+        </li>
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/EKGBAu6QL10/800x600" alt="Swirly texture" loading="lazy" />
+          </div>
+        </li>
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/567UmWZIYJ8/800x650" alt="Palm tree on a clear blue sky" loading="lazy" />
+          </div>
+        </li>
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/0BZlxflMHJ8/800x732" alt="Mountains in a sunset" loading="lazy" />
+          </div>
+        </li>
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/QHQgnu8tx-A/800x943" alt="Grand Canyon" loading="lazy" />
+          </div>
+        </li>
+        <li>
+          <div class="aspect-ratio-square">
+            <img src="https://source.unsplash.com/tWOt1vRvob4/800x867" alt="Pie with a slice missing" loading="lazy" />
+          </div>
+        </li>
+      </ul>
+
+
+
+
+
+
+
+
+      <h2>Cloudinary</h2>
+      <p>...</p>
+
+    </div>
+
+  </main>
+
+
+
+  @@include('./footer.html')
