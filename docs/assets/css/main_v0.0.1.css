@@ -7,12 +7,6 @@
  * credits:  */
 
 @charset "UTF-8";
-@-ms-viewport {
-  width: device-width;
-}
-@-o-viewport {
-  width: device-width;
-}
 @viewport {
   width: device-width;
 }
@@ -24,14 +18,12 @@ html {
 
 /* line 31, src/sass/components/_resets_and_improvements.scss */
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* line 34, src/sass/components/_resets_and_improvements.scss */
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 /* line 52, src/sass/components/_resets_and_improvements.scss */
@@ -43,25 +35,36 @@ figure,
 figcaption,
 dl,
 dd,
-dt {
+dt,
+hr,
+pre {
   margin: 0;
   padding: 0;
 }
 
 /* line 72, src/sass/components/_resets_and_improvements.scss */
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* line 83, src/sass/components/_resets_and_improvements.scss */
 main, article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 86, src/sass/components/_resets_and_improvements.scss */
+/* line 97, src/sass/components/_resets_and_improvements.scss */
 img {
   display: block;
   max-width: 100%;
   border-style: none;
 }
 
-/* line 103, src/sass/components/_resets_and_improvements.scss */
+/* line 114, src/sass/components/_resets_and_improvements.scss */
 audio,
 canvas,
 iframe,
@@ -71,22 +74,18 @@ video {
   vertical-align: middle;
 }
 
-/* line 121, src/sass/components/_resets_and_improvements.scss */
-::-moz-selection {
-  background: rgba(82, 32, 85, 0.25);
-  text-shadow: none;
-}
+/* line 132, src/sass/components/_resets_and_improvements.scss */
 ::selection {
   background: rgba(82, 32, 85, 0.25);
   text-shadow: none;
 }
 
-/* line 138, src/sass/components/_resets_and_improvements.scss */
+/* line 149, src/sass/components/_resets_and_improvements.scss */
 [hidden] {
   display: none;
 }
 
-/* line 146, src/sass/components/_resets_and_improvements.scss */
+/* line 157, src/sass/components/_resets_and_improvements.scss */
 .a11y-only {
   border: 0;
   clip: rect(0 0 0 0);
@@ -100,7 +99,7 @@ video {
   /* 1 */
 }
 
-/* line 156, src/sass/components/_resets_and_improvements.scss */
+/* line 167, src/sass/components/_resets_and_improvements.scss */
 .a11y-only.focusable:active, .a11y-only.focusable:focus {
   clip: auto;
   height: auto;
@@ -111,31 +110,28 @@ video {
   white-space: inherit;
 }
 
-/* line 171, src/sass/components/_resets_and_improvements.scss */
+/* line 182, src/sass/components/_resets_and_improvements.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 184, src/sass/components/_resets_and_improvements.scss */
+/* line 195, src/sass/components/_resets_and_improvements.scss */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
   overflow: visible;
   display: block;
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
 }
 
-/* line 204, src/sass/components/_resets_and_improvements.scss */
+/* line 213, src/sass/components/_resets_and_improvements.scss */
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-/* line 209, src/sass/components/_resets_and_improvements.scss */
+/* line 218, src/sass/components/_resets_and_improvements.scss */
 pre {
   font-family: monospace, monospace;
   /* 1 */
@@ -143,22 +139,22 @@ pre {
   /* 2 */
 }
 
-/* line 217, src/sass/components/_resets_and_improvements.scss */
+/* line 226, src/sass/components/_resets_and_improvements.scss */
 details {
   display: block;
 }
 
-/* line 224, src/sass/components/_resets_and_improvements.scss */
+/* line 233, src/sass/components/_resets_and_improvements.scss */
 summary {
   display: list-item;
 }
 
-/* line 241, src/sass/components/_resets_and_improvements.scss */
+/* line 250, src/sass/components/_resets_and_improvements.scss */
 template {
   display: none;
 }
 
-/* line 248, src/sass/components/_resets_and_improvements.scss */
+/* line 257, src/sass/components/_resets_and_improvements.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -167,115 +163,204 @@ template {
   /* 2 */
 }
 
-/* line 254, src/sass/components/_resets_and_improvements.scss */
+/* line 263, src/sass/components/_resets_and_improvements.scss */
 .clearfix:after {
   clear: both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* line 262, src/sass/components/_resets_and_improvements.scss */
+  /* line 271, src/sass/components/_resets_and_improvements.scss */
   body {
     scroll-behavior: auto;
   }
-  /* line 266, src/sass/components/_resets_and_improvements.scss */
+  /* line 275, src/sass/components/_resets_and_improvements.scss */
   * {
     -webkit-animation: none !important;
     animation: none !important;
-    -webkit-transition: none !important;
     transition: none !important;
   }
 }
 
-@font-face {
-  font-family: Source Sans Pro;
-  src: url(../type/SourceSansPro-Light.ttf.woff2) format("woff2"), url(../type/SourceSansPro-Light.ttf.woff) format("woff"), url(../type/SourceSansPro-Light.otf) format("opentype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Source Sans Pro;
-  src: url(../type/SourceSansPro-LightIt.ttf.woff2) format("woff2"), url(../type/SourceSansPro-LightIt.ttf.woff) format("woff"), url(../type/SourceSansPro-LightIt.otf) format("opentype");
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Source Sans Pro;
-  src: url(../type/SourceSansPro-Semibold.ttf.woff2) format("woff2"), url(../type/SourceSansPro-Semibold.ttf.woff) format("woff"), url(../type/SourceSansPro-Semibold.otf) format("opentype");
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Source Serif Pro;
-  src: url(../type/SourceSerifPro-Regular.ttf.woff2) format("woff2"), url(../type/SourceSerifPro-Regular.ttf.woff) format("woff"), url(../type/SourceSerifPro-Regular.otf) format("opentype");
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Source Code Pro;
-  src: url(../type/SourceCodePro-Light.ttf.woff2) format("woff2"), url(../type/SourceCodePro-Light.ttf.woff) format("woff"), url(../type/SourceCodePro-Light.otf) format("opentype");
-  font-display: swap;
-}
-
-/* line 184, src/sass/components/_typography.scss */
+/* line 77, src/sass/components/_typography.scss */
 :root {
-  color: #121212;
-  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
+  --measure: 34rem;
+}
+
+/* line 81, src/sass/components/_typography.scss */
+* {
+  max-width: var(--measure);
+}
+
+/* line 85, src/sass/components/_typography.scss */
+html,
+body,
+div,
+header,
+nav,
+main,
+footer,
+hr,
+.grid {
+  max-width: none;
+}
+
+/* line 174, src/sass/components/_typography.scss */
+:root {
+  --flow-space: 1em;
+}
+
+/* line 183, src/sass/components/_typography.scss */
+.stack > * + *,
+main > * + *,
+.container > * + *,
+.prose > * + *,
+.entry-header > * + *,
+.entry-content > * + *,
+form > * + *,
+.a11y-modal > * > * + * {
+  margin-top: 1rem;
+  margin-top: var(--flow-space);
+}
+
+/* line 210, src/sass/components/_typography.scss */
+.stack-compact {
+  --flow-space: 0.6698rem;
+}
+
+/* line 183, src/sass/components/_typography.scss */
+.stack-compact > * + * {
+  margin-top: 1rem;
+  margin-top: var(--flow-space);
+}
+
+/* line 217, src/sass/components/_typography.scss */
+.stack-spacious,
+.global-footer {
+  --flow-space: 1.728rem;
+}
+
+/* line 183, src/sass/components/_typography.scss */
+.stack-spacious > * + *,
+.global-footer > * + * {
+  margin-top: 1rem;
+  margin-top: var(--flow-space);
+}
+
+/* line 223, src/sass/components/_typography.scss */
+.stack-deactivate > * {
+  margin-top: 0;
+}
+
+/* line 236, src/sass/components/_typography.scss */
+:root {
   font-size: 1.125rem;
 }
 
-/* line 197, src/sass/components/_typography.scss */
-body {
-  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
-  line-height: 1.33959;
-}
-
-@media screen and (min-width: 38.25em) {
-  /* line 197, src/sass/components/_typography.scss */
-  body {
-    line-height: 1.44;
+@media screen and (min-width: 100em) {
+  /* line 236, src/sass/components/_typography.scss */
+  :root {
+    font-size: 1.1875rem;
   }
 }
 
-/* line 208, src/sass/components/_typography.scss */
+/* line 247, src/sass/components/_typography.scss */
+body {
+  color: #121212;
+  line-height: 1.44;
+}
+
+@media screen and (min-width: 100em) {
+  /* line 247, src/sass/components/_typography.scss */
+  body {
+    line-height: 1.5;
+  }
+}
+
+/* line 264, src/sass/components/_typography.scss */
+.prose {
+  hyphens: auto;
+  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+}
+
+@supports (font-kerning: normal) and (font-variant-ligatures: common-ligatures contextual) and (font-variant-numeric: oldstyle-nums proportional-nums) {
+  /* line 271, src/sass/components/_typography.scss */
+  .prose {
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures contextual;
+    font-variant-numeric: oldstyle-nums proportional-nums;
+    font-feature-settings: normal;
+  }
+}
+
+/* line 285, src/sass/components/_typography.scss */
 a {
   color: #d66351;
-  -webkit-text-decoration: underline solid #efc0b9;
-          text-decoration: underline solid #efc0b9;
+  text-decoration: underline solid #efc0b9;
 }
 
-/* line 213, src/sass/components/_typography.scss */
+/* line 290, src/sass/components/_typography.scss */
 a:hover {
   color: #882e20;
-  -webkit-text-decoration: underline solid #882e20;
-          text-decoration: underline solid #882e20;
+  text-decoration: underline solid #882e20;
 }
 
-/* line 222, src/sass/components/_typography.scss */
+/* line 298, src/sass/components/_typography.scss */
 abbr[title] {
   border-bottom: none;
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
-/* line 232, src/sass/components/_typography.scss */
+/* line 305, src/sass/components/_typography.scss */
+abbr {
+  letter-spacing: 0.01em;
+  font-feature-settings: "c2sc", "smcp";
+}
+
+@supports (font-variant-caps: all-small-caps) {
+  /* line 305, src/sass/components/_typography.scss */
+  abbr {
+    font-variant-caps: all-small-caps;
+    font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+  }
+}
+
+/* line 314, src/sass/components/_typography.scss */
+.no-small-caps {
+  font-feature-settings: unset;
+  font-variant: unset;
+}
+
+/* line 322, src/sass/components/_typography.scss */
+.number {
+  letter-spacing: 0.01em;
+}
+
+/* line 326, src/sass/components/_typography.scss */
+.nobreak {
+  white-space: nowrap;
+}
+
+/* line 330, src/sass/components/_typography.scss */
+.and {
+  font-style: italic;
+}
+
+/* line 340, src/sass/components/_typography.scss */
 b,
 strong {
   font-weight: bolder;
 }
 
-/* line 240, src/sass/components/_typography.scss */
+/* line 348, src/sass/components/_typography.scss */
 small {
   font-size: 0.69444rem;
 }
 
-/* line 247, src/sass/components/_typography.scss */
+/* line 355, src/sass/components/_typography.scss */
 sub,
 sup {
   font-size: 75%;
@@ -284,145 +369,774 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 255, src/sass/components/_typography.scss */
+/* line 363, src/sass/components/_typography.scss */
 sub {
   bottom: -0.25em;
 }
 
-/* line 259, src/sass/components/_typography.scss */
+/* line 367, src/sass/components/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 266, src/sass/components/_typography.scss */
+/* line 374, src/sass/components/_typography.scss */
 blockquote {
-  border-left: 0.5787rem solid #dbdbdb;
+  border-left: 0.1rem solid #d66351;
   color: #454545;
   font-style: italic;
-  margin: 2.0736rem 0;
-  margin-left: -1.728rem;
+  margin-left: 0;
   padding-left: 1rem;
+  /*margin: scale-value(4)+rem 0;
+  margin-left: -($space-l);
+  padding-left: $space-s;*/
 }
 
-/* line 278, src/sass/components/_typography.scss */
-h6,
-h5,
-h4,
-h3,
-h2,
-h1 {
-  margin: 0 0 0.6698rem;
-}
-
-/* line 287, src/sass/components/_typography.scss */
+/* line 397, src/sass/components/_typography.scss */
 h6,
 h5,
 h4 {
-  font-weight: 700;
+  font-weight: 600;
 }
 
-/* line 293, src/sass/components/_typography.scss */
+/* line 403, src/sass/components/_typography.scss */
+.h4 {
+  font-size: 1rem;
+}
+
+/* line 407, src/sass/components/_typography.scss */
 h3 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.07167rem;
   line-height: 1.2;
 }
 
-@media screen and (min-width: 38.25em) {
-  /* line 293, src/sass/components/_typography.scss */
-  h3 {
-    font-size: 1.2rem;
-  }
-}
-
-/* line 306, src/sass/components/_typography.scss */
+/* line 410, src/sass/components/_typography.scss */
 .prose h3 {
-  margin-top: 2.0736rem;
+  --flow-space: 2rem;
 }
 
-/* line 312, src/sass/components/_typography.scss */
+/* line 422, src/sass/components/_typography.scss */
 h2 {
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.09645;
 }
 
-@media screen and (min-width: 38.25em) {
-  /* line 312, src/sass/components/_typography.scss */
-  h2 {
-    font-size: 1.44rem;
-  }
-}
-
-/* line 325, src/sass/components/_typography.scss */
+/* line 425, src/sass/components/_typography.scss */
 .prose h2 {
-  margin-top: 2.0736rem;
+  --flow-space: 2rem;
 }
 
-/* line 331, src/sass/components/_typography.scss */
+/* line 436, src/sass/components/_typography.scss */
+.prose h3 + *,
+.prose h2 + * {
+  --flow-space: 0.5787rem;
+}
+
+/*
+.skip-custom-heading-spacing h3 + *,
+.skip-custom-heading-spacing h2 + * {
+  --flow-space: 1rem;
+}
+*/
+/* line 448, src/sass/components/_typography.scss */
 h1 {
   color: #d66351;
   font-size: 1.44rem;
   font-weight: 700;
   line-height: 1;
-  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 38.25em) {
-  /* line 331, src/sass/components/_typography.scss */
+  /* line 448, src/sass/components/_typography.scss */
   h1 {
-    font-size: 1.7749rem;
+    font-size: 2.0629rem;
   }
 }
 
-/* line 345, src/sass/components/_typography.scss */
-ol, ul, li {
-  margin-top: 0;
-  padding-top: 0;
+@media screen and (min-width: 100em) {
+  /* line 448, src/sass/components/_typography.scss */
+  h1 {
+    font-size: 2.0736rem;
+  }
+  /* line 459, src/sass/components/_typography.scss */
+  .fonts-loaded h1 {
+    letter-spacing: -0.01em;
+  }
 }
 
-/* line 350, src/sass/components/_typography.scss */
-p,
-ul,
-details,
-.entry-meta {
-  margin-bottom: 0.6698rem;
+/* line 3, src/sass/components/_list_utils.scss */
+ul[class],
+ol[class] {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 
-/* line 357, src/sass/components/_typography.scss */
-.prose {
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
-          font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+/*.list-custom {
+  margin-left: 0;
+  padding-left: 0;
+}*/
+/* line 19, src/sass/components/_list_utils.scss */
+.list-compact {
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  padding-left: 0;
+}
+
+/* line 25, src/sass/components/_list_utils.scss */
+.list-compact > li {
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+/**
+ * @bugfix Prevent webkit from removing list semantics
+ * https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+ * 1. Add a non-breaking space
+ * 2. Make sure it doesn't mess up the DOM flow
+ */
+/* line 37, src/sass/components/_list_utils.scss */
+.list-custom > li:before,
+.list-compact > li:before {
+  content: "\200B";
+  /* 1 */
+  position: absolute;
+  /* 2 */
+}
+
+/* line 7, src/sass/components/_demoing_code.scss */
+code, pre {
+  color: #000;
+  background: 0 0;
+  text-shadow: 0 1px #fff;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  font-variant-ligatures: none;
+  word-wrap: normal;
+  tab-size: 4;
+  hyphens: none;
+}
+
+/* line 22, src/sass/components/_demoing_code.scss */
+code {
+  background: #f6f3f2;
+  color: #333;
+  display: inline-block;
+  font-size: 0.83333rem;
+  font-feature-settings: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0 .275em;
+}
+
+/* line 33, src/sass/components/_demoing_code.scss */
+pre {
+  background: #f5f2f0;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  min-width: 250px;
+  max-width: 100vw;
+  overflow: auto;
+  padding: 1em;
+  resize: both;
+}
+
+/* line 44, src/sass/components/_demoing_code.scss */
+pre code {
+  color: #000;
+  background: 0 0;
+  text-shadow: 0 1px #fff;
+}
+
+/* line 3, src/sass/components/_tables.scss */
+.table-container {
+  overflow-x: auto;
+}
+
+/*
+@media (min-width: 400px) {
+  .table-container {
+    display: block;
+  }
+
+  .lists-container {
+    display: none;
+  }
+}
+*/
+/* line 24, src/sass/components/_tables.scss */
+table {
+  border-collapse: collapse;
+  border-top: 1px solid #999;
+  border-left: 1px solid #999;
+}
+
+/* line 30, src/sass/components/_tables.scss */
+caption {
+  color: #933;
+}
+
+/* line 34, src/sass/components/_tables.scss */
+th, td {
+  padding: 10px;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+/* line 7, src/sass/components/_responsive_layout_utilities.scss */
+:root {
+  --border-thin: 1px;
+}
+
+/* line 23, src/sass/components/_responsive_layout_utilities.scss */
+.box {
+  padding: 1rem;
+  border: var(--border-thin) solid;
+  --color-light: #eee;
+  --color-dark: #222;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+/* line 32, src/sass/components/_responsive_layout_utilities.scss */
+.box.box-no-padding {
+  padding: 0;
+}
+
+/* line 36, src/sass/components/_responsive_layout_utilities.scss */
+.box.box-no-border {
+  border: none;
+  outline: 0.125rem solid transparent;
+  outline-offset: -0.125rem;
+}
+
+/* line 42, src/sass/components/_responsive_layout_utilities.scss */
+.box *:not(a) {
+  color: inherit;
+}
+
+/* line 46, src/sass/components/_responsive_layout_utilities.scss */
+.box.invert {
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+/* line 90, src/sass/components/_responsive_layout_utilities.scss */
+.centre {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 34rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-@supports ((-webkit-font-kerning: normal) or (font-kerning: normal)) and ((-webkit-font-variant-ligatures: common-ligatures contextual) or (font-variant-ligatures: common-ligatures contextual)) and (font-variant-numeric: oldstyle-nums proportional-nums) {
-  /* line 364, src/sass/components/_typography.scss */
-  .prose {
-    -webkit-font-kerning: normal;
-            font-kerning: normal;
-    -webkit-font-variant-ligatures: common-ligatures contextual;
-            font-variant-ligatures: common-ligatures contextual;
-    font-variant-numeric: oldstyle-nums proportional-nums;
-    -webkit-font-feature-settings: normal;
-            font-feature-settings: normal;
+/* line 94, src/sass/components/_responsive_layout_utilities.scss */
+.centre.centre-no-gutter {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 98, src/sass/components/_responsive_layout_utilities.scss */
+.centre.centre-with-centred-text {
+  text-align: center;
+}
+
+/* line 106, src/sass/components/_responsive_layout_utilities.scss */
+.centre.centre-intrinsic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 114, src/sass/components/_responsive_layout_utilities.scss */
+.container {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 34rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 61.2rem;
+}
+
+@media screen and (min-width: 48em) {
+  /* line 114, src/sass/components/_responsive_layout_utilities.scss */
+  .container {
+    padding-left: 1.44rem;
+    padding-right: 1.44rem;
   }
 }
 
-/* line 40, src/sass/components/_forms_and_buttons.scss */
-.btn-wrap {
-  margin-top: 0.83333rem;
+/* line 138, src/sass/components/_responsive_layout_utilities.scss */
+.cluster {
+  --space: 1rem;
+  overflow: hidden;
 }
 
-/* line 44, src/sass/components/_forms_and_buttons.scss */
-form {
-  margin-bottom: 0.6698rem;
+/* line 143, src/sass/components/_responsive_layout_utilities.scss */
+.cluster > * {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: calc(var(--space) / 2 * -1);
 }
 
-/* line 50, src/sass/components/_forms_and_buttons.scss */
+/* line 151, src/sass/components/_responsive_layout_utilities.scss */
+.cluster > * > * {
+  margin: calc(var(--space) / 2);
+}
+
+/* line 168, src/sass/components/_responsive_layout_utilities.scss */
+.with-sidebar {
+  overflow: hidden;
+}
+
+/* line 172, src/sass/components/_responsive_layout_utilities.scss */
+.with-sidebar > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(0px / 2 * -1);
+}
+
+/* line 178, src/sass/components/_responsive_layout_utilities.scss */
+.with-sidebar-blog-layout > *,
+.with-sidebar-media-object > * {
+  margin: calc(1rem / 2 * -1);
+}
+
+/* line 183, src/sass/components/_responsive_layout_utilities.scss */
+.with-sidebar > * > * {
+  margin: calc(0px / 2);
+  flex-grow: 1;
+}
+
+/* line 188, src/sass/components/_responsive_layout_utilities.scss */
+.with-sidebar-blog-layout > * > * {
+  margin: calc(1rem / 2);
+  flex-basis: 20rem;
+}
+
+/* line 193, src/sass/components/_responsive_layout_utilities.scss */
+.with-sidebar-media-object > * > * {
+  margin: calc(1rem / 2);
+  flex-basis: 15rem;
+}
+
+/* line 198, src/sass/components/_responsive_layout_utilities.scss */
+.with-sidebar-on-left > * > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 0px);
+}
+
+/* line 204, src/sass/components/_responsive_layout_utilities.scss */
+.with-sidebar-on-right > * > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 0px);
+}
+
+/* line 210, src/sass/components/_responsive_layout_utilities.scss */
+.with-sidebar-blog-layout.with-sidebar-on-left > * > :last-child,
+.with-sidebar-media-object.with-sidebar-on-left > * > :last-child {
+  min-width: calc(50% - 1rem);
+}
+
+/* line 216, src/sass/components/_responsive_layout_utilities.scss */
+.with-sidebar-blog-layout.with-sidebar-on-right > * > :first-child,
+.with-sidebar-media-object.with-sidebar-on-right > * > :first-child {
+  min-width: calc(50% - 1rem);
+}
+
+/* line 230, src/sass/components/_responsive_layout_utilities.scss */
+.switcher > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc((1rem / 2) * -1);
+}
+
+/* line 236, src/sass/components/_responsive_layout_utilities.scss */
+.switcher > * > * {
+  flex-grow: 1;
+  flex-basis: calc((34rem - (100% - 1rem)) * 999);
+  margin: calc(1rem / 2);
+}
+
+/* line 244, src/sass/components/_responsive_layout_utilities.scss */
+.switcher > * > :nth-last-child(n+5),
+.switcher > * > :nth-last-child(n+5) ~ * {
+  flex-basis: 100%;
+}
+
+/* line 261, src/sass/components/_responsive_layout_utilities.scss */
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* line 268, src/sass/components/_responsive_layout_utilities.scss */
+.cover.cover-no-padding {
+  padding: 0;
+}
+
+/* line 272, src/sass/components/_responsive_layout_utilities.scss */
+.cover > * {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* line 277, src/sass/components/_responsive_layout_utilities.scss */
+.cover > :first-child:not(.centred) {
+  margin-top: 0;
+}
+
+/* line 281, src/sass/components/_responsive_layout_utilities.scss */
+.cover > :last-child:not(.centred) {
+  margin-bottom: 0;
+}
+
+/* line 285, src/sass/components/_responsive_layout_utilities.scss */
+.cover > .centred {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* line 319, src/sass/components/_responsive_layout_utilities.scss */
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 100%;
+}
+
+/* line 308, src/sass/components/_responsive_layout_utilities.scss */
+.grid.aboveMin {
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+@supports (width: min(20rem, 100%)) {
+  /* line 319, src/sass/components/_responsive_layout_utilities.scss */
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+  }
+}
+
+/* line 334, src/sass/components/_responsive_layout_utilities.scss */
+.scroll-track {
+  display: flex;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 342, src/sass/components/_responsive_layout_utilities.scss */
+.scroll-track > * {
+  flex-shrink: 0;
+}
+
+/* line 348, src/sass/components/_responsive_layout_utilities.scss */
+.scroll-track-intrinsic {
+  display: inline-flex;
+}
+
+/* line 362, src/sass/components/_responsive_layout_utilities.scss */
+.frame {
+  --n: 6;
+  --d: 9;
+  padding-bottom: calc(var(--n) / var(--d) * 100%);
+  position: relative;
+  display: block;
+}
+
+@media (orientation: portrait) {
+  /* line 373, src/sass/components/_responsive_layout_utilities.scss */
+  .frame {
+    --n: 1;
+    --d: 1;
+  }
+}
+
+/* line 379, src/sass/components/_responsive_layout_utilities.scss */
+.frame > * {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 393, src/sass/components/_responsive_layout_utilities.scss */
+.frame > img,
+.frame > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* line 405, src/sass/components/_responsive_layout_utilities.scss */
+[class*='aspect-ratio-'] {
+  display: block;
+  position: relative;
+}
+
+/* line 410, src/sass/components/_responsive_layout_utilities.scss */
+[class*='aspect-ratio-'] > * {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 419, src/sass/components/_responsive_layout_utilities.scss */
+.aspect-ratio-wide {
+  padding-top: 56.25%;
+}
+
+/* line 423, src/sass/components/_responsive_layout_utilities.scss */
+.aspect-ratio-square {
+  padding-top: 100%;
+}
+
+/*
+///////////////////////////////////
+// Responsive utilities
+///////////////////////////////////
+
+// Container
+// Use this to give wrappers a sensible maximum width and some lateral breathing space.
+// Defined as a mixin so the styles can be imported into different elements; not just by necessity of using a .container class.
+
+@mixin container() {
+
+  margin-left: $space-s;
+  margin-right: $space-s;
+
+  @include at-least($bp-wide-two) {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  @include at-least($bp-wide-three) {
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+
+  @include at-least($bp-wide-four) {
+    //margin-left: 10%;
+    //margin-right: 10%;
+
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70vw; // change as required based on the maximum width you want your content to go.
+  }
+
+  @include at-least($bp-wide-five) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.container {
+  @include container();
+}
+
+
+// Container (centred inner content e.g. a centred column)
+// A container which centres its content based on the max-width of that content.
+// By using flexbox centring, there is no need for a max-width on this parent which makes it more flexible.
+// Flex-direction is column so that subsequent sibling elements don’t align horizontally.
+
+@mixin container-centred-content() {
+  margin-left: $space-s;
+  margin-right: $space-s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-centred-content {
+  @include container-centred-content();
+}
+
+
+// Container (centred content and centred text within)
+
+.container-centred-content-centred-text {
+  @include container-centred-content();
+  & > * {
+    text-align: center;
+    max-width: $text-measure-max-in-ems+rem;
+  }
+}
+
+
+
+// Create a grid with 3 flexible-width-but-always-equal-width colummns
+// (and auto-rows? - test to confirm)
+
+@mixin trio() {
+  display: grid;
+  grid-column-gap: $space-l;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.trio {
+  //--flow-space: 1.33959rem;
+  @include stack-recursive();
+
+  @include at-least($bp-wide-one) {
+    @include trio();
+
+    & > * {
+      margin-top: 0;
+    }
+
+    section {
+      --flow-space: 0.6698rem;
+    }
+  }
+}
+
+
+
+// Create a row with 2 equal-width columns (using multi-column) but when space allows, 3 equal-width columns.
+
+.min-duo-max-trio {
+  columns: 2;
+  @include at-least($bp-wide-one) {
+    columns: unset;
+    @include trio();
+  }
+}
+
+
+
+
+
+// Component lists of flexible/unknown quantity with equal width items.
+// To achieve wrapping, we can use the auto-fit or auto-fill keywords.
+// auto-fill inserts empty columns to end of line if necessary
+// auto-fit also inserts empty columns but collapses them so they don’t take up space then allocates their space to the items.
+// See https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/
+
+
+
+
+// Create a grid that shows two across on narrow screens
+// but on wider screens, auto-fits columns and rows (inserts empty columns to end of line if necessary)
+// and never lets items get too wide, by virtue of using a vw-based column-gap
+// Ref: https://www.sarasoueidan.com/work/
+// Note: should test/decide whether grid or flexbox is best here
+
+.flexible-list-component {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15vw;
+}
+
+@media (min-width: 50em) {
+  .flexible-list-component {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 7em 7vw;
+
+    & > * {
+      //outline: 1px solid red;
+    }
+  }
+
+}
+
+
+
+// A flexible grid suited to items that can be narrow.
+// It increases the minimum width of items beyond a breakpoint.
+
+.another-flexible-list-component {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-gap: 3em;
+}
+
+@media (min-width: 56.25em) {
+  .another-flexible-list-component {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+*/
+/* line 3, src/sass/components/_media_objects.scss */
+div.slat {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* line 7, src/sass/components/_media_objects.scss */
+div.slat div.slat-copy {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+/* line 2, src/sass/components/_breakout.scss */
+.special {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+}
+
+@supports (display: grid) {
+  /* line 10, src/sass/components/_rooted_footer.scss */
+  html {
+    height: 100%;
+  }
+  /* line 14, src/sass/components/_rooted_footer.scss */
+  body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  /* line 21, src/sass/components/_rooted_footer.scss */
+  main {
+    min-width: 0;
+  }
+}
+
+/* line 13, src/sass/components/_svg_and_text_pairs.scss */
+.text-icon-pair {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* line 18, src/sass/components/_svg_and_text_pairs.scss */
+.text-icon-pair :last-child {
+  margin-left: .2em;
+}
+
+/* line 28, src/sass/components/_svg_and_text_pairs.scss */
+.offsite svg {
+  font-size: .9em;
+}
+
+/* line 51, src/sass/components/_forms_and_buttons.scss */
 .form-custom {
   /**
    * Shared styling among the different form controls.
@@ -453,14 +1167,14 @@ form {
    */
 }
 
-/* line 54, src/sass/components/_forms_and_buttons.scss */
+/* line 55, src/sass/components/_forms_and_buttons.scss */
 .form-custom fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/* line 63, src/sass/components/_forms_and_buttons.scss */
+/* line 64, src/sass/components/_forms_and_buttons.scss */
 .form-custom button,
 .form-custom [type="button"],
 .form-custom [type="reset"],
@@ -468,15 +1182,14 @@ form {
   -webkit-appearance: button;
 }
 
-/* line 79, src/sass/components/_forms_and_buttons.scss */
+/* line 80, src/sass/components/_forms_and_buttons.scss */
 .form-custom input,
 .form-custom button,
 .form-custom textarea,
 .form-custom select {
   border-radius: 0;
   /* may change, but start consistently */
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -488,14 +1201,14 @@ form {
   /* remove inheritance Edge, Firefox, IE */
 }
 
-/* line 97, src/sass/components/_forms_and_buttons.scss */
+/* line 98, src/sass/components/_forms_and_buttons.scss */
 .form-custom input::-ms-clear {
   display: none;
   height: 0;
   width: 0;
 }
 
-/* line 108, src/sass/components/_forms_and_buttons.scss */
+/* line 109, src/sass/components/_forms_and_buttons.scss */
 .form-custom button::-moz-focus-inner,
 .form-custom [type="button"]::-moz-focus-inner,
 .form-custom [type="reset"]::-moz-focus-inner,
@@ -504,7 +1217,7 @@ form {
   padding: 0;
 }
 
-/* line 121, src/sass/components/_forms_and_buttons.scss */
+/* line 122, src/sass/components/_forms_and_buttons.scss */
 .form-custom button:-moz-focusring,
 .form-custom [type="button"]:-moz-focusring,
 .form-custom [type="reset"]:-moz-focusring,
@@ -512,7 +1225,7 @@ form {
   outline: 1px dotted ButtonText;
 }
 
-/* line 132, src/sass/components/_forms_and_buttons.scss */
+/* line 133, src/sass/components/_forms_and_buttons.scss */
 .form-custom legend {
   color: inherit;
   /* 1 */
@@ -525,18 +1238,13 @@ form {
   /* 2 */
 }
 
-/* line 142, src/sass/components/_forms_and_buttons.scss */
-.form-custom .form-group {
-  margin-bottom: 0.6698rem;
-}
-
-/* line 146, src/sass/components/_forms_and_buttons.scss */
+/* line 147, src/sass/components/_forms_and_buttons.scss */
 .form-custom label {
   display: block;
   font-weight: 700;
 }
 
-/* line 151, src/sass/components/_forms_and_buttons.scss */
+/* line 152, src/sass/components/_forms_and_buttons.scss */
 .form-custom input[type=text],
 .form-custom input[type=email],
 .form-custom input[type=number],
@@ -547,7 +1255,7 @@ form {
   border: 1px solid #dbdbdb;
 }
 
-/* line 161, src/sass/components/_forms_and_buttons.scss */
+/* line 162, src/sass/components/_forms_and_buttons.scss */
 .form-custom input[type=text],
 .form-custom input[type=email],
 .form-custom input[type=number],
@@ -558,7 +1266,7 @@ form {
   padding: .5em;
 }
 
-/* line 171, src/sass/components/_forms_and_buttons.scss */
+/* line 172, src/sass/components/_forms_and_buttons.scss */
 .form-custom input[type=text],
 .form-custom input[type=email],
 .form-custom input[type=search],
@@ -567,7 +1275,7 @@ form {
   width: 100%;
 }
 
-/* line 182, src/sass/components/_forms_and_buttons.scss */
+/* line 183, src/sass/components/_forms_and_buttons.scss */
 .form-custom button,
 .form-custom [type="button"],
 .form-custom [type="submit"],
@@ -579,18 +1287,17 @@ form {
   display: inline-block;
   font-weight: 700;
   white-space: nowrap;
-  padding: 0.48225em 1em 0.5787em;
-  -webkit-transition: all 0.3s ease;
+  padding: 0.3349em 0.5787em 0.40188em;
   transition: all 0.3s ease;
 }
 
-/* line 190, src/sass/components/_forms_and_buttons.scss */
+/* line 191, src/sass/components/_forms_and_buttons.scss */
 .form-custom .btn-large,
 .form-custom .btn-large {
   padding: 0.48225em 1em 0.5787em;
 }
 
-/* line 195, src/sass/components/_forms_and_buttons.scss */
+/* line 196, src/sass/components/_forms_and_buttons.scss */
 .form-custom button:hover,
 .form-custom [type="button"]:hover,
 .form-custom [type="submit"]:hover,
@@ -599,19 +1306,19 @@ form {
   color: #e6e6e6;
 }
 
-/* line 206, src/sass/components/_forms_and_buttons.scss */
+/* line 207, src/sass/components/_forms_and_buttons.scss */
 .form-custom textarea {
   overflow: auto;
   resize: vertical;
 }
 
-/* line 224, src/sass/components/_forms_and_buttons.scss */
+/* line 225, src/sass/components/_forms_and_buttons.scss */
 .form-custom input[type="search"] {
   -webkit-appearance: none;
   /* 1 */
 }
 
-/* line 228, src/sass/components/_forms_and_buttons.scss */
+/* line 229, src/sass/components/_forms_and_buttons.scss */
 .form-custom input[type="search"]::-webkit-search-decoration,
 .form-custom input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -619,18 +1326,14 @@ form {
   appearance: none;
 }
 
-/* line 240, src/sass/components/_forms_and_buttons.scss */
+/* line 241, src/sass/components/_forms_and_buttons.scss */
 .form-custom .form-group-checkbox div,
 .form-custom .form-group-radio div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
-/* line 245, src/sass/components/_forms_and_buttons.scss */
+/* line 246, src/sass/components/_forms_and_buttons.scss */
 .form-custom .form-group-checkbox input[type="checkbox"],
 .form-custom .form-group-checkbox input[type="checkbox"]:focus,
 .form-custom .form-group-radio input[type="checkbox"],
@@ -638,7 +1341,7 @@ form {
   border-radius: 10%;
 }
 
-/* line 250, src/sass/components/_forms_and_buttons.scss */
+/* line 251, src/sass/components/_forms_and_buttons.scss */
 .form-custom .form-group-checkbox input[type="checkbox"] + label,
 .form-custom .form-group-checkbox label + input[type="checkbox"],
 .form-custom .form-group-radio input[type="checkbox"] + label,
@@ -646,40 +1349,38 @@ form {
   margin-left: 0.48225em;
 }
 
-/* line 255, src/sass/components/_forms_and_buttons.scss */
+/* line 256, src/sass/components/_forms_and_buttons.scss */
 .form-custom .form-group-checkbox input[type="radio"],
 .form-custom .form-group-radio input[type="radio"] {
   border-radius: 100%;
   margin-right: 0.48225em;
 }
 
-/* line 260, src/sass/components/_forms_and_buttons.scss */
+/* line 261, src/sass/components/_forms_and_buttons.scss */
 .form-custom .form-group-checkbox label,
 .form-custom .form-group-radio label {
   font-weight: 400;
 }
 
-/* line 267, src/sass/components/_forms_and_buttons.scss */
+/* line 268, src/sass/components/_forms_and_buttons.scss */
 .form-custom input[type="checkbox"],
 .form-custom input[type="radio"] {
   padding: 0;
   border: 0;
 }
 
-/* line 276, src/sass/components/_forms_and_buttons.scss */
+/* line 277, src/sass/components/_forms_and_buttons.scss */
 .form-custom .field-button-pair {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
-/* line 279, src/sass/components/_forms_and_buttons.scss */
+/* line 280, src/sass/components/_forms_and_buttons.scss */
 .form-custom .field-button-pair input:not([type=submit]) {
   min-width: 0;
   margin-right: 1rem;
 }
 
-/* line 289, src/sass/components/_forms_and_buttons.scss */
+/* line 290, src/sass/components/_forms_and_buttons.scss */
 .form-custom .field-button-pair-search input:not([type=submit]) {
   margin-right: 0;
   border-right: 0;
@@ -687,61 +1388,60 @@ form {
   border-bottom-right-radius: 0;
 }
 
-/* line 296, src/sass/components/_forms_and_buttons.scss */
+/* line 297, src/sass/components/_forms_and_buttons.scss */
 .form-custom .field-button-pair-search [type=submit] {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
 
-/* line 308, src/sass/components/_forms_and_buttons.scss */
+/* line 309, src/sass/components/_forms_and_buttons.scss */
 .form-custom select {
   font-size: 1rem;
-  font-family: Source Sans Pro, Helvetica Neue, sans-serif;
+  font-family: "Source Sans Pro", Helvetica Neue, sans-serif;
   color: #121212;
   display: block;
   max-width: 100%;
   width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
   border-radius: 4px;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
   background-color: #fff;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23dcdcdc%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23dcdcdc%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(to bottom, #fff 0%, #fff 100%);
   background-repeat: no-repeat, repeat;
   background-position: right .7em top 50%, 0 0;
   background-size: .65em auto, 100%;
 }
 
-/* line 332, src/sass/components/_forms_and_buttons.scss */
+/* line 335, src/sass/components/_forms_and_buttons.scss */
 .form-custom select::-ms-expand {
   display: none;
 }
 
-/* line 335, src/sass/components/_forms_and_buttons.scss */
+/* line 338, src/sass/components/_forms_and_buttons.scss */
 .form-custom select:hover {
   border-color: #888;
 }
 
-/* line 338, src/sass/components/_forms_and_buttons.scss */
+/* line 341, src/sass/components/_forms_and_buttons.scss */
 .form-custom select:focus {
   border-color: #aaa;
-  -webkit-box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
-          box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
   box-shadow: 0 0 0 3px -moz-mac-focusring;
   color: #222;
   outline: none;
 }
 
-/* line 345, src/sass/components/_forms_and_buttons.scss */
+/* line 348, src/sass/components/_forms_and_buttons.scss */
 .form-custom select option {
   font-weight: normal;
 }
 
-/* line 355, src/sass/components/_forms_and_buttons.scss */
+/* line 358, src/sass/components/_forms_and_buttons.scss */
 .btn {
   background: #d66351;
   border: 0;
@@ -750,149 +1450,78 @@ form {
   display: inline-block;
   font-weight: 700;
   white-space: nowrap;
-  padding: 0.48225em 1em 0.5787em;
-  -webkit-transition: all 0.3s ease;
+  padding: 0.3349em 0.5787em 0.40188em;
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
-/* line 360, src/sass/components/_forms_and_buttons.scss */
+/* line 363, src/sass/components/_forms_and_buttons.scss */
 .btn:link, .btn:visited {
   color: #fff;
 }
 
-/* line 364, src/sass/components/_forms_and_buttons.scss */
+/* line 367, src/sass/components/_forms_and_buttons.scss */
 .btn:hover {
   background: #c6432f;
   color: #e6e6e6;
   text-decoration: none;
 }
 
-/* line 369, src/sass/components/_forms_and_buttons.scss */
-.btn-small:link, .btn-small:visited {
-  padding: 0.3349em 0.5787em 0.40188em;
+/* line 377, src/sass/components/_forms_and_buttons.scss */
+.btn-large:link, .btn-large:visited {
+  padding: 0.48225em 1em 0.5787em;
 }
 
-/* line 377, src/sass/components/_forms_and_buttons.scss */
+/* line 386, src/sass/components/_forms_and_buttons.scss */
 .btn-icon:link, .btn-icon:hover,
 .form-custom button.btn-icon, .form-custom [type="button"].btn-icon, .form-custom [type="reset"].btn-icon {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
-/* line 383, src/sass/components/_forms_and_buttons.scss */
-.btn-icon > *:last-child {
+/* line 392, src/sass/components/_forms_and_buttons.scss */
+.btn-icon > * + * {
   margin-left: 0.3349em;
 }
 
-/* line 3, src/sass/components/_list_utils.scss */
-ul[class],
-ol[class] {
-  list-style: none;
+/* line 8, src/sass/components/_profile_pic.scss */
+.profile {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
 }
 
-/* line 10, src/sass/components/_list_utils.scss */
-.list-custom {
-  margin-left: 0;
-  padding-left: 0;
+/* line 14, src/sass/components/_profile_pic.scss */
+.profile--large {
+  font-size: 5rem;
 }
 
-/* line 17, src/sass/components/_list_utils.scss */
-.list-compact {
-  margin-left: -0.5em;
-  margin-right: -0.5em;
-  padding-left: 0;
-}
-
-/* line 23, src/sass/components/_list_utils.scss */
-.list-compact > li {
-  display: inline-block;
+/* line 18, src/sass/components/_profile_pic.scss */
+.profile > * + * {
   margin-left: 0.5em;
-  margin-right: 0.5em;
 }
 
-/**
- * @bugfix Prevent webkit from removing list semantics
- * https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
- * 1. Add a non-breaking space
- * 2. Make sure it doesn't mess up the DOM flow
- */
-/* line 35, src/sass/components/_list_utils.scss */
-.list-custom > li:before,
-.list-compact > li:before {
-  content: "\200B";
-  /* 1 */
-  position: absolute;
-  /* 2 */
+/* line 22, src/sass/components/_profile_pic.scss */
+.profile__heading {
+  font-size: 0.5em;
+  line-height: 1.1;
 }
 
-/* line 3, src/sass/components/_tables.scss */
-.table-container {
-  overflow-x: auto;
+/* line 27, src/sass/components/_profile_pic.scss */
+.profile__image {
+  width: 1.5em;
+  height: 1.5em;
+  object-fit: cover;
+  border-radius: 999px;
+  flex-shrink: 0;
+  border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
-/*
-@media (min-width: 400px) {
-  .table-container {
-    display: block;
-  }
-
-  .lists-container {
-    display: none;
-  }
-}
-*/
-/* line 24, src/sass/components/_tables.scss */
-table {
-  border-collapse: collapse;
-  border-top: 1px solid #999;
-  border-left: 1px solid #999;
-  margin: 1em 0;
-}
-
-/* line 32, src/sass/components/_tables.scss */
-caption {
-  color: #933;
-}
-
-/* line 36, src/sass/components/_tables.scss */
-th, td {
-  padding: 10px;
-  border-right: 1px solid #999;
-  border-bottom: 1px solid #999;
-}
-
-/* line 6, src/sass/components/_code.scss */
-code {
-  font-family: Source Code Pro, monospace;
-  color: #42615a;
-  -webkit-hyphens: none;
-      -ms-hyphens: none;
-          hyphens: none;
-  line-height: normal;
-}
-
-/* line 24, src/sass/components/_code.scss */
-pre {
-  background: #fafafa;
-  border: 1px dotted #aaa;
-  color: #111;
-  font-size: 0.83333rem;
-  padding: 1em;
-  margin: 1.33959rem 0;
-  overflow: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-/* line 38, src/sass/components/_code.scss */
-pre code {
-  font-size: 1em;
-  color: #111;
+/* Pres */
+/* line 183, src/sass/components/_typography.scss */
+.user > * + * {
+  margin-top: 1rem;
+  margin-top: var(--flow-space);
 }
 
 /* line 7, src/sass/components/_skip_links.scss */
@@ -908,11 +1537,9 @@ pre code {
   display: block;
   background: #000;
   color: #fff;
-  -webkit-text-decoration-color: #fff;
-          text-decoration-color: #fff;
+  text-decoration-color: #fff;
   margin: 0.335em;
   padding: 0.335em;
-  -webkit-transition: 150ms;
   transition: 150ms;
 }
 
@@ -924,14 +1551,12 @@ pre code {
 /* line 25, src/sass/components/_skip_links.scss */
 #skip-links a:focus,
 #skip-links a:focus ~ a {
-  -webkit-transform: translate(52em);
-          transform: translate(52em);
+  transform: translate(52em);
 }
 
 /* line 29, src/sass/components/_skip_links.scss */
 #skip-links:focus-within a {
-  -webkit-transform: translate(52em);
-          transform: translate(52em);
+  transform: translate(52em);
 }
 
 @media (max-height: 42em) {
@@ -946,174 +1571,151 @@ pre code {
 }
 
 /**
- * credit Andy Bell https://andy-bell.design/wrote/creating-an-aspect-ratio-css-utility/
- * ASPECT RATIO
- * A utility that provides you with a predictable aspect ratio
- *
- * ratio-wide: a 16:9 aspect
- * ratio-square: a perfect square
+ * Including the at-only style with the dialog CSS as it is required
+ * to visually hide a dialog's heading if desired.
  */
-/* line 11, src/sass/components/_aspect_ratio.scss */
-[class*='aspect-ratio-'] {
-  display: block;
-  position: relative;
+/* line 7, src/sass/components/_modals.scss */
+.at-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
-/* line 16, src/sass/components/_aspect_ratio.scss */
-[class*='aspect-ratio-'] > * {
-  display: block;
+/**
+ * Trigger styling
+ */
+/* line 19, src/sass/components/_modals.scss */
+[data-modal-open][hidden] {
+  display: none;
+}
+
+/**
+ * When a modal dialog is open, don't allow scrolling of content
+ * beneath (on desktop). Also useful in negating instances of
+ * double scroll bars.
+ * (browser window + dialog if long enough content)
+ */
+/* line 29, src/sass/components/_modals.scss */
+body.modal-open {
+  overflow: hidden;
+}
+
+/**
+ * Modal Dialog base styling
+ */
+/* line 36, src/sass/components/_modals.scss */
+.js [data-modal],
+.a11y-modal {
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+  border: 2px solid;
+  bottom: 0;
+  box-shadow: 0 0 1800px 400px rgba(0, 0, 0, 0.4);
+  left: 0;
+  margin: auto;
+  max-height: 100%;
+  max-width: 660px;
+  opacity: 1;
+  overflow: auto;
+  padding: 1.25em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateY(0%);
+  visibility: visible;
   width: 100%;
+  z-index: 10;
+  /* this should be more than enough... */
+}
+
+@media screen and (min-height: 440px) and (min-width: 500px) {
+  /* line 60, src/sass/components/_modals.scss */
+  .js [data-modal],
+  .a11y-modal {
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+  }
+}
+
+/**
+ * To allow for CSS animations, hidden modal dialogs are
+ * not set to display: none, but rather the following rule
+ * set, in combination with the dialog's default
+ * position: fixed, will keep dialogs hidden from
+ * all users until opened.
+ *
+ * This also solves an issue with iOS VO + Safari not allowing
+ * modal dialogs to be focused, if the dialog is initially
+ * set to "display: none".
+ */
+/* line 81, src/sass/components/_modals.scss */
+.js [data-modal][hidden]
+.a11y-modal[hidden] {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15vh);
+  visibility: hidden;
+}
+
+/* line 90, src/sass/components/_modals.scss */
+.a11y-modal__close-btn {
+  border: none;
+}
+
+/* line 94, src/sass/components/_modals.scss */
+.is-icon-btn {
+  background: none;
+  border: none;
+  height: 2em;
+  padding: 0;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 2em;
+  margin-top: 0;
+}
+
+/* line 107, src/sass/components/_modals.scss */
+.is-icon-btn:hover [data-modal-x],
+.is-icon-btn:focus [data-modal-x] {
+  color: #600;
+  transform: scale(1.3) rotate(45deg);
+  transition: transform .2s ease-in-out;
+}
+
+/* line 114, src/sass/components/_modals.scss */
+[data-modal-x] {
+  border-right: 2px solid;
+  bottom: 0;
+  display: block;
+  height: 2em;
+  left: 0;
+  margin: auto;
+  pointer-events: none;
+  position: relative;
+  right: 0;
+  top: 0;
+  transform: rotate(45deg);
+  width: 2px;
+}
+
+/* line 129, src/sass/components/_modals.scss */
+[data-modal-x]:after {
+  border-right: 2px solid;
+  content: "";
   height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
-}
-
-/* line 25, src/sass/components/_aspect_ratio.scss */
-.aspect-ratio-wide {
-  padding-top: 56.25%;
-}
-
-/* line 29, src/sass/components/_aspect_ratio.scss */
-.aspect-ratio-square {
-  padding-top: 100%;
-}
-
-/* line 36, src/sass/components/_aspect_ratio.scss */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-  grid-gap: 0.4rem;
-  list-style: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-/* line 46, src/sass/components/_aspect_ratio.scss */
-.gallery img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-/* line 13, src/sass/components/_svg_and_text_pairs.scss */
-.text-icon-pair {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-/* line 18, src/sass/components/_svg_and_text_pairs.scss */
-.text-icon-pair :last-child {
-  margin-left: .2em;
-}
-
-/* line 3, src/sass/components/_media_objects.scss */
-div.slat {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-/* line 7, src/sass/components/_media_objects.scss */
-div.slat div.slat-copy {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin-left: 1rem;
-}
-
-/* line 2, src/sass/components/_breakout.scss */
-.special {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  margin-left: -50vw;
-}
-
-/* line 31, src/sass/components/_responsive_layout_utilities.scss */
-.container {
-  margin: 0 1rem;
-}
-
-@media screen and (min-width: 64em) {
-  /* line 31, src/sass/components/_responsive_layout_utilities.scss */
-  .container {
-    margin: 0 2%;
-  }
-}
-
-@media screen and (min-width: 80em) {
-  /* line 31, src/sass/components/_responsive_layout_utilities.scss */
-  .container {
-    margin: 0 6%;
-  }
-}
-
-@media screen and (min-width: 100em) {
-  /* line 31, src/sass/components/_responsive_layout_utilities.scss */
-  .container {
-    margin: 0 10%;
-  }
-}
-
-@media screen and (min-width: 120em) {
-  /* line 31, src/sass/components/_responsive_layout_utilities.scss */
-  .container {
-    margin: 0 auto;
-    max-width: 80em;
-  }
-}
-
-/* line 35, src/sass/components/_responsive_layout_utilities.scss */
-.container-centred-text {
-  text-align: center;
-}
-
-/* line 38, src/sass/components/_responsive_layout_utilities.scss */
-.container-centred-text > * {
-  max-width: 34rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-@media screen and (min-width: 38.25em) {
-  /* line 38, src/sass/components/_responsive_layout_utilities.scss */
-  .container-centred-text > * {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  /* line 64, src/sass/components/_responsive_layout_utilities.scss */
-  .trio {
-    display: grid;
-    grid-column-gap: 1.728rem;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* line 73, src/sass/components/_responsive_layout_utilities.scss */
-.min-duo-max-trio {
-  -webkit-columns: 2;
-          columns: 2;
-}
-
-@media screen and (min-width: 48em) {
-  /* line 73, src/sass/components/_responsive_layout_utilities.scss */
-  .min-duo-max-trio {
-    -webkit-columns: unset;
-            columns: unset;
-    display: grid;
-    grid-column-gap: 1.728rem;
-    grid-template-columns: repeat(3, 1fr);
-  }
+  transform: rotate(-90deg);
+  width: 100%;
 }
 
 /**
@@ -1164,188 +1766,47 @@ div.slat div.slat-copy {
   padding: 0 0.5em;
 }
 
-@supports (display: grid) {
-  /* line 6, src/sass/components/_rooted_footer.scss */
-  html {
-    height: 100%;
-  }
-  /* line 10, src/sass/components/_rooted_footer.scss */
-  body {
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-  }
-  /* line 17, src/sass/components/_rooted_footer.scss */
-  main {
-    min-width: 0;
-  }
+/* Ref: https://inclusive-components.design/a-content-slider/ */
+/*.slider {
+  overflow-x: scroll;
 }
 
-/**
- * Including the at-only style with the dialog CSS as it is required
- * to visually hide a dialog's heading if desired.
- */
-/* line 7, src/sass/components/_modals.scss */
-.at-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
+.slider li {
+  display: inline-block;
   white-space: nowrap;
-  width: 1px;
-}
-
-/**
- * Trigger styling
- */
-/* line 19, src/sass/components/_modals.scss */
-[data-modal-open][hidden] {
-  display: none;
-}
-
-/**
- * When a modal dialog is open, don't allow scrolling of content
- * beneath (on desktop). Also useful in negating instances of
- * double scroll bars.
- * (browser window + dialog if long enough content)
- */
-/* line 29, src/sass/components/_modals.scss */
-body.modal-open {
-  overflow: hidden;
-}
-
-/**
- * Modal Dialog base styling
- */
-/* line 36, src/sass/components/_modals.scss */
-.js [data-modal],
-.a11y-modal {
-  -webkit-overflow-scrolling: touch;
-  background: #fff;
+}*/
+/* line 13, src/sass/components/content_slider.scss */
+[aria-label="gallery"] {
   border: 2px solid;
-  bottom: 0;
-  -webkit-box-shadow: 0 0 1800px 400px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 0 1800px 400px rgba(0, 0, 0, 0.4);
-  left: 0;
-  margin: auto;
-  max-height: 100%;
-  max-width: 660px;
-  opacity: 1;
-  overflow: auto;
-  padding: 1.25em;
-  position: fixed;
-  right: 0;
-  top: 0;
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
-  visibility: visible;
-  width: 100%;
-  z-index: 10;
-  /* this should be more than enough... */
+  padding: 1rem;
+  overflow-x: scroll;
 }
 
-@media screen and (min-height: 440px) and (min-width: 500px) {
-  /* line 60, src/sass/components/_modals.scss */
-  .js [data-modal],
-  .a11y-modal {
-    bottom: auto;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    -webkit-transition: opacity .2s ease-in-out, -webkit-transform .2s ease-in-out;
-    transition: opacity .2s ease-in-out, -webkit-transform .2s ease-in-out;
-    transition: opacity .2s ease-in-out, transform .2s ease-in-out;
-    transition: opacity .2s ease-in-out, transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
-  }
+/* line 19, src/sass/components/content_slider.scss */
+[aria-label="gallery"]:focus {
+  outline: 4px solid DodgerBlue;
+  outline-offset: -6px;
 }
 
-/**
- * To allow for CSS animations, hidden modal dialogs are
- * not set to display: none, but rather the following rule
- * set, in combination with the dialog's default
- * position: fixed, will keep dialogs hidden from
- * all users until opened.
- *
- * This also solves an issue with iOS VO + Safari not allowing
- * modal dialogs to be focused, if the dialog is initially
- * set to "display: none".
- */
-/* line 81, src/sass/components/_modals.scss */
-.js [data-modal][hidden]
-.a11y-modal[hidden] {
-  display: block;
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transform: translateY(15vh);
-          transform: translateY(15vh);
-  visibility: hidden;
+/* line 24, src/sass/components/content_slider.scss */
+[aria-label="gallery"] ul {
+  white-space: nowrap;
 }
 
-/* line 90, src/sass/components/_modals.scss */
-.a11y-modal__close-btn {
-  border: none;
+/* line 28, src/sass/components/content_slider.scss */
+[aria-label="gallery"] li {
+  display: inline-block;
+  margin-right: 1rem;
 }
 
-/* line 94, src/sass/components/_modals.scss */
-.is-icon-btn {
-  background: none;
-  border: none;
-  height: 2em;
-  padding: 0;
-  position: absolute;
-  right: 1em;
-  top: 1em;
-  width: 2em;
-}
-
-/* line 105, src/sass/components/_modals.scss */
-.is-icon-btn:hover [data-modal-x],
-.is-icon-btn:focus [data-modal-x] {
-  color: #600;
-  -webkit-transform: scale(1.3) rotate(45deg);
-          transform: scale(1.3) rotate(45deg);
-  -webkit-transition: -webkit-transform .2s ease-in-out;
-  transition: -webkit-transform .2s ease-in-out;
-  transition: transform .2s ease-in-out;
-  transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
-}
-
-/* line 112, src/sass/components/_modals.scss */
-[data-modal-x] {
-  border-right: 2px solid;
-  bottom: 0;
-  display: block;
-  height: 2em;
-  left: 0;
-  margin: auto;
-  pointer-events: none;
-  position: relative;
-  right: 0;
-  top: 0;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  width: 2px;
-}
-
-/* line 127, src/sass/components/_modals.scss */
-[data-modal-x]:after {
-  border-right: 2px solid;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  width: 100%;
+/* line 33, src/sass/components/content_slider.scss */
+[aria-label="gallery"] img {
+  max-height: 60vh;
 }
 
 /* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
 .cc-window {
   opacity: 1;
-  -webkit-transition: opacity 1s ease;
   transition: opacity 1s ease;
 }
 
@@ -1356,35 +1817,28 @@ body.modal-open {
 
 /* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
 .cc-animate.cc-revoke {
-  -webkit-transition: -webkit-transform 1s ease;
-  transition: -webkit-transform 1s ease;
   transition: transform 1s ease;
-  transition: transform 1s ease, -webkit-transform 1s ease;
 }
 
 /* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
 .cc-animate.cc-revoke.cc-top {
-  -webkit-transform: translateY(-2em);
-          transform: translateY(-2em);
+  transform: translateY(-2em);
 }
 
 /* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
 .cc-animate.cc-revoke.cc-bottom {
-  -webkit-transform: translateY(2em);
-          transform: translateY(2em);
+  transform: translateY(2em);
 }
 
 /* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
 .cc-animate.cc-revoke.cc-active.cc-bottom, .cc-animate.cc-revoke.cc-active.cc-top, .cc-revoke:hover {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
 
 /* line 1, src/sass/components/_cookieconsent2_3.1.0.min.scss */
 .cc-grower {
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: max-height 1s;
   transition: max-height 1s;
 }
 
@@ -1397,13 +1851,11 @@ body.modal-open {
 .cc-revoke, .cc-window {
   position: fixed;
   overflow: hidden;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: Helvetica,Calibri,Arial,sans-serif;
   font-size: 16px;
   line-height: 1.5em;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
@@ -1420,9 +1872,7 @@ body.modal-open {
   padding: 2em;
   max-width: 24em;
   -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 /* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
@@ -1430,9 +1880,7 @@ body.modal-open {
   padding: 1em 1.8em;
   width: 100%;
   -ms-flex-direction: row;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 /* line 2, src/sass/components/_cookieconsent2_3.1.0.min.scss */
@@ -1570,15 +2018,13 @@ body.modal-open {
 /* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
 .cc-window.cc-floating .cc-compliance {
   -ms-flex: 1 0 auto;
-  -webkit-box-flex: 1;
-          flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 /* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
 .cc-window.cc-banner {
   -ms-flex-align: center;
-  -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 /* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
@@ -1599,8 +2045,7 @@ body.modal-open {
 .cc-banner .cc-message {
   display: block;
   -ms-flex: 1 1 auto;
-  -webkit-box-flex: 1;
-          flex: 1 1 auto;
+  flex: 1 1 auto;
   max-width: 100%;
   margin-right: 1em;
 }
@@ -1608,11 +2053,9 @@ body.modal-open {
 /* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
 .cc-compliance {
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
   -ms-flex-align: center;
-  -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   -ms-flex-line-pack: justify;
   align-content: space-between;
 }
@@ -1620,8 +2063,7 @@ body.modal-open {
 /* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
 .cc-floating .cc-compliance > .cc-btn {
   -ms-flex: 1;
-  -webkit-box-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 
 /* line 3, src/sass/components/_cookieconsent2_3.1.0.min.scss */
@@ -1660,15 +2102,12 @@ body.modal-open {
   /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
   .cc-window.cc-banner {
     -ms-flex-direction: column;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
+    flex-direction: column;
   }
   /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
   .cc-window.cc-banner .cc-compliance {
     -ms-flex: 1 1 auto;
-    -webkit-box-flex: 1;
-            flex: 1 1 auto;
+    flex: 1 1 auto;
   }
   /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
   .cc-window.cc-floating {
@@ -1681,8 +2120,7 @@ body.modal-open {
   /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
   .cc-window.cc-banner {
     -ms-flex-align: unset;
-    -webkit-box-align: unset;
-            align-items: unset;
+    align-items: unset;
   }
   /* line 4, src/sass/components/_cookieconsent2_3.1.0.min.scss */
   .cc-window.cc-banner .cc-message {
@@ -1701,8 +2139,7 @@ body.modal-open {
   text-align: center;
   display: inline;
   -ms-flex: none;
-  -webkit-box-flex: 0;
-          flex: none;
+  flex: none;
 }
 
 /* line 5, src/sass/components/_cookieconsent2_3.1.0.min.scss */
@@ -1747,180 +2184,207 @@ body.modal-open {
   margin-left: 0;
 }
 
-/* line 27, src/sass/main.scss */
-.header-banner {
-  background: #f2f2f2;
-  overflow: auto;
-  padding: 1.33959rem 0 1.728rem;
+/* line 8, src/sass/components/_cookieconsent2_3.1.0.min.scss */
+.cc-btn:hover {
+  text-decoration: none;
 }
 
-/* line 32, src/sass/main.scss */
-.header-banner .container > * {
-  margin-bottom: 0;
+/* line 40, src/sass/main.scss */
+.intro {
+  --flow-space: 1.44rem;
+  /*@include at-least($bp-wide-four) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }*/
 }
 
-/* line 36, src/sass/main.scss */
-.header-banner .container > * + * {
-  margin-top: 1.33959rem;
+@media screen and (min-width: 48em) {
+  /* line 40, src/sass/main.scss */
+  .intro {
+    padding-top: 1.728rem;
+    padding-bottom: 1.728rem;
+  }
+}
+
+/* line 52, src/sass/main.scss */
+.intro h1 {
+  font-weight: 400;
+  font-size: 1.728rem;
 }
 
 @media screen and (min-width: 38.25em) {
-  /* line 27, src/sass/main.scss */
-  .header-banner {
-    padding: 1.728rem 0 2.0736rem;
-  }
-  /* line 43, src/sass/main.scss */
-  .header-banner .container > * + * {
-    margin-top: 1.728rem;
+  /* line 52, src/sass/main.scss */
+  .intro h1 {
+    font-size: 2.0736rem;
   }
 }
 
-@media screen and (min-width: 80em) {
-  /* line 27, src/sass/main.scss */
-  .header-banner {
-    padding: 2.98598rem 0 3.58318rem;
+@media screen and (min-width: 100em) {
+  /* line 52, src/sass/main.scss */
+  .intro h1 {
+    font-size: 2.48832rem;
   }
 }
 
-/* line 56, src/sass/main.scss */
-.meta {
-  color: gray;
-  margin: 0;
+/* line 66, src/sass/main.scss */
+.header-banner {
+  background: #f2f2f2;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
-/* line 61, src/sass/main.scss */
-.dt-published {
-  color: gray;
+/* line 71, src/sass/main.scss */
+.header-banner h1 {
+  /*@include at-least($width-pressure-point-one) {
+      font-size: scale-value(3)+rem;
+    }*/
 }
 
-/* line 65, src/sass/main.scss */
+/* line 81, src/sass/main.scss */
+.entry-meta {
+  color: #999;
+}
+
+/* line 84, src/sass/main.scss */
+.entry-meta a {
+  color: #999;
+  text-decoration: underline solid #999;
+}
+
+/* line 94, src/sass/main.scss */
 .entry-meta .posted-on::before {
   content: " · ";
 }
 
-/* line 75, src/sass/main.scss */
-.offsite svg {
-  font-size: .9em;
-}
-
-/* line 86, src/sass/main.scss */
+/* line 104, src/sass/main.scss */
 .global-header {
-  border-bottom: 1px solid #dbdbdb;
-  padding: 1rem 0;
+  padding-top: 0.6698rem;
+  padding-bottom: 0.6698rem;
 }
 
-/* line 90, src/sass/main.scss */
+/* line 109, src/sass/main.scss */
 .global-header a {
   text-decoration: none;
 }
 
-/* line 96, src/sass/main.scss */
+/* line 114, src/sass/main.scss */
 .header-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
-/* line 100, src/sass/main.scss */
+/* line 118, src/sass/main.scss */
 .header-content > * + * {
+  margin-top: 0;
   margin-left: 1rem;
 }
 
-/* line 105, src/sass/main.scss */
+/* line 124, src/sass/main.scss */
 .logo {
   line-height: 1;
   margin-right: auto;
-  font-size: 2.48832rem;
 }
 
-/* line 110, src/sass/main.scss */
+/* line 128, src/sass/main.scss */
 .logo svg {
   display: block;
+  height: 3em;
+  width: 2.625em;
 }
 
-/* line 115, src/sass/main.scss */
-.logo :last-child {
-  font-size: 1rem;
-  margin-left: 0.40188rem;
+@media screen and (min-width: 64em) {
+  /* line 128, src/sass/main.scss */
+  .logo svg {
+    height: 3.2736rem;
+    width: 2.86442em;
+  }
 }
 
-/* line 122, src/sass/main.scss */
-.header-menu ul {
-  margin-bottom: 0;
+/* line 140, src/sass/main.scss */
+.header-menu-toggle a::after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: .2em;
+  vertical-align: .15em;
+  content: "";
+  border-top: .3em solid;
+  border-right: .3em solid transparent;
+  border-bottom: 0;
+  border-left: .3em solid transparent;
 }
 
-/* line 130, src/sass/main.scss */
+/* line 156, src/sass/main.scss */
 .header-menu-hidden {
   display: none;
 }
 
-/* line 134, src/sass/main.scss */
-.header-menu-toggle .text-icon-pair-icon {
-  font-size: .6em;
-  margin-top: .2em;
-}
-
-/* line 147, src/sass/main.scss */
+/* line 166, src/sass/main.scss */
 .global-footer {
   background: #121212;
   color: #fff;
-  padding: 1.728rem 0 0.83333rem;
+  padding-top: var(--flow-space);
+  padding-bottom: var(--flow-space);
 }
 
-/* line 152, src/sass/main.scss */
-.global-footer ul {
-  margin-bottom: 1rem;
-  -webkit-columns: 2;
-          columns: 2;
-}
-
-/* line 157, src/sass/main.scss */
-.global-footer li {
-  margin-bottom: 0.40188rem;
-  font-size: 0.83333rem;
-}
-
-/* line 162, src/sass/main.scss */
+/* line 172, src/sass/main.scss */
 .global-footer a {
   color: #fff;
   text-decoration: none;
 }
 
-/* line 166, src/sass/main.scss */
+/* line 176, src/sass/main.scss */
 .global-footer a:hover {
   text-decoration: underline;
 }
 
-/* line 180, src/sass/main.scss */
-.primary-content {
-  padding: 1.33959rem 0 1.728rem;
+/* line 182, src/sass/main.scss */
+.footer-menu-list {
+  max-width: none;
+  columns: 2;
 }
 
-/* line 183, src/sass/main.scss */
+@media screen and (min-width: 48em) {
+  /* line 182, src/sass/main.scss */
+  .footer-menu-list {
+    columns: 3;
+  }
+}
+
+/* line 192, src/sass/main.scss */
+.footer-menu-list li {
+  font-size: 0.83333rem;
+}
+
+/* line 195, src/sass/main.scss */
+.footer-menu-list li + li {
+  margin-top: 0.3349rem;
+}
+
+/* line 209, src/sass/main.scss */
+.primary-content {
+  padding-top: 1.728rem;
+  padding-bottom: 3rem;
+}
+
+/* line 213, src/sass/main.scss */
 .primary-content.with-header-banner {
   padding-top: 0;
 }
 
-/* line 197, src/sass/main.scss */
-.features-benefits section {
-  margin-top: 1.33959rem;
-}
+/*.features-benefits {
 
-@media screen and (min-width: 38.25em) {
-  /* line 197, src/sass/main.scss */
-  .features-benefits section {
-    margin-top: 1.728rem;
+  section {
+    margin-top: $space-m;
+
+    @include at-least($width-pressure-point-one) {
+      margin-top: $space-l;
+    }
   }
-}
-
-/* line 212, src/sass/main.scss */
-.cc-btn:hover {
-  text-decoration: none;
-}
-
+}*/
+/*.features-benefits-wrap {
+  --flow-space: 1.728rem;
+}*/
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:

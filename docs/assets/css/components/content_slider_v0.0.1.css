@@ -1,0 +1,45 @@
+/*!
+ * Sofrito v0.0.1
+ * A savoury front-end base with advanced typographic, layout, performance and build ingredients.
+ * (c) 2019 Laurence Hughes
+ * MIT License
+ * https://github.com/fuzzylogicxx/sofrito
+ * credits:  */
+
+/* Ref: https://inclusive-components.design/a-content-slider/ */
+/*.slider {
+  overflow-x: scroll;
+}
+
+.slider li {
+  display: inline-block;
+  white-space: nowrap;
+}*/
+/* line 13, src/sass/components/content_slider.scss */
+[aria-label="gallery"] {
+  border: 2px solid;
+  padding: 1rem;
+  overflow-x: scroll;
+}
+
+/* line 19, src/sass/components/content_slider.scss */
+[aria-label="gallery"]:focus {
+  outline: 4px solid DodgerBlue;
+  outline-offset: -6px;
+}
+
+/* line 24, src/sass/components/content_slider.scss */
+[aria-label="gallery"] ul {
+  white-space: nowrap;
+}
+
+/* line 28, src/sass/components/content_slider.scss */
+[aria-label="gallery"] li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/* line 33, src/sass/components/content_slider.scss */
+[aria-label="gallery"] img {
+  max-height: 60vh;
+}

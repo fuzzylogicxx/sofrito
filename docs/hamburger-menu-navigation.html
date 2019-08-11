@@ -1,0 +1,22 @@
+<!-- Ref https://inclusive-components.design/menus-menu-buttons/ -->
+<nav id="navigation">
+  <!-- add this with javascript
+  <button aria-expanded="false" aria-controls="menu-list">Menu</button>
+  -->
+  <ul id="menu-list" hidden>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/shop">Shop</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!--
+For JS and CSS implementation, try Offside https://github.com/toomuchdesign/offside
+Notes:
+- It looks like i should be able to create the above markup structure with it
+- In <head>, could use custom JS to insert the <button> first, then add the offside.js stuff
+- Could use offside.js’s callbacks to change aria states as required (for example setting aria-expanded="true" on button)
+-->
+
+<!-- Chris C’s pure CSS implementation (https://css-tricks.com/off-canvas-menu-with-css-target/) is cool although uses a link rather than a button for toggling -->
