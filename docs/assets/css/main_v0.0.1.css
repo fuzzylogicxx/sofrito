@@ -11,22 +11,22 @@
   width: device-width;
 }
 
-/* line 11, src/sass/components/_resets_and_improvements.scss */
+/* line 12, src/sass/components/_resets_and_improvements.scss */
 html {
-  -webkit-text-size-adjust: auto;
+  -webkit-text-size-adjust: 100%;
 }
 
-/* line 31, src/sass/components/_resets_and_improvements.scss */
+/* line 32, src/sass/components/_resets_and_improvements.scss */
 html {
   box-sizing: border-box;
 }
 
-/* line 34, src/sass/components/_resets_and_improvements.scss */
+/* line 35, src/sass/components/_resets_and_improvements.scss */
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* line 52, src/sass/components/_resets_and_improvements.scss */
+/* line 53, src/sass/components/_resets_and_improvements.scss */
 body,
 h1, h2, h3, h4, h5, h6,
 p,
@@ -42,7 +42,7 @@ pre {
   padding: 0;
 }
 
-/* line 72, src/sass/components/_resets_and_improvements.scss */
+/* line 73, src/sass/components/_resets_and_improvements.scss */
 ul,
 ol {
   margin-top: 0;
@@ -51,20 +51,20 @@ ol {
   padding-bottom: 0;
 }
 
-/* line 83, src/sass/components/_resets_and_improvements.scss */
+/* line 84, src/sass/components/_resets_and_improvements.scss */
 main, article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 97, src/sass/components/_resets_and_improvements.scss */
+/* line 98, src/sass/components/_resets_and_improvements.scss */
 img {
   display: block;
   max-width: 100%;
   border-style: none;
 }
 
-/* line 114, src/sass/components/_resets_and_improvements.scss */
+/* line 115, src/sass/components/_resets_and_improvements.scss */
 audio,
 canvas,
 iframe,
@@ -74,18 +74,18 @@ video {
   vertical-align: middle;
 }
 
-/* line 132, src/sass/components/_resets_and_improvements.scss */
+/* line 133, src/sass/components/_resets_and_improvements.scss */
 ::selection {
   background: rgba(82, 32, 85, 0.25);
   text-shadow: none;
 }
 
-/* line 149, src/sass/components/_resets_and_improvements.scss */
+/* line 150, src/sass/components/_resets_and_improvements.scss */
 [hidden] {
   display: none;
 }
 
-/* line 157, src/sass/components/_resets_and_improvements.scss */
+/* line 158, src/sass/components/_resets_and_improvements.scss */
 .a11y-only {
   border: 0;
   clip: rect(0 0 0 0);
@@ -99,7 +99,7 @@ video {
   /* 1 */
 }
 
-/* line 167, src/sass/components/_resets_and_improvements.scss */
+/* line 168, src/sass/components/_resets_and_improvements.scss */
 .a11y-only.focusable:active, .a11y-only.focusable:focus {
   clip: auto;
   height: auto;
@@ -110,12 +110,12 @@ video {
   white-space: inherit;
 }
 
-/* line 182, src/sass/components/_resets_and_improvements.scss */
+/* line 183, src/sass/components/_resets_and_improvements.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 195, src/sass/components/_resets_and_improvements.scss */
+/* line 196, src/sass/components/_resets_and_improvements.scss */
 hr {
   box-sizing: content-box;
   height: 0;
@@ -126,12 +126,12 @@ hr {
   border-top: 1px solid #ccc;
 }
 
-/* line 213, src/sass/components/_resets_and_improvements.scss */
+/* line 214, src/sass/components/_resets_and_improvements.scss */
 :focus:not(:focus-visible) {
   outline: none;
 }
 
-/* line 218, src/sass/components/_resets_and_improvements.scss */
+/* line 219, src/sass/components/_resets_and_improvements.scss */
 pre {
   font-family: monospace, monospace;
   /* 1 */
@@ -139,22 +139,22 @@ pre {
   /* 2 */
 }
 
-/* line 226, src/sass/components/_resets_and_improvements.scss */
+/* line 227, src/sass/components/_resets_and_improvements.scss */
 details {
   display: block;
 }
 
-/* line 233, src/sass/components/_resets_and_improvements.scss */
+/* line 234, src/sass/components/_resets_and_improvements.scss */
 summary {
   display: list-item;
 }
 
-/* line 250, src/sass/components/_resets_and_improvements.scss */
+/* line 251, src/sass/components/_resets_and_improvements.scss */
 template {
   display: none;
 }
 
-/* line 257, src/sass/components/_resets_and_improvements.scss */
+/* line 258, src/sass/components/_resets_and_improvements.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -163,17 +163,17 @@ template {
   /* 2 */
 }
 
-/* line 263, src/sass/components/_resets_and_improvements.scss */
+/* line 264, src/sass/components/_resets_and_improvements.scss */
 .clearfix:after {
   clear: both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* line 271, src/sass/components/_resets_and_improvements.scss */
+  /* line 272, src/sass/components/_resets_and_improvements.scss */
   body {
     scroll-behavior: auto;
   }
-  /* line 275, src/sass/components/_resets_and_improvements.scss */
+  /* line 276, src/sass/components/_resets_and_improvements.scss */
   * {
     -webkit-animation: none !important;
     animation: none !important;
@@ -656,7 +656,7 @@ th, td {
   padding-right: 0;
 }
 
-/* line 114, src/sass/components/_responsive_layout_utilities.scss */
+/* line 115, src/sass/components/_responsive_layout_utilities.scss */
 .container {
   box-sizing: content-box;
   margin-left: auto;
@@ -668,20 +668,20 @@ th, td {
 }
 
 @media screen and (min-width: 48em) {
-  /* line 114, src/sass/components/_responsive_layout_utilities.scss */
+  /* line 115, src/sass/components/_responsive_layout_utilities.scss */
   .container {
     padding-left: 1.44rem;
     padding-right: 1.44rem;
   }
 }
 
-/* line 138, src/sass/components/_responsive_layout_utilities.scss */
+/* line 139, src/sass/components/_responsive_layout_utilities.scss */
 .cluster {
   --space: 1rem;
   overflow: hidden;
 }
 
-/* line 143, src/sass/components/_responsive_layout_utilities.scss */
+/* line 144, src/sass/components/_responsive_layout_utilities.scss */
 .cluster > * {
   display: flex;
   flex-wrap: wrap;
@@ -690,94 +690,94 @@ th, td {
   margin: calc(var(--space) / 2 * -1);
 }
 
-/* line 151, src/sass/components/_responsive_layout_utilities.scss */
+/* line 152, src/sass/components/_responsive_layout_utilities.scss */
 .cluster > * > * {
   margin: calc(var(--space) / 2);
 }
 
-/* line 168, src/sass/components/_responsive_layout_utilities.scss */
+/* line 169, src/sass/components/_responsive_layout_utilities.scss */
 .with-sidebar {
   overflow: hidden;
 }
 
-/* line 172, src/sass/components/_responsive_layout_utilities.scss */
+/* line 173, src/sass/components/_responsive_layout_utilities.scss */
 .with-sidebar > * {
   display: flex;
   flex-wrap: wrap;
   margin: calc(0px / 2 * -1);
 }
 
-/* line 178, src/sass/components/_responsive_layout_utilities.scss */
+/* line 179, src/sass/components/_responsive_layout_utilities.scss */
 .with-sidebar-blog-layout > *,
 .with-sidebar-media-object > * {
   margin: calc(1rem / 2 * -1);
 }
 
-/* line 183, src/sass/components/_responsive_layout_utilities.scss */
+/* line 184, src/sass/components/_responsive_layout_utilities.scss */
 .with-sidebar > * > * {
   margin: calc(0px / 2);
   flex-grow: 1;
 }
 
-/* line 188, src/sass/components/_responsive_layout_utilities.scss */
+/* line 189, src/sass/components/_responsive_layout_utilities.scss */
 .with-sidebar-blog-layout > * > * {
   margin: calc(1rem / 2);
   flex-basis: 20rem;
 }
 
-/* line 193, src/sass/components/_responsive_layout_utilities.scss */
+/* line 194, src/sass/components/_responsive_layout_utilities.scss */
 .with-sidebar-media-object > * > * {
   margin: calc(1rem / 2);
   flex-basis: 15rem;
 }
 
-/* line 198, src/sass/components/_responsive_layout_utilities.scss */
+/* line 199, src/sass/components/_responsive_layout_utilities.scss */
 .with-sidebar-on-left > * > :last-child {
   flex-basis: 0;
   flex-grow: 999;
   min-width: calc(50% - 0px);
 }
 
-/* line 204, src/sass/components/_responsive_layout_utilities.scss */
+/* line 205, src/sass/components/_responsive_layout_utilities.scss */
 .with-sidebar-on-right > * > :first-child {
   flex-basis: 0;
   flex-grow: 999;
   min-width: calc(50% - 0px);
 }
 
-/* line 210, src/sass/components/_responsive_layout_utilities.scss */
+/* line 211, src/sass/components/_responsive_layout_utilities.scss */
 .with-sidebar-blog-layout.with-sidebar-on-left > * > :last-child,
 .with-sidebar-media-object.with-sidebar-on-left > * > :last-child {
   min-width: calc(50% - 1rem);
 }
 
-/* line 216, src/sass/components/_responsive_layout_utilities.scss */
+/* line 217, src/sass/components/_responsive_layout_utilities.scss */
 .with-sidebar-blog-layout.with-sidebar-on-right > * > :first-child,
 .with-sidebar-media-object.with-sidebar-on-right > * > :first-child {
   min-width: calc(50% - 1rem);
 }
 
-/* line 230, src/sass/components/_responsive_layout_utilities.scss */
+/* line 231, src/sass/components/_responsive_layout_utilities.scss */
 .switcher > * {
   display: flex;
   flex-wrap: wrap;
   margin: calc((1rem / 2) * -1);
 }
 
-/* line 236, src/sass/components/_responsive_layout_utilities.scss */
+/* line 237, src/sass/components/_responsive_layout_utilities.scss */
 .switcher > * > * {
   flex-grow: 1;
   flex-basis: calc((34rem - (100% - 1rem)) * 999);
   margin: calc(1rem / 2);
 }
 
-/* line 244, src/sass/components/_responsive_layout_utilities.scss */
+/* line 245, src/sass/components/_responsive_layout_utilities.scss */
 .switcher > * > :nth-last-child(n+5),
 .switcher > * > :nth-last-child(n+5) ~ * {
   flex-basis: 100%;
 }
 
-/* line 261, src/sass/components/_responsive_layout_utilities.scss */
+/* line 262, src/sass/components/_responsive_layout_utilities.scss */
 .cover {
   display: flex;
   flex-direction: column;
@@ -785,53 +785,73 @@ th, td {
   padding: 1rem;
 }
 
-/* line 268, src/sass/components/_responsive_layout_utilities.scss */
+/* line 269, src/sass/components/_responsive_layout_utilities.scss */
 .cover.cover-no-padding {
   padding: 0;
 }
 
-/* line 272, src/sass/components/_responsive_layout_utilities.scss */
+/* line 273, src/sass/components/_responsive_layout_utilities.scss */
 .cover > * {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-/* line 277, src/sass/components/_responsive_layout_utilities.scss */
+/* line 278, src/sass/components/_responsive_layout_utilities.scss */
 .cover > :first-child:not(.centred) {
   margin-top: 0;
 }
 
-/* line 281, src/sass/components/_responsive_layout_utilities.scss */
+/* line 282, src/sass/components/_responsive_layout_utilities.scss */
 .cover > :last-child:not(.centred) {
   margin-bottom: 0;
 }
 
-/* line 285, src/sass/components/_responsive_layout_utilities.scss */
+/* line 286, src/sass/components/_responsive_layout_utilities.scss */
 .cover > .centred {
   margin-top: auto;
   margin-bottom: auto;
 }
 
-/* line 319, src/sass/components/_responsive_layout_utilities.scss */
+/* line 345, src/sass/components/_responsive_layout_utilities.scss */
 .grid {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 100%;
 }
 
-/* line 308, src/sass/components/_responsive_layout_utilities.scss */
+/* line 310, src/sass/components/_responsive_layout_utilities.scss */
 .grid.aboveMin {
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
 @supports (width: min(20rem, 100%)) {
-  /* line 319, src/sass/components/_responsive_layout_utilities.scss */
+  /* line 345, src/sass/components/_responsive_layout_utilities.scss */
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
   }
 }
 
-/* line 334, src/sass/components/_responsive_layout_utilities.scss */
+/* line 326, src/sass/components/_responsive_layout_utilities.scss */
+.grid > * {
+  max-width: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 332, src/sass/components/_responsive_layout_utilities.scss */
+.grid > * + * {
+  margin-top: 1rem;
+}
+
+@supports (display: grid) {
+  /* line 338, src/sass/components/_responsive_layout_utilities.scss */
+  .grid > * {
+    max-width: unset;
+    margin: 0;
+  }
+}
+
+/* line 360, src/sass/components/_responsive_layout_utilities.scss */
 .scroll-track {
   display: flex;
   max-width: 100%;
@@ -840,17 +860,17 @@ th, td {
   -webkit-overflow-scrolling: touch;
 }
 
-/* line 342, src/sass/components/_responsive_layout_utilities.scss */
+/* line 368, src/sass/components/_responsive_layout_utilities.scss */
 .scroll-track > * {
   flex-shrink: 0;
 }
 
-/* line 348, src/sass/components/_responsive_layout_utilities.scss */
+/* line 374, src/sass/components/_responsive_layout_utilities.scss */
 .scroll-track-intrinsic {
   display: inline-flex;
 }
 
-/* line 362, src/sass/components/_responsive_layout_utilities.scss */
+/* line 388, src/sass/components/_responsive_layout_utilities.scss */
 .frame {
   --n: 6;
   --d: 9;
@@ -860,14 +880,14 @@ th, td {
 }
 
 @media (orientation: portrait) {
-  /* line 373, src/sass/components/_responsive_layout_utilities.scss */
+  /* line 399, src/sass/components/_responsive_layout_utilities.scss */
   .frame {
     --n: 1;
     --d: 1;
   }
 }
 
-/* line 379, src/sass/components/_responsive_layout_utilities.scss */
+/* line 405, src/sass/components/_responsive_layout_utilities.scss */
 .frame > * {
   overflow: hidden;
   position: absolute;
@@ -880,7 +900,7 @@ th, td {
   align-items: center;
 }
 
-/* line 393, src/sass/components/_responsive_layout_utilities.scss */
+/* line 419, src/sass/components/_responsive_layout_utilities.scss */
 .frame > img,
 .frame > video {
   width: 100%;
@@ -888,13 +908,13 @@ th, td {
   object-fit: cover;
 }
 
-/* line 405, src/sass/components/_responsive_layout_utilities.scss */
+/* line 431, src/sass/components/_responsive_layout_utilities.scss */
 [class*='aspect-ratio-'] {
   display: block;
   position: relative;
 }
 
-/* line 410, src/sass/components/_responsive_layout_utilities.scss */
+/* line 436, src/sass/components/_responsive_layout_utilities.scss */
 [class*='aspect-ratio-'] > * {
   display: block;
   position: absolute;
@@ -904,12 +924,12 @@ th, td {
   height: 100%;
 }
 
-/* line 419, src/sass/components/_responsive_layout_utilities.scss */
+/* line 445, src/sass/components/_responsive_layout_utilities.scss */
 .aspect-ratio-wide {
   padding-top: 56.25%;
 }
 
-/* line 423, src/sass/components/_responsive_layout_utilities.scss */
+/* line 449, src/sass/components/_responsive_layout_utilities.scss */
 .aspect-ratio-square {
   padding-top: 100%;
 }

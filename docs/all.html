@@ -225,9 +225,10 @@
 
 
   <!-- Page contents begin -->
-  <div class="container">
 
-    <main id="primary-content">
+    <main id="primary-content" class="primary-content">
+
+      <div class="centre stack">
 
       <p>To do: add modals and alerts.</p>
 
@@ -680,29 +681,38 @@
 
       </article>
 
+      </div>
+
     </main>
 
-  </div>
+      <!-- Footer begins -->
+  <footer aria-label="site" id="global-footer" class="global-footer">
 
-  <!-- Footer begins -->
-  <footer aria-label="site" id="global-footer">
+    <div class="container">
 
-    <nav id="footer-menu">
-      <ul class="list-custom">
-        <li><a href="/">News</a></li>
-        <li><a href="/">Products</a></li>
-        <li><a href="/">Jobs</a></li>
-        <li><a href="/">Thoughts</a></li>
-        <li><a href="/">Events</a></li>
-        <li><a href="/">Portfolio</a></li>
-      </ul>
-    </nav>
+      <h3 class="h4">Browse pages and patterns</h3>
 
-    <small class="copyright">&copy; 2017–2019 Team Sofrito</small>
+      <nav id="footer-menu">
+        <ul class="list-custom footer-menu-list">
+          <li><a href="guidance.html">Typical Page</a></li>
+          <li><a href="blog-index.html">Blog Index</a></li>
+          <li><a href="blog-article.html">Blog Article</a></li>
+          <li><a href="corporate.html">Corporate</a></li> <!-- use Cl4 inspiration -->
+          <li><a href="form.html">Forms</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="svg.html">SVG</a></li>
+          <li><a href="team.html">The Team</a></li>
+          <li><a href="all.html">Miscellaneous</a></li>
+          <li><a href="test-polyfills.html">Testing</a></li>
+          <li><a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Ffuzzylogicxx.github.io%2Fsofrito%2F">Validate HTML</a></li>
+        </ul>
+      </nav>
+
+      <p><small class="copyright">&copy; 2017–2019 <a href="https://fuzzylogic.me">Laurence Hughes</a></small></p>
+
+    </div>
 
   </footer>
-
-
 
   <!-- Scripts at bottom -->
 
@@ -710,15 +720,29 @@
   <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
   <!-- website’s global javascript file including any globally required polyfills (that aren’t provided by polyfill.io) -->
-  <script src="/assets/js/main.polyfills_v0.0.1.min.js"></script>
+  <script src="assets/js/main.polyfills_v0.0.1.min.js"></script>
 
-  <!-- add any page-specific JS here (files or inline), for example: -->
+  <!-- add any page-specific JS here (files or inline) -->
+
+  <!-- Use this on a page which contains a .grid. Patch support for CSS’s min() in our auto-grid (.grid) pattern -->
+  <script>
+  ready(function() {
+    const grid = document.querySelector('.grid');
+    if (grid) {
+      observeGrid(grid);
+    }
+  });
+</script>
+
+  <!--  for example: -->
   <!-- <script src="/assets/js/another-file_v0.0.1.min.js"></script> -->
 
-  <!-- initialise a disclosure element -->
+  <!-- or initialise a disclosure element -->
+  <!--
   <script>
     var disclosure = new Houdini('[data-houdini]');
   </script>
+  -->
 
   <!-- register a service worker (for improved resilience and performance) -->
   <!--
@@ -759,10 +783,8 @@
   </script>
   -->
 
-  <!-- As an alternative to Google Analytics, try XYZ -->
-
-
-
+  <!-- You might also consider an alternative to Google Analytics: see https://adactio.com/journal/13853 -->
 
 </body>
 </html>
+
