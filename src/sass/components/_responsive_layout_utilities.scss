@@ -2,7 +2,7 @@
 // Grid: https://css-tricks.com/snippets/css/complete-guide-grid/, http://grid.malven.co/, https://cssgrid-generator.netlify.com/
 
 
-// Temp til WE decide where to put these vars
+// Temp til we decide where to put these vars
 
 :root {
   --border-thin: 1px;
@@ -108,8 +108,9 @@
 }
 
 
-// Container: a class for centring the outermost columns/containers in "centred" sites (i.e. no sidebar flush at viewport edge) like BBC, gov.uk etc.
+// Container: a class for centring the widest/outermost columns/containers, in "centred" sites (i.e. non-full-width sites) like BBC, gov.uk etc.
 // I could have created dedicated styles but instead I’m creating an instance of .centre (slightly customised) so as to inherit .centre’s goodness.
+// To do: a better approach might be to just use a .centre here but with appropriate variables passed in, then a .centre (with normal measure) nested inside which avoids the potential too-wide content.
 
 .container {
   @include centre();
@@ -301,12 +302,18 @@
 // Vars: i) "minimum": the left-hand value of the min() function, e.g. 20rem; ii) "space": the space between grid cells, e.g. 1rem.
 
 @mixin grid($min_trigger: 20rem, $space: 1rem) {
+
+  // the following are applied only when grid is supported, otherwise ignored.
   display: grid;
   grid-gap: $space;
   grid-template-columns: 100%;
-
   &.aboveMin {
     grid-template-columns: repeat(auto-fit, minmax($min_trigger, 1fr));
+
+    // Here’s an optional variation which centers the grid. It requires auto-fit rather than auto-fill and a non-1fr max value in minmax())
+    // grid-template-columns: repeat(auto-fit, minmax(var(--min-col-width), 35ch));
+    // NB if providing a fallback, and it uses flexbox, wrap the justify-content within an @supports (display: grid).
+    // justify-content: center;
   }
 
   // Add min() into the mix to avoid overflows within narrow containers.
@@ -314,10 +321,29 @@
   @supports (width: m#{i}n(20rem, 100%)) {
     grid-template-columns: repeat(auto-fit, minmax(m#{i}n(20rem, 100%), 1fr));
   }
+
+  // Set up an acceptable "stacked layout" baseline for browsers that lack grid support
+  & > * {
+    max-width: $min_trigger;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  & > * + * {
+    margin-top: 1rem;
+  }
+
+  // Remove those baseline "stacked layout" styles if we have grid support.
+  @supports (display: grid) {
+    & > * {
+      max-width: unset;
+      margin: 0;
+    }
+  }
 }
 
 .grid {
-  @include grid();
+  @include grid(15rem);
 }
 
 
