@@ -1,29 +1,13 @@
 # Sofrito
 
-TO DO:
+
+
+Deploying to Github pages
 
 NEW
-- in branch develop, delete /docs then copy /dist and paste a duplicate then rename as /docs
-- in sublime, right-click docs/assets/css and Find in Folder /assets and replace all with ../../assets
-- That’s it.
-
-OLD
-When preparing the Github demo page (in the gh-pages branch):
-
-- index.html and any other HTML pages:
-  - need any changes to header, footer etc brought in. Maybe just copy in a page from /dist?
-  - refs to static assets need to be dist/assets/css/main_v0.0.1.min.css whereas in a real page we wouldn’t have the dist part
-- favicon and sitemanifest
-  - both paths need prefixed with dist/
-- *.min.css 
-  - refs /assets need to be /sofrito/dist/assets whereas in a real page we wouldn’t have the /sofrito/dist part
-
-
-
-- could handle the above in a different/separate build step?
-- or with more simple find and replace?
-
-
+- in branch develop, delete /docs then copy /dist then paste a duplicate then rename as /docs. That’s it; no path changes required.
+- Merge brach develop into branch master and push.
+- End. 
 
 
 

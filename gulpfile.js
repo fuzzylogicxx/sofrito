@@ -322,6 +322,12 @@ exports.default = series(
 	)
 );
 
+// To do: add a "build" (or "production" or "cache-bust") task which is lesser-used.
+// It should do the same as the default "gulp" task, but with the addition of a gulp-string-replace (or similar)
+// which replaces the version at the end of the href value of <link rel="stylesheet"> elements, and src value of <script> elements
+// using package.version.
+// Note that this will be useful in traditional hosted environments although on Netlify cache-invalidation is handled at their end.
+
 // Watch and reload
 // gulp watch
 exports.watch = series(
